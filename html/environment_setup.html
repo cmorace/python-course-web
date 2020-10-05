@@ -1,0 +1,292 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Programming Environment Setup &mdash; Peanuts Python Course Website 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Homework" href="homework.html" />
+    <link rel="prev" title="Welcome to the Peanuts Python Course Website!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Peanuts Python Course Website
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Programming Environment Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#anaconda">1. Anaconda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#visual-studio-code">2. Visual Studio Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python-extension-for-vs-code">3. Python Extension for VS Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pycat">3. Pycat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#optional-software">4. Optional Software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pycat-tools">Pycat-tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pylance">Pylance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#git">Git</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="homework.html">Homework</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Peanuts Python Course Website</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Programming Environment Setup</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="programming-environment-setup">
+<h1>Programming Environment Setup<a class="headerlink" href="#programming-environment-setup" title="Permalink to this headline">¶</a></h1>
+<p>You can follow the steps below to setup your personal computer with a programming environment similar to the one we use in class. Follow the installation steps below from top to bottom for the best results.</p>
+<div class="section" id="anaconda">
+<h2>1. Anaconda<a class="headerlink" href="#anaconda" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Download the <a class="reference external" href="https://www.anaconda.com/products/individual#Downloads">Anaconda installer</a> for your operating system. Open the installer file and follow the installation steps.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Select the option to add Anaconda to my PATH environment variable.</p>
+<a class="reference internal image-reference" href="_images/anaconda.png"><img alt="_images/anaconda.png" class="align-center" src="_images/anaconda.png" style="width: 298.8px; height: 232.4px;" /></a>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="visual-studio-code">
+<h2>2. Visual Studio Code<a class="headerlink" href="#visual-studio-code" title="Permalink to this headline">¶</a></h2>
+<p>Download and install <a class="reference external" href="https://code.visualstudio.com/Download">Visual Studio Code</a>.</p>
+</div>
+<div class="section" id="python-extension-for-vs-code">
+<h2>3. Python Extension for VS Code<a class="headerlink" href="#python-extension-for-vs-code" title="Permalink to this headline">¶</a></h2>
+<p>After installing VS Code, install the <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python extension</a>.</p>
+</div>
+<div class="section" id="pycat">
+<h2>3. Pycat<a class="headerlink" href="#pycat" title="Permalink to this headline">¶</a></h2>
+<p>Install the latest version or pycat. Open the Anacona Terminal application and run the command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install git+https://bitbucket.org/dwhite0/pycat.git
+</pre></div>
+</div>
+</div>
+<div class="section" id="optional-software">
+<h2>4. Optional Software<a class="headerlink" href="#optional-software" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pycat-tools">
+<h3>Pycat-tools<a class="headerlink" href="#pycat-tools" title="Permalink to this headline">¶</a></h3>
+<p>Download the latest version of pycat-tools <a class="reference external" href="https://bitbucket.org/dwhite0/pycat/raw/master/utils/pycat-vscode-extension/pycat-tools/pycat-tools-0.0.1.vsix">here</a>. In VS Code’s extensions view, click on the “Views and More Actions” button and then Install from VSIX…</p>
+<a class="reference internal image-reference" href="_images/install_vsix.png"><img alt="_images/install_vsix.png" class="align-center" src="_images/install_vsix.png" style="width: 360.0px; height: 186.0px;" /></a>
+<p>Select the <code class="docutils literal notranslate"><span class="pre">pycat-tools.vsix</span></code> file you just downloaded.</p>
+</div>
+<div class="section" id="pylance">
+<h3>Pylance<a class="headerlink" href="#pylance" title="Permalink to this headline">¶</a></h3>
+<p>Install the <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance">Pylance Visual Studio Code Extension</a> to enhance VS Code’s semantic highlighting, auto-complete, and diagnostics features.</p>
+</div>
+<div class="section" id="git">
+<h3>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h3>
+<p>Install <a class="reference external" href="https://git-scm.com/downloads">git</a> for your operating system.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="homework.html" class="btn btn-neutral float-right" title="Homework" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to the Peanuts Python Course Website!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Peanuts Education
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,6 +1,1 @@
-**.DS_Store
-**.mypy_cache/
-**.vscode/
-build/
-source/_build
-source/_test
+*.DS_Store
