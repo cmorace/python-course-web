@@ -1,0 +1,28 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Peanuts Education
+# This file is distributed under the same license as the Peanuts Python
+# Course Website package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Peanuts Python Course Website \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-05 00:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/index.rst:3
+msgid "Welcome to the Peanuts Python Course Website!"
+msgstr "歡迎來到花生Python課程網站！"
+
+#: ../../source/index.rst:5
+msgid "Hi there. This page includes some resources for our Python course."
+msgstr "嗨，您好。 該頁麵包括我們Python課程的一些資源。"
+
