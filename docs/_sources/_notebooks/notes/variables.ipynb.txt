@@ -1,0 +1,164 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Variables  \n",
+    "\n",
+    "Variables let us store and manipulate different kinds of data. For example, we can store numbers, characters, lists, dictionaries, and many other types with Python. \n",
+    "\n",
+    "---\n",
+    "\n",
+    "## Assigning values\n",
+    "\n",
+    "We use the **assignment operator** `=` to assign values to variables. \n",
+    "\n",
+    "On the left side is a name we give to our variable and on the right side is a **literal value**. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "example_variable = 5\n"
+     ]
+    }
+   ],
+   "source": [
+    "example_variable = 5\n",
+    "print(\"example_variable =\", example_variable)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "We can also assign values to multiple variables on the same line."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "metadata": {
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1 2 3\n"
+     ]
+    }
+   ],
+   "source": [
+    "x, y, z = 1,2,3\n",
+    "print(x, y, z)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "\n",
+    "## Naming Variables  \n",
+    "\n",
+    "Variable names should be descriptive. Your programs will be easier to read and write if you name your variables according to the values they represent. Most python programs name variables with all lowercase letters and underscores between words. For example, ```this_is_a_long_variable_name```. Consistency in naming style is considered a good practice.\n",
+    "\n",
+    "Rules for Python variables:\n",
+    "\n",
+    "- A variable name must start with a letter or the underscore character\n",
+    "\n",
+    "- A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )\n",
+    "\n",
+    "- Variable names are case-sensitive (age, Age and AGE are three different variables)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "_variable_names_can_start_with_an_underscore = True\n",
+    "variable_names_can_include_numbers_like_123 = True\n",
+    "VARIABLE_NAMES_ARE_CASE_SENSITIVE = True"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "\n",
+    "## Data Types  \n",
+    "Python is a *dynamically-typed* programming language. This means that data types are automatically inferred based on the values being assigned. Python has many built-in data types. For example,  \n",
+    "\n",
+    "- ```bool```  (a logical value, either ```True``` or ```False```)\n",
+    "- ```int```   (integer values, positive or negative whole numbers like ```-1``` and ```1```)\n",
+    "- ```float``` (floating point values, numbers like ```3.1415```)\n",
+    "- ```str```   (a string is a list of characters, like ```\"programming is fun\"```)\n",
+    "\n",
+    "### The `type()` Function\n",
+    "We can use the `type()` function to check a variable's type."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "the variable 'a' has type: <class 'bool'>\n",
+      "the variable 'b' has type: <class 'int'>\n",
+      "the variable 'c' has type: <class 'float'>\n",
+      "the variable 'd' has type: <class 'str'>\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = True\n",
+    "b = -1\n",
+    "c = 3.1415\n",
+    "d = \"programming is fun\"\n",
+    "print(\"the variable 'a' has type:\", type(a))\n",
+    "print(\"the variable 'b' has type:\", type(b))\n",
+    "print(\"the variable 'c' has type:\", type(c))\n",
+    "print(\"the variable 'd' has type:\", type(d))"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3.8.5 vscode virtualenv",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}

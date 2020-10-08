@@ -1,7 +1,7 @@
 Programming Environment Setup
 ==============================
 
-You can follow the steps below to setup your personal computer with a programming environment similar to the one we use in class. Follow the installation steps below from top to bottom for the best results.
+You can follow the steps below to setup your personal computer with a programming environment similar to the one we use in class. Follow the installation steps in order from top to bottom.
 
 
 1. Anaconda
@@ -38,9 +38,9 @@ Install the latest version or pycat. Open the Anacona Terminal application and r
 4. Optional Software
 --------------------
 
-Pycat-tools
+pycat-tools
 ^^^^^^^^^^^^^
-Download the latest version of pycat-tools `here <https://bitbucket.org/dwhite0/pycat/raw/master/utils/pycat-vscode-extension/pycat-tools/pycat-tools-0.0.1.vsix>`_. In VS Code's extensions view, click on the "Views and More Actions" button and then Install from VSIX...
+Download pycat-tools `here <https://bitbucket.org/dwhite0/pycat/raw/master/utils/pycat-vscode-extension/pycat-tools/pycat-tools-0.0.1.vsix>`_. In VS Code's extensions view, click on the "Views and More Actions" button and then Install from VSIX...
 
 .. image:: images/install_vsix.png
        :scale: 60 %
@@ -52,6 +52,6 @@ Pylance
 ^^^^^^^^
 Install the `Pylance Visual Studio Code Extension <https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance>`_ to enhance VS Code's semantic highlighting, auto-complete, and diagnostics features.
 
-Git
-^^^^^^^
-Install `git <https://git-scm.com/downloads>`_ for your operating system.
+git-scm
+^^^^^^^^
+Install `git <https://git-scm.com/downloads>`_ if you would maintain a repository for code your write and track changes.
