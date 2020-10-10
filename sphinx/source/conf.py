@@ -21,7 +21,7 @@ https://www.sphinx-doc.org/en/master/usage/configuration.html
 # -- Project information -----------------------------------------------------
 
 project = 'Peanuts Python Course Website'
-copyright = '2020'
+copyright = '2020 Peanuts Education'
 author = 'Charles Morace'
 
 # The full version, including alpha/beta/rc tags
