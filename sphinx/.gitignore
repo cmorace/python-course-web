@@ -1,0 +1,7 @@
+**.DS_Store
+**.mypy_cache/
+**.vscode/
+build/
+source/_build
+source/_test
+**.ipynb_checkpoints/
