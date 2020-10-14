@@ -5,13 +5,13 @@ Hi there. This page includes some resources for our Python course. Check it out!
 
 * `Setup <setup.rst>`_ has instructions for setting up a Python programming environment.
 * `Homework <homework.rst>`_ posts the assigned homework.
-* `Notes <notes.rst>`_ posts some notes about Python and the topics we cover in class.
-* `Tutorials <tutorials.rst>`_ includes tutorials for programming tools we use.
+* `Notes <notes.rst>`_ include details about Python and the topics we cover in class.
+* `Tutorials <tutorials.rst>`_ include tutorials for the programming tools we use.
 * `Binder <binder.rst>`_ has links to an online Python programming environment.
 
 
 .. note::
-   If your programming environment is set up, stay up to date with the latest version of pycat by running the following command in your terminal e.g. Anaconda Prompt
+   If your programming environment is set up, stay up to date with the latest version of pycat by running the following command in your terminal application (e.g. Anaconda Prompt if you use Windows)
 
    .. code:: bash
 

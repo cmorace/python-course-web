@@ -9,6 +9,9 @@ To complete the assignments you should have Anaconda installed. If you have not 
 
 You can complete the assignments by downloading the `.ipynb` file and opening the file with VS Code or the Jupyter Notebook web application. The `Jupyter tutorial <_notebooks/tutorials/jupyter_tutorial.ipynb>`_ has information about using jupyter notebooks if you are unfamiliar.
 
+.. note::
+   You must be using a desktop computer to download the homework files.
+
 
 .. list-table::
    :header-rows: 2
@@ -24,7 +27,7 @@ You can complete the assignments by downloading the `.ipynb` file and opening th
 Preview
 -------------
 
-The links below will bring you to a preview of the homework assignments. You will not be able to execute the Python code; these are static webpages meant only for previewing assignments and solutions.
+The links below will bring you to a preview of the homework assignments. You will not be able to execute the Python code; these are static webpages meant for previewing assignments and solutions.
 
 .. toctree::
    :maxdepth: 1
