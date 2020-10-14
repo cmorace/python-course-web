@@ -13,6 +13,9 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/asciinema-player_2.6.1.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/asciinema-custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
 
   
   
@@ -32,6 +35,8 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/asciinema-player_2.6.1.js"></script>
+        <script src="../../_static/js/custom.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
@@ -88,16 +93,18 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../environment_setup.html">Programming Environment Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../setup.html">Setup</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../homework.html">Homework</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../homework.html#downloads">Downloads</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../../homework.html#preview">Preview</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="hw01.html">Homework 1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hw01_solution.html">Homework 1 Solutions</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Homework 02</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#1.-Unicode">1. Unicode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#2.-Calculating-the-Sum-of-Natural-Numbers">2. Calculating the Sum of Natural Numbers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#4.-Summing-to-\pi">4. Summing to <span class="math notranslate nohighlight">\(\pi\)</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#1.-print()’s-end-Argument">1. <code class="docutils literal notranslate"><span class="pre">print()</span></code>’s <code class="docutils literal notranslate"><span class="pre">end</span></code> Argument</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#2.-Printing-Unicode-Characters">2. Printing Unicode Characters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#3.-Math-Quiz-with-randint()">3. Math Quiz with <code class="docutils literal notranslate"><span class="pre">randint()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#4.-Calculating-the-Sum-of-Natural-Numbers">4. Calculating the Sum of Natural Numbers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#5.-Summing-to-\pi">5. Summing to <span class="math notranslate nohighlight">\(\pi\)</span></a></li>
 </ul>
 </li>
 </ul>
@@ -106,6 +113,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../notes.html">Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../binder.html">Jupyter Binder</a></li>
 </ul>
 
             
@@ -428,15 +436,62 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="section" id="Homework-02">
 <h1>Homework 02<a class="headerlink" href="#Homework-02" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="1.-Unicode">
-<h2>1. Unicode<a class="headerlink" href="#1.-Unicode" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Unicode">Unicode</a> covers all the characters for all the writing systems of the world, modern and ancient. It also includes technical symbols, punctuations, and many other characters used in writing text. In Python, we can print unicode characters by converting a character code to an integer and then converting the integer to a character using the <code class="docutils literal notranslate"><span class="pre">chr()</span></code> function. Below, is an example. Unicode character codes can be looked up in a chart
-<a class="reference external" href="https://www.unicode.org/charts/">here</a>.</p>
+<p>This homework covers the topic of iteration. We have seen two kinds of iteration in class, the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop and the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. Each exercise is preceded by a similar example to help you.</p>
+<hr class="docutils" />
+<div class="section" id="1.-print()’s-end-Argument">
+<h2>1. <code class="docutils literal notranslate"><span class="pre">print()</span></code>’s <code class="docutils literal notranslate"><span class="pre">end</span></code> Argument<a class="headerlink" href="#1.-print()’s-end-Argument" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">print</span></code> function has a keyword argument <code class="docutils literal notranslate"><span class="pre">end</span></code>. Whatever value we assign to <code class="docutils literal notranslate"><span class="pre">end</span></code> will be printed after printing out the previous arguments. Below is an example.</p>
+<div class="section" id="Example:-Print-the-Natural-Numbers">
+<h3>Example: Print the Natural Numbers<a class="headerlink" href="#Example:-Print-the-Natural-Numbers" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Exercise:-Print-the-Odd-Numbers">
+<h3>Exercise: Print the Odd Numbers<a class="headerlink" href="#Exercise:-Print-the-Odd-Numbers" title="Permalink to this headline">¶</a></h3>
+<p>Print the odd numbers from <span class="math notranslate nohighlight">\(1\)</span> to <span class="math notranslate nohighlight">\(n\)</span> on the same line using a for loop. Can you do it without any <code class="docutils literal notranslate"><span class="pre">if</span></code> statements?</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="2.-Printing-Unicode-Characters">
+<h2>2. Printing Unicode Characters<a class="headerlink" href="#2.-Printing-Unicode-Characters" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Unicode">Unicode</a> includes technical symbols, punctuations, and many other characters used in writing text. In Python, to print unicode characters we can:</p>
+<ol class="arabic simple">
+<li><p>convert a unicode character from <a class="reference external" href="https://en.wikipedia.org/wiki/Hexadecimal">hexidecimal</a> to a base-10 integer with the <code class="docutils literal notranslate"><span class="pre">int(hex_code,</span> <span class="pre">16)</span></code> function.</p></li>
+<li><p>then convert the integer to a character using the <code class="docutils literal notranslate"><span class="pre">chr()</span></code> function.</p></li>
+</ol>
+<p>Below, is an example.</p>
 <div class="section" id="Example:-Printing-Bopomofo">
 <h3>Example: Printing Bopomofo<a class="headerlink" href="#Example:-Printing-Bopomofo" title="Permalink to this headline">¶</a></h3>
-<p>Notice that the the print function’s keyword argument <code class="docutils literal notranslate"><span class="pre">end</span></code> is set to the empty string. This forces the print function to continue printing on the same line after each call.</p>
+<p>In the example below <code class="docutils literal notranslate"><span class="pre">ㄅ</span></code> is represented by <code class="docutils literal notranslate"><span class="pre">&quot;3105&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">ㄬ</span></code> is represented by <code class="docutils literal notranslate"><span class="pre">&quot;312C&quot;</span></code>. Other unicode character codes can be looked up in a chart <a class="reference external" href="https://www.unicode.org/charts/">here</a>.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[58]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -458,7 +513,76 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="section" id="Exercise:-Printing-Emojis">
 <h3>Exercise: Printing Emojis<a class="headerlink" href="#Exercise:-Printing-Emojis" title="Permalink to this headline">¶</a></h3>
-<p>Lookup the character codes for emojis <a class="reference external" href="https://www.unicode.org/charts/PDF/U1F600.pdf">here</a>. Use a for loop to print out the all of the emoji’s on a single line.</p>
+<p>The unicode characters for emoticons start with <code class="docutils literal notranslate"><span class="pre">1F600</span></code> and end with <code class="docutils literal notranslate"><span class="pre">1F64F</span></code>. Use a for loop to print out the all of the emoticons on a single line.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">low</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s2">&quot;1F600&quot;</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">high</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s2">&quot;1F64F&quot;</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="c1"># write your for loop here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="3.-Math-Quiz-with-randint()">
+<h2>3. Math Quiz with <code class="docutils literal notranslate"><span class="pre">randint()</span></code><a class="headerlink" href="#3.-Math-Quiz-with-randint()" title="Permalink to this headline">¶</a></h2>
+<p>Python has a built-in package named <code class="docutils literal notranslate"><span class="pre">random</span></code> which has many functions for generating random numbers. The function <code class="docutils literal notranslate"><span class="pre">randint(a,</span> <span class="pre">b)</span></code> will return a random integer between <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+<div class="section" id="Example:-Division-Quiz">
+<h3>Example: Division Quiz<a class="headerlink" href="#Example:-Division-Quiz" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="n">product</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What is &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">product</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;/&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;?&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;very good&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;sorry, wrong answer&quot;</span><span class="p">)</span>
+
+    <span class="n">continue_response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;press q to quit:&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">continue_response</span> <span class="o">==</span> <span class="s2">&quot;q&quot;</span><span class="p">:</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+What is 27/3? 9
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+very good
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+press q to quit: q
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Exersise:-Multiplication-Quiz">
+<h3>Exersise: Multiplication Quiz<a class="headerlink" href="#Exersise:-Multiplication-Quiz" title="Permalink to this headline">¶</a></h3>
+<p>Modify the example above to ask multiplication questions rather than division.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -471,21 +595,27 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="2.-Calculating-the-Sum-of-Natural-Numbers">
-<h2>2. Calculating the Sum of Natural Numbers<a class="headerlink" href="#2.-Calculating-the-Sum-of-Natural-Numbers" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="4.-Calculating-the-Sum-of-Natural-Numbers">
+<h2>4. Calculating the Sum of Natural Numbers<a class="headerlink" href="#4.-Calculating-the-Sum-of-Natural-Numbers" title="Permalink to this headline">¶</a></h2>
+<p>A useful formula for the sum of natural numbers from <span class="math notranslate nohighlight">\(1\)</span> to <span class="math notranslate nohighlight">\(n\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[1+2+3+\dots+n=\frac{n(n+1)}{2}\]</div>
+<p>Write a loop to verify this formula.</p>
 <div class="section" id="Example:-While-Loop-Implementation">
 <h3>Example: While Loop Implementation<a class="headerlink" href="#Example:-While-Loop-Implementation" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
-    <span class="nb">sum</span> <span class="o">+=</span> <span class="n">i</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">sum_n</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+    <span class="n">sum_n</span> <span class="o">+=</span> <span class="n">i</span>
     <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sum_n</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sum_n</span> <span class="o">==</span> <span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -495,6 +625,7 @@ div.rendered_html tbody tr:hover {
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 5050
+True
 </pre></div></div>
 </div>
 </div>
@@ -513,8 +644,8 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="4.-Summing-to-\pi">
-<h2>4. Summing to <span class="math notranslate nohighlight">\(\pi\)</span><a class="headerlink" href="#4.-Summing-to-\pi" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="5.-Summing-to-\pi">
+<h2>5. Summing to <span class="math notranslate nohighlight">\(\pi\)</span><a class="headerlink" href="#5.-Summing-to-\pi" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="Example:-The-Bailey–Borwein–Plouffe-Formula">
 <h3>Example: The Bailey–Borwein–Plouffe Formula<a class="headerlink" href="#Example:-The-Bailey–Borwein–Plouffe-Formula" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Bailey%E2%80%93Borwein%E2%80%93Plouffe_formula">The Bailey–Borwein–Plouffe Formula</a> was discovered in 1995 by Simon Plouffe. It states that</p>
@@ -522,7 +653,7 @@ div.rendered_html tbody tr:hover {
 \[\pi = \sum_{k=0}^{\infty} \left(\frac{1}{16^k}\left(\frac{4}{8k+1}-\frac{2}{8k+4}-\frac{1}{8k+5}-\frac{1}{8k+6}\right)\right)\]</div>
 <p>Remarkably, this formula accurately computes the first 15 digits of pi in just 10 iterations.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -543,12 +674,12 @@ div.rendered_html tbody tr:hover {
 </pre></div></div>
 </div>
 </div>
-<div class="section" id="Example:-The-Leibniz-Formula">
-<h3>Example: The Leibniz Formula<a class="headerlink" href="#Example:-The-Leibniz-Formula" title="Permalink to this headline">¶</a></h3>
-<p>The <cite>Leibniz formula for :math:</cite>pi` &lt;<a class="reference external" href="https://en.wikipedia.org/wiki/Leibniz_formula_for_%CF%80">https://en.wikipedia.org/wiki/Leibniz_formula_for_%CF%80</a>&gt;`__ was discovered by the Indian Mathematician Madhava of Sangamagrama in the 14th century. It states that:</p>
+<div class="section" id="Exercise:-The-Leibniz-Formula">
+<h3>Exercise: The Leibniz Formula<a class="headerlink" href="#Exercise:-The-Leibniz-Formula" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Leibniz_formula_for_%CF%80">Leibniz formula</a> was discovered by the Indian Mathematician Madhava of Sangamagrama in the 14th century. It states that:</p>
 <div class="math notranslate nohighlight">
 \[1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{9} \dots = \frac{\pi}{4}\]</div>
-<p>Use a for loop to calculate this sum and multiply the final sum by 4 to check how close the result is to <span class="math notranslate nohighlight">\(\pi\)</span>. One million digits of <span class="math notranslate nohighlight">\(\pi\)</span> are listed <a class="reference external" href="https://www.piday.org/million/">here</a>. As you increase the number of iterations, you should get a better and better approximation.</p>
+<p>Use a for loop to calculate this sum and multiply the final sum by 4 to check how close the result is to <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>

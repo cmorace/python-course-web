@@ -2,6 +2,6 @@ Tutorials
 ==========
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    _notebooks/tutorials/jupyter_tutorial

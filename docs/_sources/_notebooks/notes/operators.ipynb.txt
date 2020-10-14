@@ -156,7 +156,7 @@
    "source": [
     "<div class=\"alert alert-warning\">Warning\n",
     "    <div class=\"alert alert-warning\">\n",
-    "        The `and` and `or` operators may return unexpected results if applied to non-boolean types. This behavior can cause bugs in your program that are difficult to find. It is recommended that you only apply the operators `and` and `or` to boolean values.\n",
+    "        The `and` and `or` operators may return unexpected results if applied to non-boolean types.\n",
     "    </div>\n",
     "</div>"
    ]

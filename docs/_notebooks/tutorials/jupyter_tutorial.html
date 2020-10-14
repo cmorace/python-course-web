@@ -13,6 +13,9 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/asciinema-player_2.6.1.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/asciinema-custom.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
 
   
   
@@ -32,6 +35,8 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/asciinema-player_2.6.1.js"></script>
+        <script src="../../_static/js/custom.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
@@ -41,6 +46,7 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Jupyter Binder" href="../../binder.html" />
     <link rel="prev" title="Tutorials" href="../../tutorials.html" /> 
 </head>
 
@@ -87,7 +93,7 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../environment_setup.html">Programming Environment Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../setup.html">Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../homework.html">Homework</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../notes.html">Notes</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../tutorials.html">Tutorials</a><ul class="current">
@@ -112,6 +118,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../binder.html">Jupyter Binder</a></li>
 </ul>
 
             
@@ -434,22 +441,22 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="section" id="Jupyter-Notebooks">
 <h1>Jupyter Notebooks<a class="headerlink" href="#Jupyter-Notebooks" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://jupyter.org/">Jupyter notebooks</a> run bits of code interactively and are great environments for learning to program with Python. They can run as a web-application inside a web-browser or inside an integrated development environment such as VS Code. To use Jupyter notebooks you must have Python and Jupyter Notebooks installed on your computer. The easiest way to do this is to install Anaconda, which includes both Python and Jupyter. If you haven’t installed Anaconda yet, see the
-<a class="reference internal" href="../../environment_setup.html#anaconda"><span class="std std-ref">installation instructions</span></a>.</p>
+<p><a class="reference external" href="https://jupyter.org/">Jupyter notebooks</a> run bits of code interactively and are great environments for learning to program with Python. They can run as a web-application inside a web-browser, inside an integrated development environment such as VS Code, or even in the cloud with tools like <a class="reference external" href="https://mybinder.org">mybinder.org</a>. To get the full functionality of jupyter notebooks you must have Python and Jupyter Notebooks installed on your computer. The easiest way to do this is to install
+Anaconda, which includes both Python and Jupyter. If you haven’t installed Anaconda yet, see the <a class="reference internal" href="../../setup.html#anaconda"><span class="std std-ref">Anaconda installation instructions</span></a>.</p>
 <hr class="docutils" />
 <div class="section" id="Editors">
 <h2>Editors<a class="headerlink" href="#Editors" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="Jupyter-Notebook-Web-Application">
 <h3>Jupyter Notebook Web Application<a class="headerlink" href="#Jupyter-Notebook-Web-Application" title="Permalink to this headline">¶</a></h3>
-<p>Once jupyter is installed, open your terminal application and type the command</p>
+<p>Once jupyter is installed, open up the Anaconda Prompt (or other terminal application) and type the command</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter notebook
 </pre></div>
 </div>
-<p>The jupyter notebook interface should open up in your web-browser. Use the <code class="docutils literal notranslate"><span class="pre">New</span></code> button to create a new notebook, the <code class="docutils literal notranslate"><span class="pre">Upload</span></code> button to open an existing notebook, and the file directory to navigate your file system. Check the Jupyter <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/notebook.html">documentation</a> for more details.</p>
+<p>The jupyter notebook interface should open up in your web-browser. You can use the <code class="docutils literal notranslate"><span class="pre">New</span></code> button to create a new notebook, the <code class="docutils literal notranslate"><span class="pre">Upload</span></code> button to open an existing notebook, and the file directory to navigate your file system. Check the Jupyter <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/notebook.html">documentation</a> for more details.</p>
 </div>
 <div class="section" id="VS-Code">
 <h3>VS Code<a class="headerlink" href="#VS-Code" title="Permalink to this headline">¶</a></h3>
-<p>You can also create, open, and edit jupyter notebook <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files in VS Code. VS Code takes a bit longer to load files and is missing some features of the traditional web interface such as copy and pasting cells, merging and splitting cells, and linking to other Jupyter notebooks.</p>
+<p>With the Python extension for VS Code you can create, open, and edit jupyter notebook <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files. VS Code takes a bit longer to load files and is missing some features of the web application but also adds auto-complete, debugging, and other features that are not available in the web-based interface.</p>
 <hr class="docutils" />
 </div>
 </div>
@@ -484,8 +491,10 @@ this is a code cell
 </div>
 <div class="section" id="Command-Mode-vs. Edit-Mode">
 <h3>Command Mode vs. Edit Mode<a class="headerlink" href="#Command-Mode-vs. Edit-Mode" title="Permalink to this headline">¶</a></h3>
-<p>Cells can be in one of two states, command mode or edit mode. In command mode, we can create new cells, delete existing cells, of change the type of cell to either a morkdown cell or a code cell. In edit mode, we can edit and execute a cell’s content (either markdown or Python code). To enter command mode click on the side bar to the left side of the cell. To enter edit mode click inside the cell. You can also use the <code class="docutils literal notranslate"><span class="pre">esc</span></code> and <code class="docutils literal notranslate"><span class="pre">enter</span></code> keys to switch between command and edit modes,
-respecively.</p>
+<p>Cells can be in one of two states, command mode or edit mode.</p>
+<p>To enter command mode, you can click on the side bar to the left side of the cell. In command mode, we can create, delete, copy, paste, or change the type of cells.</p>
+<p>To enter edit mode you can click inside the cell. In edit mode, we edit and execute a cell’s content (either markdown or Python code).</p>
+<p>You can also use the <code class="docutils literal notranslate"><span class="pre">esc</span></code> and <code class="docutils literal notranslate"><span class="pre">enter</span></code> keys to switch between command and edit modes.</p>
 <hr class="docutils" />
 </div>
 </div>
@@ -593,6 +602,8 @@ respecively.</p>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../binder.html" class="btn btn-neutral float-right" title="Jupyter Binder" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../../tutorials.html" class="btn btn-neutral float-left" title="Tutorials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

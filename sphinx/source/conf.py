@@ -37,6 +37,7 @@ extensions = [
     'sphinx_rtd_theme',
     'sphinx.ext.mathjax',
     'nbsphinx',
+    'sphinxcontrib.asciinema',
 ]
 
 html_show_sourcelink = False
@@ -64,16 +65,20 @@ exclude_patterns = [
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
-html_theme_options = {
-    'analytics_id': 'UA-126736149-2',
+html_theme_options = {'analytics_id': 'UA-126736149-2',}
+sphinxcontrib_asciinema_defaults = {
+    'theme': 'solarized-dark',
+    'preload': 1,
+    'font-size': '15px'
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+html_js_files = ['js/custom.js']
+html_css_files = ['css/custom.css']
 html_favicon = 'images/favicon.ico'
-
 
 # Configuration for sphinx-intl
 locale_dirs = ['locale/']
