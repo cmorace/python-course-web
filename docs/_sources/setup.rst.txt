@@ -16,7 +16,7 @@ Download the `Anaconda installer <https://www.anaconda.com/products/individual#D
       :scale: 60 %
       :align: center
 
-Anaconda comes with Python and many third-party python packages, including a package we will use called *jupyter notebook*. If you downloaded Anaconda on Windows then the *Anaconda Prompt* application is also installed. 
+Anaconda comes with Python and many third-party Python packages, including a package we will use called *Jupyter Notebook*. If you downloaded Anaconda on Windows then the *Anaconda Prompt* application is also installed. 
 
 
 2. Visual Studio Code
@@ -37,7 +37,7 @@ Install the latest version or pycat. Open the Anaconda Prompt (or other terminal
    pip install git+https://bitbucket.org/dwhite0/pycat.git
 
 
-If successful, the installation should print to your terminal something similar to below.
+The installation should print something similar to below in your terminal.
 
 .. image:: images/pycat.png
    :scale: 55 %
