@@ -21,12 +21,12 @@ Anaconda comes with Python and many third-party Python packages, including a pac
 
 2. Visual Studio Code
 ----------------------
-Download and install `Visual Studio Code <https://code.visualstudio.com/Download>`_.
+Download and install `Visual Studio Code <https://code.visualstudio.com/Download>`_. After installing VS Code, install the `Python extension <https://marketplace.visualstudio.com/items?itemName=ms-python.python>`_.
 
+3. git-scm
+^^^^^^^^^^^
+Download `git <https://git-scm.com/downloads>`_. Run the installer and select `next` for all options 
 
-3. Python Extension for VS Code
---------------------------------
-After installing VS Code, install the `Python extension <https://marketplace.visualstudio.com/items?itemName=ms-python.python>`_.
 
 3. Pycat
 ---------
@@ -60,7 +60,3 @@ Select the ``pycat-tools.vsix`` file you just downloaded.
 Pylance
 ^^^^^^^^
 Install the `Pylance Visual Studio Code Extension <https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance>`_ to enhance VS Code's semantic highlighting, auto-complete, and diagnostics features.
-
-git-scm
-^^^^^^^^
-Install `git <https://git-scm.com/downloads>`_ if you would like to maintain a repository for the code your write. This is highly recommended.

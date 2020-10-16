@@ -9,6 +9,10 @@ Hi there. This page includes some resources for our Python course. Check it out!
 * `Tutorials <tutorials.rst>`_ include tutorials for the programming tools we use.
 * `Binder <binder.rst>`_ has links to an online Python programming environment.
 
+Lesson 5 resources
+------------------
+:download:`hw01.ipynb <_lesson_resources/lesson_05_images.zip>`
+
 
 .. note::
    If your programming environment is set up, stay up to date with the latest version of pycat by running the following command in your terminal application (e.g. Anaconda Prompt if you use Windows)
