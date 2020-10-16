@@ -11,7 +11,7 @@ Hi there. This page includes some resources for our Python course. Check it out!
 
 Lesson 5 resources
 ------------------
-:download:`hw01.ipynb <_lesson_resources/lesson_05_images.zip>`
+:download:`lesson_05_images.zip <_lesson_resources/lesson_05_images.zip>`
 
 
 .. note::
