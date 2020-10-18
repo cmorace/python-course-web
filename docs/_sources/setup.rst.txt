@@ -23,12 +23,11 @@ Anaconda comes with Python and many third-party Python packages, including a pac
 ----------------------
 Download and install `Visual Studio Code <https://code.visualstudio.com/Download>`_. After installing VS Code, install the `Python extension <https://marketplace.visualstudio.com/items?itemName=ms-python.python>`_.
 
-3. git-scm
-^^^^^^^^^^^
-Download `git <https://git-scm.com/downloads>`_. Run the installer and select `next` for all options 
+3. Git-scm
+-----------
+Download `git <https://git-scm.com/downloads>`_. Run the installer and select `next` for all options.
 
-
-3. Pycat
+4. Pycat
 ---------
 Install the latest version or pycat. Open the Anaconda Prompt (or other terminal application) and run the command
 
@@ -44,10 +43,10 @@ The installation should print something similar to below in your terminal.
    :align: center
 
 
-4. Optional Software
+5. Optional Software
 --------------------
 
-pycat-tools
+Pycat-tools
 ^^^^^^^^^^^^^
 Download pycat-tools `here <https://bitbucket.org/dwhite0/pycat/raw/master/utils/pycat-vscode-extension/pycat-tools/pycat-tools-0.0.1.vsix>`_. In VS Code's extensions view, click on the "Views and More Actions" button and then Install from VSIX...
 
