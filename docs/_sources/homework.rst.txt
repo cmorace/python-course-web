@@ -13,14 +13,25 @@ You can complete the assignments by downloading the `.ipynb` file and opening th
    You must be using a desktop computer to download the homework files.
 
 
+.. |hw1_binder| image:: images/launch_binder.svg
+   :target: https://mybinder.org/v2/gh/cmorace/python-course-web/gh-pages?filepath=sphinx%2Fsource%2F_notebooks%2Fhomework%2Fhw01.ipynb
+
+
+.. |hw2_binder| image:: images/launch_binder.svg
+   :target: https://mybinder.org/v2/gh/cmorace/python-course-web/gh-pages?filepath=sphinx%2Fsource%2F_notebooks%2Fhomework%2Fhw02.ipynb
+
+
 .. list-table::
    :header-rows: 2
 
    * - Homework
+     - Binder
      - Solution
    * - :download:`hw01.ipynb <_notebooks/homework/hw01.ipynb>`
+     - |hw1_binder|
      - :download:`hw01_solution.ipynb <_notebooks/homework/hw01_solution.ipynb>`
    * - :download:`hw02.ipynb <_notebooks/homework/hw02.ipynb>`
+     - |hw2_binder|
      -
 
 
