@@ -36,7 +36,16 @@ Lesson 5
 
    Scheduler.update(create_gem, 1)
 
-2. Add custom class properties:
+2. Sprite Self Deletion:
+
+.. code:: python
+
+   class Gem(Sprite):
+      def on_update(self):
+         if touching_any_sprite():
+            self.delete()
+
+3. Add Custom Class Properties:
 
 .. code:: python
 
@@ -44,17 +53,30 @@ Lesson 5
       def on_create(self):
          self.score = 0
 
-3. Python Lists and random.choice:
+4. Python Lists and ``random.choice``:
 
 .. code:: python
 
    import random
    file_list = ["img/1.png", "img/2.png", "img/3.png"]
+   random.choice(file_list)
 
 
 Lesson 6
 ^^^^^^^^^
 :download:`lesson_06_media.zip <_lesson_resources/lesson_06_media.zip>`
+
+1. Use `Sprite`'s ``on_left_click``:
+
+.. code:: python
+
+   class Alien(Sprite):
+      def on_left_click(self):
+         self.is_moving_up = True
+
+2. Use `tags`'s for collision:
+
+
 
 
 .. toctree::
