@@ -36,13 +36,20 @@ Lesson 5
 
    Scheduler.update(create_gem, 1)
 
-2. Add properties on the fly:
+2. Add custom class properties:
 
 .. code:: python
 
    class Player(Sprite):
       def on_create(self):
-         self.score = 0 
+         self.score = 0
+
+3. Python Lists and random.choice:
+
+.. code:: python
+
+   import random
+   file_list = ["img/1.png", "img/2.png", "img/3.png"]
 
 
 Lesson 6
