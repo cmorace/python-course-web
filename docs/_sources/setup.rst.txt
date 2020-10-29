@@ -38,9 +38,11 @@ Install the latest version or pycat. Open the Anaconda Prompt (or other terminal
 
 The installation should print something similar to below in your terminal.
 
-.. image:: images/pycat.png
-   :scale: 55 %
-   :align: center
+.. asciinema:: 364908
+
+.. .. image:: images/pycat.png
+..    :scale: 55 %
+..    :align: center
 
 
 5. Optional Software
