@@ -74,7 +74,7 @@ Lesson 6
       def on_left_click(self):
          self.is_moving_up = True
 
-2. Use `tags`'s for collision:
+2. Use `tags` for collision:
 
 .. code:: python
 
