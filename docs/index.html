@@ -257,6 +257,16 @@
 <ol class="arabic simple" start="2">
 <li><p>Use <cite>tags</cite>’s for collision:</p></li>
 </ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Spaceship</span><span class="p">(</span><span class="n">Sprite</span><span class="p">):</span>
+   <span class="k">def</span> <span class="nf">on_create</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">add_tag</span><span class="p">(</span><span class="s1">&#39;spaceship&#39;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Alien</span><span class="p">(</span><span class="n">Sprite</span><span class="p">):</span>
+   <span class="k">def</span> <span class="nf">on_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
+      <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">touching_any_sprite_with_tag</span><span class="p">(</span><span class="s1">&#39;spaceship&#39;</span><span class="p">):</span>
+         <span class="bp">self</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+</pre></div>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </div>

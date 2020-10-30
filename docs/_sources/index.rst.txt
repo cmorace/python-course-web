@@ -76,6 +76,18 @@ Lesson 6
 
 2. Use `tags`'s for collision:
 
+.. code:: python
+
+   class Spaceship(Sprite):
+      def on_create(self):
+         self.add_tag('spaceship')
+
+   class Alien(Sprite):
+      def on_update(self, dt):
+         if self.touching_any_sprite_with_tag('spaceship'):
+            self.delete()
+
+
 
 
 
