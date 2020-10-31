@@ -90,9 +90,11 @@ Lesson 7
 
    The ``len()`` function allows us to iterate over lists with arbitrary length.
 
-   my_list = ["red", "green", "blue", "cyan", "magenta", "yellow"]
-      for i in range(len(my_list)):
-         print(my_list[i])
+   .. code:: python
+   
+      my_list = ["red", "green", "blue", "cyan", "magenta", "yellow"]
+         for i in range(len(my_list)):
+            print(my_list[i])
 
 6. The ``clear()`` function:
 
