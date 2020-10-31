@@ -19,47 +19,93 @@ Pycat
 
      pip install git+https://bitbucket.org/dwhite0/pycat.git
 
-
-Lesson 5
+Lesson 7
 ^^^^^^^^^
+1. `Jupyter` review:
 
-:download:`lesson_05_images.zip <_lesson_resources/lesson_05_images.zip>`
+   * `Jupyter Notebook`, `VSCode`, and `Binder`
 
-1. Use the `Scheduler`'s update function to repeatedly create sprites:
+   * `Markdown`
 
-.. code:: python
+   * Caution with code execution order
 
-   from pycat import Scheduler
+   * Restarting the kernel
 
-   def create_gem(dt):
-      window.create_sprite(Gem)
 
-   Scheduler.update(create_gem, 1)
+2. Python list construction:
 
-2. Sprite Self Deletion:
+   * Empty list construction:
 
-.. code:: python
+   .. code:: python
 
-   class Gem(Sprite):
-      def on_update(self):
-         if touching_any_sprite():
-            self.delete()
+      my_list = []
 
-3. Add Custom Class Properties:
+   * Explicit construction:
 
-.. code:: python
+   .. code:: python
 
-   class Player(Sprite):
-      def on_create(self):
-         self.score = 0
+      my_strings = ["red", "green", "blue"]
+      my_ints = [23, 42, 57]
+      my_floats = [1.41421, 2.71828, 3.14159]
+      my_bools = [True, True, False]
 
-4. Python Lists and ``random.choice``:
+3. The ``append()`` method:
 
-.. code:: python
+   Adds elements to the end of the list.
 
-   import random
-   file_list = ["img/1.png", "img/2.png", "img/3.png"]
-   random.choice(file_list)
+   .. code:: python
+
+      my_list = []
+      my_list.append("red")
+      my_list.append("blue")
+      my_list.append("green")
+
+
+4. Accessing list elements by index:
+
+   Python, like most programming languages, uses `zero-based` indexing.
+
+   .. code:: python
+
+      my_list = ["red", "green", "blue"]
+      first_color = my_list[0]
+
+   We can use an index to `iterate` over a list.
+
+   .. code:: python
+
+      my_list = ["red", "green", "blue"]
+      for i in range(3):
+         print(my_list[i])
+
+
+5. The ``len()`` function:
+
+   Returns the number of objects in the list.
+
+   .. code:: python
+
+      my_list = ["red", "green", "blue"]
+      size = len(my_list)
+
+   The ``len()`` function allows us to iterate over lists with arbitrary length.
+
+   my_list = ["red", "green", "blue", "cyan", "magenta", "yellow"]
+      for i in range(len(my_list)):
+         print(my_list[i])
+
+6. The ``clear()`` function:
+
+   Removes all elements in the list.
+
+   .. code:: python
+
+      my_list.clear()
+
+7. Review homework
+
+
+
 
 
 Lesson 6
@@ -87,8 +133,55 @@ Lesson 6
          if self.touching_any_sprite_with_tag('spaceship'):
             self.delete()
 
+2. Display a `label` to show score:
+
+.. code:: python
+
+   score_label = Label('Aliens in ship: 0',x=550,y=600)
+   window.add_label(score_label)
+   score_label.text = 'Aliens in ship: '+str(space_ship.score)
 
 
+Lesson 5
+^^^^^^^^^
+
+:download:`lesson_05_images.zip <_lesson_resources/lesson_05_images.zip>`
+
+1. Use the `Scheduler`'s update function to repeatedly create sprites:
+
+.. code:: python
+
+   from pycat.core import Scheduler
+
+   def create_gem(dt):
+      window.create_sprite(Gem)
+
+   Scheduler.update(create_gem, 1)
+
+2. Sprite self deletion:
+
+.. code:: python
+
+   class Gem(Sprite):
+      def on_update(self):
+         if touching_any_sprite():
+            self.delete()
+
+3. Add custom class properties:
+
+.. code:: python
+
+   class Player(Sprite):
+      def on_create(self):
+         self.score = 0
+
+4. Python lists and ``random.choice``:
+
+.. code:: python
+
+   import random
+   file_list = ["img/1.png", "img/2.png", "img/3.png"]
+   random.choice(file_list)
 
 
 .. toctree::

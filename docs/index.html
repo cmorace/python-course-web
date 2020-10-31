@@ -203,45 +203,81 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="lesson-5">
-<h3>Lesson 5<a class="headerlink" href="#lesson-5" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference download internal" download="" href="_downloads/ae8e528d453dbadc58ab7d5fa44c1f27/lesson_05_images.zip"><code class="xref download docutils literal notranslate"><span class="pre">lesson_05_images.zip</span></code></a></p>
-<ol class="arabic simple">
-<li><p>Use the <cite>Scheduler</cite>’s update function to repeatedly create sprites:</p></li>
-</ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pycat</span> <span class="kn">import</span> <span class="n">Scheduler</span>
-
-<span class="k">def</span> <span class="nf">create_gem</span><span class="p">(</span><span class="n">dt</span><span class="p">):</span>
-   <span class="n">window</span><span class="o">.</span><span class="n">create_sprite</span><span class="p">(</span><span class="n">Gem</span><span class="p">)</span>
-
-<span class="n">Scheduler</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">create_gem</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<div class="section" id="lesson-7">
+<h3>Lesson 7<a class="headerlink" href="#lesson-7" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p><cite>Jupyter</cite> review:</p>
+<ul class="simple">
+<li><p><cite>Jupyter Notebook</cite>, <cite>VSCode</cite>, and <cite>Binder</cite></p></li>
+<li><p><cite>Markdown</cite></p></li>
+<li><p>Caution with code execution order</p></li>
+<li><p>Restarting the kernel</p></li>
+</ul>
+</li>
+<li><p>Python list construction:</p>
+<ul class="simple">
+<li><p>Empty list construction:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[]</span>
 </pre></div>
 </div>
-<ol class="arabic simple" start="2">
-<li><p>Sprite Self Deletion:</p></li>
-</ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Gem</span><span class="p">(</span><span class="n">Sprite</span><span class="p">):</span>
-   <span class="k">def</span> <span class="nf">on_update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-      <span class="k">if</span> <span class="n">touching_any_sprite</span><span class="p">():</span>
-         <span class="bp">self</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+<ul class="simple">
+<li><p>Explicit construction:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_strings</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">]</span>
+<span class="n">my_ints</span> <span class="o">=</span> <span class="p">[</span><span class="mi">23</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">57</span><span class="p">]</span>
+<span class="n">my_floats</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.41421</span><span class="p">,</span> <span class="mf">2.71828</span><span class="p">,</span> <span class="mf">3.14159</span><span class="p">]</span>
+<span class="n">my_bools</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span>
 </pre></div>
 </div>
-<ol class="arabic simple" start="3">
-<li><p>Add Custom Class Properties:</p></li>
-</ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Player</span><span class="p">(</span><span class="n">Sprite</span><span class="p">):</span>
-   <span class="k">def</span> <span class="nf">on_create</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-      <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">append()</span></code> method:</p>
+<p>Adds elements to the end of the list.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">my_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">my_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<span class="n">my_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<ol class="arabic simple" start="4">
-<li><p>Python Lists and <code class="docutils literal notranslate"><span class="pre">random.choice</span></code>:</p></li>
-</ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
-<span class="n">file_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;img/1.png&quot;</span><span class="p">,</span> <span class="s2">&quot;img/2.png&quot;</span><span class="p">,</span> <span class="s2">&quot;img/3.png&quot;</span><span class="p">]</span>
-<span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">file_list</span><span class="p">)</span>
+</li>
+<li><p>Accessing list elements by index:</p>
+<p>Python, like most programming languages, uses <cite>zero-based</cite> indexing.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">]</span>
+<span class="n">first_color</span> <span class="o">=</span> <span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
+<p>We can use an index to <cite>iterate</cite> over a list.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">len()</span></code> function:</p>
+<p>Returns the number of objects in the list.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">]</span>
+<span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">len()</span></code> function allows us to iterate over lists with arbitrary length.</p>
+<dl class="simple">
+<dt>my_list = [“red”, “green”, “blue”, “cyan”, “magenta”, “yellow”]</dt><dd><dl class="simple">
+<dt>for i in range(len(my_list)):</dt><dd><p>print(my_list[i])</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+</ol>
+<ol class="arabic" start="5">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">clear()</span></code> function:</p>
+<p>Removes all elements in the list.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">]</span>
+<span class="n">my_list</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ol>
 </div>
 <div class="section" id="lesson-6">
 <h3>Lesson 6<a class="headerlink" href="#lesson-6" title="Permalink to this headline">¶</a></h3>
@@ -265,6 +301,54 @@
    <span class="k">def</span> <span class="nf">on_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
       <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">touching_any_sprite_with_tag</span><span class="p">(</span><span class="s1">&#39;spaceship&#39;</span><span class="p">):</span>
          <span class="bp">self</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Display a <cite>label</cite> to show score:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">score_label</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="s1">&#39;Aliens in ship: 0&#39;</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="mi">550</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+<span class="n">window</span><span class="o">.</span><span class="n">add_label</span><span class="p">(</span><span class="n">score_label</span><span class="p">)</span>
+<span class="n">score_label</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Aliens in ship: &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">space_ship</span><span class="o">.</span><span class="n">score</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="lesson-5">
+<h3>Lesson 5<a class="headerlink" href="#lesson-5" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference download internal" download="" href="_downloads/ae8e528d453dbadc58ab7d5fa44c1f27/lesson_05_images.zip"><code class="xref download docutils literal notranslate"><span class="pre">lesson_05_images.zip</span></code></a></p>
+<ol class="arabic simple">
+<li><p>Use the <cite>Scheduler</cite>’s update function to repeatedly create sprites:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pycat.core</span> <span class="kn">import</span> <span class="n">Scheduler</span>
+
+<span class="k">def</span> <span class="nf">create_gem</span><span class="p">(</span><span class="n">dt</span><span class="p">):</span>
+   <span class="n">window</span><span class="o">.</span><span class="n">create_sprite</span><span class="p">(</span><span class="n">Gem</span><span class="p">)</span>
+
+<span class="n">Scheduler</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">create_gem</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Sprite self deletion:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Gem</span><span class="p">(</span><span class="n">Sprite</span><span class="p">):</span>
+   <span class="k">def</span> <span class="nf">on_update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="k">if</span> <span class="n">touching_any_sprite</span><span class="p">():</span>
+         <span class="bp">self</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Add custom class properties:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Player</span><span class="p">(</span><span class="n">Sprite</span><span class="p">):</span>
+   <span class="k">def</span> <span class="nf">on_create</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Python lists and <code class="docutils literal notranslate"><span class="pre">random.choice</span></code>:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">file_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;img/1.png&quot;</span><span class="p">,</span> <span class="s2">&quot;img/2.png&quot;</span><span class="p">,</span> <span class="s2">&quot;img/3.png&quot;</span><span class="p">]</span>
+<span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">file_list</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="toctree-wrapper compound">
