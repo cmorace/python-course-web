@@ -35,7 +35,7 @@ You can complete the assignments by downloading the `.ipynb` file and opening th
      - :download:`hw01_solution.ipynb <_notebooks/homework/hw01_solution.ipynb>`
    * - :download:`hw02.ipynb <_notebooks/homework/hw02.ipynb>`
      - |hw2_binder|
-     -
+     - :download:`hw02_solution.ipynb <_notebooks/homework/hw02_solution.ipynb>`
    * - :download:`hw03.ipynb <_notebooks/homework/hw03.ipynb>`
      - |hw3_binder|
      -
@@ -52,6 +52,7 @@ The links below will bring you to a preview of the homework assignments. You wil
    _notebooks/homework/hw01
    _notebooks/homework/hw01_solution
    _notebooks/homework/hw02
+   _notebooks/homework/hw02_solution
    _notebooks/homework/hw03
 
 
