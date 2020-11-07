@@ -26,17 +26,22 @@ Lesson 8
 :download:`lesson08_media.zip <_lesson_resources/lesson08_media.zip>`
 
 1. Review lists
+
    * list construction
+
    * ``append()``
+
    * ``len()``
+
    * accessing elements
+
    * ``clear()``
 
 2. Pycat
 
    .. code:: python
 
-      window = Window(draw_sprite_rects=True)
+      window = Window(background_image="forest_04.png", draw_sprite_rects=True)
 
 
    .. code:: python
@@ -49,6 +54,17 @@ Lesson 8
 
 3. New Python Syntax
 
+   Use ``in`` and ``not in`` to check list membership
+
+   .. code:: python
+
+      my_list = [1, 2, 3]
+      x = 1
+      if x in my_list:
+         pass
+
+      if x not in my list:
+         pass
 
 
 Lesson 7
