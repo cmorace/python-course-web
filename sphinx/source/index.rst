@@ -23,7 +23,7 @@ Pycat
 Lesson 8
 ^^^^^^^^
 
-:download:`lesson08_media.zip <_lesson_resources/lesson08_media.zip>`
+.. :download:`lesson08_media.zip <_lesson_resources/lesson08_media.zip>`
 
 1. Review lists
 
@@ -39,6 +39,8 @@ Lesson 8
 
 2. Pycat
 
+   Keyword arguments for ``Window()`` and ``create_sprite()``
+
    .. code:: python
 
       window = Window(background_image="forest_04.png", draw_sprite_rects=True)
@@ -52,19 +54,19 @@ Lesson 8
       window.create_sprite(Card, x=200, y=200, image='avatar_02.png')
 
 
-3. New Python Syntax
+3. Python
 
-   Use ``in`` and ``not in`` to check list membership
+   Use ``in`` and ``not in`` to check list membership.
 
    .. code:: python
 
       my_list = [1, 2, 3]
       x = 1
       if x in my_list:
-         pass
+         print(x, "is in", my_list)
 
       if x not in my list:
-         pass
+         print(x, "is not in", my_list)
 
 
 Lesson 7
