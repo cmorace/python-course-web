@@ -23,6 +23,8 @@ You can complete the assignments by downloading the `.ipynb` file and opening th
 .. |hw3_binder| image:: images/launch_binder.svg
    :target: https://mybinder.org/v2/gh/cmorace/python-course-web/gh-pages?filepath=sphinx%2Fsource%2F_notebooks%2Fhomework%2Fhw03.ipynb
 
+.. |hw4_binder| image:: images/launch_binder.svg
+   :target: https://mybinder.org/v2/gh/cmorace/python-course-web/gh-pages?filepath=sphinx%2Fsource%2F_notebooks%2Fhomework%2Fhw04.ipynb
 
 .. list-table::
    :header-rows: 3
@@ -37,6 +39,9 @@ You can complete the assignments by downloading the `.ipynb` file and opening th
      - |hw2_binder|
      - :download:`hw02_solution.ipynb <_notebooks/homework/hw02_solution.ipynb>`
    * - :download:`hw03.ipynb <_notebooks/homework/hw03.ipynb>`
+     - |hw3_binder|
+     -
+   * - :download:`hw04.ipynb <_notebooks/homework/hw04.ipynb>`
      - |hw3_binder|
      -
 
@@ -54,6 +59,7 @@ The links below will bring you to a preview of the homework assignments. You wil
    _notebooks/homework/hw02
    _notebooks/homework/hw02_solution
    _notebooks/homework/hw03
+   _notebooks/homework/hw04
 
 
    

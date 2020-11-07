@@ -19,6 +19,38 @@ Pycat
 
      pip install git+https://bitbucket.org/dwhite0/pycat.git
 
+
+Lesson 8
+^^^^^^^^
+
+:download:`lesson08_media.zip <_lesson_resources/lesson08_media.zip>`
+
+1. Review lists
+   * list construction
+   * ``append()``
+   * ``len()``
+   * accessing elements
+   * ``clear()``
+
+2. Pycat
+
+   .. code:: python
+
+      window = Window(draw_sprite_rects=True)
+
+
+   .. code:: python
+
+      window.create_sprite(Card, x=100, y=100, image='avatar_01.png')
+      window.create_sprite(Card, x=100, y=200, image='avatar_01.png')
+      window.create_sprite(Card, x=200, y=100, image='avatar_02.png')
+      window.create_sprite(Card, x=200, y=200, image='avatar_02.png')
+
+
+3. New Python Syntax
+
+
+
 Lesson 7
 ^^^^^^^^^
 1. `Jupyter` review:
