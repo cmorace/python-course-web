@@ -61,6 +61,3 @@ The links below will bring you to a preview of the homework assignments. You wil
    _notebooks/homework/hw03
    _notebooks/homework/hw03_solution
    _notebooks/homework/hw04
-
-
-   

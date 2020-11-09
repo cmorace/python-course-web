@@ -27,6 +27,17 @@ Download and install `Visual Studio Code <https://code.visualstudio.com/Download
 -----------
 Download `git <https://git-scm.com/downloads>`_. Run the installer and select `next` for all options.
 
+See the video below for an example.
+
+.. raw:: html
+
+   <video class="align-center" width="480" controls>
+   <source src="_static/git_edit.mp4" type="video/mp4">
+   Your browser does not support HTML video.
+   </video>
+   <p> </p>
+
+
 4. Pycat
 ---------
 Install the latest version or pycat. Open the Anaconda Prompt (or other terminal application) and run the command
@@ -36,14 +47,17 @@ Install the latest version or pycat. Open the Anaconda Prompt (or other terminal
    pip install git+https://bitbucket.org/dwhite0/pycat.git
 
 
-The installation should print something similar to below in your terminal.
+See the video below for an example.
 
-.. asciinema:: 364908
+.. raw:: html
 
-.. .. image:: images/pycat.png
-..    :scale: 55 %
-..    :align: center
+   <video class="align-center" width="480" controls>
+   <source src="_static/pycat_edit.mp4" type="video/mp4">
+   Your browser does not support HTML video.
+   </video>
+   <p> </p>
 
+.. Note that the installation is spead up in the video.
 
 5. Optional Software
 --------------------

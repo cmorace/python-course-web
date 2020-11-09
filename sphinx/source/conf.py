@@ -37,7 +37,6 @@ extensions = [
     'sphinx_rtd_theme',
     'sphinx.ext.mathjax',
     'nbsphinx',
-    'sphinxcontrib.asciinema',
 ]
 
 html_show_sourcelink = False
