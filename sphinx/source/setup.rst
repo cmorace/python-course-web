@@ -44,7 +44,7 @@ Install the latest version or pycat. Open the Anaconda Prompt (or other terminal
 
 .. code:: bash
 
-   pip install git+https://bitbucket.org/dwhite0/pycat.git
+   pip install git+https://bitbucket.org/dwhite0/pycat.git -U
 
 
 See the video below for an example.

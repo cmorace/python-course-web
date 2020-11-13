@@ -196,9 +196,51 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Update pycat by running the following command in your terminal application (e.g. Anaconda Prompt)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install git+https://bitbucket.org/dwhite0/pycat.git
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install git+https://bitbucket.org/dwhite0/pycat.git -U
 </pre></div>
 </div>
+</div>
+<div class="section" id="lesson-9">
+<h3>Lesson 9<a class="headerlink" href="#lesson-9" title="Permalink to this headline">¶</a></h3>
+<p>First update pycat in your Anaconda Terminal.</p>
+<p>Download and unzip the following files.</p>
+<p><a class="reference download internal" download="" href="_downloads/fcfc660576df1a4ea790cd4285323183/lesson_09_media.zip"><code class="xref download docutils literal notranslate"><span class="pre">lesson_09_media.zip</span></code></a></p>
+<ol class="arabic">
+<li><p>Sound Effects and Audio Loops</p>
+<p>Pycat has two classes for playing sound files, <code class="docutils literal notranslate"><span class="pre">Player</span></code> and <code class="docutils literal notranslate"><span class="pre">AudioLoop</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pycat.core</span> <span class="kn">import</span> <span class="n">Player</span><span class="p">,</span> <span class="n">AudioLoop</span>
+
+<span class="n">select_sprite_sound</span> <span class="o">=</span> <span class="n">Player</span><span class="p">(</span><span class="s1">&#39;hit.wav&#39;</span><span class="p">)</span>
+<span class="n">match_sprite_sound</span> <span class="o">=</span> <span class="n">Player</span><span class="p">(</span><span class="s1">&#39;point.wav&#39;</span><span class="p">)</span>
+<span class="n">audio_loop</span> <span class="o">=</span> <span class="n">AudioLoop</span><span class="p">(</span><span class="s1">&#39;LoopLivi.wav&#39;</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">audio_loop</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://scratch.mit.edu/projects/editor/?tutorial=getStarted">Scratch</a> has a great collections of sound effects which you can download.</p>
+</li>
+<li><p>List Operations and Methods</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">*</span></code> operation</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">img_list</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="p">[</span><span class="s1">&#39;1.png&#39;</span><span class="p">,</span> <span class="s1">&#39;2.png&#39;</span><span class="p">,</span> <span class="s1">&#39;3.png&#39;</span><span class="p">,</span> <span class="s1">&#39;4.png&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">pop()</span></code> method</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">last_image</span> <span class="o">=</span> <span class="n">img_list</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>Random Shuffle</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">img_list</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="p">[</span><span class="s1">&#39;1.png&#39;</span><span class="p">,</span> <span class="s1">&#39;2.png&#39;</span><span class="p">,</span> <span class="s1">&#39;3.png&#39;</span><span class="p">,</span> <span class="s1">&#39;4.png&#39;</span><span class="p">]</span>
+<span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">img_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
 </div>
 <div class="section" id="lesson-8">
 <h3>Lesson 8<a class="headerlink" href="#lesson-8" title="Permalink to this headline">¶</a></h3>

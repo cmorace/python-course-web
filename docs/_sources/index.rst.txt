@@ -17,13 +17,62 @@ Pycat
 
    .. code:: bash
 
-     pip install git+https://bitbucket.org/dwhite0/pycat.git
+     pip install git+https://bitbucket.org/dwhite0/pycat.git -U
+
+Lesson 9
+^^^^^^^^
+First update pycat in your Anaconda Terminal.
+
+Download and unzip the following files.
+
+:download:`lesson_09_media.zip <_lesson_resources/lesson_09_media.zip>`
+
+1. Sound Effects and Audio Loops
+
+   Pycat has two classes for playing sound files, ``Player`` and ``AudioLoop``.
+
+   .. code:: python
+
+      from pycat.core import Player, AudioLoop
+
+      select_sprite_sound = Player('hit.wav')
+      match_sprite_sound = Player('point.wav')
+      audio_loop = AudioLoop('LoopLivi.wav', volume=0.2)
+      audio_loop.play()
+
+   `Scratch <https://scratch.mit.edu/projects/editor/?tutorial=getStarted>`_ has a great collections of sound effects which you can download.
+
+
+2. List Operations and Methods
+
+   * The ``*`` operation
+
+   .. code:: python
+
+      img_list = 4 * ['1.png', '2.png', '3.png', '4.png']
+
+   
+   * The ``pop()`` method
+
+   .. code:: python
+
+      last_image = img_list.pop()
+
+3. Random Shuffle
+
+   .. code:: python
+
+         import random
+
+         img_list = 4 * ['1.png', '2.png', '3.png', '4.png']
+         random.shuffle(img_list)
+   
 
 
 Lesson 8
 ^^^^^^^^
 
-.. :download:`lesson08_media.zip <_lesson_resources/lesson08_media.zip>`
+.. :download:`lesson_08_media.zip <_lesson_resources/lesson_08_media.zip>`
 
 1. Review lists
 
