@@ -40,7 +40,7 @@ Download and unzip the following files.
       audio_loop = AudioLoop('LoopLivi.wav', volume=0.2)
       audio_loop.play()
 
-   `Scratch <https://scratch.mit.edu/projects/editor/?tutorial=getStarted>`_ has a great collections of sound effects which you can download.
+   `Scratch <https://scratch.mit.edu/projects/editor>`_ has a great collections of sound effects which you can download.
 
 
 2. List Operations and Methods
