@@ -37,6 +37,7 @@ Download and unzip the following files.
 
       select_sprite_sound = Player('hit.wav')
       match_sprite_sound = Player('point.wav')
+      no_match_sprite_sound = Player('laugh.wav')
       audio_loop = AudioLoop('LoopLivi.wav', volume=0.2)
       audio_loop.play()
 
