@@ -42,7 +42,7 @@ You can complete the assignments by downloading the `.ipynb` file and opening th
      - |hw3_binder|
      - :download:`hw03_solution.ipynb <_notebooks/homework/hw03_solution.ipynb>`
    * - :download:`hw04.ipynb <_notebooks/homework/hw04.ipynb>`
-     - |hw3_binder|
+     - |hw4_binder|
      -
 
 
