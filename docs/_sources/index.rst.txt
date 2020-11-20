@@ -19,6 +19,13 @@ Pycat
 
      pip install git+https://bitbucket.org/dwhite0/pycat.git -U
 
+Lesson 10
+^^^^^^^^^
+
+:download:`lesson_10.ipynb <_lesson_resources/lesson_10.ipynb>`
+
+
+
 Lesson 9
 ^^^^^^^^
 First update pycat in your Anaconda Terminal.
