@@ -577,7 +577,8 @@ hello world !
 </div>
 <div class="section" id="Exercise">
 <h3>Exercise<a class="headerlink" href="#Exercise" title="Permalink to this headline">¶</a></h3>
-<p>Write a function <code class="docutils literal notranslate"><span class="pre">my_product</span></code> that takes three parameters and returns their product i.e. <span class="math notranslate nohighlight">\(f(x,y,z) = x \times y \times z\)</span>. For example:</p>
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">my_product</span></code> that takes three parameters and returns their product i.e. <span class="math notranslate nohighlight">\(f(x,y,z) = x \times y \times z\)</span>.</p>
+<p>For example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">my_product</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -591,8 +592,21 @@ hello world !
 </pre></div>
 </div>
 </div>
-<div class="section" id="Extension">
-<h4>Extension<a class="headerlink" href="#Extension" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="Extension-1">
+<h4>Extension 1<a class="headerlink" href="#Extension-1" title="Permalink to this headline">¶</a></h4>
+<p>Implement a function <code class="docutils literal notranslate"><span class="pre">my_list_product</span></code> that takes a list as a parameter and returns the product of all elements in the list.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Extension-2">
+<h4>Extension 2<a class="headerlink" href="#Extension-2" title="Permalink to this headline">¶</a></h4>
 <p>Implement a function <code class="docutils literal notranslate"><span class="pre">my_len</span></code> that takes a list as a parameter and returns the number of elements in the list.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -630,13 +644,13 @@ hello world !
 False
 </pre></div></div>
 </div>
-<p>How could we implement such a function?</p>
+<p>How could we implement a function to test if an item is in a list? - How many parameters? - What is the return value type?</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<span></span><span class="c1"># implement together in class</span>
 </pre></div>
 </div>
 </div>
@@ -655,7 +669,7 @@ False
     <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;is in the list&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>should print <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">list</span></code>. In your function implementation do not use the python keyword <code class="docutils literal notranslate"><span class="pre">in</span></code>. Iterate through the list do not use the <code class="docutils literal notranslate"><span class="pre">in</span></code> keyword.</p>
+<p>should print <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">list</span></code>. In your function implementation do not use the python keyword <code class="docutils literal notranslate"><span class="pre">in</span></code>. Iterate through the list.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -666,14 +680,196 @@ False
 </div>
 </div>
 <div class="section" id="id3">
-<h4>Extension<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<h4>Extension 1<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <p>Write a function <code class="docutils literal notranslate"><span class="pre">has_element_greater_than</span></code> that takes two parameters, a list of integers and a threshold value and returns True if there are any integers greater than the threshold and False otherwise.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">list_x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">6</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">has_element_greater_than</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">list_x</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>should print <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h4>Extension 2<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>Write a function ‘get_random_list’ that returns a list of random numbers. You can use <code class="docutils literal notranslate"><span class="pre">random.randint()</span></code> function to generate the random numbers. What should the parameters be?</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>—<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Functions-and-Lists-(Part-3)">
+<h3>Functions and Lists (Part 3)<a class="headerlink" href="#Functions-and-Lists-(Part-3)" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="The-sum-Function">
+<h3>The <code class="docutils literal notranslate"><span class="pre">sum</span></code> Function<a class="headerlink" href="#The-sum-Function" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+10
+</pre></div></div>
+</div>
+<p>What is the input and output of the <code class="docutils literal notranslate"><span class="pre">sum</span></code> function?</p>
+<p>How could we implement this?</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># to generate test cases, use the random.sample function</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="n">my_test_list</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_test_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">my_test_list</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[82, 41, 9, 11, 73, 24, 6, 23, 49, 84, 34, 61, 32, 19, 21, 20, 54, 89, 74, 57, 3, 79, 53, 86, 8, 4, 40, 33, 60, 52, 63, 7, 81, 15, 13, 16, 10, 42, 44, 97, 95, 2, 78, 70, 51, 55, 93, 59, 72, 22, 92, 38, 66, 87, 30, 94, 5, 56, 31, 91, 48, 68, 96, 77, 18, 27, 88, 35, 65, 1, 26, 99, 37, 90, 12, 98, 71, 43, 45, 46, 0, 25, 17, 29, 14, 83, 28, 36, 39, 69, 47, 76, 67, 58, 80, 50, 64, 75, 85, 62]
+4950
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>Exercise<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>Implement the <code class="docutils literal notranslate"><span class="pre">my_sum</span></code> function.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h4>Extension 1<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<p>Suppose the list of integers are ages. Implement a function <code class="docutils literal notranslate"><span class="pre">sum_of_adult_ages</span></code> that sums only the ages of adults.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h4>Extension 2<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<p>Suppose the list of integers are ages. Implement a function <code class="docutils literal notranslate"><span class="pre">sum_of_baby_ages</span></code> that sums only the ages of babies. Consider the baby age to be 0, 1, or 2.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Extension-3">
+<h4>Extension 3<a class="headerlink" href="#Extension-3" title="Permalink to this headline">¶</a></h4>
+<p>Implement a function <code class="docutils literal notranslate"><span class="pre">number_of_ages_in_range</span></code> that takes a list of ages, a min age and max age as parameters and returns the total number of people between the min and max age.</p>
+<p>For example,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_age_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number_of_ages_in_range</span><span class="p">(</span><span class="n">my_age_list</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number_of_ages_in_range</span><span class="p">(</span><span class="n">my_age_list</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Should print out <code class="docutils literal notranslate"><span class="pre">4</span></code> and <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>—<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="Functions-and-Lists-(Part-4)">
+<h2>Functions and Lists (Part 4)<a class="headerlink" href="#Functions-and-Lists-(Part-4)" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="The-max-and-min-Functions">
+<h3>The <code class="docutils literal notranslate"><span class="pre">max</span></code> and <code class="docutils literal notranslate"><span class="pre">min</span></code> Functions<a class="headerlink" href="#The-max-and-min-Functions" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">my_list</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">my_list</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+4
+1
+</pre></div></div>
+</div>
+<ul class="simple">
+<li><p>What’s the input and output?</p></li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h3>Exercise<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>Implement the function <code class="docutils literal notranslate"><span class="pre">my_max</span></code>. Does it work if there are negative numbers in the list?</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="Extension">
+<h4>Extension<a class="headerlink" href="#Extension" title="Permalink to this headline">¶</a></h4>
+<p>Implement <code class="docutils literal notranslate"><span class="pre">my_max</span></code> so that it returns a list of the <code class="docutils literal notranslate"><span class="pre">k</span></code> largest elements, where <code class="docutils literal notranslate"><span class="pre">k</span></code> is a parameter.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
