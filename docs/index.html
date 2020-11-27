@@ -200,6 +200,74 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="lesson-11">
+<h3>Lesson 11<a class="headerlink" href="#lesson-11" title="Permalink to this headline">¶</a></h3>
+<p>Learning objectives:</p>
+<ul class="simple">
+<li><p>List indexing (reinforce)</p></li>
+<li><p>Parallel lists</p></li>
+<li><p>Refactoring code to avoid duplication</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">global</span></code> keyword</p></li>
+</ul>
+<p><a class="reference download internal" download="" href="_downloads/fcfc660576df1a4ea790cd4285323183/lesson_09_media.zip"><code class="xref download docutils literal notranslate"><span class="pre">lesson_11_media.zip</span></code></a></p>
+<ol class="arabic">
+<li><p>Slideshow</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">images</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="s1">&#39;squirrel.jpg&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;bird.jpg&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;sheep.jpg&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;cow.jpg&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;seal.jpg&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;cat.jpg&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;hedgehog.jpg&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;meerkat.jpg&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">image_number</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">window</span> <span class="o">=</span> <span class="n">Window</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">window</span><span class="o">.</span><span class="n">background_image</span> <span class="o">=</span> <span class="n">images</span><span class="p">[</span><span class="n">image_number</span><span class="p">]</span>
+
+
+<span class="k">class</span> <span class="nc">NextButton</span><span class="p">(</span><span class="n">Sprite</span><span class="p">):</span>
+
+   <span class="k">def</span> <span class="nf">on_left_click</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="k">global</span> <span class="n">image_number</span>
+</pre></div>
+</div>
+</li>
+<li><p>Slideshow with Labels</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">texts</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="s1">&#39;Red squirrel&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;Pheasant&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;Sheep&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;Cow&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;Seal&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;Cat&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;Hedgehog&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;Meerkat&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">text_label</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">text_label</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">texts</span><span class="p">[</span><span class="n">image_number</span><span class="p">]</span>
+<span class="n">window</span><span class="o">.</span><span class="n">add_label</span><span class="p">(</span><span class="n">text_label</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Refactoring Duplicate Code</p></li>
+<li><p>Track and Print Out Liked/Disliked Pictures</p></li>
+</ol>
+<div class="section" id="create-your-programming-website">
+<h4>Create Your Programming Website<a class="headerlink" href="#create-your-programming-website" title="Permalink to this headline">¶</a></h4>
+<p>Sign up for a github account at <a class="reference external" href="https://github.com/">Github</a>. Choose your username wisely. Your website will be named <code class="docutils literal notranslate"><span class="pre">www.&lt;your_username&gt;.github.io</span></code></p>
+<p>Follow the instructions to set up your website below.</p>
+<p><a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/github/working-with-github-pages/creating-a-github-pages-site?">Github Pages</a></p>
+<ol class="arabic simple">
+<li><p>Name your repository <code class="docutils literal notranslate"><span class="pre">&lt;your_username&gt;.github.io</span></code></p></li>
+<li><p>Add a file <code class="docutils literal notranslate"><span class="pre">index.md</span></code></p></li>
+<li><p>Go to settings and enable github pages for your main branch</p></li>
+</ol>
+</div>
+</div>
 <div class="section" id="lesson-10">
 <h3>Lesson 10<a class="headerlink" href="#lesson-10" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference download internal" download="" href="_downloads/257aae9dd5d5f0106618a0b0beec7895/lesson_10.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">lesson_10.ipynb</span></code></a></p>

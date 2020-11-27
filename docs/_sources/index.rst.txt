@@ -19,6 +19,83 @@ Pycat
 
      pip install git+https://bitbucket.org/dwhite0/pycat.git -U
 
+
+Lesson 11
+^^^^^^^^^
+
+Learning objectives:
+
+- List indexing (reinforce)
+- Parallel lists
+- Refactoring code to avoid duplication
+- ``global`` keyword
+
+
+:download:`lesson_11_media.zip <_lesson_resources/lesson_09_media.zip>`
+
+
+1. Slideshow
+
+   .. code:: python
+
+      images = [
+         'squirrel.jpg',
+         'bird.jpg',
+         'sheep.jpg',
+         'cow.jpg',
+         'seal.jpg',
+         'cat.jpg',
+         'hedgehog.jpg',
+         'meerkat.jpg',
+      ]
+
+      image_number = 0
+      window = Window(width=1000)
+      window.background_image = images[image_number]
+
+
+      class NextButton(Sprite):
+
+         def on_left_click(self):
+            global image_number
+
+2. Slideshow with Labels
+
+   .. code:: python
+
+      texts = [
+         'Red squirrel',
+         'Pheasant',
+         'Sheep',
+         'Cow',
+         'Seal',
+         'Cat',
+         'Hedgehog',
+         'Meerkat',
+      ]
+
+      text_label = Label('', 100, 50)
+      text_label.text = texts[image_number]
+      window.add_label(text_label)
+
+3. Refactoring Duplicate Code
+
+4. Track and Print Out Liked/Disliked Pictures
+
+
+Create Your Programming Website
+""""""""""""""""""""""""""""""""
+
+Sign up for a github account at `Github <https://github.com/>`_. Choose your username wisely. Your website will be named ``www.<your_username>.github.io``
+
+Follow the instructions to set up your website below.
+
+`Github Pages <https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/creating-a-github-pages-site?>`_
+
+1. Name your repository ``<your_username>.github.io``
+2. Add a file ``index.md``
+3. Go to settings and enable github pages for your main branch
+
 Lesson 10
 ^^^^^^^^^
 
