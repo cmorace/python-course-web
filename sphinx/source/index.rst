@@ -88,9 +88,7 @@ Create Your Programming Website
 
 Sign up for a github account at `Github <https://github.com/>`_. Choose your username wisely. Your website will be named ``www.<your_username>.github.io``
 
-Follow the instructions to set up your website below.
-
-`Github Pages <https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/creating-a-github-pages-site?>`_
+Follow the instructions `here <https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/creating-a-github-pages-site?>`_ to set up your website.
 
 1. Name your repository ``<your_username>.github.io``
 2. Add a file ``index.md``
