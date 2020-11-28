@@ -31,7 +31,7 @@ Learning objectives:
 - ``global`` keyword
 
 
-:download:`lesson_11_media.zip <_lesson_resources/lesson_09_media.zip>`
+:download:`lesson_11_media.zip <_lesson_resources/lesson_11_media.zip>`
 
 
 1. Slideshow
