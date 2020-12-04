@@ -39,15 +39,15 @@ Lesson 12
 
       class Particle(Sprite):
 
-         def on_create(self):
-            self.goto_random_position()
-            self.rotation = random.randint(0, 360)
-            self.scale = 5
+          def on_create(self):
+              self.goto_random_position()
+              self.rotation = random.randint(0, 360)
+              self.scale = 5
 
 
       window = Window()
       for _ in range(100):
-         window.create_sprite(Particle)
+          window.create_sprite(Particle)
 
       window.run()
 
@@ -55,58 +55,58 @@ Lesson 12
 
 3. Changing particle properties
 
-   Starter Code:
+   Use tags to get a list of particles from the window
 
    .. code:: python
 
       class Particle(Sprite):
 
-         def on_create(self):
-            self.add_tag('particle')
+          def on_create(self):
+              self.add_tag('particle')
 
 
       class ColorButton(Sprite):
 
-         def on_left_click(self):
-            for particle in window.get_sprites_with_tag('particle'):
+          def on_left_click(self):
+              for particle in window.get_sprites_with_tag('particle'):
                   particle.color = self.color
 
    Now create two of more buttons with different colors to modify the particles' color.
 
-   3. Timed Explosions
+4. Timed Explosions
 
-      Keep track of time to set off an explosion.
+   Keep track of time to set off an explosion.
 
-      .. code:: python
+   .. code:: python
 
-         class TimedExplosionParticle(Sprite):
-         def on_create(self):
-            self.timer = 0
+      class TimedExplosionParticle(Sprite):
+          def on_create(self):
+              self.timer = 0
 
-         def on_update(self, dt):
-            self.timer += dt
+          def on_update(self, dt):
+              self.timer += dt
 
-      Create two buttons for creating and exploding particles.
+   Create two buttons for creating and exploding particles.
 
-   4. Fireworks
+5. Fireworks
 
-      Create particles when clicking the mouse.
+   Create particles when clicking the mouse.
 
-      .. code:: python
+   .. code:: python
 
-         from pycat.base.event import MouseEvent
+      from pycat.base.event import MouseEvent
 
-         def my_mouse_press(mouse: MouseEvent):
-            for _ in range(8):
-               p = window.create_sprite(Particle)
-               p.position = mouse.position
-               p.rotation = random.randint(70, 110)
-               p.speed = 5+random.random()*2
+      def my_mouse_press(mouse: MouseEvent):
+          for _ in range(8):
+              p = window.create_sprite(Particle)
+              p.position = mouse.position
+              p.rotation = random.randint(70, 110)
+              p.speed = 5+random.random()*2
 
 
-         window.run(on_mouse_press=my_mouse_press)
+      window.run(on_mouse_press=my_mouse_press)
 
-      Add a timer to your your particle class and set off the fireworks.
+   Add a timer to your your particle class and set off the fireworks.
 
 
 Lesson 11
