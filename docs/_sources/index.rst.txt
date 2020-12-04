@@ -20,6 +20,95 @@ Pycat
      pip install git+https://bitbucket.org/dwhite0/pycat.git -U
 
 
+Lesson 12
+^^^^^^^^^
+
+1. A new way to iterate over lists
+
+   :download:`lesson_12.ipynb <_lesson_resources/lesson_12.ipynb>`
+
+2. Particle Systems
+   
+   Starter Code:
+
+   .. code:: python
+
+      from pycat.core import Sprite, Window
+      import random
+
+
+      class Particle(Sprite):
+
+         def on_create(self):
+            self.goto_random_position()
+            self.rotation = random.randint(0, 360)
+            self.scale = 5
+
+
+      window = Window()
+      for _ in range(100):
+         window.create_sprite(Particle)
+
+      window.run()
+
+   Your job is to add a bounce effect.
+
+3. Changing particle properties
+
+   Starter Code:
+
+   .. code:: python
+
+      class Particle(Sprite):
+
+         def on_create(self):
+            self.add_tag('particle')
+
+
+      class ColorButton(Sprite):
+
+         def on_left_click(self):
+            for particle in window.get_sprites_with_tag('particle'):
+                  particle.color = self.color
+
+   Now create two of more buttons with different colors to modify the particles' color.
+
+   3. Timed Explosions
+
+      Keep track of time to set off an explosion.
+
+      .. code:: python
+
+         class TimedExplosionParticle(Sprite):
+         def on_create(self):
+            self.timer = 0
+
+         def on_update(self, dt):
+            self.timer += dt
+
+      Create two buttons for creating and exploding particles.
+
+   4. Fireworks
+
+      Create particles when clicking the mouse.
+
+      .. code:: python
+
+         from pycat.base.event import MouseEvent
+
+         def my_mouse_press(mouse: MouseEvent):
+            for _ in range(8):
+               p = window.create_sprite(Particle)
+               p.position = mouse.position
+               p.rotation = random.randint(70, 110)
+               p.speed = 5+random.random()*2
+
+
+         window.run(on_mouse_press=my_mouse_press)
+
+      Add a timer to your your particle class and set off the fireworks.
+
+
 Lesson 11
 ^^^^^^^^^
 
