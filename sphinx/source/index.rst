@@ -123,7 +123,7 @@ Final project template and decomposition
 
    We need to add tags to our ``Bullet`` class and check if a bullet touches any enemy in our ``Enemy`` class.
 
-   - ``self.add_tag('bullet`)``
+   - ``self.add_tag('bullet')``
    - ``self.touching_any_sprite_with_tag('bullet')``
 
    Extension: 
