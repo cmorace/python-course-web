@@ -20,6 +20,65 @@ Pycat
      pip install git+https://bitbucket.org/dwhite0/pycat.git -U
 
 
+Lesson 13
+^^^^^^^^^
+
+First, please update pycat with Anaconda prompt.
+
+What's new?
+   - new mouse event handler for the Sprite class: ``on_left_click_anywhere(self)``
+   - ``self.point_toward_mouse_cursor()`` will set a sprite's rotation/direction
+   - a ``Color`` class with named colors, e.g. ``Color.AMBER``.
+
+Final project template and decomposition
+
+1. Implementing the Player class
+
+   .. code:: python
+
+    from pycat.core import Color, KeyCode, Sprite, Window
+
+    window = Window()
+
+
+    class Player(Sprite):
+
+        def on_create(self):
+            self.color = Color.AMBER
+            self.scale = 30
+            self.speed = 10
+
+        def on_update(self, dt):
+            if window.get_key(KeyCode.W):
+                self.y += self.speed
+            # fill in code for keys A, S, D
+
+
+    window.create_sprite(Player)
+    window.run()
+
+2. Shooting Bullets with ``on_left_click_anywhere()``
+   
+   We will fire bullets whenever the mouse is clicked.
+   Add the following method to your Player class.
+   
+   .. code:: python
+
+    def on_left_click_anywhere(self):            
+        window.create_sprite(Bullet)
+
+   Then implement your Bullet class. (Remember ``pycatSprite`` auto-complete?)
+
+   - What is the bullet size i.e. ``self.scale``?
+   - What is the bullet color i.e. ``self.color``?
+   - What is the bullet starting position i.e ``self.position``
+   - Add a new property for the bullet speed i.e. ``self.speed``
+   - We want each bullet to shoot towards the mouse cursor. To set the correct rotation you can use ``self.point_toward_mouse_cursor()``.
+   - Make each bullet move foward to the mouse cursor with ``self.move_forward(self.speed)`` and call ``self.delete()`` if ``self.touching_window_edge()``
+    
+
+
+
 Lesson 12
 ^^^^^^^^^
 
