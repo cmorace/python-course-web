@@ -54,8 +54,16 @@ Final project template and decomposition
             # fill in code for keys A, S, D
 
 
-    window.create_sprite(Player)
+    player = window.create_sprite(Player)
     window.run()
+
+   Extensions:
+
+   - set your player's initial position
+   - add a key to make your player teleport
+   - add a method to reset your player's position
+   - add properties to store your player's hp, strength, defense, magic, etc.
+
 
 2. Shooting Bullets with ``on_left_click_anywhere()``
    
@@ -64,17 +72,67 @@ Final project template and decomposition
    
    .. code:: python
 
-    def on_left_click_anywhere(self):            
-        window.create_sprite(Bullet)
+      def on_left_click_anywhere(self):            
+          window.create_sprite(Bullet)
 
-   Then implement your Bullet class. (Remember ``pycatSprite`` auto-complete?)
+   Now implement your ``Bullet`` class.
 
    - What is the bullet size i.e. ``self.scale``?
    - What is the bullet color i.e. ``self.color``?
-   - What is the bullet starting position i.e ``self.position``
-   - Add a new property for the bullet speed i.e. ``self.speed``
-   - We want each bullet to shoot towards the mouse cursor. To set the correct rotation you can use ``self.point_toward_mouse_cursor()``.
+   - What is the bullet starting position i.e ``self.position``?
+   - Add a new property for bullet speed i.e. ``self.speed``
+   - To set the rotation to shoot towards the mouse cursor, use ``self.point_toward_mouse_cursor()``.
    - Make each bullet move foward to the mouse cursor with ``self.move_forward(self.speed)`` and call ``self.delete()`` if ``self.touching_window_edge()``
+
+   Extensions:
+
+   - Give your player a maximum number of bullets they can fire
+   - Add a power property to your ``Bullet`` class
+   - Add a ``PowerUp`` class that the player can collect to increase power
+
+3. Add an ``Enemy`` class and generate some enemies.
+
+   We will need a little help. Import the ``Scheduler`` class and the ``random`` module.
+
+   .. code:: python
+      
+      from pycat.core import Color, KeyCode, Scheduler, Sprite, Window
+      import random
+   
+   - Start each enemy at a random starting position with ``self.goto_random_position()``
+   - Start each enemy with a random rotation, i.e. ``self.rotation = random.randint(0, 360)``
+   - Add a speed property in and move each enemy forward
+   - Delete the enemies when they the touch the window's edge
+
+   Spawn the enemies using the ``Scheduler.update()`` method.
+
+   .. code:: python
+
+      def spawn_enemy():
+          window.create_sprite(Enemy)
+
+
+      Scheduler.update(spawn_enemy, delay=1)
+
+      Extension:
+
+      - only spawn enemies if they are farther than some distance from the player. You can use the method ``self.distance_to(player)``
+      - only spawn enemies on the window edge. How can you keep them from being deleted?
+
+4. Have the player's bullets kill enemies
+
+   We need to add tags to our ``Bullet`` class and check if a bullet touches any enemy in our ``Enemy`` class.
+
+   - ``self.add_tag('bullet`)``
+   - ``self.touching_any_sprite_with_tag('bullet')``
+
+   Extension: 
+   
+   - add hp to your ``Enemy`` class so that they die after multiple hits
+   - reduce your player's hp if touching an enemy
+   - add a enemy bullet class and make your enemies shoot at the player
+
+
     
 
 
