@@ -273,38 +273,65 @@ Add the following method to your Player class.</p>
 <span class="kn">import</span> <span class="nn">random</span>
 </pre></div>
 </div>
+<p>In the <code class="docutils literal notranslate"><span class="pre">Enemy</span></code> class:</p>
 <ul class="simple">
-<li><p>Start each enemy at a random starting position with <code class="docutils literal notranslate"><span class="pre">self.goto_random_position()</span></code></p></li>
+<li><p>Start each enemy at a random starting position i.e. <code class="docutils literal notranslate"><span class="pre">self.goto_random_position()</span></code></p></li>
 <li><p>Start each enemy with a random rotation, i.e. <code class="docutils literal notranslate"><span class="pre">self.rotation</span> <span class="pre">=</span> <span class="pre">random.randint(0,</span> <span class="pre">360)</span></code></p></li>
-<li><p>Add a speed property in and move each enemy forward</p></li>
-<li><p>Delete the enemies when they the touch the window’s edge</p></li>
+<li><p>Add a speed property and move each enemy forward</p></li>
+<li><p>Delete an an enemy when they touch the window’s edge</p></li>
 </ul>
 <p>Spawn the enemies using the <code class="docutils literal notranslate"><span class="pre">Scheduler.update()</span></code> method.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>def spawn_enemy():
-    window.create_sprite(Enemy)
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">spawn_enemy</span><span class="p">():</span>
+    <span class="n">window</span><span class="o">.</span><span class="n">create_sprite</span><span class="p">(</span><span class="n">Enemy</span><span class="p">)</span>
 
 
-Scheduler.update(spawn_enemy, delay=1)
-
-Extension:
-
-- only spawn enemies if they are farther than some distance from the player. You can use the method ``self.distance_to(player)``
-- only spawn enemies on the window edge. How can you keep them from being deleted?
+<span class="n">Scheduler</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">spawn_enemy</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-</li>
-<li><p>Have the player’s bullets kill enemies</p>
-<p>We need to add tags to our <code class="docutils literal notranslate"><span class="pre">Bullet</span></code> class and check if a bullet touches any enemy in our <code class="docutils literal notranslate"><span class="pre">Enemy</span></code> class.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">self.add_tag('bullet')</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">self.touching_any_sprite_with_tag('bullet')</span></code></p></li>
-</ul>
+<p>Remember that this code must be outside any class (in the global scope).</p>
 <p>Extension:</p>
 <ul class="simple">
-<li><p>add hp to your <code class="docutils literal notranslate"><span class="pre">Enemy</span></code> class so that they die after multiple hits</p></li>
-<li><p>reduce your player’s hp if touching an enemy</p></li>
-<li><p>add a enemy bullet class and make your enemies shoot at the player</p></li>
+<li><p>only spawn enemies if they are farther than some distance from the player. You can use the method <code class="docutils literal notranslate"><span class="pre">self.distance_to(player.position)</span></code></p></li>
+<li><p>only spawn enemies on the window edge. How can you keep them from being immediately deleted?</p></li>
 </ul>
+</li>
+<li><p>Have the player’s bullets kill enemies</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self.add_tag('bullet')</span></code> in our <code class="docutils literal notranslate"><span class="pre">Bullet</span></code> class</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self.delete()</span></code> if <code class="docutils literal notranslate"><span class="pre">self.touching_any_sprite_with_tag('bullet')</span></code> in our <code class="docutils literal notranslate"><span class="pre">Enemy</span></code> class.</p></li>
+</ul>
+<p>Extensions:</p>
+<ul class="simple">
+<li><p>add hp to your <code class="docutils literal notranslate"><span class="pre">Enemy</span></code> class so that they die after multiple hits</p></li>
+<li><p>if an enemny touches the player, reduce their hp, change color, and/or opacity</p></li>
+</ul>
+</li>
+<li><p>Make your enemies shoot bullets at the player</p>
+<blockquote>
+<div><p>Create an <code class="docutils literal notranslate"><span class="pre">EnemyBullet</span></code> class with properties:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self.color</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self.scale</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self.speed</span></code></p></li>
+</ul>
+</div></blockquote>
+<p>The enemy bullets should <code class="docutils literal notranslate"><span class="pre">self.move_forward(self.speed)</span></code> and be deleted if:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self.touching_window_edge()</span></code> or,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self.touching_sprite(player)</span></code></p></li>
+</ul>
+</div></blockquote>
+<p>We want each of our enemies to fire bullets at the player every 2 seconds.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>add a <code class="docutils literal notranslate"><span class="pre">self.time</span></code> to the <code class="docutils literal notranslate"><span class="pre">Enemy</span></code> class</p></li>
+<li><p>update <code class="docutils literal notranslate"><span class="pre">self.time</span></code> in <code class="docutils literal notranslate"><span class="pre">on_update(self,</span> <span class="pre">dt)</span></code></p></li>
+<li><p>if <code class="docutils literal notranslate"><span class="pre">self.time</span> <span class="pre">&gt;</span> <span class="pre">2</span></code> then create a bullet and set it’s position and rotation</p></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
 </li>
 </ol>
 </div>

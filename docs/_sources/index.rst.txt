@@ -98,11 +98,13 @@ Final project template and decomposition
       
       from pycat.core import Color, KeyCode, Scheduler, Sprite, Window
       import random
+
+   In the ``Enemy`` class:
    
-   - Start each enemy at a random starting position with ``self.goto_random_position()``
+   - Start each enemy at a random starting position i.e. ``self.goto_random_position()``
    - Start each enemy with a random rotation, i.e. ``self.rotation = random.randint(0, 360)``
-   - Add a speed property in and move each enemy forward
-   - Delete the enemies when they the touch the window's edge
+   - Add a speed property and move each enemy forward
+   - Delete an an enemy when they touch the window's edge
 
    Spawn the enemies using the ``Scheduler.update()`` method.
 
@@ -114,23 +116,42 @@ Final project template and decomposition
 
       Scheduler.update(spawn_enemy, delay=1)
 
-      Extension:
+   Remember that this code must be outside any class (in the global scope).
 
-      - only spawn enemies if they are farther than some distance from the player. You can use the method ``self.distance_to(player)``
-      - only spawn enemies on the window edge. How can you keep them from being deleted?
+
+   Extension:
+
+   - only spawn enemies if they are farther than some distance from the player. You can use the method ``self.distance_to(player.position)``
+   - only spawn enemies on the window edge. How can you keep them from being immediately deleted?
 
 4. Have the player's bullets kill enemies
 
-   We need to add tags to our ``Bullet`` class and check if a bullet touches any enemy in our ``Enemy`` class.
+   - ``self.add_tag('bullet')`` in our ``Bullet`` class
+   - ``self.delete()`` if ``self.touching_any_sprite_with_tag('bullet')`` in our ``Enemy`` class.
 
-   - ``self.add_tag('bullet')``
-   - ``self.touching_any_sprite_with_tag('bullet')``
-
-   Extension: 
+   Extensions: 
    
    - add hp to your ``Enemy`` class so that they die after multiple hits
-   - reduce your player's hp if touching an enemy
-   - add a enemy bullet class and make your enemies shoot at the player
+   - if an enemny touches the player, reduce their hp, change color, and/or opacity
+
+5. Make your enemies shoot bullets at the player
+
+    Create an ``EnemyBullet`` class with properties:
+
+       - ``self.color``
+       - ``self.scale``
+       - ``self.speed``
+
+    The enemy bullets should ``self.move_forward(self.speed)`` and be deleted if:
+    
+       - ``self.touching_window_edge()`` or,
+       - ``self.touching_sprite(player)``
+
+    We want each of our enemies to fire bullets at the player every 2 seconds.
+    
+       - add a ``self.time`` to the ``Enemy`` class
+       - update ``self.time`` in ``on_update(self, dt)``
+       - if ``self.time > 2`` then create a bullet and set it's position and rotation
 
 
     
