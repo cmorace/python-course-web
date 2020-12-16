@@ -132,30 +132,34 @@ Final project template and decomposition
    Extensions: 
    
    - add hp to your ``Enemy`` class so that they die after multiple hits
-   - if an enemny touches the player, reduce their hp, change color, and/or opacity
+   - if an enemny touches the player, reduce the player's hp, change color, and/or opacity, etc.
 
 5. Make your enemies shoot bullets at the player
 
-    Create an ``EnemyBullet`` class with properties:
+   Create an ``EnemyBullet`` class with properties:
 
-       - ``self.color``
-       - ``self.scale``
-       - ``self.speed``
+   - ``self.color``
+   - ``self.scale``
+   - ``self.speed``
 
-    The enemy bullets should ``self.move_forward(self.speed)`` and be deleted if:
+   The enemy bullets should ``self.move_forward(self.speed)`` and be deleted if:
     
-       - ``self.touching_window_edge()`` or,
-       - ``self.touching_sprite(player)``
+   - ``self.touching_window_edge()`` or,
+   - ``self.touching_sprite(player)``
 
-    We want each of our enemies to fire bullets at the player every 2 seconds.
+   We want each of our enemies to fire bullets at the player every 2 seconds.
     
-       - add a ``self.time`` to the ``Enemy`` class
-       - update ``self.time`` in ``on_update(self, dt)``
-       - if ``self.time > 2`` then create a bullet and set it's position and rotation
+   - add a ``self.time`` to the ``Enemy`` class
+   - update ``self.time += dt`` in ``on_update(self, dt)``
+   - if ``self.time > 2`` then create a bullet and remember to set ``self.time = 0``
+   
+   Each bullet's position should start at the enemy shooting it and ``point_toward_sprite(player)``.
 
+   Extensions:
 
-    
-
+   - delete the enemy bullets when they touch the player
+   - reduce the player's hp if they get hit by a enemy bullet
+   - add a label to display the player's hp
 
 
 Lesson 12
@@ -430,11 +434,11 @@ Lesson 8
 
 Lesson 7
 ^^^^^^^^^
-1. `Jupyter` review:
+1. Jupyter review:
 
-   * `Jupyter Notebook`, `VSCode`, and `Binder`
+   * Jupyter Notebook, VSCode, and Binder
 
-   * `Markdown`
+   * Markdown
 
    * Caution with code execution order
 
@@ -472,14 +476,14 @@ Lesson 7
 
 4. Accessing list elements by index:
 
-   Python, like most programming languages, uses `zero-based` indexing.
+   Python, like most programming languages, uses "zero-based" indexing.
 
    .. code:: python
 
       my_list = ["red", "green", "blue"]
       first_color = my_list[0]
 
-   We can use an index to `iterate` over a list.
+   We can use an index to "iterate" over a list.
 
    .. code:: python
 
@@ -523,7 +527,7 @@ Lesson 6
 ^^^^^^^^^
 :download:`lesson_06_media.zip <_lesson_resources/lesson_06_media.zip>`
 
-1. Use `Sprite`'s ``on_left_click``:
+1. Use ``Sprite``'s ``on_left_click``:
 
 .. code:: python
 
@@ -531,7 +535,7 @@ Lesson 6
       def on_left_click(self):
          self.is_moving_up = True
 
-2. Use `tags` for collision:
+2. Use "tags" for collision:
 
 .. code:: python
 
@@ -544,7 +548,7 @@ Lesson 6
          if self.touching_any_sprite_with_tag('spaceship'):
             self.delete()
 
-2. Display a `label` to show score:
+2. Display a ``Label`` to show score:
 
 .. code:: python
 
@@ -558,7 +562,7 @@ Lesson 5
 
 :download:`lesson_05_images.zip <_lesson_resources/lesson_05_images.zip>`
 
-1. Use the `Scheduler`'s update function to repeatedly create sprites:
+1. Use the ``Scheduler``'s update function to repeatedly create sprites:
 
 .. code:: python
 

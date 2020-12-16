@@ -303,35 +303,34 @@ Add the following method to your Player class.</p>
 <p>Extensions:</p>
 <ul class="simple">
 <li><p>add hp to your <code class="docutils literal notranslate"><span class="pre">Enemy</span></code> class so that they die after multiple hits</p></li>
-<li><p>if an enemny touches the player, reduce their hp, change color, and/or opacity</p></li>
+<li><p>if an enemny touches the player, reduce the player’s hp, change color, and/or opacity, etc.</p></li>
 </ul>
 </li>
 <li><p>Make your enemies shoot bullets at the player</p>
-<blockquote>
-<div><p>Create an <code class="docutils literal notranslate"><span class="pre">EnemyBullet</span></code> class with properties:</p>
-<blockquote>
-<div><ul class="simple">
+<p>Create an <code class="docutils literal notranslate"><span class="pre">EnemyBullet</span></code> class with properties:</p>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">self.color</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">self.scale</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">self.speed</span></code></p></li>
 </ul>
-</div></blockquote>
 <p>The enemy bullets should <code class="docutils literal notranslate"><span class="pre">self.move_forward(self.speed)</span></code> and be deleted if:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">self.touching_window_edge()</span></code> or,</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">self.touching_sprite(player)</span></code></p></li>
 </ul>
-</div></blockquote>
 <p>We want each of our enemies to fire bullets at the player every 2 seconds.</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p>add a <code class="docutils literal notranslate"><span class="pre">self.time</span></code> to the <code class="docutils literal notranslate"><span class="pre">Enemy</span></code> class</p></li>
-<li><p>update <code class="docutils literal notranslate"><span class="pre">self.time</span></code> in <code class="docutils literal notranslate"><span class="pre">on_update(self,</span> <span class="pre">dt)</span></code></p></li>
-<li><p>if <code class="docutils literal notranslate"><span class="pre">self.time</span> <span class="pre">&gt;</span> <span class="pre">2</span></code> then create a bullet and set it’s position and rotation</p></li>
+<li><p>update <code class="docutils literal notranslate"><span class="pre">self.time</span> <span class="pre">+=</span> <span class="pre">dt</span></code> in <code class="docutils literal notranslate"><span class="pre">on_update(self,</span> <span class="pre">dt)</span></code></p></li>
+<li><p>if <code class="docutils literal notranslate"><span class="pre">self.time</span> <span class="pre">&gt;</span> <span class="pre">2</span></code> then create a bullet and remember to set <code class="docutils literal notranslate"><span class="pre">self.time</span> <span class="pre">=</span> <span class="pre">0</span></code></p></li>
 </ul>
-</div></blockquote>
-</div></blockquote>
+<p>Each bullet’s position should start at the enemy shooting it and <code class="docutils literal notranslate"><span class="pre">point_toward_sprite(player)</span></code>.</p>
+<p>Extensions:</p>
+<ul class="simple">
+<li><p>delete the enemy bullets when they touch the player</p></li>
+<li><p>reduce the player’s hp if they get hit by a enemy bullet</p></li>
+<li><p>add a label to display the player’s hp</p></li>
+</ul>
 </li>
 </ol>
 </div>
@@ -567,10 +566,10 @@ Add the following method to your Player class.</p>
 <div class="section" id="lesson-7">
 <h3>Lesson 7<a class="headerlink" href="#lesson-7" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p><cite>Jupyter</cite> review:</p>
+<li><p>Jupyter review:</p>
 <ul class="simple">
-<li><p><cite>Jupyter Notebook</cite>, <cite>VSCode</cite>, and <cite>Binder</cite></p></li>
-<li><p><cite>Markdown</cite></p></li>
+<li><p>Jupyter Notebook, VSCode, and Binder</p></li>
+<li><p>Markdown</p></li>
 <li><p>Caution with code execution order</p></li>
 <li><p>Restarting the kernel</p></li>
 </ul>
@@ -602,12 +601,12 @@ Add the following method to your Player class.</p>
 </div>
 </li>
 <li><p>Accessing list elements by index:</p>
-<p>Python, like most programming languages, uses <cite>zero-based</cite> indexing.</p>
+<p>Python, like most programming languages, uses “zero-based” indexing.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">]</span>
 <span class="n">first_color</span> <span class="o">=</span> <span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>We can use an index to <cite>iterate</cite> over a list.</p>
+<p>We can use an index to “iterate” over a list.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
    <span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
@@ -640,7 +639,7 @@ Add the following method to your Player class.</p>
 <h3>Lesson 6<a class="headerlink" href="#lesson-6" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference download internal" download="" href="_downloads/08857178b87c6b2532c8dc364f1029c8/lesson_06_media.zip"><code class="xref download docutils literal notranslate"><span class="pre">lesson_06_media.zip</span></code></a></p>
 <ol class="arabic simple">
-<li><p>Use <cite>Sprite</cite>’s <code class="docutils literal notranslate"><span class="pre">on_left_click</span></code>:</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">Sprite</span></code>’s <code class="docutils literal notranslate"><span class="pre">on_left_click</span></code>:</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Alien</span><span class="p">(</span><span class="n">Sprite</span><span class="p">):</span>
    <span class="k">def</span> <span class="nf">on_left_click</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -648,7 +647,7 @@ Add the following method to your Player class.</p>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li><p>Use <cite>tags</cite> for collision:</p></li>
+<li><p>Use “tags” for collision:</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Spaceship</span><span class="p">(</span><span class="n">Sprite</span><span class="p">):</span>
    <span class="k">def</span> <span class="nf">on_create</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -661,7 +660,7 @@ Add the following method to your Player class.</p>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li><p>Display a <cite>label</cite> to show score:</p></li>
+<li><p>Display a <code class="docutils literal notranslate"><span class="pre">Label</span></code> to show score:</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">score_label</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="s1">&#39;Aliens in ship: 0&#39;</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="mi">550</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
 <span class="n">window</span><span class="o">.</span><span class="n">add_label</span><span class="p">(</span><span class="n">score_label</span><span class="p">)</span>
@@ -673,7 +672,7 @@ Add the following method to your Player class.</p>
 <h3>Lesson 5<a class="headerlink" href="#lesson-5" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference download internal" download="" href="_downloads/ae8e528d453dbadc58ab7d5fa44c1f27/lesson_05_images.zip"><code class="xref download docutils literal notranslate"><span class="pre">lesson_05_images.zip</span></code></a></p>
 <ol class="arabic simple">
-<li><p>Use the <cite>Scheduler</cite>’s update function to repeatedly create sprites:</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">Scheduler</span></code>’s update function to repeatedly create sprites:</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pycat.core</span> <span class="kn">import</span> <span class="n">Scheduler</span>
 
