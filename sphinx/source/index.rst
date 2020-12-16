@@ -104,7 +104,7 @@ Final project template and decomposition
    - Start each enemy at a random starting position i.e. ``self.goto_random_position()``
    - Start each enemy with a random rotation, i.e. ``self.rotation = random.randint(0, 360)``
    - Add a speed property and move each enemy forward
-   - Delete an an enemy when they touch the window's edge
+   - Delete an enemy when they touch the window's edge
 
    Spawn the enemies using the ``Scheduler.update()`` method.
 
