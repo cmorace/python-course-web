@@ -133,6 +133,8 @@ Final project template and decomposition
    
    - add hp to your ``Enemy`` class so that they die after multiple hits
    - if an enemny touches the player, reduce the player's hp, change color, and/or opacity, etc.
+   - keep track of the total number of enemies killed
+   - add a label that displays the total number of enemies killed
 
 5. Make your enemies shoot bullets at the player
 
