@@ -19,6 +19,39 @@ Pycat
 
      pip install git+https://bitbucket.org/dwhite0/pycat.git -U
 
+Lesson 14
+^^^^^^^^^
+Lesson Objectives:
+
+- Webpage setup
+- Final project planning, decomposition, and implementation
+
+1. Webpage setup
+
+- Download the zip file :download:`markdown-pages <_lesson_resources/markdown-pages.zip>`
+- Create a new folder in your VS Code workspace
+- Move the downloaded files into the new folder
+- Open ``index.md`` in the VS Code editor
+- Press ``shift + control + v`` to see a preview
+- Add the files to your github repository
+
+2. Write a rough overview for your final project (see template webpage) 
+   
+3. Draw a decomposition/ UML class diagram (see template webpage)
+
+   - Take a picture of the diagram and add it to your webpage
+
+4. Draw/find some appropriate sprites and sound effects
+
+   - A nice collection can be found in `Scratch <https://scratch.mit.edu/projects/editor>`_
+   - Add images of each sprite to your webpage and give a brief description of it's role in the project
+
+5. Preview your webpage in VS Code and update your repository
+
+6. Begin implementation
+
+
+
 
 Lesson 13
 ^^^^^^^^^
