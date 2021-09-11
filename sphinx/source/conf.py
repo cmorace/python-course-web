@@ -21,11 +21,11 @@ https://www.sphinx-doc.org/en/master/usage/configuration.html
 # -- Project information -----------------------------------------------------
 
 project = 'Peanuts Python Course Website'
-copyright = '2020 Peanuts Education'
+copyright = '2021 Charles Morace'
 author = 'Charles Morace'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.1'
+release = '0.0.2'
 
 
 # -- General configuration ---------------------------------------------------
@@ -64,7 +64,7 @@ exclude_patterns = [
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
-html_theme_options = {'analytics_id': 'UA-126736149-2',}
+html_theme_options = {'analytics_id': 'UA-126736149-2'}
 sphinxcontrib_asciinema_defaults = {
     'theme': 'solarized-dark',
     'preload': 1,

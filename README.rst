@@ -9,10 +9,10 @@ To build the website, run the following:
 
    cd sphinx
    make clean
-   make html
-   python make_github_pages.py
+   make HTML
+   python make_gh_pages.py
 
-then push changes to github.
+Then push changes to Github.
 
 Dependencies
 ^^^^^^^^^^^^
