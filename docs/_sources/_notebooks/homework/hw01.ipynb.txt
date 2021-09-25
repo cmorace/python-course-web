@@ -2,10 +2,7 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "metadata": {},
    "source": [
-    "# Homework 1\n",
-    "\n",
     "This homework will test your understanding of the following programming concepts:\n",
     "\n",
     "- variables\n",
@@ -16,39 +13,22 @@
     "Each problem is preceded by an example to demonstrate the concepts and Python syntax you will need to complete the exercise. Read the example code, click on the example's code cell, and press `ctrl + enter` to execute the code. Then read the exercise and complete the program.\n",
     "\n",
     "---"
-   ]
+   ],
+   "metadata": {}
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
    "source": [
     "##  1. Comparison\n",
     "\n",
     "### Example: The Smaller Number\n",
     "Get two integers from a user and print which number is smaller or if they are equal."
-   ]
+   ],
+   "metadata": {}
   },
   {
    "cell_type": "code",
    "execution_count": 2,
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stdin",
-     "output_type": "stream",
-     "text": [
-      "enter an integer: 100\n",
-      "enter an integer: 99\n"
-     ]
-    },
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "99 is less than 100\n"
-     ]
-    }
-   ],
    "source": [
     "a = int(input(\"enter an integer:\"))\n",
     "b = int(input(\"enter an integer:\"))\n",
@@ -58,131 +38,130 @@
     "    print(b, \"is less than\", a)\n",
     "else:\n",
     "    print(a, \"and\", b, \"are equal\")"
-   ]
+   ],
+   "outputs": [
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "enter an integer: 100\n",
+      "enter an integer: 99\n"
+     ]
+    },
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "99 is less than 100\n"
+     ]
+    }
+   ],
+   "metadata": {}
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
    "source": [
     "### Exercise: Who is Younger?\n",
     "Get the names and ages of two people, then print which person is younger or if they are the same age."
-   ]
+   ],
+   "metadata": {}
   },
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
-   "outputs": [],
    "source": [
     "name_a = input(\"first name:\")\n",
     "age_a = int(input(\"first age:\"))\n",
     "name_b = input(\"second name:\")\n",
     "age_b = int(input(\"second age:\"))\n",
     "# fill in the rest"
-   ]
+   ],
+   "outputs": [],
+   "metadata": {}
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
    "source": [
     "---"
-   ]
+   ],
+   "metadata": {}
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
    "source": [
     "## 2. Divisibility testing\n",
     "### Example: Divisible by $3$\n",
     "Use the `%` operator to check if an integer is divisible by $3$"
-   ]
+   ],
+   "metadata": {}
   },
   {
    "cell_type": "code",
    "execution_count": 3,
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stdin",
-     "output_type": "stream",
-     "text": [
-      "enter an integer: 7\n"
-     ]
-    },
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "7 is not divisible by 3\n"
-     ]
-    }
-   ],
    "source": [
     "x = int(input(\"enter an integer:\"))\n",
     "if x % 3 == 0:\n",
     "    print(x, \"is divisible by 3\")\n",
     "else:\n",
     "    print(x, \"is not divisible by 3\")"
-   ]
+   ],
+   "outputs": [
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "enter an integer: 7\n"
+     ]
+    },
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "7 is not divisible by 3\n"
+     ]
+    }
+   ],
+   "metadata": {}
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
    "source": [
     "### Exercise: Even or Odd?\n",
     "Use the `%` operator to check if an integer is even or odd."
-   ]
+   ],
+   "metadata": {}
   },
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
-   "outputs": [],
    "source": [
     "x = int(input(\"enter an integer\"))\n",
     "# fill in the rest"
-   ]
+   ],
+   "outputs": [],
+   "metadata": {}
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
    "source": [
     "---"
-   ]
+   ],
+   "metadata": {}
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
    "source": [
     "## 3. Calculator\n",
     "\n",
     "### Example: Sum and Difference\n",
     "\n",
     "Use the `input()` function to get two numbers and an arithmetic operation (either + or -) from the user, then print the result."
-   ]
+   ],
+   "metadata": {}
   },
   {
    "cell_type": "code",
    "execution_count": 4,
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stdin",
-     "output_type": "stream",
-     "text": [
-      "enter a number: 30\n",
-      "enter a operator: -\n",
-      "enter a number: 7.5\n"
-     ]
-    },
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "30.0 - 7.5 = 22.5\n"
-     ]
-    }
-   ],
    "source": [
     "a = float(input(\"enter a number:\"))\n",
     "operator = input(\"enter a operator:\")\n",
@@ -196,23 +175,38 @@
     "    print(\"operator must be + or -\")\n",
     "\n",
     "print(a, operator, b, \"=\", result)"
-   ]
+   ],
+   "outputs": [
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "enter a number: 30\n",
+      "enter a operator: -\n",
+      "enter a number: 7.5\n"
+     ]
+    },
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "30.0 - 7.5 = 22.5\n"
+     ]
+    }
+   ],
+   "metadata": {}
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
    "source": [
     "### Exercise: All Arithmetic Operators\n",
     "Use a conditional statement to calculate results for all of the arithmetic operators"
-   ]
+   ],
+   "metadata": {}
   },
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {
-    "tags": []
-   },
-   "outputs": [],
    "source": [
     "a = float(input(\"enter a number:\"))\n",
     "operator = input(\"enter an operator:\")\n",
@@ -236,46 +230,37 @@
     "else:\n",
     "    print(\"not a valid operator\")\n",
     "print(a, operator, b, \"=\", result)"
-   ]
+   ],
+   "outputs": [],
+   "metadata": {
+    "tags": []
+   }
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
    "source": [
     "---"
-   ]
+   ],
+   "metadata": {}
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
    "source": [
     "## 4. Extension: Calculate While ..."
-   ]
+   ],
+   "metadata": {}
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
    "source": [
     "### Example: Repeat until I say 'q'\n",
     "The code below uses a `while` loop to continue to get input from the user. If the the user enters `q` then the loop will stop and the program will finish. The `break` keyword forces the loop to exit."
-   ]
+   ],
+   "metadata": {}
   },
   {
    "cell_type": "code",
    "execution_count": 5,
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stdin",
-     "output_type": "stream",
-     "text": [
-      "Type q to quit:  a\n",
-      "Type q to quit:  b\n",
-      "Type q to quit:  s\n",
-      "Type q to quit:  q\n"
-     ]
-    }
-   ],
    "source": [
     "# this is code you can use to repeat getting input\n",
     "while True:\n",
@@ -284,11 +269,23 @@
     "    \n",
     "    if do_again == 'q':\n",
     "        break"
-   ]
+   ],
+   "outputs": [
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "Type q to quit:  a\n",
+      "Type q to quit:  b\n",
+      "Type q to quit:  s\n",
+      "Type q to quit:  q\n"
+     ]
+    }
+   ],
+   "metadata": {}
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
    "source": [
     "### Exercise: Keep on Calculating\n",
     "\n",
@@ -303,23 +300,24 @@
     "5. if not, repeat\n",
     "\n",
     "You can reuse your solution from the previous exercise for most of the code."
-   ]
+   ],
+   "metadata": {}
   },
   {
    "cell_type": "code",
    "execution_count": null,
-   "metadata": {},
-   "outputs": [],
    "source": [
     "# write you calculator with a while loop here"
-   ]
+   ],
+   "outputs": [],
+   "metadata": {}
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
    "source": [
     "---"
-   ]
+   ],
+   "metadata": {}
   }
  ],
  "metadata": {
