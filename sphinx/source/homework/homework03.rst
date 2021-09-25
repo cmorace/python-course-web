@@ -2,7 +2,9 @@ Homework 3 (Jupyter Notebook)
 ##############################
 
 .. |launch_binder| image:: ../images/launch_binder.svg
-.. _launch_binder: https://mybinder.org/v2/gh/cmorace/python-course-web/gh-pages?filepath=docs%2F_notebooks%2Fhomework%2Fhw03.ipynb
+.. _launch_binder: https://mybinder.org/v2/gh/cmorace/python-course-web/HEAD?filepath=sphinx%2Fsource%2F_notebooks%2Fhomework%2Fhw01.ipynb
+
+
 
 
 In this homework, we will use Jupyter Notebook. Jupyter Notebook is an interactive programming environment. To see a preview click `here <../_notebooks/homework/hw01.ipynb>`_.
