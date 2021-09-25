@@ -37,8 +37,9 @@ extensions = [
     'sphinx_rtd_theme',
     'sphinx.ext.mathjax',
     'nbsphinx',
+    'nbsphinx_link',
 ]
-
+nbsphinx_allow_errors = True
 html_show_sourcelink = False
 source_suffix = ['.rst', '.ipynb']
 master_doc = 'index'
