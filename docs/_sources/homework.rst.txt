@@ -19,12 +19,12 @@ I will assign small homework assignments throughout the semester. Please, try yo
      - ✅
      - ❌
      - ✅
-     - ⚠️
-   * - `Homework 2 <homework/homework02.rst>`_
-     - ❌
-     - ❌
      - ✅
-     - ⚠️
+   * - `Homework 2 <homework/homework02.rst>`_
+     - ✅
+     - ✅
+     - ✅
+     - ✅
    * - `Homework 3 <homework/homework03.rst>`_
      - 
      - 

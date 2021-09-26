@@ -53,12 +53,3 @@ See the video below for an example.
    Your browser does not support HTML video.
    </video>
    <p> </p>
-
-
-
- 
-
-.. |ImageLink| image:: /images/anaconda.png
-.. _ImageLink: http://link.url/
-
-Click on my |ImageLink|_
