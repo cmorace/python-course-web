@@ -26,10 +26,10 @@ I will assign small homework assignments throughout the semester. Please, try yo
      - ✅
      - ✅
    * - `Homework 3 <homework/homework03.rst>`_
-     - 
-     - 
-     - 
-     - 
+     - ✅
+     - ❌
+     - ✅
+     - ❌
 
 
 .. toctree::

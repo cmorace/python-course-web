@@ -31,7 +31,7 @@ Variables let us store and manipulate data. They store simple data like a number
 
 Properties
 *****************
-Properties, also known as member variables, are variables contained inside a particular class like Sprite or Window.
+Properties, also known as member variables, are variables contained inside a particular Class like Sprite or Window. For example, below ``image``, ``x``, ``y``, and ``scale`` are properties of the Sprite class.
 
 .. code-block:: python
       

@@ -8,3 +8,4 @@ Lessons
    lessons/lesson01
    lessons/lesson02
    lessons/lesson03
+   lessons/lesson04
