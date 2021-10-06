@@ -43,7 +43,6 @@
               <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../lessons.html">Lessons</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Lesson 1</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#resources">Resources</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#import-statements">Import Statements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#variables">Variables</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#properties">Properties</a></li>
@@ -54,6 +53,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="lesson02.html">Lesson 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lesson03.html">Lesson 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson04.html">Lesson 4</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../homework.html">Homework</a></li>
@@ -113,11 +113,8 @@
 </style>
 <div class="section" id="lesson-1">
 <h1>Lesson 1<a class="headerlink" href="#lesson-1" title="Permalink to this headline"></a></h1>
-<div class="section" id="resources">
-<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline"></a></h2>
 <p>Download and extract the image files below.</p>
 <p><a class="reference download internal" download="" href="../_downloads/da54e62131a77a63b54d026efca9a98b/lesson_01_images.zip"><code class="xref download docutils literal notranslate"><span class="pre">lesson_01_images.zip</span></code></a></p>
-</div>
 <div class="section" id="import-statements">
 <h2>Import Statements<a class="headerlink" href="#import-statements" title="Permalink to this headline"></a></h2>
 <p>Import statements allow us to import code from outside the file we are currently working on. For example, Window and Sprite are pieces of code that we have already written and would like to re-use.</p>
@@ -147,7 +144,7 @@
 </div>
 <div class="section" id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h2>
-<p>Functions define a sub-routine in our program. They are handy to eliminate duplicate code and make our programs easier to understand and maintain. The data we pass into functions are called <strong>arguments</strong>. The data that we receive from functions are called <strong>return values</strong>. They do not do anything unless they are <em>called</em>.</p>
+<p>Functions define a sub-routine in our program. They are handy to eliminate duplicate code and make our programs easier to understand and maintain. The data we pass into functions are called <strong>arguments</strong>. The data that we receive from functions are called <strong>return values</strong>. The code inside functions is not executed until the function is <em>called</em>.</p>
 <p>Two functions in the Python programming language are <code class="docutils literal notranslate"><span class="pre">input()</span></code> and <code class="docutils literal notranslate"><span class="pre">print()</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;enter your age:&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;your age is&#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>

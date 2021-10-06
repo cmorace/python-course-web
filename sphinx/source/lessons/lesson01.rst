@@ -1,8 +1,6 @@
 Lesson 1
 ########
 
-Resources
-*********
 
 Download and extract the image files below.
    
@@ -44,7 +42,7 @@ Properties, also known as member variables, are variables contained inside a par
 Functions
 *****************
 
-Functions define a sub-routine in our program. They are handy to eliminate duplicate code and make our programs easier to understand and maintain. The data we pass into functions are called **arguments**. The data that we receive from functions are called **return values**. They do not do anything unless they are *called*.
+Functions define a sub-routine in our program. They are handy to eliminate duplicate code and make our programs easier to understand and maintain. The data we pass into functions are called **arguments**. The data that we receive from functions are called **return values**. The code inside functions is not executed until the function is *called*.
 
 Two functions in the Python programming language are ``input()`` and ``print()``.
       
@@ -78,4 +76,3 @@ Conditional statements change the flow of our code based on some logic.
       elephant.scale = 0.5
    else:
       print('Sorry, I only understand big or small.')
-

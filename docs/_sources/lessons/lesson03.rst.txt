@@ -12,7 +12,7 @@ The Update Design Pattern
 
 Each sprite created has an update function called repeatedly from the time created until the time deleted or if the application is closed.
 
-The Sprite Life-Cyle
+The Sprite Life-Cycle
 =====================
 
 1. ``sprite = window.create_sprite()``
@@ -43,7 +43,7 @@ When would we want to use one vs. the other?
 These three methods all return boolean values and are used together with an `if` statement to detect the correct key event. For example, the code below will continuously move a sprite to the left while a user holds down the ``A`` key.
 
 .. code-block:: python
-    
+
     def on_update(self, dt):
         if window.is_key_press(KeyCode.A):
             self.x -= 5

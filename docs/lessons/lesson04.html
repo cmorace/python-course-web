@@ -20,7 +20,9 @@
         <script src="../_static/js/custom.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Homework" href="../homework.html" />
+    <link rel="prev" title="Lesson 3" href="lesson03.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -38,8 +40,20 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../lessons.html">Lessons</a></li>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../lessons.html">Lessons</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="lesson01.html">Lesson 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson02.html">Lesson 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson03.html">Lesson 3</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lesson 4</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rotation">Rotation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collision-detection">Collision Detection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#keyword-arguments">Keyword arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#more-sprite-properties">More Sprite Properties</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../homework.html">Homework</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notes.html">Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
@@ -61,6 +75,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../lessons.html">Lessons</a> &raquo;</li>
       <li>Lesson 4</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -96,17 +111,78 @@
 </style>
 <div class="section" id="lesson-4">
 <h1>Lesson 4<a class="headerlink" href="#lesson-4" title="Permalink to this headline"></a></h1>
-<div class="section" id="resources">
-<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline"></a></h2>
 <p>Download and extract the image files below.</p>
 <p><a class="reference download internal" download="" href="../_downloads/76e7c93a409ffe8a14ba8963378289b9/lesson_04_images.zip"><code class="xref download docutils literal notranslate"><span class="pre">lesson_04_images.zip</span></code></a></p>
+<div class="section" id="rotation">
+<h2>Rotation<a class="headerlink" href="#rotation" title="Permalink to this headline"></a></h2>
+<p>In pycat, each sprite had a rotation property. Rotation is counter-clockwise positive, and by default, has a value of zero, which faces right.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self.rotation</span> <span class="pre">=</span> <span class="pre">0</span></code> faces right</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self.rotation</span> <span class="pre">=</span> <span class="pre">90</span></code> faces up</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self.rotation</span> <span class="pre">=</span> <span class="pre">180</span></code> faces left</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self.rotation</span> <span class="pre">=</span> <span class="pre">270</span></code> faces down</p></li>
+</ul>
+<p>Use the sprite’s <code class="docutils literal notranslate"><span class="pre">move_forward()</span></code> method to move in the direction of its rotation. Sprites also have a special property <code class="docutils literal notranslate"><span class="pre">rotation_mode</span></code> which decouples the sprite’s image and its <code class="docutils literal notranslate"><span class="pre">rotation</span></code> properties. The <code class="docutils literal notranslate"><span class="pre">rotation_mode</span></code> property is set like so,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pycat.core</span> <span class="kn">import</span> <span class="n">RotationMode</span>
+<span class="o">...</span>
+<span class="n">sprite</span><span class="o">.</span><span class="n">rotation_mode</span> <span class="o">=</span> <span class="n">Rotation_Mode</span><span class="o">.</span><span class="n">RIGHT_LEFT</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">Rotation_Mode.RIGHT_LEFT</span></code> setting allows the sprite to move in any direction, but the sprite’s image will be constrained to face either right or left. The possible values for <code class="docutils literal notranslate"><span class="pre">sprite.rotation_mode</span></code> are</p>
+<ul class="simple">
+<li><p>RotationMode.ALL_AROUND</p></li>
+<li><p>RotationMode.RIGHT_LEFT</p></li>
+<li><p>RotationMode.MIRROR</p></li>
+<li><p>RotationMode.NO_ROTATION</p></li>
+</ul>
+</div>
+<div class="section" id="collision-detection">
+<h2>Collision Detection<a class="headerlink" href="#collision-detection" title="Permalink to this headline"></a></h2>
+<p>Collision detection determines if two or more sprites are touching one another. The <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> class has many methods for determining collisions with other sprites. We usually use these methods inside the <code class="docutils literal notranslate"><span class="pre">on_update</span></code> method to check for collisions repeatedly. Some useful collision detection methods are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self.is_touching_any_sprite()</span></code> returns true if this sprite is touching any other visible sprite in the window.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self.is_touching_sprite(other_sprite:</span> <span class="pre">Sprite)</span></code> returns true if this sprite touches the other sprite passed as an argument.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self.is_touching_sprite_with_tag(tag:</span> <span class="pre">str)</span></code> returns true if this sprite touches a sprite with a given tag using the <code class="docutils literal notranslate"><span class="pre">sprite.add_tag(tag:</span> <span class="pre">str)</span></code> method.</p></li>
+</ul>
+</div>
+<div class="section" id="keyword-arguments">
+<h2>Keyword arguments<a class="headerlink" href="#keyword-arguments" title="Permalink to this headline"></a></h2>
+<p>Keyword arguments, or kwargs, are arguments passed with a specific name. For example, we previously used a keyword argument in <code class="docutils literal notranslate"><span class="pre">window</span> <span class="pre">=</span> <span class="pre">Window(background_image='img.png')</span></code> to set the window’s background image.  For convenience purposes, the window’s method <code class="docutils literal notranslate"><span class="pre">create_sprite()</span></code> also accepts keyword arguments to set many of a sprite’s properties. For example,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sprite</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">create_sprite</span><span class="p">()</span>
+<span class="n">sprite</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">sprite</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">sprite</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="s1">&#39;img.png&#39;</span>
+</pre></div>
+</div>
+<p>is equavilent to</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sprite</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">create_sprite</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="s1">&#39;img.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that the sprite properties are set after the sprite’s <code class="docutils literal notranslate"><span class="pre">on_create()</span></code> method is called.</p>
+</div>
+<div class="section" id="more-sprite-properties">
+<h2>More Sprite Properties<a class="headerlink" href="#more-sprite-properties" title="Permalink to this headline"></a></h2>
+<p>Here is a list of more sprite properties,</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sprite.x</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sprite.y</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sprite.scale</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sprite.rotation</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sprite.color</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sprite.opacity</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sprite.rotation_mode</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sprite.position</span></code></p></li>
+</ul>
 </div>
 </div>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="lesson03.html" class="btn btn-neutral float-left" title="Lesson 3" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../homework.html" class="btn btn-neutral float-right" title="Homework" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
