@@ -1,5 +1,5 @@
-Homework 1
-##########
+Homework 1 (Python Setup)
+##########################
 
 1. Follow the instructions `here <setup.rst>`_ to set up your home computer with Python, VSCode, Git, and Pycat. 
 2. Test your installation of python and pycat and take two screenshots like below.

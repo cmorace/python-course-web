@@ -66,11 +66,7 @@ exclude_patterns = [
 #
 html_theme = 'sphinx_rtd_theme'
 html_theme_options = {'analytics_id': 'UA-126736149-2'}
-sphinxcontrib_asciinema_defaults = {
-    'theme': 'solarized-dark',
-    'preload': 1,
-    'font-size': '15px'
-}
+
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

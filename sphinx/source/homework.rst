@@ -2,7 +2,7 @@
 Homework
 ********
 
-I will assign small homework assignments throughout the semester. Please, try your best to complete the assignments and email me your work to cmorace.public@gmail.com before the next class.
+All homework will be due one week after they are posted unless otherwise noted. Please email your assignments to me at cmorace.public@gmail.com.
 
 .. list-table::
    :align: center
@@ -30,6 +30,11 @@ I will assign small homework assignments throughout the semester. Please, try yo
      - ❌
      - ✅
      - ❌
+   * - `Homework 4 <homework/homework04.rst>`_
+     - 
+     - 
+     - 
+     - 
 
 
 .. toctree::
@@ -38,3 +43,4 @@ I will assign small homework assignments throughout the semester. Please, try yo
    homework/homework01
    homework/homework02
    homework/homework03
+   homework/homework04
