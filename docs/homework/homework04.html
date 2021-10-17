@@ -43,8 +43,8 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../lessons.html">Lessons</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../homework.html">Homework</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="homework01.html">Homework 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="homework02.html">Homework 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="homework01.html">Homework 1 (Python Setup)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="homework02.html">Homework 2 (Github Account)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="homework03.html">Homework 3 (Jupyter Notebook)</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Homework 4 (Colorful Squares)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#part-1">Part 1</a></li>
@@ -115,19 +115,11 @@
 <p>Write a python program using <strong>pycat</strong> to create an output like the picture below.</p>
 <p>Hints:</p>
 <ul class="simple">
-<li><p>Use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to create lots of sprites</p></li>
-<li><p>Each sprite has a random position e.g. <code class="docutils literal notranslate"><span class="pre">self.go_to_random_position()</span></code></p></li>
-<li><p>Each sprite has a random scale e.g. <code class="docutils literal notranslate"><span class="pre">self.scale</span> <span class="pre">=</span> <span class="pre">randint(a,</span> <span class="pre">b)</span></code></p></li>
-<li><p>Each sprite has a random color e.g.
-<code class="docutils literal notranslate"><span class="pre">self.color</span> <span class="pre">=</span> <span class="pre">Color.random_rgb()</span></code></p></li>
-<li><dl class="simple">
-<dt>You will need to import:</dt><dd><ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">pycat.core</span> <span class="pre">import</span> <span class="pre">Color</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">random</span> <span class="pre">import</span> <span class="pre">randint</span></code></p></li>
-</ul>
-</dd>
-</dl>
-</li>
+<li><p>Use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to create lots of sprites.</p></li>
+<li><p>Each sprite has a random position e.g. <code class="docutils literal notranslate"><span class="pre">self.go_to_random_position()</span></code>.</p></li>
+<li><p>Each sprite has a random scale, e.g. <code class="docutils literal notranslate"><span class="pre">self.scale</span> <span class="pre">=</span> <span class="pre">randint(a,</span> <span class="pre">b)</span></code>. Remember to add <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">random</span> <span class="pre">import</span> <span class="pre">randint</span></code> to be able to use the <code class="docutils literal notranslate"><span class="pre">randint</span></code> function.</p></li>
+<li><p>Each sprite has a random color, e.g.
+<code class="docutils literal notranslate"><span class="pre">self.set_random_color()</span></code>.</p></li>
 </ul>
 <div class="figure align-default" id="id1">
 <img alt="part 1" src="../_images/part1.png" />
@@ -136,8 +128,7 @@
 </div>
 <div class="section" id="part-2">
 <h2>Part 2<a class="headerlink" href="#part-2" title="Permalink to this headline"></a></h2>
-<p>Extend your previous program so that the sprites slowly fall to the
-bottom of the screen, as shown in this video.</p>
+<p>Extend your previous program so that the sprites slowly fall, as shown in the gif below.</p>
 <div class="figure align-default" id="id2">
 <img alt="part 2" src="../_images/part2.gif" />
 <p class="caption"><span class="caption-text">part 2</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
@@ -147,8 +138,8 @@ bottom of the screen, as shown in this video.</p>
 <h2>Part 3<a class="headerlink" href="#part-3" title="Permalink to this headline"></a></h2>
 <p>Extend your previous program, as shown in the gif below, so that:</p>
 <ul class="simple">
-<li><p>some of the sprites fall to the bottom of the screen</p></li>
-<li><p>some of the sprites move to the left side of the screen</p></li>
+<li><p>some of the sprites fall</p></li>
+<li><p>some of the sprites move to the left</p></li>
 </ul>
 <div class="figure align-default" id="id3">
 <img alt="part 3" src="../_images/part3.gif" />

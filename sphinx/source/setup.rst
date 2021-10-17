@@ -12,7 +12,7 @@ Download the `Anaconda installer <https://www.anaconda.com/products/individual#D
 
    Check the option to add Anaconda to my PATH environment variable.
 
-   .. image:: images/anaconda.png
+   .. image:: images/anaconda_new.png
       :alt: anaconda
       :scale: 60 %
       :align: center
