@@ -20,7 +20,9 @@
         <script src="../_static/js/custom.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Homework" href="../homework.html" />
+    <link rel="prev" title="Lesson 5" href="lesson05.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -38,8 +40,23 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../lessons.html">Lessons</a></li>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../lessons.html">Lessons</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="lesson01.html">Lesson 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson02.html">Lesson 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson03.html">Lesson 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson04.html">Lesson 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson05.html">Lesson 5</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lesson 6</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#state">State</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mouse-click-event-handler">Mouse Click Event Handler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tagging-sprites">Tagging Sprites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#labels">Labels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sound-effects">Sound Effects</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../homework.html">Homework</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notes.html">Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
@@ -61,6 +78,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../lessons.html">Lessons</a> &raquo;</li>
       <li>Lesson 6</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -100,8 +118,16 @@
 <p><a class="reference download internal" download="" href="../_downloads/1f7c1636a227330b8cd4e5b9aeb3e958/L6_media.zip"><code class="xref download docutils literal notranslate"><span class="pre">media.zip</span></code></a></p>
 <div class="section" id="state">
 <h2>State<a class="headerlink" href="#state" title="Permalink to this headline"></a></h2>
-<p>We can add different behaviors to our sprite’s by defining different states. For example, a sprite can perform one type of behavior if it is in one state and another behavior if it is in a different state. Add a custom property to the sprite to store its current state. If only two behaviors are required, a boolean will suffice. For example,</p>
+<p>We can add behavior to our sprite’s by defining different states. For example, a sprite can perform one type of behavior if it is in one state, and perform another behavior if it is in a different state. Add a custom property to the sprite to store its current state. If only two behaviors are required, a boolean will suffice. For example,</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">is_in_original_state</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>Then, in <code class="docutils literal notranslate"><span class="pre">on_update</span></code> use a conditional to define the different behaviors. For example,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_in_original_state</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-=</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </div>
@@ -145,12 +171,23 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="sound-effects">
+<h2>Sound Effects<a class="headerlink" href="#sound-effects" title="Permalink to this headline"></a></h2>
+<p>You can use the pycat <code class="docutils literal notranslate"><span class="pre">Player</span></code> class to play different sounds. First you must find a <code class="docutils literal notranslate"><span class="pre">.wav</span></code> sound file you would like to play in your game. <a class="reference external" href="www.scratch.mit.edu">Scratch</a> has many good sound effects that you can download.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sound</span> <span class="o">=</span> <span class="n">Player</span><span class="p">(</span><span class="s1">&#39;die.wav&#39;</span><span class="p">)</span>
+<span class="n">sound</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="lesson05.html" class="btn btn-neutral float-left" title="Lesson 5" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../homework.html" class="btn btn-neutral float-right" title="Homework" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

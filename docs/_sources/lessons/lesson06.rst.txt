@@ -8,11 +8,21 @@ Download and extract the image files below.
 
 State
 ======
-We can add different behaviors to our sprite's by defining different states. For example, a sprite can perform one type of behavior if it is in one state and another behavior if it is in a different state. Add a custom property to the sprite to store its current state. If only two behaviors are required, a boolean will suffice. For example,
+We can add behavior to our sprite's by defining different states. For example, a sprite can perform one type of behavior if it is in one state, and perform another behavior if it is in a different state. Add a custom property to the sprite to store its current state. If only two behaviors are required, a boolean will suffice. For example,
 
 .. code-block:: python
 
     self.is_in_original_state = True
+
+Then, in ``on_update`` use a conditional to define the different behaviors. For example,
+
+.. code-block:: python
+
+    def on_update(self, dt):
+        if self.is_in_original_state:
+            self.x += 1
+        else:
+            self.x -= 1
 
 
 Mouse Click Event Handler
@@ -66,3 +76,12 @@ You can also create a custom Label class very similar to the way you would a cus
 
     window.create_label(Hello)
 
+Sound Effects
+===============
+
+You can use the pycat ``Player`` class to play different sounds. First you must find a ``.wav`` sound file you would like to play in your game. `Scratch <www.scratch.mit.edu>`_ has many good sound effects that you can download.
+
+.. code-block:: python
+
+    sound = Player('die.wav')
+    sound.play()
