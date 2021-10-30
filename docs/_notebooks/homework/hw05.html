@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>&lt;no title&gt; &mdash; Peanuts Python Course Website 0.0.2 documentation</title>
+  <title>Homework 5 &mdash; Peanuts Python Course Website 0.0.2 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
@@ -18,6 +17,8 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
         <script src="../../_static/js/custom.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -62,7 +63,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>&lt;no title&gt;</li>
+      <li>Homework 5</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -73,6 +74,237 @@
              
   
 <style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
 /* CSS overrides for sphinx_rtd_theme */
 
 /* 24px margin */
@@ -95,461 +327,250 @@
     text-align: unset;
 }
 </style>
-<dl>
-<dt>{</dt><dd><dl>
-<dt>“cells”: [</dt><dd><dl>
-<dt>{</dt><dd><p>“cell_type”: “markdown”,
-“metadata”: {},
-“source”: [</p>
-<blockquote>
-<div><p>“# Homework 5n”,
-“n”,
-“This homework covers the topic of iteration. We have seen two kinds of iteration in class, the <cite>while</cite> loop and the <cite>for</cite> loop.n”,
-“Each exercise is preceded by a similar example to help you.”</p>
-</div></blockquote>
-<p>]</p>
-</dd>
-</dl>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “markdown”,
-“metadata”: {},
-“source”: [</p>
-<blockquote>
-<div><p>“—n”,
-“n”,
-“## 1. <cite>print()</cite>’s <cite>end</cite> Argumentn”,
-“n”,
-“The <cite>print</cite> function has a keyword argument <cite>end</cite>. Whatever value we assign to <cite>end</cite> will be printed after printing out the previous arguments. Below is an example.n”,
-“n”,
-“### Example: Print the Natural Numbers”</p>
-</div></blockquote>
-<p>]</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “code”,
-“execution_count”: 1,
-“metadata”: {},
-“outputs”: [</p>
-<blockquote>
-<div><dl>
-<dt>{</dt><dd><p>“name”: “stdout”,
-“output_type”: “stream”,
-“text”: [</p>
-<blockquote>
-<div><p>“1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20n”</p>
-</div></blockquote>
-<p>]</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
-<p>],
-“source”: [</p>
-<blockquote>
-<div><p>“n = 20n”,
-“for i in range(1, n):n”,
-”    print(i, end=&quot;,&quot;)n”,
-“print(n)”</p>
-</div></blockquote>
-<p>]</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “markdown”,
-“metadata”: {},
-“source”: [</p>
-<blockquote>
-<div><p>“### Exercise: Print the Odd Numbersn”,
-“Print the odd numbers from $1$ to $n$ on the same line using a for loop.n”,
-“Can you do it without any <cite>if</cite> statements?”</p>
-</div></blockquote>
-<p>]</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “code”,
-“execution_count”: null,
-“metadata”: {},
-“outputs”: [],
-“source”: []</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “markdown”,
-“metadata”: {},
-“source”: [</p>
-<blockquote>
-<div><p>“—n”,
-“n”,
-“## 2. Printing Unicode Charactersn”,
-“[Unicode](<a class="reference external" href="https://en.wikipedia.org/wiki/Unicode">https://en.wikipedia.org/wiki/Unicode</a>) includes technical symbols, punctuations, and many other characters used in writing text. In Python, to print unicode characters we can:n”,
-“n”,
-“1. convert a unicode character from [hexidecimal](https://en.wikipedia.org/wiki/Hexadecimal) to a base-10 integer with the <cite>int(hex_code, 16)</cite> function.n”,
-“2. then convert the integer to a character using the <cite>chr()</cite> function.n”,
-“n”,
-“Below, is an example.n”,
-“n”,
-“### Example: Printing Bopomofon”,
-“In the example below <cite>ㄅ</cite> is represented by <cite>&quot;3105&quot;</cite> and <cite>ㄬ</cite> is represented by <cite>&quot;312C&quot;</cite>. Other unicode character codes can be looked up in a chart [here](<a class="reference external" href="https://www.unicode.org/charts/">https://www.unicode.org/charts/</a>).”</p>
-</div></blockquote>
-<p>]</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “code”,
-“execution_count”: 2,
-“metadata”: {},
-“outputs”: [</p>
-<blockquote>
-<div><dl>
-<dt>{</dt><dd><p>“name”: “stdout”,
-“output_type”: “stream”,
-“text”: [</p>
-<blockquote>
-<div><p>“ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦㄧㄨㄩㄪㄫㄬ”</p>
-</div></blockquote>
-<p>]</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
-<p>],
-“source”: [</p>
-<blockquote>
-<div><p>“low = int(&quot;3105&quot;, 16)n”,
-“high = int(&quot;312C&quot;, 16)n”,
-“for i in range(low, high+1):n”,
-”    print(chr(i), end=&quot;&quot;)”</p>
-</div></blockquote>
-<p>]</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “markdown”,
-“metadata”: {},
-“source”: [</p>
-<blockquote>
-<div><p>“### Exercise: Printing Emojisn”,
-“The unicode characters for emoticons start with <cite>1F600</cite> and end with <cite>1F64F</cite>. Use a for loop to print out the all of the emoticons on a single line.”</p>
-</div></blockquote>
-<p>]</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “code”,
-“execution_count”: null,
-“metadata”: {},
-“outputs”: [],
-“source”: [</p>
-<blockquote>
-<div><p>“low = int(&quot;1F600&quot;, 16)n”,
-“high = int(&quot;1F64F&quot;, 16)n”,
-“# write your for loop here”</p>
-</div></blockquote>
-<p>]</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “markdown”,
-“metadata”: {},
-“source”: [</p>
-<blockquote>
-<div><p>“—n”,
-“n”,
-“## 3. Math Quiz with <cite>randint()</cite>n”,
-“n”,
-“Python has a built-in package named <cite>random</cite> which has many functions for generating random numbers. The function <cite>randint(a, b)</cite> will return a random integer between <cite>a</cite> and <cite>b</cite>.n”,
-“n”,
-“### Example: Division Quiz”</p>
-</div></blockquote>
-<p>]</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “code”,
-“execution_count”: 1,
-“metadata”: {},
-“outputs”: [</p>
-<blockquote>
-<div><dl>
-<dt>{</dt><dd><p>“name”: “stdout”,
-“output_type”: “stream”,
-“text”: [</p>
-<blockquote>
-<div><p>“What is 27/3? 9n”</p>
-</div></blockquote>
-<p>]</p>
-</dd>
-</dl>
-<p>},
-{</p>
-<blockquote>
-<div><p>“name”: “stdout”,
-“output_type”: “stream”,
-“text”: [</p>
-<blockquote>
-<div><p>“very goodn”</p>
-</div></blockquote>
-<p>]</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“name”: “stdout”,
-“output_type”: “stream”,
-“text”: [</p>
-<blockquote>
-<div><p>“press q to quit: qn”</p>
-</div></blockquote>
-<p>]</p>
-</div></blockquote>
-<p>}</p>
-</div></blockquote>
-<p>],
-“source”: [</p>
-<blockquote>
-<div><p>“from random import randintn”,
-“while True:n”,
-”    a = randint(2, 10)n”,
-”    b = randint(2, 10)n”,
-”    product = a * bn”,
-”    answer = input(&quot;What is &quot;+str(product)+&quot;/&quot;+str(a)+&quot;?&quot;)n”,
-”    if int(answer) == b:n”,
-”        print(&quot;very good&quot;)n”,
-”    else:n”,
-”        print(&quot;sorry, wrong answer&quot;)n”,
-”        n”,
-”    continue_response = input(&quot;press q to quit:&quot;)n”,
-”    if continue_response == &quot;q&quot;:n”,
-”        break”</p>
-</div></blockquote>
-<p>]</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “markdown”,
-“metadata”: {},
-“source”: [</p>
-<blockquote>
-<div><p>“### Exersise: Multiplication Quizn”,
-“Modify the example above to ask multiplication questions rather than division.”</p>
-</div></blockquote>
-<p>]</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “code”,
-“execution_count”: null,
-“metadata”: {},
-“outputs”: [],
-“source”: []</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “markdown”,
-“metadata”: {},
-“source”: [</p>
-<blockquote>
-<div><p>“—n”,
-“n”,
-“## 4. Calculating the Sum of Natural Numbersn”,
-“A useful formula for the sum of natural numbers from $1$ to $n$ is:n”,
-“$$1+2+3+\dots+n=\frac{n(n+1)}{2}$$n”,
-“Write a loop to verify this formula.n”,
-“n”,
-“### Example: While Loop Implementation”</p>
-</div></blockquote>
-<p>]</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “code”,
-“execution_count”: 5,
-“metadata”: {},
-“outputs”: [</p>
-<blockquote>
-<div><dl>
-<dt>{</dt><dd><p>“name”: “stdout”,
-“output_type”: “stream”,
-“text”: [</p>
-<blockquote>
-<div><p>“5050n”,
-“Truen”</p>
-</div></blockquote>
-<p>]</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
-<p>],
-“source”: [</p>
-<blockquote>
-<div><p>“i = 1n”,
-“n = 100n”,
-“sum_n = 0n”,
-“while i &lt;= n:n”,
-”    sum_n += in”,
-”    i += 1n”,
-“print(sum_n)n”,
-“print(sum_n == n*(n+1)/2)”</p>
-</div></blockquote>
-<p>]</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “markdown”,
-“metadata”: {},
-“source”: [</p>
-<blockquote>
-<div><p>“### Exercise: For Loop Implementationn”,
-“Calculate the same sum but with a for loop. Check that you get the same result. “</p>
-</div></blockquote>
-<p>]</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “code”,
-“execution_count”: null,
-“metadata”: {},
-“outputs”: [],
-“source”: []</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “markdown”,
-“metadata”: {},
-“source”: [</p>
-<blockquote>
-<div><p>“—n”,
-“n”,
-“## 5. Summing to $\pi$”</p>
-</div></blockquote>
-<p>]</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “markdown”,
-“metadata”: {},
-“source”: [</p>
-<blockquote>
-<div><p>“### Example: The Bailey–Borwein–Plouffe Formulan”,
-“The [The Bailey–Borwein–Plouffe Formula](<a class="reference external" href="https://en.wikipedia.org/wiki/Bailey%E2%80%93Borwein%E2%80%93Plouffe_formula">https://en.wikipedia.org/wiki/Bailey%E2%80%93Borwein%E2%80%93Plouffe_formula</a>) was discovered in 1995 by Simon Plouffe. It states that n”,
-“$$\pi = \sum_{k=0}^{\infty} \left(\frac{1}{16^k}\left(\frac{4}{8k+1}-\frac{2}{8k+4}-\frac{1}{8k+5}-\frac{1}{8k+6}\right)\right)$$ n”,
-“Remarkably, this formula accurately computes the first 15 digits of pi in just 10 iterations.”</p>
-</div></blockquote>
-<p>]</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “code”,
-“execution_count”: 6,
-“metadata”: {},
-“outputs”: [</p>
-<blockquote>
-<div><dl>
-<dt>{</dt><dd><p>“name”: “stdout”,
-“output_type”: “stream”,
-“text”: [</p>
-<blockquote>
-<div><p>“3.1415926535897913n”</p>
-</div></blockquote>
-<p>]</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
-<p>],
-“source”: [</p>
-<blockquote>
-<div><p>“sum = 0n”,
-“for k in range(10):n”,
-”    _8k = 8*kn”,
-”    sum += (4/(_8k+1) - 2/(_8k+4) - 1/(_8k+5) - 1/(_8k+6)) / (16**k)n”,
-“print(sum)”</p>
-</div></blockquote>
-<p>]</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “markdown”,
-“metadata”: {},
-“source”: [</p>
-<blockquote>
-<div><p>“### Exercise: The Leibniz Formulan”,
-“n”,
-“The [Leibniz formula](<a class="reference external" href="https://en.wikipedia.org/wiki/Leibniz_formula_for_%CF%80">https://en.wikipedia.org/wiki/Leibniz_formula_for_%CF%80</a>) was discovered by the Indian Mathematician Madhava of Sangamagrama in the 14th century. It states that:n”,
-“$$1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{9} \dots = \frac{\pi}{4}$$n”,
-“Use a for loop to calculate this sum and multiply the final sum by 4 to check how close the result is to $\pi$.”</p>
-</div></blockquote>
-<p>]</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “code”,
-“execution_count”: null,
-“metadata”: {},
-“outputs”: [],
-“source”: []</p>
-</div></blockquote>
-<p>}</p>
-</dd>
-</dl>
-<p>],
-“metadata”: {</p>
-<blockquote>
-<div><dl class="simple">
-<dt>“kernelspec”: {</dt><dd><p>“display_name”: “Python 3 (ipykernel)”,
-“language”: “python”,
-“name”: “python3”</p>
-</dd>
-</dl>
-<p>},
-“language_info”: {</p>
-<blockquote>
-<div><dl class="simple">
-<dt>“codemirror_mode”: {</dt><dd><p>“name”: “ipython”,
-“version”: 3</p>
-</dd>
-</dl>
-<p>},
-“file_extension”: “.py”,
-“mimetype”: “text/x-python”,
-“name”: “python”,
-“nbconvert_exporter”: “python”,
-“pygments_lexer”: “ipython3”,
-“version”: “3.9.7”</p>
-</div></blockquote>
-<p>}</p>
-</div></blockquote>
-<p>},
-“nbformat”: 4,
-“nbformat_minor”: 4</p>
-</dd>
-</dl>
-<p>}</p>
+<div class="section" id="Homework-5">
+<h1>Homework 5<a class="headerlink" href="#Homework-5" title="Permalink to this headline"></a></h1>
+<p>This homework covers the topic of iteration. We have seen two kinds of iteration in class, the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop and the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. Each exercise is preceded by a similar example to help you.</p>
+<hr class="docutils" />
+<div class="section" id="1.-print()’s-end-Argument">
+<h2>1. <code class="docutils literal notranslate"><span class="pre">print()</span></code>’s <code class="docutils literal notranslate"><span class="pre">end</span></code> Argument<a class="headerlink" href="#1.-print()’s-end-Argument" title="Permalink to this headline"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">print</span></code> function has a keyword argument <code class="docutils literal notranslate"><span class="pre">end</span></code>. Whatever value we assign to <code class="docutils literal notranslate"><span class="pre">end</span></code> will be printed after printing out the previous arguments. Below is an example.</p>
+<div class="section" id="Example:-Print-the-Natural-Numbers">
+<h3>Example: Print the Natural Numbers<a class="headerlink" href="#Example:-Print-the-Natural-Numbers" title="Permalink to this headline"></a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Exercise:-Print-the-Odd-Numbers">
+<h3>Exercise: Print the Odd Numbers<a class="headerlink" href="#Exercise:-Print-the-Odd-Numbers" title="Permalink to this headline"></a></h3>
+<p>Print the odd numbers from <span class="math notranslate nohighlight">\(1\)</span> to <span class="math notranslate nohighlight">\(n\)</span> on the same line using a for loop. Can you do it without any <code class="docutils literal notranslate"><span class="pre">if</span></code> statements?</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="2.-Printing-Unicode-Characters">
+<h2>2. Printing Unicode Characters<a class="headerlink" href="#2.-Printing-Unicode-Characters" title="Permalink to this headline"></a></h2>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Unicode">Unicode</a> includes technical symbols, punctuations, and many other characters used in writing text. In Python, to print unicode characters we can:</p>
+<ol class="arabic simple">
+<li><p>convert a unicode character from <a class="reference external" href="https://en.wikipedia.org/wiki/Hexadecimal">hexidecimal</a> to a base-10 integer with the <code class="docutils literal notranslate"><span class="pre">int(hex_code,</span> <span class="pre">16)</span></code> function.</p></li>
+<li><p>then convert the integer to a character using the <code class="docutils literal notranslate"><span class="pre">chr()</span></code> function.</p></li>
+</ol>
+<p>Below, is an example.</p>
+<div class="section" id="Example:-Printing-Bopomofo">
+<h3>Example: Printing Bopomofo<a class="headerlink" href="#Example:-Printing-Bopomofo" title="Permalink to this headline"></a></h3>
+<p>In the example below <code class="docutils literal notranslate"><span class="pre">ㄅ</span></code> is represented by <code class="docutils literal notranslate"><span class="pre">&quot;3105&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">ㄬ</span></code> is represented by <code class="docutils literal notranslate"><span class="pre">&quot;312C&quot;</span></code>. Other unicode character codes can be looked up in a chart <a class="reference external" href="https://www.unicode.org/charts/">here</a>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">low</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s2">&quot;3105&quot;</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">high</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s2">&quot;312C&quot;</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦㄧㄨㄩㄪㄫㄬ
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Exercise:-Printing-Emojis">
+<h3>Exercise: Printing Emojis<a class="headerlink" href="#Exercise:-Printing-Emojis" title="Permalink to this headline"></a></h3>
+<p>The unicode characters for emoticons start with <code class="docutils literal notranslate"><span class="pre">1F600</span></code> and end with <code class="docutils literal notranslate"><span class="pre">1F64F</span></code>. Use a for loop to print out the all of the emoticons on a single line.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">low</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s2">&quot;1F600&quot;</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">high</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s2">&quot;1F64F&quot;</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="c1"># write your for loop here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="3.-Math-Quiz-with-randint()">
+<h2>3. Math Quiz with <code class="docutils literal notranslate"><span class="pre">randint()</span></code><a class="headerlink" href="#3.-Math-Quiz-with-randint()" title="Permalink to this headline"></a></h2>
+<p>Python has a built-in package named <code class="docutils literal notranslate"><span class="pre">random</span></code> which has many functions for generating random numbers. The function <code class="docutils literal notranslate"><span class="pre">randint(a,</span> <span class="pre">b)</span></code> will return a random integer between <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+<div class="section" id="Example:-Division-Quiz">
+<h3>Example: Division Quiz<a class="headerlink" href="#Example:-Division-Quiz" title="Permalink to this headline"></a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="n">product</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What is &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">product</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;/&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;?&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;very good&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;sorry, wrong answer&quot;</span><span class="p">)</span>
+
+    <span class="n">continue_response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;press q to quit:&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">continue_response</span> <span class="o">==</span> <span class="s2">&quot;q&quot;</span><span class="p">:</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+What is 27/3? 9
+very good
+press q to quit: q
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Exersise:-Multiplication-Quiz">
+<h3>Exersise: Multiplication Quiz<a class="headerlink" href="#Exersise:-Multiplication-Quiz" title="Permalink to this headline"></a></h3>
+<p>Modify the example above to ask multiplication questions rather than division.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="4.-Calculating-the-Sum-of-Natural-Numbers">
+<h2>4. Calculating the Sum of Natural Numbers<a class="headerlink" href="#4.-Calculating-the-Sum-of-Natural-Numbers" title="Permalink to this headline"></a></h2>
+<p>A useful formula for the sum of natural numbers from <span class="math notranslate nohighlight">\(1\)</span> to <span class="math notranslate nohighlight">\(n\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[1+2+3+\dots+n=\frac{n(n+1)}{2}\]</div>
+<p>Write a loop to verify this formula.</p>
+<div class="section" id="Example:-While-Loop-Implementation">
+<h3>Example: While Loop Implementation<a class="headerlink" href="#Example:-While-Loop-Implementation" title="Permalink to this headline"></a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">sum_n</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+    <span class="n">sum_n</span> <span class="o">+=</span> <span class="n">i</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sum_n</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sum_n</span> <span class="o">==</span> <span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+5050
+True
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Exercise:-For-Loop-Implementation">
+<h3>Exercise: For Loop Implementation<a class="headerlink" href="#Exercise:-For-Loop-Implementation" title="Permalink to this headline"></a></h3>
+<p>Calculate the same sum but with a for loop. Check that you get the same result.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="5.-Summing-to-\pi">
+<h2>5. Summing to <span class="math notranslate nohighlight">\(\pi\)</span><a class="headerlink" href="#5.-Summing-to-\pi" title="Permalink to this headline"></a></h2>
+<div class="section" id="Example:-The-Bailey–Borwein–Plouffe-Formula">
+<h3>Example: The Bailey–Borwein–Plouffe Formula<a class="headerlink" href="#Example:-The-Bailey–Borwein–Plouffe-Formula" title="Permalink to this headline"></a></h3>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Bailey%E2%80%93Borwein%E2%80%93Plouffe_formula">The Bailey–Borwein–Plouffe Formula</a> was discovered in 1995 by Simon Plouffe. It states that</p>
+<div class="math notranslate nohighlight">
+\[\pi = \sum_{k=0}^{\infty} \left(\frac{1}{16^k}\left(\frac{4}{8k+1}-\frac{2}{8k+4}-\frac{1}{8k+5}-\frac{1}{8k+6}\right)\right)\]</div>
+<p>Remarkably, this formula accurately computes the first 15 digits of pi in just 10 iterations.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">_8k</span> <span class="o">=</span> <span class="mi">8</span><span class="o">*</span><span class="n">k</span>
+    <span class="nb">sum</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="p">(</span><span class="n">_8k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">_8k</span><span class="o">+</span><span class="mi">4</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">_8k</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">_8k</span><span class="o">+</span><span class="mi">6</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">16</span><span class="o">**</span><span class="n">k</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+3.1415926535897913
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Exercise:-The-Leibniz-Formula">
+<h3>Exercise: The Leibniz Formula<a class="headerlink" href="#Exercise:-The-Leibniz-Formula" title="Permalink to this headline"></a></h3>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Leibniz_formula_for_%CF%80">Leibniz formula</a> was discovered by the Indian Mathematician Madhava of Sangamagrama in the 14th century. It states that:</p>
+<div class="math notranslate nohighlight">
+\[1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{9} \dots = \frac{\pi}{4}\]</div>
+<p>Use a for loop to calculate this sum and multiply the final sum by 4 to check how close the result is to <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
            </div>
