@@ -99,63 +99,196 @@
 <dt>{</dt><dd><dl>
 <dt>“cells”: [</dt><dd><dl>
 <dt>{</dt><dd><p>“cell_type”: “markdown”,
+“metadata”: {},
 “source”: [</p>
 <blockquote>
-<div><p>“This homework will test your understanding of the following programming concepts:n”,
+<div><p>“# Homework 5n”,
 “n”,
-“- variablesn”,
-“- input/outputn”,
-“- conditional statementsn”,
-“- arithmetic and comparison operatorsn”,
-“n”,
-“Each problem is preceded by an example to demonstrate the concepts and Python syntax you will need to complete the exercise. Read the example code, click on the example’s code cell, and press <cite>ctrl + enter</cite> to execute the code. Then read the exercise and complete the program.n”,
-“n”,
-“—”</p>
+“This homework covers the topic of iteration. We have seen two kinds of iteration in class, the <cite>while</cite> loop and the <cite>for</cite> loop.n”,
+“Each exercise is preceded by a similar example to help you.”</p>
 </div></blockquote>
-<p>],
-“metadata”: {}</p>
+<p>]</p>
 </dd>
 </dl>
 <p>},
 {</p>
 <blockquote>
 <div><p>“cell_type”: “markdown”,
+“metadata”: {},
 “source”: [</p>
 <blockquote>
-<div><p>“##  1. Comparisonn”,
+<div><p>“—n”,
 “n”,
-“### Example: The Smaller Numbern”,
-“Get two integers from a user and print which number is smaller or if they are equal.”</p>
+“## 1. <cite>print()</cite>’s <cite>end</cite> Argumentn”,
+“n”,
+“The <cite>print</cite> function has a keyword argument <cite>end</cite>. Whatever value we assign to <cite>end</cite> will be printed after printing out the previous arguments. Below is an example.n”,
+“n”,
+“### Example: Print the Natural Numbers”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “code”,
+“execution_count”: 1,
+“metadata”: {},
+“outputs”: [</p>
+<blockquote>
+<div><dl>
+<dt>{</dt><dd><p>“name”: “stdout”,
+“output_type”: “stream”,
+“text”: [</p>
+<blockquote>
+<div><p>“1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20n”</p>
+</div></blockquote>
+<p>]</p>
+</dd>
+</dl>
+<p>}</p>
 </div></blockquote>
 <p>],
-“metadata”: {}</p>
+“source”: [</p>
+<blockquote>
+<div><p>“n = 20n”,
+“for i in range(1, n):n”,
+”    print(i, end=&quot;,&quot;)n”,
+“print(n)”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “markdown”,
+“metadata”: {},
+“source”: [</p>
+<blockquote>
+<div><p>“### Exercise: Print the Odd Numbersn”,
+“Print the odd numbers from $1$ to $n$ on the same line using a for loop.n”,
+“Can you do it without any <cite>if</cite> statements?”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “code”,
+“execution_count”: null,
+“metadata”: {},
+“outputs”: [],
+“source”: []</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “markdown”,
+“metadata”: {},
+“source”: [</p>
+<blockquote>
+<div><p>“—n”,
+“n”,
+“## 2. Printing Unicode Charactersn”,
+“[Unicode](<a class="reference external" href="https://en.wikipedia.org/wiki/Unicode">https://en.wikipedia.org/wiki/Unicode</a>) includes technical symbols, punctuations, and many other characters used in writing text. In Python, to print unicode characters we can:n”,
+“n”,
+“1. convert a unicode character from [hexidecimal](https://en.wikipedia.org/wiki/Hexadecimal) to a base-10 integer with the <cite>int(hex_code, 16)</cite> function.n”,
+“2. then convert the integer to a character using the <cite>chr()</cite> function.n”,
+“n”,
+“Below, is an example.n”,
+“n”,
+“### Example: Printing Bopomofon”,
+“In the example below <cite>ㄅ</cite> is represented by <cite>&quot;3105&quot;</cite> and <cite>ㄬ</cite> is represented by <cite>&quot;312C&quot;</cite>. Other unicode character codes can be looked up in a chart [here](<a class="reference external" href="https://www.unicode.org/charts/">https://www.unicode.org/charts/</a>).”</p>
+</div></blockquote>
+<p>]</p>
 </div></blockquote>
 <p>},
 {</p>
 <blockquote>
 <div><p>“cell_type”: “code”,
 “execution_count”: 2,
-“source”: [</p>
-<blockquote>
-<div><p>“a = int(input(&quot;enter an integer:&quot;))n”,
-“b = int(input(&quot;enter an integer:&quot;))n”,
-“if a &lt; b:n”,
-”    print(a, &quot;is less than&quot;, b)n”,
-“elif b &lt; a:n”,
-”    print(b, &quot;is less than&quot;, a)n”,
-“else:n”,
-”    print(a, &quot;and&quot;, b, &quot;are equal&quot;)”</p>
-</div></blockquote>
-<p>],
+“metadata”: {},
 “outputs”: [</p>
 <blockquote>
 <div><dl>
-<dt>{</dt><dd><p>“output_type”: “stream”,
-“name”: “stdout”,
+<dt>{</dt><dd><p>“name”: “stdout”,
+“output_type”: “stream”,
 “text”: [</p>
 <blockquote>
-<div><p>“enter an integer: 100n”,
-“enter an integer: 99n”</p>
+<div><p>“ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦㄧㄨㄩㄪㄫㄬ”</p>
+</div></blockquote>
+<p>]</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>],
+“source”: [</p>
+<blockquote>
+<div><p>“low = int(&quot;3105&quot;, 16)n”,
+“high = int(&quot;312C&quot;, 16)n”,
+“for i in range(low, high+1):n”,
+”    print(chr(i), end=&quot;&quot;)”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “markdown”,
+“metadata”: {},
+“source”: [</p>
+<blockquote>
+<div><p>“### Exercise: Printing Emojisn”,
+“The unicode characters for emoticons start with <cite>1F600</cite> and end with <cite>1F64F</cite>. Use a for loop to print out the all of the emoticons on a single line.”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “code”,
+“execution_count”: null,
+“metadata”: {},
+“outputs”: [],
+“source”: [</p>
+<blockquote>
+<div><p>“low = int(&quot;1F600&quot;, 16)n”,
+“high = int(&quot;1F64F&quot;, 16)n”,
+“# write your for loop here”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “markdown”,
+“metadata”: {},
+“source”: [</p>
+<blockquote>
+<div><p>“—n”,
+“n”,
+“## 3. Math Quiz with <cite>randint()</cite>n”,
+“n”,
+“Python has a built-in package named <cite>random</cite> which has many functions for generating random numbers. The function <cite>randint(a, b)</cite> will return a random integer between <cite>a</cite> and <cite>b</cite>.n”,
+“n”,
+“### Example: Division Quiz”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “code”,
+“execution_count”: 1,
+“metadata”: {},
+“outputs”: [</p>
+<blockquote>
+<div><dl>
+<dt>{</dt><dd><p>“name”: “stdout”,
+“output_type”: “stream”,
+“text”: [</p>
+<blockquote>
+<div><p>“What is 27/3? 9n”</p>
 </div></blockquote>
 <p>]</p>
 </dd>
@@ -163,328 +296,101 @@
 <p>},
 {</p>
 <blockquote>
-<div><p>“output_type”: “stream”,
-“name”: “stdout”,
+<div><p>“name”: “stdout”,
+“output_type”: “stream”,
 “text”: [</p>
 <blockquote>
-<div><p>“99 is less than 100n”</p>
+<div><p>“very goodn”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“name”: “stdout”,
+“output_type”: “stream”,
+“text”: [</p>
+<blockquote>
+<div><p>“press q to quit: qn”</p>
 </div></blockquote>
 <p>]</p>
 </div></blockquote>
 <p>}</p>
 </div></blockquote>
 <p>],
-“metadata”: {}</p>
+“source”: [</p>
+<blockquote>
+<div><p>“from random import randintn”,
+“while True:n”,
+”    a = randint(2, 10)n”,
+”    b = randint(2, 10)n”,
+”    product = a * bn”,
+”    answer = input(&quot;What is &quot;+str(product)+&quot;/&quot;+str(a)+&quot;?&quot;)n”,
+”    if int(answer) == b:n”,
+”        print(&quot;very good&quot;)n”,
+”    else:n”,
+”        print(&quot;sorry, wrong answer&quot;)n”,
+”        n”,
+”    continue_response = input(&quot;press q to quit:&quot;)n”,
+”    if continue_response == &quot;q&quot;:n”,
+”        break”</p>
+</div></blockquote>
+<p>]</p>
 </div></blockquote>
 <p>},
 {</p>
 <blockquote>
 <div><p>“cell_type”: “markdown”,
+“metadata”: {},
 “source”: [</p>
 <blockquote>
-<div><p>“### Exercise: Who is Younger?n”,
-“Get the names and ages of two people, then print which person is younger or if they are the same age.”</p>
+<div><p>“### Exersise: Multiplication Quizn”,
+“Modify the example above to ask multiplication questions rather than division.”</p>
 </div></blockquote>
-<p>],
-“metadata”: {}</p>
+<p>]</p>
 </div></blockquote>
 <p>},
 {</p>
 <blockquote>
 <div><p>“cell_type”: “code”,
 “execution_count”: null,
-“source”: [</p>
-<blockquote>
-<div><p>“name_a = input(&quot;first name:&quot;)n”,
-“age_a = int(input(&quot;first age:&quot;))n”,
-“name_b = input(&quot;second name:&quot;)n”,
-“age_b = int(input(&quot;second age:&quot;))n”,
-“# fill in the rest”</p>
-</div></blockquote>
-<p>],
+“metadata”: {},
 “outputs”: [],
-“metadata”: {}</p>
+“source”: []</p>
 </div></blockquote>
 <p>},
 {</p>
 <blockquote>
 <div><p>“cell_type”: “markdown”,
+“metadata”: {},
 “source”: [</p>
 <blockquote>
-<div><p>“—”</p>
-</div></blockquote>
-<p>],
-“metadata”: {}</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “markdown”,
-“source”: [</p>
-<blockquote>
-<div><p>“## 2. Divisibility testingn”,
-“### Example: Divisible by $3$n”,
-“Use the <cite>%</cite> operator to check if an integer is divisible by $3$”</p>
-</div></blockquote>
-<p>],
-“metadata”: {}</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “code”,
-“execution_count”: 3,
-“source”: [</p>
-<blockquote>
-<div><p>“x = int(input(&quot;enter an integer:&quot;))n”,
-“if x % 3 == 0:n”,
-”    print(x, &quot;is divisible by 3&quot;)n”,
-“else:n”,
-”    print(x, &quot;is not divisible by 3&quot;)”</p>
-</div></blockquote>
-<p>],
-“outputs”: [</p>
-<blockquote>
-<div><dl>
-<dt>{</dt><dd><p>“output_type”: “stream”,
-“name”: “stdout”,
-“text”: [</p>
-<blockquote>
-<div><p>“enter an integer: 7n”</p>
+<div><p>“—n”,
+“n”,
+“## 4. Calculating the Sum of Natural Numbersn”,
+“A useful formula for the sum of natural numbers from $1$ to $n$ is:n”,
+“$$1+2+3+\dots+n=\frac{n(n+1)}{2}$$n”,
+“Write a loop to verify this formula.n”,
+“n”,
+“### Example: While Loop Implementation”</p>
 </div></blockquote>
 <p>]</p>
-</dd>
-</dl>
-<p>},
-{</p>
-<blockquote>
-<div><p>“output_type”: “stream”,
-“name”: “stdout”,
-“text”: [</p>
-<blockquote>
-<div><p>“7 is not divisible by 3n”</p>
-</div></blockquote>
-<p>]</p>
-</div></blockquote>
-<p>}</p>
-</div></blockquote>
-<p>],
-“metadata”: {}</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “markdown”,
-“source”: [</p>
-<blockquote>
-<div><p>“### Exercise: Even or Odd?n”,
-“Use the <cite>%</cite> operator to check if an integer is even or odd.”</p>
-</div></blockquote>
-<p>],
-“metadata”: {}</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “code”,
-“execution_count”: null,
-“source”: [</p>
-<blockquote>
-<div><p>“x = int(input(&quot;enter an integer&quot;))n”,
-“# fill in the rest”</p>
-</div></blockquote>
-<p>],
-“outputs”: [],
-“metadata”: {}</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “markdown”,
-“source”: [</p>
-<blockquote>
-<div><p>“—”</p>
-</div></blockquote>
-<p>],
-“metadata”: {}</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “markdown”,
-“source”: [</p>
-<blockquote>
-<div><p>“## 3. Calculatorn”,
-“n”,
-“### Example: Sum and Differencen”,
-“n”,
-“Use the <cite>input()</cite> function to get two numbers and an arithmetic operation (either + or -) from the user, then print the result.”</p>
-</div></blockquote>
-<p>],
-“metadata”: {}</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “code”,
-“execution_count”: 4,
-“source”: [</p>
-<blockquote>
-<div><p>“a = float(input(&quot;enter a number:&quot;))n”,
-“operator = input(&quot;enter a operator:&quot;)n”,
-“b = float(input(&quot;enter a number:&quot;))n”,
-“n”,
-“if operator == &quot;+&quot;:n”,
-”    result = a + bn”,
-“elif operator == &quot;-&quot;:n”,
-”    result = a - bn”,
-“else:n”,
-”    print(&quot;operator must be + or -&quot;)n”,
-“n”,
-“print(a, operator, b, &quot;=&quot;, result)”</p>
-</div></blockquote>
-<p>],
-“outputs”: [</p>
-<blockquote>
-<div><dl>
-<dt>{</dt><dd><p>“output_type”: “stream”,
-“name”: “stdout”,
-“text”: [</p>
-<blockquote>
-<div><p>“enter a number: 30n”,
-“enter a operator: -n”,
-“enter a number: 7.5n”</p>
-</div></blockquote>
-<p>]</p>
-</dd>
-</dl>
-<p>},
-{</p>
-<blockquote>
-<div><p>“output_type”: “stream”,
-“name”: “stdout”,
-“text”: [</p>
-<blockquote>
-<div><p>“30.0 - 7.5 = 22.5n”</p>
-</div></blockquote>
-<p>]</p>
-</div></blockquote>
-<p>}</p>
-</div></blockquote>
-<p>],
-“metadata”: {}</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “markdown”,
-“source”: [</p>
-<blockquote>
-<div><p>“### Exercise: All Arithmetic Operatorsn”,
-“Use a conditional statement to calculate results for all of the arithmetic operators”</p>
-</div></blockquote>
-<p>],
-“metadata”: {}</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “code”,
-“execution_count”: null,
-“source”: [</p>
-<blockquote>
-<div><p>“a = float(input(&quot;enter a number:&quot;))n”,
-“operator = input(&quot;enter an operator:&quot;)n”,
-“b = float(input(&quot;enter a number:&quot;))n”,
-“n”,
-“n”,
-“if operator == &quot;+&quot;:n”,
-”    result = a + bn”,
-“elif operator == &quot;-&quot;:n”,
-”    passn”,
-“elif operator == &quot;<em>&quot;:n”,
-”    passn”,
-“elif operator == &quot;/&quot;:n”,
-”    passn”,
-“elif operator == &quot;%&quot;:n”,
-”    passn”,
-“elif operator == &quot;*</em>&quot;:n”,
-”    passn”,
-“elif operator == &quot;//&quot;:n”,
-”    passn”,
-“else:n”,
-”    print(&quot;not a valid operator&quot;)n”,
-“print(a, operator, b, &quot;=&quot;, result)”</p>
-</div></blockquote>
-<p>],
-“outputs”: [],
-“metadata”: {</p>
-<blockquote>
-<div><p>“tags”: []</p>
-</div></blockquote>
-<p>}</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “markdown”,
-“source”: [</p>
-<blockquote>
-<div><p>“—”</p>
-</div></blockquote>
-<p>],
-“metadata”: {}</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “markdown”,
-“source”: [</p>
-<blockquote>
-<div><p>“## 4. Extension: Calculate While …”</p>
-</div></blockquote>
-<p>],
-“metadata”: {}</p>
-</div></blockquote>
-<p>},
-{</p>
-<blockquote>
-<div><p>“cell_type”: “markdown”,
-“source”: [</p>
-<blockquote>
-<div><p>“### Example: Repeat until I say ‘q’n”,
-“The code below uses a <cite>while</cite> loop to continue to get input from the user. If the the user enters <cite>q</cite> then the loop will stop and the program will finish. The <cite>break</cite> keyword forces the loop to exit.”</p>
-</div></blockquote>
-<p>],
-“metadata”: {}</p>
 </div></blockquote>
 <p>},
 {</p>
 <blockquote>
 <div><p>“cell_type”: “code”,
 “execution_count”: 5,
-“source”: [</p>
-<blockquote>
-<div><p>“# this is code you can use to repeat getting inputn”,
-“while True:n”,
-“n”,
-”    do_again = input(&quot;Type q to quit: &quot;)n”,
-”    n”,
-”    if do_again == ‘q’:n”,
-”        break”</p>
-</div></blockquote>
-<p>],
+“metadata”: {},
 “outputs”: [</p>
 <blockquote>
 <div><dl>
-<dt>{</dt><dd><p>“output_type”: “stream”,
-“name”: “stdout”,
+<dt>{</dt><dd><p>“name”: “stdout”,
+“output_type”: “stream”,
 “text”: [</p>
 <blockquote>
-<div><p>“Type q to quit:  an”,
-“Type q to quit:  bn”,
-“Type q to quit:  sn”,
-“Type q to quit:  qn”</p>
+<div><p>“5050n”,
+“Truen”</p>
 </div></blockquote>
 <p>]</p>
 </dd>
@@ -492,54 +398,121 @@
 <p>}</p>
 </div></blockquote>
 <p>],
-“metadata”: {}</p>
+“source”: [</p>
+<blockquote>
+<div><p>“i = 1n”,
+“n = 100n”,
+“sum_n = 0n”,
+“while i &lt;= n:n”,
+”    sum_n += in”,
+”    i += 1n”,
+“print(sum_n)n”,
+“print(sum_n == n*(n+1)/2)”</p>
+</div></blockquote>
+<p>]</p>
 </div></blockquote>
 <p>},
 {</p>
 <blockquote>
 <div><p>“cell_type”: “markdown”,
+“metadata”: {},
 “source”: [</p>
 <blockquote>
-<div><p>“### Exercise: Keep on Calculatingn”,
-“n”,
-“Use a while loop to continue to get input from the user for your calculatorn”,
-“n”,
-“Your calculator code should:n”,
-“n”,
-“1. get input datan”,
-“2. compute the outputn”,
-“3. print outputn”,
-“4. check if the user wants to quitn”,
-“5. if not, repeatn”,
-“n”,
-“You can reuse your solution from the previous exercise for most of the code.”</p>
+<div><p>“### Exercise: For Loop Implementationn”,
+“Calculate the same sum but with a for loop. Check that you get the same result. “</p>
 </div></blockquote>
-<p>],
-“metadata”: {}</p>
+<p>]</p>
 </div></blockquote>
 <p>},
 {</p>
 <blockquote>
 <div><p>“cell_type”: “code”,
 “execution_count”: null,
-“source”: [</p>
-<blockquote>
-<div><p>“# write you calculator with a while loop here”</p>
-</div></blockquote>
-<p>],
+“metadata”: {},
 “outputs”: [],
-“metadata”: {}</p>
+“source”: []</p>
 </div></blockquote>
 <p>},
 {</p>
 <blockquote>
 <div><p>“cell_type”: “markdown”,
+“metadata”: {},
 “source”: [</p>
 <blockquote>
-<div><p>“—”</p>
+<div><p>“—n”,
+“n”,
+“## 5. Summing to $\pi$”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “markdown”,
+“metadata”: {},
+“source”: [</p>
+<blockquote>
+<div><p>“### Example: The Bailey–Borwein–Plouffe Formulan”,
+“The [The Bailey–Borwein–Plouffe Formula](<a class="reference external" href="https://en.wikipedia.org/wiki/Bailey%E2%80%93Borwein%E2%80%93Plouffe_formula">https://en.wikipedia.org/wiki/Bailey%E2%80%93Borwein%E2%80%93Plouffe_formula</a>) was discovered in 1995 by Simon Plouffe. It states that n”,
+“$$\pi = \sum_{k=0}^{\infty} \left(\frac{1}{16^k}\left(\frac{4}{8k+1}-\frac{2}{8k+4}-\frac{1}{8k+5}-\frac{1}{8k+6}\right)\right)$$ n”,
+“Remarkably, this formula accurately computes the first 15 digits of pi in just 10 iterations.”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “code”,
+“execution_count”: 6,
+“metadata”: {},
+“outputs”: [</p>
+<blockquote>
+<div><dl>
+<dt>{</dt><dd><p>“name”: “stdout”,
+“output_type”: “stream”,
+“text”: [</p>
+<blockquote>
+<div><p>“3.1415926535897913n”</p>
+</div></blockquote>
+<p>]</p>
+</dd>
+</dl>
+<p>}</p>
 </div></blockquote>
 <p>],
-“metadata”: {}</p>
+“source”: [</p>
+<blockquote>
+<div><p>“sum = 0n”,
+“for k in range(10):n”,
+”    _8k = 8*kn”,
+”    sum += (4/(_8k+1) - 2/(_8k+4) - 1/(_8k+5) - 1/(_8k+6)) / (16**k)n”,
+“print(sum)”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “markdown”,
+“metadata”: {},
+“source”: [</p>
+<blockquote>
+<div><p>“### Exercise: The Leibniz Formulan”,
+“n”,
+“The [Leibniz formula](<a class="reference external" href="https://en.wikipedia.org/wiki/Leibniz_formula_for_%CF%80">https://en.wikipedia.org/wiki/Leibniz_formula_for_%CF%80</a>) was discovered by the Indian Mathematician Madhava of Sangamagrama in the 14th century. It states that:n”,
+“$$1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{9} \dots = \frac{\pi}{4}$$n”,
+“Use a for loop to calculate this sum and multiply the final sum by 4 to check how close the result is to $\pi$.”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “code”,
+“execution_count”: null,
+“metadata”: {},
+“outputs”: [],
+“source”: []</p>
 </div></blockquote>
 <p>}</p>
 </dd>
@@ -548,7 +521,7 @@
 “metadata”: {</p>
 <blockquote>
 <div><dl class="simple">
-<dt>“kernelspec”: {</dt><dd><p>“display_name”: “Python 3.8.5 vscode virtualenv”,
+<dt>“kernelspec”: {</dt><dd><p>“display_name”: “Python 3 (ipykernel)”,
 “language”: “python”,
 “name”: “python3”</p>
 </dd>
@@ -567,7 +540,7 @@
 “name”: “python”,
 “nbconvert_exporter”: “python”,
 “pygments_lexer”: “ipython3”,
-“version”: “3.8.5”</p>
+“version”: “3.9.7”</p>
 </div></blockquote>
 <p>}</p>
 </div></blockquote>

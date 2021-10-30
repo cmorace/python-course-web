@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Type Conversion &mdash; Peanuts Python Course Website 0.0.2 documentation</title>
+  <title>&lt;no title&gt; &mdash; Peanuts Python Course Website 0.0.2 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
@@ -21,8 +22,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Operators" href="operators.html" />
-    <link rel="prev" title="Variables" href="variables.html" /> 
+    <link rel="next" title="&lt;no title&gt;" href="operators.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="variables.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -40,16 +41,10 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../lessons.html">Lessons</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../homework.html">Homework</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../notes.html">Notes</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="variables.html">Variables</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Type Conversion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operators.html">Operators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="strings.html">Strings</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes.html">Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../setup.html">Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../binder.html">Binder</a></li>
@@ -70,7 +65,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../../notes.html">Notes</a> &raquo;</li>
-      <li>Type Conversion</li>
+      <li>&lt;no title&gt;</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -81,237 +76,6 @@
              
   
 <style>
-/* CSS for nbsphinx extension */
-
-/* remove conflicting styling from Sphinx themes */
-div.nbinput.container,
-div.nbinput.container div.prompt,
-div.nbinput.container div.input_area,
-div.nbinput.container div[class*=highlight],
-div.nbinput.container div[class*=highlight] pre,
-div.nboutput.container,
-div.nboutput.container div.prompt,
-div.nboutput.container div.output_area,
-div.nboutput.container div[class*=highlight],
-div.nboutput.container div[class*=highlight] pre {
-    background: none;
-    border: none;
-    padding: 0 0;
-    margin: 0;
-    box-shadow: none;
-}
-
-/* avoid gaps between output lines */
-div.nboutput.container div[class*=highlight] pre {
-    line-height: normal;
-}
-
-/* input/output containers */
-div.nbinput.container,
-div.nboutput.container {
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
-@media (max-width: 540px) {
-    div.nbinput.container,
-    div.nboutput.container {
-        flex-direction: column;
-    }
-}
-
-/* input container */
-div.nbinput.container {
-    padding-top: 5px;
-}
-
-/* last container */
-div.nblast.container {
-    padding-bottom: 5px;
-}
-
-/* input prompt */
-div.nbinput.container div.prompt pre {
-    color: #307FC1;
-}
-
-/* output prompt */
-div.nboutput.container div.prompt pre {
-    color: #BF5B3D;
-}
-
-/* all prompts */
-div.nbinput.container div.prompt,
-div.nboutput.container div.prompt {
-    width: 4.5ex;
-    padding-top: 5px;
-    position: relative;
-    user-select: none;
-}
-
-div.nbinput.container div.prompt > div,
-div.nboutput.container div.prompt > div {
-    position: absolute;
-    right: 0;
-    margin-right: 0.3ex;
-}
-
-@media (max-width: 540px) {
-    div.nbinput.container div.prompt,
-    div.nboutput.container div.prompt {
-        width: unset;
-        text-align: left;
-        padding: 0.4em;
-    }
-    div.nboutput.container div.prompt.empty {
-        padding: 0;
-    }
-
-    div.nbinput.container div.prompt > div,
-    div.nboutput.container div.prompt > div {
-        position: unset;
-    }
-}
-
-/* disable scrollbars on prompts */
-div.nbinput.container div.prompt pre,
-div.nboutput.container div.prompt pre {
-    overflow: hidden;
-}
-
-/* input/output area */
-div.nbinput.container div.input_area,
-div.nboutput.container div.output_area {
-    -webkit-flex: 1;
-    flex: 1;
-    overflow: auto;
-}
-@media (max-width: 540px) {
-    div.nbinput.container div.input_area,
-    div.nboutput.container div.output_area {
-        width: 100%;
-    }
-}
-
-/* input area */
-div.nbinput.container div.input_area {
-    border: 1px solid #e0e0e0;
-    border-radius: 2px;
-    background: #f5f5f5;
-}
-
-/* override MathJax center alignment in output cells */
-div.nboutput.container div[class*=MathJax] {
-    text-align: left !important;
-}
-
-/* override sphinx.ext.imgmath center alignment in output cells */
-div.nboutput.container div.math p {
-    text-align: left;
-}
-
-/* standard error */
-div.nboutput.container div.output_area.stderr {
-    background: #fdd;
-}
-
-/* ANSI colors */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-default-inverse-fg { color: #FFFFFF; }
-.ansi-default-inverse-bg { background-color: #000000; }
-
-.ansi-bold { font-weight: bold; }
-.ansi-underline { text-decoration: underline; }
-
-
-div.nbinput.container div.input_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight].math,
-div.nboutput.container div.output_area.rendered_html,
-div.nboutput.container div.output_area > div.output_javascript,
-div.nboutput.container div.output_area:not(.rendered_html) > img{
-    padding: 5px;
-}
-
-/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
-div.nbinput.container div.input_area > div[class^='highlight'],
-div.nboutput.container div.output_area > div[class^='highlight']{
-    overflow-y: hidden;
-}
-
-/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
-    display: none;
-}
-
-/* Some additional styling taken form the Jupyter notebook CSS */
-div.rendered_html table {
-  border: none;
-  border-collapse: collapse;
-  border-spacing: 0;
-  color: black;
-  font-size: 12px;
-  table-layout: fixed;
-}
-div.rendered_html thead {
-  border-bottom: 1px solid black;
-  vertical-align: bottom;
-}
-div.rendered_html tr,
-div.rendered_html th,
-div.rendered_html td {
-  text-align: right;
-  vertical-align: middle;
-  padding: 0.5em 0.5em;
-  line-height: normal;
-  white-space: normal;
-  max-width: none;
-  border: none;
-}
-div.rendered_html th {
-  font-weight: bold;
-}
-div.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-div.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
-}
-
 /* CSS overrides for sphinx_rtd_theme */
 
 /* 24px margin */
@@ -334,141 +98,272 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Type-Conversion">
-<h1>Type Conversion<a class="headerlink" href="#Type-Conversion" title="Permalink to this headline"></a></h1>
-<p>We use type names to convert from one type to another. Below are some examples of type conversions and their resulting values.</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;boolean conversions&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------------------------------------------------------------&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;int(True)         -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="kc">True</span><span class="p">))</span>   <span class="o">+</span> <span class="s2">&quot;            # bool to int&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;float(False)      -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="kc">False</span><span class="p">))</span>   <span class="o">+</span> <span class="s2">&quot;          # bool to float&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;str(True)         -&gt; &#39;&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>   <span class="o">+</span> <span class="s2">&quot;&#39;       # bool to str&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">integer conversions&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------------------------------------------------------------&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bool(1)           -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;         # int to bool&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;float(1234567)    -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="mi">1234567</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;    # int to float&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;str(1234567)      -&gt; &#39;&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">1234567</span><span class="p">)</span>   <span class="o">+</span> <span class="s2">&quot;&#39;    # int to str&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">float conversions&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------------------------------------------------------------&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bool(1.0)         -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="mf">1.0</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;         # float to bool&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;int(3.99)         -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mf">3.99</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;            # float to int&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;int(-3.99)        -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="o">-</span><span class="mf">3.99</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;           # negative float to int&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;str(3.99)         -&gt; &#39;&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mf">3.99</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;&#39;       # float to str&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">string conversions&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------------------------------------------------------------&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bool(&#39;False&#39;)     -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;False&#39;</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;         # str to bool&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;int(&#39;1234567&#39;)    -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;1234567&#39;</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;      # str to int&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;float(&#39;1234567&#39;)  -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;1234567&#39;</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;    # str to float&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">ascii conversions&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------------------------------------------------------------&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ord(&#39;A&#39;)          -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;           # str to ascii&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;chr(122)          -&gt; &#39;&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="mi">122</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;&#39;          # ascii to str&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-boolean conversions
--------------------------------------------------------------
-int(True)         -&gt; 1            # bool to int
-float(False)      -&gt; 0.0          # bool to float
-str(True)         -&gt; &#39;True&#39;       # bool to str
-
-integer conversions
--------------------------------------------------------------
-bool(1)           -&gt; True         # int to bool
-float(1234567)    -&gt; 1234567.0    # int to float
-str(1234567)      -&gt; &#39;1234567&#39;    # int to str
-
-float conversions
--------------------------------------------------------------
-bool(1.0)         -&gt; True         # float to bool
-int(3.99)         -&gt; 3            # float to int
-int(-3.99)        -&gt; -3           # negative float to int
-str(3.99)         -&gt; &#39;3.99&#39;       # float to str
-
-string conversions
--------------------------------------------------------------
-bool(&#39;False&#39;)     -&gt; True         # str to bool
-int(&#39;1234567&#39;)    -&gt; 1234567      # str to int
-float(&#39;1234567&#39;)  -&gt; 1234567.0    # str to float
-
-ascii conversions
--------------------------------------------------------------
-ord(&#39;A&#39;)          -&gt; 65           # str to ascii
-chr(122)          -&gt; &#39;z&#39;          # ascii to str
-</pre></div></div>
-</div>
-<p>Not all values are compatible. To convert a string to a number type, the string must be all numbers.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">ok_to_convert</span> <span class="o">=</span> <span class="s2">&quot;987654321&quot;</span>
-<span class="nb">int</span><span class="p">(</span><span class="n">ok_to_convert</span><span class="p">)</span>
-<span class="n">not_ok_to_convert</span> <span class="o">=</span> <span class="s2">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span>
-<span class="c1"># int(not_ok_to_convert) # Value Error</span>
-</pre></div>
-</div>
-</div>
-<p>Only the empty string converts to False</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;False&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-True
-True
-False
-</pre></div></div>
-</div>
-<p>You can convert <code class="docutils literal notranslate"><span class="pre">'0'</span></code> to <code class="docutils literal notranslate"><span class="pre">False</span></code> with a <strong>nested</strong> operation</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-True
-False
-</pre></div></div>
-</div>
-</div>
+<dl>
+<dt>{</dt><dd><dl>
+<dt>“cells”: [</dt><dd><dl>
+<dt>{</dt><dd><p>“cell_type”: “markdown”,
+“metadata”: {},
+“source”: [</p>
+<blockquote>
+<div><p>“# Type Conversion”</p>
+</div></blockquote>
+<p>]</p>
+</dd>
+</dl>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “markdown”,
+“metadata”: {},
+“source”: [</p>
+<blockquote>
+<div><p>“We use type names to convert from one type to another. Below are some examples of type conversions and their resulting values.”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “code”,
+“execution_count”: 1,
+“metadata”: {</p>
+<blockquote>
+<div><p>“tags”: []</p>
+</div></blockquote>
+<p>},
+“outputs”: [</p>
+<blockquote>
+<div><dl>
+<dt>{</dt><dd><p>“name”: “stdout”,
+“output_type”: “stream”,
+“text”: [</p>
+<blockquote>
+<div><p>“boolean conversionsn”,
+“————————————————————-n”,
+“int(True)         -&gt; 1            # bool to intn”,
+“float(False)      -&gt; 0.0          # bool to floatn”,
+“str(True)         -&gt; ‘True’       # bool to strn”,
+“n”,
+“integer conversionsn”,
+“————————————————————-n”,
+“bool(1)           -&gt; True         # int to booln”,
+“float(1234567)    -&gt; 1234567.0    # int to floatn”,
+“str(1234567)      -&gt; ‘1234567’    # int to strn”,
+“n”,
+“float conversionsn”,
+“————————————————————-n”,
+“bool(1.0)         -&gt; True         # float to booln”,
+“int(3.99)         -&gt; 3            # float to intn”,
+“int(-3.99)        -&gt; -3           # negative float to intn”,
+“str(3.99)         -&gt; ‘3.99’       # float to strn”,
+“n”,
+“string conversionsn”,
+“————————————————————-n”,
+“bool(‘False’)     -&gt; True         # str to booln”,
+“int(‘1234567’)    -&gt; 1234567      # str to intn”,
+“float(‘1234567’)  -&gt; 1234567.0    # str to floatn”,
+“n”,
+“ascii conversionsn”,
+“————————————————————-n”,
+“ord(‘A’)          -&gt; 65           # str to asciin”,
+“chr(122)          -&gt; ‘z’          # ascii to strn”</p>
+</div></blockquote>
+<p>]</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>],
+“source”: [</p>
+<blockquote>
+<div><p>“print(&quot;boolean conversions&quot;)n”,
+“print(&quot;————————————————————-&quot;)n”,
+“print(&quot;int(True)         -&gt; &quot; + str(int(True))   + &quot;            # bool to int&quot;)n”,
+“print(&quot;float(False)      -&gt; &quot; + str(float(False))   + &quot;          # bool to float&quot;)n”,
+“print(&quot;str(True)         -&gt; ‘&quot; + str(True)   + &quot;’       # bool to str&quot;)n”,
+“print(&quot;\ninteger conversions&quot;)n”,
+“print(&quot;————————————————————-&quot;)n”,
+“print(&quot;bool(1)           -&gt; &quot; + str(bool(1)) + &quot;         # int to bool&quot;)n”,
+“print(&quot;float(1234567)    -&gt; &quot; + str(float(1234567)) + &quot;    # int to float&quot;)n”,
+“print(&quot;str(1234567)      -&gt; ‘&quot; + str(1234567)   + &quot;’    # int to str&quot;)n”,
+“print(&quot;\nfloat conversions&quot;)n”,
+“print(&quot;————————————————————-&quot;)n”,
+“print(&quot;bool(1.0)         -&gt; &quot; + str(bool(1.0)) + &quot;         # float to bool&quot;)n”,
+“print(&quot;int(3.99)         -&gt; &quot; + str(int(3.99)) + &quot;            # float to int&quot;)n”,
+“print(&quot;int(-3.99)        -&gt; &quot; + str(int(-3.99)) + &quot;           # negative float to int&quot;)n”,
+“print(&quot;str(3.99)         -&gt; ‘&quot; + str(3.99) + &quot;’       # float to str&quot;)n”,
+“print(&quot;\nstring conversions&quot;)n”,
+“print(&quot;————————————————————-&quot;)n”,
+“print(&quot;bool(‘False’)     -&gt; &quot; + str(bool(‘False’)) + &quot;         # str to bool&quot;)n”,
+“print(&quot;int(‘1234567’)    -&gt; &quot; + str(int(‘1234567’)) + &quot;      # str to int&quot;)n”,
+“print(&quot;float(‘1234567’)  -&gt; &quot; + str(float(‘1234567’)) + &quot;    # str to float&quot;)n”,
+“print(&quot;\nascii conversions&quot;)n”,
+“print(&quot;————————————————————-&quot;)n”,
+“print(&quot;ord(‘A’)          -&gt; &quot; + str(ord(‘A’)) + &quot;           # str to ascii&quot;)n”,
+“print(&quot;chr(122)          -&gt; ‘&quot; + str(chr(122)) + &quot;’          # ascii to str&quot;)”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “markdown”,
+“metadata”: {},
+“source”: [</p>
+<blockquote>
+<div><p>“Not all values are compatible. To convert a string to a number type, the string must be all numbers.”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “code”,
+“execution_count”: 1,
+“metadata”: {},
+“outputs”: [],
+“source”: [</p>
+<blockquote>
+<div><p>“ok_to_convert = &quot;987654321&quot;n”,
+“int(ok_to_convert)n”,
+“not_ok_to_convert = &quot;abcdefghijklmnopqrstuvwxyz&quot;n”,
+“# int(not_ok_to_convert) # Value Error”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “markdown”,
+“metadata”: {},
+“source”: [</p>
+<blockquote>
+<div><p>“Only the empty string converts to False”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “code”,
+“execution_count”: 14,
+“metadata”: {</p>
+<blockquote>
+<div><p>“tags”: []</p>
+</div></blockquote>
+<p>},
+“outputs”: [</p>
+<blockquote>
+<div><dl>
+<dt>{</dt><dd><p>“name”: “stdout”,
+“output_type”: “stream”,
+“text”: [</p>
+<blockquote>
+<div><p>“Truen”,
+“Truen”,
+“Falsen”</p>
+</div></blockquote>
+<p>]</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>],
+“source”: [</p>
+<blockquote>
+<div><p>“print(bool(‘0’))n”,
+“print(bool(‘False’))n”,
+“print(bool(‘’))”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “markdown”,
+“metadata”: {},
+“source”: [</p>
+<blockquote>
+<div><p>“You can convert <cite>‘0’</cite> to <cite>False</cite> with a <strong>nested</strong> operation”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“cell_type”: “code”,
+“execution_count”: 15,
+“metadata”: {</p>
+<blockquote>
+<div><p>“tags”: []</p>
+</div></blockquote>
+<p>},
+“outputs”: [</p>
+<blockquote>
+<div><dl>
+<dt>{</dt><dd><p>“name”: “stdout”,
+“output_type”: “stream”,
+“text”: [</p>
+<blockquote>
+<div><p>“Truen”,
+“Falsen”</p>
+</div></blockquote>
+<p>]</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>],
+“source”: [</p>
+<blockquote>
+<div><p>“print(bool(‘0’))n”,
+“print(bool(int(‘0’)))”</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+<p>],
+“metadata”: {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>“kernelspec”: {</dt><dd><p>“display_name”: “Python 3.8.5 vscode virtualenv”,
+“language”: “python”,
+“name”: “python3”</p>
+</dd>
+</dl>
+<p>},
+“language_info”: {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>“codemirror_mode”: {</dt><dd><p>“name”: “ipython”,
+“version”: 3</p>
+</dd>
+</dl>
+<p>},
+“file_extension”: “.py”,
+“mimetype”: “text/x-python”,
+“name”: “python”,
+“nbconvert_exporter”: “python”,
+“pygments_lexer”: “ipython3”,
+“version”: “3.8.5”</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>},
+“nbformat”: 4,
+“nbformat_minor”: 4</p>
+</dd>
+</dl>
+<p>}</p>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="variables.html" class="btn btn-neutral float-left" title="Variables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="operators.html" class="btn btn-neutral float-right" title="Operators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="variables.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="operators.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
