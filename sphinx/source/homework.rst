@@ -16,24 +16,24 @@ All homework will be due one week after they are posted unless otherwise noted. 
      - Ivan
      - Chris
    * - `Homework 1 <homework/homework01.rst>`_
-     - ✔️
-     - ✔️
-     - ✔️
-     - ✔️
+     - ✅
+     - ✅
+     - ✅
+     - ✅
    * - `Homework 2 <homework/homework02.rst>`_
-     - ✔️
-     - ✔️
-     - ✔️
-     - ✔️
+     - ✅
+     - ✅
+     - ✅
+     - ✅
    * - `Homework 3 <homework/homework03.rst>`_
-     - ✔️
+     - ✅
      - ❌
-     - ✔️
+     - ✅
      - ❌
    * - `Homework 4 <homework/homework04.rst>`_
-     - ✔️
+     - ✅
      - ❌
-     - ✔️ 
+     - ✅ 
      - ❌
    * - `Homework 5 <homework/homework05.rst>`_
      - 
