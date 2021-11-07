@@ -32,7 +32,7 @@ All homework will be due one week after they are posted unless otherwise noted. 
      - ❌
    * - `Homework 4 <homework/homework04.rst>`_
      - ✅
-     - ❌
+     - ✅
      - ✅ 
      - ❌
    * - `Homework 5 <homework/homework05.rst>`_
