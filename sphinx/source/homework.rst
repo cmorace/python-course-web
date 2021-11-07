@@ -6,7 +6,7 @@ All homework will be due one week after they are posted unless otherwise noted. 
 
 .. list-table::
    :align: center
-   :widths: 25 15 15 15 15
+   :widths: 25 15 15 15
    :header-rows: 1
    :stub-columns: 1
 
@@ -14,9 +14,7 @@ All homework will be due one week after they are posted unless otherwise noted. 
      - Hank
      - Feng-Jun
      - Ivan
-     - Chris
    * - `Homework 1 <homework/homework01.rst>`_
-     - ✅
      - ✅
      - ✅
      - ✅
@@ -24,22 +22,19 @@ All homework will be due one week after they are posted unless otherwise noted. 
      - ✅
      - ✅
      - ✅
-     - ✅
    * - `Homework 3 <homework/homework03.rst>`_
      - ✅
      - ❌
      - ✅
-     - ❌
    * - `Homework 4 <homework/homework04.rst>`_
      - ✅
      - ✅
      - ✅ 
-     - ❌
    * - `Homework 5 <homework/homework05.rst>`_
-     - 
-     - 
-     - 
-     - 
+     - ✅
+     - ✅
+     - ✅
+
 
 
 .. toctree::
