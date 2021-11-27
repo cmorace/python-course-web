@@ -1,5 +1,5 @@
 Lesson 8
-########
+################
 
 Download and extract the image files below.
    

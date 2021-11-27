@@ -34,10 +34,11 @@ Git Tutorial
 
 7. did you commit the right files? ``git status`` is your friend!
 
-8. set the remote
-9. push to the remote
+8. set the remote (check Github for the remote name)
+   
+9.  push to the remote (check Github for the remote address)
 
-10. After that you can push the files to your remote repository (e.g. Github) with simply:
+10. After that you can push the files to your remote repository (e.g. Github) with:
 
 .. code-block:: bash
 
