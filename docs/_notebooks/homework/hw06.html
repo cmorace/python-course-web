@@ -329,224 +329,8 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="section" id="Homework-6">
 <h1>Homework 6<a class="headerlink" href="#Homework-6" title="Permalink to this headline"></a></h1>
-<p>This homework’s topic is python lists. Lists in Python are data structures that store a collection of objects. These objects can be types like <code class="docutils literal notranslate"><span class="pre">bool</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code>, or even classes like <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> or <code class="docutils literal notranslate"><span class="pre">Label</span></code>.</p>
-<div class="section" id="List-Construction">
-<h2>List Construction<a class="headerlink" href="#List-Construction" title="Permalink to this headline"></a></h2>
-<p>There are two ways to construct an empty list</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">list_a</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">list_b</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<p>We can create a non-empyt list like this.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">list_c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">21</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<p><strong>Note:</strong> do not name a variable <code class="docutils literal notranslate"><span class="pre">list</span> <span class="pre">=</span> <span class="pre">[]</span></code>. <code class="docutils literal notranslate"><span class="pre">list</span></code> is a python keyword and should never be used as a variable name.</p>
-<div class="section" id="Exercise:-Invalid-Syntax">
-<h3>Exercise: Invalid Syntax<a class="headerlink" href="#Exercise:-Invalid-Syntax" title="Permalink to this headline"></a></h3>
-<p>Fix the following syntax errors so that the variable <code class="docutils literal notranslate"><span class="pre">list_d</span></code> is set to an empy list and the variable <code class="docutils literal notranslate"><span class="pre">list_e</span></code> is set to a non-empty list.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># list_d[]</span>
-<span class="c1"># list_e[1,2,3,4,5]</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<hr class="docutils" />
-<div class="section" id="The-append()-Method">
-<h2>The <code class="docutils literal notranslate"><span class="pre">append()</span></code> Method<a class="headerlink" href="#The-append()-Method" title="Permalink to this headline"></a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">append()</span></code> method adds elements to the end of a list. For example,</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">list_f</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
-<span class="n">list_f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">105</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">list_f</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-[-2, 105]
-</pre></div></div>
-</div>
-<div class="section" id="Exercise:-Append-Fibonacci">
-<h3>Exercise: Append Fibonacci<a class="headerlink" href="#Exercise:-Append-Fibonacci" title="Permalink to this headline"></a></h3>
-<p>Use the <code class="docutils literal notranslate"><span class="pre">append()</span></code> function to add the next Fibonacci number, i.e. 3, to <code class="docutils literal notranslate"><span class="pre">list_g</span></code>.</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">list_g</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
-<span class="c1"># append here</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">list_g</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-[1, 1, 2]
-</pre></div></div>
-</div>
-</div>
-</div>
-<hr class="docutils" />
-<div class="section" id="Accessing-List-Elements">
-<h2>Accessing List Elements<a class="headerlink" href="#Accessing-List-Elements" title="Permalink to this headline"></a></h2>
-<p>Lists elements can be accessed using an interger index. The first element is accessed with the index 0.</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">list_h</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">94</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">list_h</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-7
-</pre></div></div>
-</div>
-<div class="section" id="Exercise:-Index-Out-Of-Range">
-<h3>Exercise: Index Out Of Range<a class="headerlink" href="#Exercise:-Index-Out-Of-Range" title="Permalink to this headline"></a></h3>
-<p>Fix the error to print out the last element of <code class="docutils literal notranslate"><span class="pre">list_i</span></code>, i.e. ‘d’.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">list_i</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;z&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">]</span>
-<span class="c1">#print(list_i[4]) # &lt;- fix this</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<hr class="docutils" />
-<div class="section" id="The-len()-Function">
-<h2>The <code class="docutils literal notranslate"><span class="pre">len()</span></code> Function<a class="headerlink" href="#The-len()-Function" title="Permalink to this headline"></a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">len()</span></code> function returns the number of elements in a list.</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">list_j</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span>
-<span class="n">list_j_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">list_j_size</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-2
-</pre></div></div>
-</div>
-<div class="section" id="Exercise:-Guess-How-Many">
-<h3>Exercise: Guess How Many<a class="headerlink" href="#Exercise:-Guess-How-Many" title="Permalink to this headline"></a></h3>
-<p>Read the code below and guess how many elements are in <code class="docutils literal notranslate"><span class="pre">list_h</span></code>. Print the number of elements in <code class="docutils literal notranslate"><span class="pre">list_h</span></code> using the <code class="docutils literal notranslate"><span class="pre">len()</span></code> function and see if you are correct.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">list_k</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
-    <span class="n">list_k</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
-<span class="c1"># add code here to print the length of list_k</span>
-
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<hr class="docutils" />
-<div class="section" id="The-clear()-Method">
-<h2>The <code class="docutils literal notranslate"><span class="pre">clear()</span></code> Method<a class="headerlink" href="#The-clear()-Method" title="Permalink to this headline"></a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">clear()</span></code> function erases all elements in a list.</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">list_l</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="s2">&quot;!&quot;</span><span class="p">,</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="s2">&quot;@&quot;</span><span class="p">,</span><span class="s2">&quot;3&quot;</span><span class="p">,</span><span class="s2">&quot;#&quot;</span><span class="p">]</span>
-<span class="n">list_l</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">list_l</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-[]
-</pre></div></div>
-</div>
-<div class="section" id="Exercise:-Print-My-List">
-<h3>Exercise: Print My List<a class="headerlink" href="#Exercise:-Print-My-List" title="Permalink to this headline"></a></h3>
-<p>Use the <code class="docutils literal notranslate"><span class="pre">clear()</span></code> and <code class="docutils literal notranslate"><span class="pre">append()</span></code> functions so that <code class="docutils literal notranslate"><span class="pre">print(list_m)</span></code> prints out <code class="docutils literal notranslate"><span class="pre">[42]</span></code></p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">list_m</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">15</span><span class="p">))</span>
-<span class="c1"># add your code here</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">list_m</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-[1, 16, 31, 46, 61, 76, 91]
-</pre></div></div>
-</div>
-</div>
-</div>
-<hr class="docutils" />
-<div class="section" id="More-Exercises">
-<h2>More Exercises<a class="headerlink" href="#More-Exercises" title="Permalink to this headline"></a></h2>
 <div class="section" id="Exercise:-Map-x^2">
-<h3>Exercise: Map <span class="math notranslate nohighlight">\(x^2\)</span><a class="headerlink" href="#Exercise:-Map-x^2" title="Permalink to this headline"></a></h3>
+<h2>Exercise: Map <span class="math notranslate nohighlight">\(x^2\)</span><a class="headerlink" href="#Exercise:-Map-x^2" title="Permalink to this headline"></a></h2>
 <p>Write a function that takes a list of numbers and returns a new list with the square of each number in the original list. For example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
 <span class="n">x2</span> <span class="o">=</span> <span class="n">map_squares</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -555,7 +339,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>should print <code class="docutils literal notranslate"><span class="pre">[1,16,4,25,9]</span></code></p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -581,10 +365,10 @@ None
 </div>
 </div>
 <div class="section" id="Exercise:-Fibonacci-List">
-<h3>Exercise: Fibonacci List<a class="headerlink" href="#Exercise:-Fibonacci-List" title="Permalink to this headline"></a></h3>
+<h2>Exercise: Fibonacci List<a class="headerlink" href="#Exercise:-Fibonacci-List" title="Permalink to this headline"></a></h2>
 <p>Use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop and the <code class="docutils literal notranslate"><span class="pre">append</span></code> function to create a list with the first 100 Fibonacci numbers, i.e. <code class="docutils literal notranslate"><span class="pre">[1,1,2,3,5,8,13,21,34,55,...]</span></code>.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -607,10 +391,10 @@ None
 </div>
 </div>
 <div class="section" id="Exercise:-List-Equivalence">
-<h3>Exercise: List Equivalence<a class="headerlink" href="#Exercise:-List-Equivalence" title="Permalink to this headline"></a></h3>
+<h2>Exercise: List Equivalence<a class="headerlink" href="#Exercise:-List-Equivalence" title="Permalink to this headline"></a></h2>
 <p>Write a function to test if two lists have the same elements in the same order. The function should return <code class="docutils literal notranslate"><span class="pre">True</span></code> if the two lists are equivalent and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -636,10 +420,10 @@ None
 </div>
 </div>
 <div class="section" id="Exercise:-Digit-List">
-<h3>Exercise: Digit List<a class="headerlink" href="#Exercise:-Digit-List" title="Permalink to this headline"></a></h3>
+<h2>Exercise: Digit List<a class="headerlink" href="#Exercise:-Digit-List" title="Permalink to this headline"></a></h2>
 <p>Write a function that takes an integer and returns a list or its digits. For example, <code class="docutils literal notranslate"><span class="pre">to_digits(50394829384)</span></code> should return <code class="docutils literal notranslate"><span class="pre">[5,0,3,9,4,8,2,9,3,8,4]</span></code>. Do not use string conversion.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -665,7 +449,7 @@ None
 </div>
 </div>
 <div class="section" id="Exercise:-Filter-Primes">
-<h3>Exercise: Filter Primes<a class="headerlink" href="#Exercise:-Filter-Primes" title="Permalink to this headline"></a></h3>
+<h2>Exercise: Filter Primes<a class="headerlink" href="#Exercise:-Filter-Primes" title="Permalink to this headline"></a></h2>
 <p>Write a function that takes a list of numbers and returns a new list with the prime numbers in the original list. For example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
 <span class="n">x2</span> <span class="o">=</span> <span class="n">filter_primes</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -675,7 +459,7 @@ None
 <p>should output <code class="docutils literal notranslate"><span class="pre">[2,3,5,7]</span></code>.</p>
 <p>Recall, a prime number is a positive integer that is divisible by no other number but 1 and itself.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -698,7 +482,6 @@ None
 <div class="highlight"><pre>
 None
 </pre></div></div>
-</div>
 </div>
 </div>
 </div>
