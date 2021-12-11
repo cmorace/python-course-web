@@ -49,10 +49,17 @@
 <li class="toctree-l2"><a class="reference internal" href="lesson05.html">Lesson 5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lesson06.html">Lesson 6</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lesson07.html">Lesson 7</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Lesson 8</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lesson 8</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#drawing-sprite-rects">Drawing Sprite Rects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#card-randomization-and-grid-layout">Card Randomization and Grid Layout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-clicked-cards-to-list">Add Clicked Cards to List</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="lesson09.html">Lesson 9</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lesson10.html">Lesson 10</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lesson11.html">Lesson 11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson12.html">Lesson 12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesson13.html">Lesson 13</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../homework.html">Homework</a></li>
@@ -114,10 +121,14 @@
 <h1>Lesson 8<a class="headerlink" href="#lesson-8" title="Permalink to this headline"></a></h1>
 <p>Download and extract the image files below.</p>
 <p><a class="reference download internal" download="" href="../_downloads/fbc9694ed059ad3452ae29092396f788/L8_media.zip"><code class="xref download docutils literal notranslate"><span class="pre">media.zip</span></code></a></p>
-<p>Drawing rects around sprites</p>
+<div class="section" id="drawing-sprite-rects">
+<h2>Drawing Sprite Rects<a class="headerlink" href="#drawing-sprite-rects" title="Permalink to this headline"></a></h2>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">Window</span><span class="p">(</span><span class="n">draw_sprite_rects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="card-randomization-and-grid-layout">
+<h2>Card Randomization and Grid Layout<a class="headerlink" href="#card-randomization-and-grid-layout" title="Permalink to this headline"></a></h2>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">shuffle</span>
 
 <span class="n">w</span> <span class="o">=</span> <span class="n">Window</span><span class="p">(</span><span class="n">draw_sprite_rects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -130,6 +141,18 @@
         <span class="n">s</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">create_sprite</span><span class="p">(</span><span class="n">Card</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">100</span> <span class="o">+</span> <span class="n">j</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">500</span> <span class="o">-</span> <span class="n">i</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
         <span class="n">s</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">img_list</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
+<div class="section" id="add-clicked-cards-to-list">
+<h2>Add Clicked Cards to List<a class="headerlink" href="#add-clicked-cards-to-list" title="Permalink to this headline"></a></h2>
+<p>When should clicked cards be added to the list</p>
+<ul class="simple">
+<li><p>when the card is clicked</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">clicked_cards</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="ow">and</span> <span class="bp">self</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">clicked_cards</span><span class="p">:</span>
+    <span class="n">clicked_cards</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </div>
 

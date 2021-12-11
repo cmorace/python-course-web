@@ -35,9 +35,9 @@ All homework will be due one week after they are posted unless otherwise noted. 
      - ✅
      - ✅
    * - `Homework 6 <homework/homework06.rst>`_
-     - 
-     - 
-     - 
+     - ✅
+     - ✅
+     - ✅
 
 
 
