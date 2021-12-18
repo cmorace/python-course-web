@@ -25,7 +25,7 @@ Final project template and decomposition
                 self.speed = 10
 
             def on_update(self, dt):
-                if window.get_key(KeyCode.W):
+                if window.is_key_pressed(KeyCode.W):
                     self.y += self.speed
                 # fill in code for keys A, S, D
 
