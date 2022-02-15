@@ -21,4 +21,8 @@ pip install:
 * sphinx
 * nbsphinx
 * sphinx_rtd_theme
-* sphinx-itl
+* sphinx-intl
+* nbsphinx_link
+* ipython
+* ipykernel
+

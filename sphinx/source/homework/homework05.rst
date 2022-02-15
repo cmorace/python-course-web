@@ -2,6 +2,7 @@ Homework 5 (Math and Emojis)
 ###################################################
 
 .. |launch_binder| image:: ../images/launch_binder.svg
+
 .. _launch_binder: https://mybinder.org/v2/gh/cmorace/python-course-web/gh-pages?filepath=sphinx%2Fsource%2F_notebooks%2Fhomework%2Fhw05.ipynb
 
 In this homework, we will use a Jupyter notebook. To see a preview click `here <../_notebooks/homework/hw05.ipynb>`_.

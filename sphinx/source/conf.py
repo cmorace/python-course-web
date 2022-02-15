@@ -39,9 +39,10 @@ extensions = [
     'nbsphinx',
     'nbsphinx_link',
 ]
+
 nbsphinx_allow_errors = True
 html_show_sourcelink = False
-source_suffix = ['.rst', '.ipynb']
+source_suffix = ['.rst']
 master_doc = 'index'
 language = None
 pygments_style = 'sphinx'
