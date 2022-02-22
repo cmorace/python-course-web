@@ -1,3 +1,4 @@
 {
-    "restructuredtext.confPath": "${workspaceFolder}/sphinx/source"
+    "restructuredtext.confPath": "${workspaceFolder}/sphinx/source",
+    "restructuredtext.languageServer.disabled": true
 }
