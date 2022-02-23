@@ -22,7 +22,7 @@ All homework will be due one week after being posted unless otherwise noted. Ple
      - Feb. 22
      - ❓
      - ❓
-     - ⚠️
+     - ✅
      - ✅
 
 
