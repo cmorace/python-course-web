@@ -21,7 +21,7 @@ https://www.sphinx-doc.org/en/master/usage/configuration.html
 # -- Project information -----------------------------------------------------
 
 project = 'Peanuts Python Course Website'
-copyright = '2021 Charles Morace'
+copyright = '2022 Charles Morace'
 author = 'Charles Morace'
 
 # The full version, including alpha/beta/rc tags
@@ -41,6 +41,7 @@ extensions = [
 ]
 
 nbsphinx_allow_errors = True
+nbsphinx_execute = 'never'
 html_show_sourcelink = False
 source_suffix = ['.rst']
 master_doc = 'index'
