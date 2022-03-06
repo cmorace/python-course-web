@@ -20,7 +20,7 @@ All homework will be due one week after being posted unless otherwise noted. Ple
    * - `Homework 1 <homework/homework01.rst>`_
      - Feb. 15
      - Feb. 22
-     - ❓
+     - ✅
      - ❓
      - ✅
      - ✅
