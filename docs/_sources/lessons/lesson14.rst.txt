@@ -58,7 +58,7 @@ Final project template and decomposition
    - What is the bullet starting position i.e ``self.position``?
    - Add a new property for bullet speed i.e. ``self.speed``
    - To set the rotation to shoot towards the mouse cursor, use ``self.point_toward_mouse_cursor()``.
-   - Make each bullet move foward to the mouse cursor with ``self.move_forward(self.speed)`` and call ``self.delete()`` if ``self.touching_window_edge()``
+   - Make each bullet move foward to the mouse cursor with ``self.move_forward(self.speed)`` and call ``self.delete()`` if ``self.is_touching_window_edge()``
 
    Extensions:
 
@@ -103,7 +103,7 @@ Final project template and decomposition
 4. Have the player's bullets kill enemies
 
    - ``self.add_tag('bullet')`` in our ``Bullet`` class
-   - ``self.delete()`` if ``self.touching_any_sprite_with_tag('bullet')`` in our ``Enemy`` class.
+   - ``self.delete()`` if ``self.is_touching_any_sprite_with_tag('bullet')`` in our ``Enemy`` class.
 
    Extensions: 
    
@@ -120,8 +120,8 @@ Final project template and decomposition
 
     The enemy bullets should ``self.move_forward(self.speed)`` and be deleted if:
     
-       - ``self.touching_window_edge()`` or,
-       - ``self.touching_sprite(player)``
+       - ``self.is_touching_window_edge()`` or,
+       - ``self.is_touching_sprite(player)``
 
     We want each of our enemies to fire bullets at the player every 2 seconds.
     

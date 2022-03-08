@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lesson 14 &mdash; Peanuts Python Course Website 0.0.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -114,7 +113,7 @@
     text-align: unset;
 }
 </style>
-<section id="lesson-14">
+<div class="section" id="lesson-14">
 <h1>Lesson 14<a class="headerlink" href="#lesson-14" title="Permalink to this headline"></a></h1>
 <dl class="simple">
 <dt>What’s new?</dt><dd><ul class="simple">
@@ -172,7 +171,7 @@ Add the following method to your Player class.</p>
 <li><p>What is the bullet starting position i.e <code class="docutils literal notranslate"><span class="pre">self.position</span></code>?</p></li>
 <li><p>Add a new property for bullet speed i.e. <code class="docutils literal notranslate"><span class="pre">self.speed</span></code></p></li>
 <li><p>To set the rotation to shoot towards the mouse cursor, use <code class="docutils literal notranslate"><span class="pre">self.point_toward_mouse_cursor()</span></code>.</p></li>
-<li><p>Make each bullet move foward to the mouse cursor with <code class="docutils literal notranslate"><span class="pre">self.move_forward(self.speed)</span></code> and call <code class="docutils literal notranslate"><span class="pre">self.delete()</span></code> if <code class="docutils literal notranslate"><span class="pre">self.touching_window_edge()</span></code></p></li>
+<li><p>Make each bullet move foward to the mouse cursor with <code class="docutils literal notranslate"><span class="pre">self.move_forward(self.speed)</span></code> and call <code class="docutils literal notranslate"><span class="pre">self.delete()</span></code> if <code class="docutils literal notranslate"><span class="pre">self.is_touching_window_edge()</span></code></p></li>
 </ul>
 <p>Extensions:</p>
 <ul class="simple">
@@ -212,7 +211,7 @@ Add the following method to your Player class.</p>
 <li><p>Have the player’s bullets kill enemies</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">self.add_tag('bullet')</span></code> in our <code class="docutils literal notranslate"><span class="pre">Bullet</span></code> class</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">self.delete()</span></code> if <code class="docutils literal notranslate"><span class="pre">self.touching_any_sprite_with_tag('bullet')</span></code> in our <code class="docutils literal notranslate"><span class="pre">Enemy</span></code> class.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self.delete()</span></code> if <code class="docutils literal notranslate"><span class="pre">self.is_touching_any_sprite_with_tag('bullet')</span></code> in our <code class="docutils literal notranslate"><span class="pre">Enemy</span></code> class.</p></li>
 </ul>
 <p>Extensions:</p>
 <ul class="simple">
@@ -233,8 +232,8 @@ Add the following method to your Player class.</p>
 <p>The enemy bullets should <code class="docutils literal notranslate"><span class="pre">self.move_forward(self.speed)</span></code> and be deleted if:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">self.touching_window_edge()</span></code> or,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">self.touching_sprite(player)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self.is_touching_window_edge()</span></code> or,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self.is_touching_sprite(player)</span></code></p></li>
 </ul>
 </div></blockquote>
 <p>We want each of our enemies to fire bullets at the player every 2 seconds.</p>
@@ -248,7 +247,7 @@ Add the following method to your Player class.</p>
 </div></blockquote>
 </li>
 </ol>
-</section>
+</div>
 
 
            </div>
