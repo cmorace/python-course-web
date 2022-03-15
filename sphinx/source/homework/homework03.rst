@@ -1,10 +1,11 @@
-Homework 4 (Colorful Squares)
+Homework 3 (Colorful Squares)
 ##############################
 
 Part 1
 ------
 
-Write a python program using **pycat** to create an output like the picture below.
+Write a python program using **pycat** to create an output
+like the picture below.
 
 Hints:
 

@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lesson 3 &mdash; Peanuts Python Course Website 0.0.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -126,16 +125,16 @@
     text-align: unset;
 }
 </style>
-<section id="lesson-3">
+<div class="section" id="lesson-3">
 <h1>Lesson 3<a class="headerlink" href="#lesson-3" title="Permalink to this headline"></a></h1>
-<section id="jupyter-notebooks">
+<div class="section" id="jupyter-notebooks">
 <h2>Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline"></a></h2>
 <p>Run the <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> command to get started. See the tutorial for a list of shortcuts <a class="reference internal" href="../_notebooks/tutorials/jupyter_tutorial.html"><span class="doc">here</span></a>.</p>
-</section>
-<section id="the-update-design-pattern">
+</div>
+<div class="section" id="the-update-design-pattern">
 <h2>The Update Design Pattern<a class="headerlink" href="#the-update-design-pattern" title="Permalink to this headline"></a></h2>
 <p>Each sprite created has an update function called repeatedly from the time created until the time deleted or if the application is closed.</p>
-<section id="the-sprite-life-cycle">
+<div class="section" id="the-sprite-life-cycle">
 <h3>The Sprite Life-Cycle<a class="headerlink" href="#the-sprite-life-cycle" title="Permalink to this headline"></a></h3>
 <ol class="arabic simple">
 <li><dl class="simple">
@@ -145,15 +144,15 @@
 </li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">on_update(self,</span> <span class="pre">dt)</span></code> method is called repeatedly at about 60 frames per second. If you subclass the sprite, you can define a custom <code class="docutils literal notranslate"><span class="pre">on_update(self,</span> <span class="pre">dt)</span></code> method to add new behavior (e.g., movement, collision detection, image and color changed, etc.) to your sprite. The <code class="docutils literal notranslate"><span class="pre">dt</span></code> argument can tell us the precise time since the last <code class="docutils literal notranslate"><span class="pre">on_update()</span></code> was called.</p></li>
 </ol>
-</section>
-</section>
-<section id="keyboard-interaction">
+</div>
+</div>
+<div class="section" id="keyboard-interaction">
 <h2>Keyboard Interaction<a class="headerlink" href="#keyboard-interaction" title="Permalink to this headline"></a></h2>
-<section id="the-keycode-class">
+<div class="section" id="the-keycode-class">
 <h3>The <code class="docutils literal notranslate"><span class="pre">KeyCode</span></code> class<a class="headerlink" href="#the-keycode-class" title="Permalink to this headline"></a></h3>
 <p>Each key that can be pressed on a keyboard is defined by a constant value defined by the <code class="docutils literal notranslate"><span class="pre">KeyCode</span></code> class.</p>
-</section>
-<section id="checking-for-key-events">
+</div>
+<div class="section" id="checking-for-key-events">
 <h3>Checking For Key Events<a class="headerlink" href="#checking-for-key-events" title="Permalink to this headline"></a></h3>
 <p>In a sprite’s <code class="docutils literal notranslate"><span class="pre">on_update</span></code> method we can detect three possible types of key events. We use <code class="docutils literal notranslate"><span class="pre">KeyCode</span></code> constant values to check for specific keys.</p>
 <ol class="arabic simple">
@@ -169,9 +168,9 @@ When would we want to use one vs. the other?</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-=</span> <span class="mi">5</span>
 </pre></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
