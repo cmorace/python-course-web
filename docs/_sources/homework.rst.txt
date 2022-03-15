@@ -21,7 +21,7 @@ All homework will be due one week after being posted unless otherwise noted. Ple
      - Feb. 15
      - Feb. 22
      - ✅
-     - ❓
+     - ✅
      - ✅
      - ✅
    * - `Homework 2 <homework/homework02.rst>`_
@@ -31,6 +31,13 @@ All homework will be due one week after being posted unless otherwise noted. Ple
      - ❓
      - ✅
      - ✅
+   * - `Homework 3 <homework/homework03.rst>`_
+     - Mar. 15
+     - Mar. 22
+     - 
+     - 
+     - 
+     - 
 
 
 .. toctree::
@@ -38,3 +45,4 @@ All homework will be due one week after being posted unless otherwise noted. Ple
 
    homework/homework01
    homework/homework02
+   homework/homework03
