@@ -2,7 +2,14 @@
 Homework
 ********
 
-All homework will be due one week after being posted unless otherwise noted. Please email your assignments to me at cmorace.public@gmail.com.
+.. note::
+
+   Please email solutions to cmorace.public@gmail.com.
+
+   - If you are stuck or have any questions about the homework, email me.
+   - I expect you to spend at least 30 minutes trying to complete the homework.
+   - It's ok if you do not finish. Send me as much as you can.
+
 
 .. list-table::
    :align: center
@@ -34,11 +41,10 @@ All homework will be due one week after being posted unless otherwise noted. Ple
    * - `Homework 3 <homework/homework03.rst>`_
      - Mar. 15
      - Mar. 22
-     - 
-     - 
-     - 
-     - 
-
+     -
+     -
+     -
+     -
 
 .. toctree::
    :hidden:

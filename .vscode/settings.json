@@ -1,6 +1,6 @@
 {
-    "restructuredtext.confPath": "${workspaceFolder}/sphinx/source",
     "restructuredtext.languageServer.disabled": true,
     "esbonio.sphinx.confDir": "/Users/ccm/Code/python-course-web/sphinx/source",
-    "esbonio.server.enabled": false
+    "esbonio.server.enabled": false,
+    "restructuredtext.confPath": "${workspaceFolder}/sphinx/source"
 }
