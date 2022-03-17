@@ -43,7 +43,7 @@ Homework
      - Mar. 22
      -
      -
-     -
+     - ✅
      -
 
 .. toctree::
