@@ -19,4 +19,5 @@ Hi there. This page includes some resources for our Python course. Check it out!
    tutorials
    setup
    binder
+   resources
 

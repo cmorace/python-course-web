@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lesson 4 &mdash; Peanuts Python Course Website 0.0.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -70,6 +69,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Tutorials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../setup.html">Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../binder.html">Binder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources</a></li>
 </ul>
 
         </div>
@@ -120,11 +120,11 @@
     text-align: unset;
 }
 </style>
-<section id="lesson-4">
+<div class="section" id="lesson-4">
 <h1>Lesson 4<a class="headerlink" href="#lesson-4" title="Permalink to this headline"></a></h1>
 <p>Download and extract the image files below.</p>
 <p><a class="reference download internal" download="" href="../_downloads/76e7c93a409ffe8a14ba8963378289b9/lesson_04_images.zip"><code class="xref download docutils literal notranslate"><span class="pre">lesson_04_images.zip</span></code></a></p>
-<section id="rotation">
+<div class="section" id="rotation">
 <h2>Rotation<a class="headerlink" href="#rotation" title="Permalink to this headline"></a></h2>
 <p>In pycat, each sprite had a rotation property. Rotation is counter-clockwise positive, and by default, has a value of zero, which faces right.</p>
 <ul class="simple">
@@ -146,8 +146,8 @@
 <li><p>RotationMode.MIRROR</p></li>
 <li><p>RotationMode.NO_ROTATION</p></li>
 </ul>
-</section>
-<section id="collision-detection">
+</div>
+<div class="section" id="collision-detection">
 <h2>Collision Detection<a class="headerlink" href="#collision-detection" title="Permalink to this headline"></a></h2>
 <p>Collision detection determines if two or more sprites are touching one another. The <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> class has many methods for determining collisions with other sprites. We usually use these methods inside the <code class="docutils literal notranslate"><span class="pre">on_update</span></code> method to check for collisions repeatedly. Some useful collision detection methods are:</p>
 <ul class="simple">
@@ -155,8 +155,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">self.is_touching_sprite(other_sprite:</span> <span class="pre">Sprite)</span></code> returns true if this sprite touches the other sprite passed as an argument.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">self.is_touching_sprite_with_tag(tag:</span> <span class="pre">str)</span></code> returns true if this sprite touches a sprite with a given tag using the <code class="docutils literal notranslate"><span class="pre">sprite.add_tag(tag:</span> <span class="pre">str)</span></code> method.</p></li>
 </ul>
-</section>
-<section id="keyword-arguments">
+</div>
+<div class="section" id="keyword-arguments">
 <h2>Keyword arguments<a class="headerlink" href="#keyword-arguments" title="Permalink to this headline"></a></h2>
 <p>Keyword arguments, or kwargs, are arguments passed with a specific name. For example, we previously used a keyword argument in <code class="docutils literal notranslate"><span class="pre">window</span> <span class="pre">=</span> <span class="pre">Window(background_image='img.png')</span></code> to set the window’s background image.  For convenience purposes, the window’s method <code class="docutils literal notranslate"><span class="pre">create_sprite()</span></code> also accepts keyword arguments to set many of a sprite’s properties. For example,</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sprite</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">create_sprite</span><span class="p">()</span>
@@ -170,8 +170,8 @@
 </pre></div>
 </div>
 <p>Note that the sprite properties are set after the sprite’s <code class="docutils literal notranslate"><span class="pre">on_create()</span></code> method is called.</p>
-</section>
-<section id="more-sprite-properties">
+</div>
+<div class="section" id="more-sprite-properties">
 <h2>More Sprite Properties<a class="headerlink" href="#more-sprite-properties" title="Permalink to this headline"></a></h2>
 <p>Here is a list of more sprite properties,</p>
 <ul class="simple">
@@ -184,8 +184,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">sprite.rotation_mode</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">sprite.position</span></code></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
