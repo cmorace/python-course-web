@@ -41,10 +41,10 @@ Homework
    * - `Homework 3 <homework/homework03.rst>`_
      - Mar. 15
      - Mar. 22
-     -
-     -
+     - ⚠️
+     - ❓
      - ✅
-     -
+     - ❓
 
 .. toctree::
    :hidden:
