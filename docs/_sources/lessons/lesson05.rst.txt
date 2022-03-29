@@ -19,7 +19,12 @@ Decomposition
 Functions
 =========
 
-A function defines a procedure that we "call" to execute at a different location in our program. In Python, functions start with the ``def`` keyword to signify the definition of a new function, followed by the function name, the function arguments, and the code that we want the function to execute. For example:
+A function defines a procedure that we "call" to execute at a different
+location in our program. In Python, functions start with the ``def`` keyword
+to signify the definition of a new function, followed by the function name,
+the function arguments, and the code that we want the function to execute.
+
+For example:
 
 .. code-block:: python
     

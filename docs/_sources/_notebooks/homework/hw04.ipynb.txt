@@ -4,7 +4,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "# Homework 5\n",
+    "# Homework 4\n",
     "\n",
     "This homework covers the topic of iteration. We have seen two kinds of iteration in class, the `while` loop and the `for` loop.\n",
     "Each exercise is preceded by a similar example to help you."
@@ -138,20 +138,8 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "What is 27/3? 9\n"
-     ]
-    },
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "very good\n"
-     ]
-    },
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
+      "What is 27/3? 9\n",
+      "very good\n",
       "press q to quit: q\n"
      ]
     }
@@ -258,7 +246,7 @@
     "### Example: The Bailey–Borwein–Plouffe Formula\n",
     "The [The Bailey–Borwein–Plouffe Formula](https://en.wikipedia.org/wiki/Bailey%E2%80%93Borwein%E2%80%93Plouffe_formula) was discovered in 1995 by Simon Plouffe. It states that \n",
     "$$\\pi = \\sum_{k=0}^{\\infty} \\left(\\frac{1}{16^k}\\left(\\frac{4}{8k+1}-\\frac{2}{8k+4}-\\frac{1}{8k+5}-\\frac{1}{8k+6}\\right)\\right)$$ \n",
-    "Remarkably, this formula accurately computes the first 15 digits of pi in just 10 iterations."
+    "Remarkably, this formula computes the first 15 digits of pi in just 10 iterations."
    ]
   },
   {
@@ -317,7 +305,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.9.7"
+   "version": "3.10.3"
   }
  },
  "nbformat": 4,
