@@ -41,7 +41,6 @@ Homework
    * - `Homework 3 <homework/homework03.rst>`_
      - Mar. 15
      - Mar. 22
-<<<<<<< HEAD
      - ❓
      - ❓
      - ✅
@@ -53,12 +52,6 @@ Homework
      -
      -
      -
-=======
-     - ⚠️
-     - ❓
-     - ✅
-     - ❓
->>>>>>> 24fbca317d6d60209003e96cd4662b109c5b652e
 
 .. toctree::
    :hidden:
@@ -66,3 +59,4 @@ Homework
    homework/homework01
    homework/homework02
    homework/homework03
+   homework/homework04
