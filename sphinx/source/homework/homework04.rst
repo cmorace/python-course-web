@@ -6,7 +6,7 @@ Homework 4 (Math and Emojis)
 .. _launch_binder: https://mybinder.org/v2/gh/cmorace/python-course-web/gh-pages?filepath=sphinx%2Fsource%2F_notebooks%2Fhomework%2Fhw04.ipynb
 
 In this homework, we will use a Jupyter notebook.
-To see a preview click `here <../_notebooks/homework/hw05.ipynb>`_.
+To see a preview click `here <../_notebooks/homework/hw04.ipynb>`_.
 
 You can :download:`download this file <../_notebooks/homework/hw04.ipynb>`
 and open it with the ``jupyter notebook`` bash command or open it in VSCode.
