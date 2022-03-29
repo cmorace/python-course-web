@@ -44,7 +44,7 @@ Homework
      - ❓
      - ❓
      - ✅
-     - ❓
+     - ✅
    * - `Homework 4 <homework/homework04.rst>`_
      - Mar. 29
      - Apr. 5
