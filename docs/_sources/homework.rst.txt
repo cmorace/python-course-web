@@ -35,7 +35,7 @@ Homework
      - Mar. 1
      - Mar. 7
      - ✅
-     - ❓
+     - ✅
      - ✅
      - ✅
    * - `Homework 3 <homework/homework03.rst>`_
@@ -48,9 +48,9 @@ Homework
    * - `Homework 4 <homework/homework04.rst>`_
      - Mar. 29
      - Apr. 5
-     -
-     -
-     -
+     - ❓
+     - ❓
+     - ⚠️
      - ✅
 
 .. toctree::
