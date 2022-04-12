@@ -22,7 +22,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Homework" href="../homework.html" />
+    <link rel="next" title="Lesson 8" href="lesson08.html" />
     <link rel="prev" title="Lesson 6" href="lesson06.html" /> 
 </head>
 
@@ -50,23 +50,14 @@
 <li class="toctree-l2"><a class="reference internal" href="lesson05.html">Lesson 5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lesson06.html">Lesson 6</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Lesson 7</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#turtle-graphics">Turtle Graphics</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#turtle-graphics-in-pycat">Turtle Graphics in pycat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#state">State</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mouse-click-event-handler">Mouse Click Event Handler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tagging-sprites">Tagging Sprites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#labels">Labels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sound-effects">Sound Effects</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#for-loops">For Loops</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#function-arguments">Function Arguments</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#extensions">Extensions</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#regular-polygon">Regular Polygon</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#user-controlled-turtle">User-controlled Turtle</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#homework">Homework</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="lesson08.html">Lesson 8</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../homework.html">Homework</a></li>
@@ -75,6 +66,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../setup.html">Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../binder.html">Binder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../student_work.html">Student Work</a></li>
 </ul>
 
         </div>
@@ -127,159 +119,70 @@
 </style>
 <section id="lesson-7">
 <h1>Lesson 7<a class="headerlink" href="#lesson-7" title="Permalink to this headline"></a></h1>
-<p>Today we will:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>learn about turtle graphics</p></li>
-<li><p>review loops</p></li>
-<li><p>learn more about functions</p></li>
-</ul>
-</div></blockquote>
-<section id="turtle-graphics">
-<h2>Turtle Graphics<a class="headerlink" href="#turtle-graphics" title="Permalink to this headline"></a></h2>
-<p>Similar to the Pen Tools extension in Scratch.</p>
-<p>Useful for:</p>
-<ul class="simple">
-<li><p>drawing polylines</p></li>
-<li><p>making patterns/art</p></li>
-</ul>
-<a class="reference internal image-reference" href="../_images/euler_spiral.png"><img alt="../_images/euler_spiral.png" src="../_images/euler_spiral.png" style="width: 49%;" /></a>
-<a class="reference internal image-reference" href="../_images/siepinski.png"><img alt="../_images/siepinski.png" src="../_images/siepinski.png" style="width: 49%;" /></a>
-<section id="turtle-graphics-in-pycat">
-<h3>Turtle Graphics in pycat<a class="headerlink" href="#turtle-graphics-in-pycat" title="Permalink to this headline"></a></h3>
-<p>In pycat, the turtle is a special kind of sprite
-that can draw line segments as it moves.</p>
-<section id="turtle-creation">
-<h4>Turtle Creation<a class="headerlink" href="#turtle-creation" title="Permalink to this headline"></a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pycat.extensions.turtle</span> <span class="kn">import</span> <span class="n">Turtle</span>
+<p>Download and extract the image files below.</p>
+<p><a class="reference download internal" download="" href="../_downloads/1f7c1636a227330b8cd4e5b9aeb3e958/L6_media.zip"><code class="xref download docutils literal notranslate"><span class="pre">media.zip</span></code></a></p>
+<section id="state">
+<h2>State<a class="headerlink" href="#state" title="Permalink to this headline"></a></h2>
+<p>We can add behavior to our sprite’s by defining different states. For example, a sprite can perform one type of behavior if it is in one state, and perform another behavior if it is in a different state. Add a custom property to the sprite to store its current state. If only two behaviors are required, a boolean will suffice. For example,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">is_in_original_state</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>Then, in <code class="docutils literal notranslate"><span class="pre">on_update</span></code> use a conditional to define the different behaviors. For example,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_in_original_state</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+<section id="mouse-click-event-handler">
+<h2>Mouse Click Event Handler<a class="headerlink" href="#mouse-click-event-handler" title="Permalink to this headline"></a></h2>
+<p>In Pycat, when a sprite is clicked with the left mouse button, the <code class="docutils literal notranslate"><span class="pre">on_left_click()</span></code> event handler is called.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_left_click</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</section>
+<section id="tagging-sprites">
+<h2>Tagging Sprites<a class="headerlink" href="#tagging-sprites" title="Permalink to this headline"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">add_tag</span><span class="p">(</span><span class="s1">&#39;alien&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_touching_any_sprite_with_tag</span><span class="p">(</span><span class="s1">&#39;alien&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I touched an alien!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="labels">
+<h2>Labels<a class="headerlink" href="#labels" title="Permalink to this headline"></a></h2>
+<p>Labels display strings on the screen. The Label API is very similar to the Sprite’s API. For example,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">label</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">create_label</span><span class="p">():</span>
+<span class="n">label</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">label</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">label</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Hello, World!&#39;</span>
+</pre></div>
+</div>
+<p>will create a new label, set the x and y position, and display ‘Hello, World!’ in the window.</p>
+<p>You can also create a custom Label class very similar to the way you would a custom Sprite class.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Hello</span><span class="p">(</span><span class="n">Label</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">on_create</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Hello&#39;</span>
 
-<span class="n">t</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">create_sprite</span><span class="p">(</span><span class="n">Turtle</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<section id="turtle-methods">
-<h4>Turtle Methods<a class="headerlink" href="#turtle-methods" title="Permalink to this headline"></a></h4>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">turtle.turn_left(degrees:</span> <span class="pre">float)</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">turtle.turn_right(degrees:</span> <span class="pre">float)</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">turtle.pen_up()</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">turtle.pen_down()</span></code></p></li>
-</ul>
-</section>
-<section id="turtle-properties">
-<h4>Turtle Properties<a class="headerlink" href="#turtle-properties" title="Permalink to this headline"></a></h4>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">turtle.pen_color</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">turtle.pen_width</span></code></p></li>
-</ul>
-<div class="admonition-exercise admonition">
-<p class="admonition-title">Exercise</p>
-<p>Write a program that creates a <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> and draws a simple shape.</p>
-<ul class="simple">
-<li><p>find an image to use for your turtle (make sure it faces right)</p></li>
-<li><p>experiment with the turtle methods and properties listed above</p></li>
-</ul>
-</div>
-</section>
-</section>
-</section>
-<hr class="docutils" />
-<section id="for-loops">
-<h2>For Loops<a class="headerlink" href="#for-loops" title="Permalink to this headline"></a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>What will this draw?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
-    <span class="n">t</span><span class="o">.</span><span class="n">move_forward</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-    <span class="n">t</span><span class="o">.</span><span class="n">rotation</span> <span class="o">+=</span> <span class="mi">90</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
-    <span class="n">t</span><span class="o">.</span><span class="n">pen_down</span><span class="p">()</span>
-    <span class="n">t</span><span class="o">.</span><span class="n">move_forward</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-    <span class="n">t</span><span class="o">.</span><span class="n">pen_up</span><span class="p">()</span>
-    <span class="n">t</span><span class="o">.</span><span class="n">move_forward</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="admonition-exercise admonition">
-<p class="admonition-title">Exercise</p>
-<p>Draw some shapes using for loops. Possible shapes include:</p>
-<ul class="simple">
-<li><p>Square</p></li>
-<li><p>Regular Polygon</p></li>
-<li><p>Circle</p></li>
-<li><p>Star</p></li>
-<li><p>Spiral</p></li>
-</ul>
-<p>After you finish a few different shapes, try to make them using dotted lines.</p>
-</div>
-</section>
-<hr class="docutils" />
-<section id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h2>
-<p>Let’s make a function to draw a square together:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_square</span><span class="p">():</span>
-    <span class="k">pass</span>
-</pre></div>
-</div>
-<div class="admonition-exercise admonition">
-<p class="admonition-title">Exercise</p>
-<p>Create functions for the shapes you made in the previous exercise</p>
-</div>
-<section id="function-arguments">
-<h3>Function Arguments<a class="headerlink" href="#function-arguments" title="Permalink to this headline"></a></h3>
-<section id="part-1">
-<h4>Part 1<a class="headerlink" href="#part-1" title="Permalink to this headline"></a></h4>
-<p>How can we make our functions more generic/useful?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_square</span><span class="p">(</span><span class="n">size</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
-    <span class="k">pass</span>
-</pre></div>
-</div>
-<div class="admonition-exercise admonition">
-<p class="admonition-title">Exercise</p>
-<p>Rewrite your functions to be more generic</p>
-</div>
-</section>
-<section id="part-2">
-<h4>Part 2<a class="headerlink" href="#part-2" title="Permalink to this headline"></a></h4>
-<p>What if we have multiple turtles in our file?</p>
-<div class="admonition-exercise admonition">
-<p class="admonition-title">Exercise</p>
-<p>Rewrite your functions to be generic</p>
-</div>
-</section>
-</section>
-</section>
-<section id="extensions">
-<h2>Extensions<a class="headerlink" href="#extensions" title="Permalink to this headline"></a></h2>
-<section id="regular-polygon">
-<h3>Regular Polygon<a class="headerlink" href="#regular-polygon" title="Permalink to this headline"></a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_regular_polygon</span><span class="p">(</span><span class="n">sides</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">side_length</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
-    <span class="k">pass</span>
+    <span class="k">def</span> <span class="nf">on_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
+        <span class="k">pass</span>
 
-<span class="k">def</span> <span class="nf">draw_regular_polygon</span><span class="p">(</span><span class="n">sides</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">side_length</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">is_dashed</span><span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
-    <span class="k">pass</span>
+<span class="n">window</span><span class="o">.</span><span class="n">create_label</span><span class="p">(</span><span class="n">Hello</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
-<section id="user-controlled-turtle">
-<h3>User-controlled Turtle<a class="headerlink" href="#user-controlled-turtle" title="Permalink to this headline"></a></h3>
-<blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">InteractiveTurtle</span><span class="p">(</span><span class="n">Turtle</span><span class="p">):</span>
-
-    <span class="k">def</span> <span class="nf">on_update</span><span class="p">(</span><span class="n">dt</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">w</span><span class="o">.</span><span class="n">get_key</span><span class="p">(</span><span class="n">KeyCode</span><span class="o">.</span><span class="n">W</span><span class="p">):</span>
-           <span class="k">pass</span>
+<section id="sound-effects">
+<h2>Sound Effects<a class="headerlink" href="#sound-effects" title="Permalink to this headline"></a></h2>
+<p>You can use the pycat <code class="docutils literal notranslate"><span class="pre">Player</span></code> class to play different sounds. First you must find a <code class="docutils literal notranslate"><span class="pre">.wav</span></code> sound file you would like to play in your game. <a class="reference external" href="www.scratch.mit.edu">Scratch</a> has many good sound effects that you can download.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sound</span> <span class="o">=</span> <span class="n">Player</span><span class="p">(</span><span class="s1">&#39;die.wav&#39;</span><span class="p">)</span>
+<span class="n">sound</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
 </pre></div>
 </div>
-</div></blockquote>
-</section>
-</section>
-<section id="homework">
-<h2>Homework<a class="headerlink" href="#homework" title="Permalink to this headline"></a></h2>
-<p><a class="reference internal" href="../homework/homework04.html"><span class="doc">Homework 4</span></a></p>
 </section>
 </section>
 
@@ -288,7 +191,7 @@ that can draw line segments as it moves.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="lesson06.html" class="btn btn-neutral float-left" title="Lesson 6" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../homework.html" class="btn btn-neutral float-right" title="Homework" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="lesson08.html" class="btn btn-neutral float-right" title="Lesson 8" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

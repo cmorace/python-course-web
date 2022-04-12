@@ -27,10 +27,10 @@ Use the sprite's ``move_forward()`` method to move in the direction of its rotat
 
 The ``Rotation_Mode.RIGHT_LEFT`` setting allows the sprite to move in any direction, but the sprite's image will be constrained to face either right or left. The possible values for ``sprite.rotation_mode`` are
 
-- RotationMode.ALL_AROUND
-- RotationMode.RIGHT_LEFT
-- RotationMode.MIRROR
-- RotationMode.NO_ROTATION
+- ``RotationMode.ALL_AROUND``
+- ``RotationMode.RIGHT_LEFT``
+- ``RotationMode.MIRROR``
+- ``RotationMode.NO_ROTATION``
 
 Collision Detection
 ********************

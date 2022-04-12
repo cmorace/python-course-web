@@ -51,7 +51,7 @@ Homework
      -
      -
      -
-     -
+     - ✅
 
 .. toctree::
    :hidden:

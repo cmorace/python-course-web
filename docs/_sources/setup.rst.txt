@@ -1,7 +1,9 @@
-Setup
+Setup  
 =========
 
-Follow the instructions carefully to set up a programming environment like the one we use in class. Be sure to follow the instructions in order!
+
+Follow the instructions carefully!
+Be sure to follow the instructions in order!
 
 
 1. Anaconda

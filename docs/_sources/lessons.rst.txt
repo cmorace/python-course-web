@@ -12,7 +12,7 @@ Lessons
    lessons/lesson05
    lessons/lesson06
    lessons/lesson07
-   .. lessons/lesson08
+   lessons/lesson08
    .. lessons/lesson09
    .. lessons/lesson10
    .. lessons/lesson11

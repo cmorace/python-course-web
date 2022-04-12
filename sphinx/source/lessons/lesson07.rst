@@ -1,184 +1,87 @@
 Lesson 7
-############
+#########
 
-Today we will:
+Download and extract the image files below.
+   
+:download:`media.zip <../_lesson_resources/lesson_06/L6_media.zip>`
 
- - learn about turtle graphics
- - review loops
- - learn more about functions
 
-Turtle Graphics
-=================
-
-Similar to the Pen Tools extension in Scratch.
-
-Useful for:
-
-- drawing polylines
-- making patterns/art
-
-.. image:: images/euler_spiral.png
-    :width: 49 %
-.. image:: images/siepinski.png
-    :width: 49 %
-
-Turtle Graphics in pycat
---------------------------
-
-In pycat, the turtle is a special kind of sprite
-that can draw line segments as it moves.
-
-Turtle Creation
-^^^^^^^^^^^^^^^^^^^^^^^
+State
+======
+We can add behavior to our sprite's by defining different states. For example, a sprite can perform one type of behavior if it is in one state, and perform another behavior if it is in a different state. Add a custom property to the sprite to store its current state. If only two behaviors are required, a boolean will suffice. For example,
 
 .. code-block:: python
 
-    from pycat.extensions.turtle import Turtle
+    self.is_in_original_state = True
 
-    t = w.create_sprite(Turtle)
-
-Turtle Methods
-^^^^^^^^^^^^^^^^^^^^^^^
-- ``turtle.turn_left(degrees: float)``
-- ``turtle.turn_right(degrees: float)``
-- ``turtle.pen_up()``
-- ``turtle.pen_down()``
-
-Turtle Properties
-^^^^^^^^^^^^^^^^^^^^^^^
-- ``turtle.pen_color``
-- ``turtle.pen_width``
-
-
-.. admonition:: Exercise 
-
-   Write a program that creates a ``Turtle`` and draws a simple shape.
-
-   - find an image to use for your turtle (make sure it faces right)
-   - experiment with the turtle methods and properties listed above
-
-
-------------------
-
-
-For Loops
-=================
+Then, in ``on_update`` use a conditional to define the different behaviors. For example,
 
 .. code-block:: python
 
-    for i in range(4):
-        print(i)
+    def on_update(self, dt):
+        if self.is_in_original_state:
+            self.x += 1
+        else:
+            self.x -= 1
 
 
-What will this draw?
+Mouse Click Event Handler
+===========================
 
-.. code-block:: python
-
-    for _ in range(4):
-        t.move_forward(10)
-        t.rotation += 90
-
-.. code-block:: python
-
-    for _ in range(4):
-        t.pen_down()
-        t.move_forward(5)
-        t.pen_up()
-        t.move_forward(5)
-
-
-
-.. admonition:: Exercise
-
-   Draw some shapes using for loops. Possible shapes include:
-
-   - Square
-   - Regular Polygon
-   - Circle
-   - Star
-   - Spiral
-
-   After you finish a few different shapes, try to make them using dotted lines.
-
-------------------
-
-Functions
-=================
-
-Let's make a function to draw a square together:
+In Pycat, when a sprite is clicked with the left mouse button, the ``on_left_click()`` event handler is called.
 
 .. code-block:: python
-
-    def draw_square():
+    
+    def on_left_click(self):
         pass
 
-.. admonition:: Exercise
-
-   Create functions for the shapes you made in the previous exercise
-
-Function Arguments
--------------------
-
-Part 1
-^^^^^^^^^
-How can we make our functions more generic/useful?
+Tagging Sprites
+================
 
 .. code-block:: python
 
-    def draw_square(size: float):
-        pass
-
-.. admonition:: Exercise
-
-   Rewrite your functions to be more generic
-
-
-Part 2
-^^^^^^^^^
-
-What if we have multiple turtles in our file?
-
-
-
-.. admonition:: Exercise
-
-   Rewrite your functions to be generic
-
-
-
-Extensions
-==============
-
-
-Regular Polygon
------------------
+    self.add_tag('alien')
 
 .. code-block:: python
 
-    def draw_regular_polygon(sides: int, side_length: float):
-        pass
-
-    def draw_regular_polygon(sides: int, side_length: float, is_dashed: bool):
-        pass
-
-User-controlled Turtle
-------------------------
-
-    .. code-block:: python
-
-        class InteractiveTurtle(Turtle):
-
-            def on_update(dt):
-                if w.get_key(KeyCode.W):
-                   pass
-
-Homework
-===========
-`Homework 4 <../homework/homework04.rst>`_
+    if self.is_touching_any_sprite_with_tag('alien'):
+        print("I touched an alien!")
 
 
+Labels
+========
+
+Labels display strings on the screen. The Label API is very similar to the Sprite's API. For example,
+
+.. code-block:: python
+
+    label = w.create_label():
+    label.x = 100
+    label.y = 300
+    label.text = 'Hello, World!'
 
 
+will create a new label, set the x and y position, and display 'Hello, World!' in the window.
 
+You can also create a custom Label class very similar to the way you would a custom Sprite class.
 
+.. code-block:: python
 
+    class Hello(Label):
+        def on_create(self):
+            self.text = 'Hello'
+
+        def on_update(self, dt):
+            pass
+
+    window.create_label(Hello)
+
+Sound Effects
+===============
+
+You can use the pycat ``Player`` class to play different sounds. First you must find a ``.wav`` sound file you would like to play in your game. `Scratch <www.scratch.mit.edu>`_ has many good sound effects that you can download.
+
+.. code-block:: python
+
+    sound = Player('die.wav')
+    sound.play()
