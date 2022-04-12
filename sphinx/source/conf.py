@@ -67,7 +67,8 @@ exclude_patterns = [
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
-html_theme_options = {'analytics_id': 'UA-126736149-2'}
+html_theme_options = {'analytics_id': 'UA-126736149-2',
+                      'collapse_navigation': False}
 
 
 # Add any paths that contain custom static files (such as style sheets) here,
