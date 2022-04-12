@@ -11,3 +11,12 @@ Student Work
 .. image:: _student_work/young/octogon_spiral.png
     :alt: octogon_spiral
     :width: 49%
+
+
+顏浚翊 (Lucas)
+-------------------------------------
+
+.. image:: _student_work/lucas/lucas_spiral.png
+    :alt: octogon_spiral
+    :width: 100%
+
