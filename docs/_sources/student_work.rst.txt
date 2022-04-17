@@ -6,11 +6,11 @@ Student Work
 
 .. image:: _student_work/young/square_spiral.png
     :alt: square_spiral
-    :width: 49%
+    :width: 48%
 
 .. image:: _student_work/young/octogon_spiral.png
     :alt: octogon_spiral
-    :width: 50.33%
+    :width: 49.5%
 
 
 顏浚翊 (Lucas)
