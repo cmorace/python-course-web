@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jupyter Notebooks &mdash; Peanuts Python Course Website 0.0.2 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -18,8 +17,6 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script src="../../_static/js/custom.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -205,6 +202,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../student_work.html">Student Work</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../student_work.html#yong">王奕詠 (Yong)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../student_work.html#lucas">顏浚翊 (Lucas)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../student_work.html#justyna-yang">Justyna Yang</a></li>
 </ul>
 </li>
 </ul>
@@ -238,35 +236,21 @@
 /* CSS for nbsphinx extension */
 
 /* remove conflicting styling from Sphinx themes */
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt *,
-div.nbinput.container div.input_area pre,
-div.nboutput.container div.output_area pre,
-div.nbinput.container div.input_area .highlight,
-div.nboutput.container div.output_area .highlight {
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
     border: none;
-    padding: 0;
+    padding: 0 0;
     margin: 0;
     box-shadow: none;
-}
-
-div.nbinput.container > div[class*=highlight],
-div.nboutput.container > div[class*=highlight] {
-    margin: 0;
-}
-
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt * {
-    background: none;
-}
-
-div.nboutput.container div.output_area .highlight,
-div.nboutput.container div.output_area pre {
-    background: unset;
-}
-
-div.nboutput.container div.output_area div.highlight {
-    color: unset;  /* override Pygments text color */
 }
 
 /* avoid gaps between output lines */
@@ -367,7 +351,7 @@ div.nboutput.container div.output_area {
 div.nbinput.container div.input_area {
     border: 1px solid #e0e0e0;
     border-radius: 2px;
-    /*background: #f5f5f5;*/
+    background: #f5f5f5;
 }
 
 /* override MathJax center alignment in output cells */
@@ -433,7 +417,6 @@ div.nboutput.container div.output_area.rendered_html,
 div.nboutput.container div.output_area > div.output_javascript,
 div.nboutput.container div.output_area:not(.rendered_html) > img{
     padding: 5px;
-    margin: 0;
 }
 
 /* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
@@ -443,7 +426,7 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt .copybtn {
+.prompt a.copybtn {
     display: none;
 }
 
@@ -503,42 +486,43 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<section id="Jupyter-Notebooks">
+<div class="section" id="Jupyter-Notebooks">
 <h1>Jupyter Notebooks<a class="headerlink" href="#Jupyter-Notebooks" title="Permalink to this headline"></a></h1>
 <p><a class="reference external" href="https://jupyter.org/">Jupyter notebooks</a> run bits of code interactively and are great environments for learning to program with Python. They can run as a web-application inside a web-browser, inside an integrated development environment such as VS Code, or even in the cloud with tools like <a class="reference external" href="https://mybinder.org">mybinder.org</a>. To get the full functionality of jupyter notebooks you must have Python and Jupyter Notebooks installed on your computer. The easiest way to do this is to install
 Anaconda, which includes both Python and Jupyter. If you haven’t installed Anaconda yet, see the <a class="reference internal" href="../../setup.html#anaconda"><span class="std std-ref">Anaconda installation instructions</span></a>.</p>
 <hr class="docutils" />
-<section id="Editors">
+<div class="section" id="Editors">
 <h2>Editors<a class="headerlink" href="#Editors" title="Permalink to this headline"></a></h2>
-<section id="Jupyter-Notebook-Web-Application">
+<div class="section" id="Jupyter-Notebook-Web-Application">
 <h3>Jupyter Notebook Web Application<a class="headerlink" href="#Jupyter-Notebook-Web-Application" title="Permalink to this headline"></a></h3>
 <p>Once jupyter is installed, open up the Anaconda Prompt (or other terminal application) and type the command</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter notebook
 </pre></div>
 </div>
 <p>The jupyter notebook interface should open up in your web-browser. You can use the <code class="docutils literal notranslate"><span class="pre">New</span></code> button to create a new notebook, the <code class="docutils literal notranslate"><span class="pre">Upload</span></code> button to open an existing notebook, and the file directory to navigate your file system. Check the Jupyter <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/notebook.html">documentation</a> for more details.</p>
-</section>
-<section id="VS-Code">
+</div>
+<div class="section" id="VS-Code">
 <h3>VS Code<a class="headerlink" href="#VS-Code" title="Permalink to this headline"></a></h3>
 <p>With the Python extension for VS Code you can create, open, and edit jupyter notebook <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files. VS Code takes a bit longer to load files and is missing some features of the web application but also adds auto-complete, debugging, and other features that are not available in the web-based interface.</p>
 <hr class="docutils" />
-</section>
-</section>
-<section id="Document-Structure">
+</div>
+</div>
+<div class="section" id="Document-Structure">
 <h2>Document Structure<a class="headerlink" href="#Document-Structure" title="Permalink to this headline"></a></h2>
 <p>Jupyter notebooks combine text and code in two different kinds of <em>cells</em>, markdown (text) cells and code cells.</p>
-<section id="Markdown-Cells">
+<div class="section" id="Markdown-Cells">
 <h3>Markdown Cells<a class="headerlink" href="#Markdown-Cells" title="Permalink to this headline"></a></h3>
 <p>In markdown cells, you can write plain text, <a class="reference external" href="https://guides.github.com/features/mastering-markdown/">GitHub Flavored Markdown</a>, or even HTML. You can add headings, lists, links, images, code snippets, and many other types of elements.</p>
-</section>
-<section id="Code-Cells">
+</div>
+<div class="section" id="Code-Cells">
 <h3>Code Cells<a class="headerlink" href="#Code-Cells" title="Permalink to this headline"></a></h3>
 <p>Below is a code cell. You can run the code by clicking on the cell and using the keyboard command <code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">enter</span></code>.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print() is a Python function for outputing text</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># print() is a Python function for outputing text</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;this is a code cell&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -551,17 +535,17 @@ Anaconda, which includes both Python and Jupyter. If you haven’t installed Ana
 this is a code cell
 </pre></div></div>
 </div>
-</section>
-<section id="Command-Mode-vs. Edit-Mode">
+</div>
+<div class="section" id="Command-Mode-vs. Edit-Mode">
 <h3>Command Mode vs. Edit Mode<a class="headerlink" href="#Command-Mode-vs. Edit-Mode" title="Permalink to this headline"></a></h3>
 <p>Cells can be in one of two states, command mode or edit mode.</p>
 <p>To enter command mode, you can click on the side bar to the left side of the cell. In command mode, we can create, delete, copy, paste, or change the type of cells.</p>
 <p>To enter edit mode you can click inside the cell. In edit mode, we edit and execute a cell’s content (either markdown or Python code).</p>
 <p>You can also use the <code class="docutils literal notranslate"><span class="pre">esc</span></code> and <code class="docutils literal notranslate"><span class="pre">enter</span></code> keys to switch between command and edit modes.</p>
 <hr class="docutils" />
-</section>
-</section>
-<section id="Some-Useful-Keyboard-Shortcuts">
+</div>
+</div>
+<div class="section" id="Some-Useful-Keyboard-Shortcuts">
 <h2>Some Useful Keyboard Shortcuts<a class="headerlink" href="#Some-Useful-Keyboard-Shortcuts" title="Permalink to this headline"></a></h2>
 <div class="admonition note">
 <p class="admonition-title fa fa-exclamation-circle">Note</p>
@@ -569,7 +553,7 @@ this is a code cell
 <p>All fo the following shortcuts are supported by the jupyter notebook web-application but may not be supported by other editors e.g. VS Code</p>
 </div>
 </div>
-<section id="Command-Mode-Shortcuts">
+<div class="section" id="Command-Mode-Shortcuts">
 <h3>Command Mode Shortcuts<a class="headerlink" href="#Command-Mode-Shortcuts" title="Permalink to this headline"></a></h3>
 <table class="docutils align-default">
 <colgroup>
@@ -621,8 +605,8 @@ this is a code cell
 </tr>
 </tbody>
 </table>
-</section>
-<section id="Edit-Mode-Shortcuts">
+</div>
+<div class="section" id="Edit-Mode-Shortcuts">
 <h3>Edit Mode Shortcuts<a class="headerlink" href="#Edit-Mode-Shortcuts" title="Permalink to this headline"></a></h3>
 <table class="docutils align-default">
 <colgroup>
@@ -654,9 +638,9 @@ this is a code cell
 </tbody>
 </table>
 <hr class="docutils" />
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
