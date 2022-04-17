@@ -13,7 +13,7 @@ Homework
 
 .. list-table::
    :align: center
-   :widths: 25 20 20 15 15 15 15
+   :widths: 25 20 20 15 15 15 15 15
    :header-rows: 1
    :stub-columns: 1
 
@@ -24,9 +24,11 @@ Homework
      - Lucas
      - Tim
      - Yong
+     - Justyna
    * - `Homework 1 <homework/homework01.rst>`_
      - Feb. 15
      - Feb. 22
+     - ✅
      - ✅
      - ✅
      - ✅
@@ -38,6 +40,7 @@ Homework
      - ✅
      - ✅
      - ✅
+     - ✅
    * - `Homework 3 <homework/homework03.rst>`_
      - Mar. 15
      - Mar. 22
@@ -45,13 +48,15 @@ Homework
      - ❓
      - ✅
      - ✅
+     - 
    * - `Homework 4 <homework/homework04.rst>`_
      - Mar. 29
      - Apr. 5
      - ❓
      - ❓
-     - ⚠️
      - ✅
+     - ✅
+     - 
 
 .. toctree::
    :hidden:
