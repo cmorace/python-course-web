@@ -92,6 +92,8 @@ For example,
         def throw():
             print('throw called')
 
+    window.create_sprite(Ape)
+
 or,
 
 .. code-block:: python
@@ -101,7 +103,7 @@ or,
             print('throw called')
 
     ape = window.create_sprite(Ape)
-    Scheduler.update(ape.throw)
+    Scheduler.update(ape.throw, 2)
 
 .. admonition:: Questions
 
@@ -125,7 +127,7 @@ stops updating a function.
             print('my_update()')
 
         def on_left_click(self):
-            Scheudler.cancel_update(self.my_update)
+            Scheduler.cancel_update(self.my_update)
 
 
 The ``Scheduler.wait()`` Method
@@ -153,7 +155,7 @@ Scheduling functions with a ``dt`` argument
         print("I waited", dt, "seconds")
 
     Scheduler.update(my_update_func, 2)
-    Scheduler.wait(my_wait_func, 4)
+    Scheduler.wait(4, my_wait_func)
 
 ----------
 

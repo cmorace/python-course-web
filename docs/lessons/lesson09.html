@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lesson 9 &mdash; Peanuts Python Course Website 0.0.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -269,9 +268,9 @@
     text-align: unset;
 }
 </style>
-<section id="lesson-9">
+<div class="section" id="lesson-9">
 <h1>Lesson 9<a class="headerlink" href="#lesson-9" title="Permalink to this headline"></a></h1>
-<section id="individual-project-and-presentation">
+<div class="section" id="individual-project-and-presentation">
 <h2>Individual Project and Presentation<a class="headerlink" href="#individual-project-and-presentation" title="Permalink to this headline"></a></h2>
 <p>Over the next two weeks, you will design and implement an individual project.
 You will demo and present your project at the end of next week’s class.</p>
@@ -283,9 +282,9 @@ You will demo and present your project at the end of next week’s class.</p>
 <p>An animation cycle repeats different behaviors (i.e. animations).
 There are many ways we could implement this. It will be up to you
 to choose an appropriate method for your project.</p>
-</section>
+</div>
 <hr class="docutils" />
-<section id="the-sprite-s-on-update-method">
+<div class="section" id="the-sprite-s-on-update-method">
 <h2>The <code class="docutils literal notranslate"><span class="pre">Sprite</span></code>’s <code class="docutils literal notranslate"><span class="pre">on_update</span></code> Method<a class="headerlink" href="#the-sprite-s-on-update-method" title="Permalink to this headline"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> class has an <code class="docutils literal notranslate"><span class="pre">on_update</span></code> method,
 which takes the <em>arguments</em> <code class="docutils literal notranslate"><span class="pre">self</span></code> and <code class="docutils literal notranslate"><span class="pre">dt</span></code>.</p>
@@ -304,11 +303,11 @@ which takes the <em>arguments</em> <code class="docutils literal notranslate"><s
 <li><p>How does a <code class="docutils literal notranslate"><span class="pre">Sprite</span></code>’s <code class="docutils literal notranslate"><span class="pre">on_update</span></code> method get called?</p></li>
 </ol>
 </div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="scheduler-methods">
+<div class="section" id="scheduler-methods">
 <h2><code class="docutils literal notranslate"><span class="pre">Scheduler</span></code> Methods<a class="headerlink" href="#scheduler-methods" title="Permalink to this headline"></a></h2>
-<section id="the-scheduler-update-method">
+<div class="section" id="the-scheduler-update-method">
 <h3>The <code class="docutils literal notranslate"><span class="pre">Scheduler.update()</span></code> Method<a class="headerlink" href="#the-scheduler-update-method" title="Permalink to this headline"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Scheduler.update(func:</span> <span class="pre">Callable,</span> <span class="pre">interval:</span> <span class="pre">float)</span></code> is a <em>static</em> method that
 repeatedly calls a function at fixed time intervals.</p>
@@ -344,6 +343,8 @@ For example,</p>
 
     <span class="k">def</span> <span class="nf">throw</span><span class="p">():</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;throw called&#39;</span><span class="p">)</span>
+
+<span class="n">window</span><span class="o">.</span><span class="n">create_sprite</span><span class="p">(</span><span class="n">Ape</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>or,</p>
@@ -352,7 +353,7 @@ For example,</p>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;throw called&#39;</span><span class="p">)</span>
 
 <span class="n">ape</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">create_sprite</span><span class="p">(</span><span class="n">Ape</span><span class="p">)</span>
-<span class="n">Scheduler</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">ape</span><span class="o">.</span><span class="n">throw</span><span class="p">)</span>
+<span class="n">Scheduler</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">ape</span><span class="o">.</span><span class="n">throw</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="admonition-questions admonition">
@@ -362,8 +363,8 @@ For example,</p>
 <li><p>What is the difference?</p></li>
 </ol>
 </div>
-</section>
-<section id="the-scheduler-cancel-update-method">
+</div>
+<div class="section" id="the-scheduler-cancel-update-method">
 <h3>The <code class="docutils literal notranslate"><span class="pre">Scheduler.cancel_update()</span></code> Method<a class="headerlink" href="#the-scheduler-cancel-update-method" title="Permalink to this headline"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Scheduler.cancel_update(func:</span> <span class="pre">Callable)</span></code> is a <em>static</em> method that
 stops updating a function.</p>
@@ -375,11 +376,11 @@ stops updating a function.</p>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my_update()&#39;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">on_left_click</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">Scheudler</span><span class="o">.</span><span class="n">cancel_update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">my_update</span><span class="p">)</span>
+        <span class="n">Scheduler</span><span class="o">.</span><span class="n">cancel_update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">my_update</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="the-scheduler-wait-method">
+</div>
+<div class="section" id="the-scheduler-wait-method">
 <h3>The <code class="docutils literal notranslate"><span class="pre">Scheduler.wait()</span></code> Method<a class="headerlink" href="#the-scheduler-wait-method" title="Permalink to this headline"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Scheduler.wait(delay:</span> <span class="pre">float,</span> <span class="pre">func:</span> <span class="pre">Callable)</span></code> is a <em>static</em> method
 that calls a function a single time after some delay time. For example,
@@ -389,8 +390,8 @@ that calls a function a single time after some delay time. For example,
 <p>Could we use <code class="docutils literal notranslate"><span class="pre">Scheduler.wait()</span></code> to replicate
 the behavior of <code class="docutils literal notranslate"><span class="pre">Scheduler.update()</span></code></p>
 </div>
-</section>
-<section id="scheduling-functions-with-a-dt-argument">
+</div>
+<div class="section" id="scheduling-functions-with-a-dt-argument">
 <h3>Scheduling functions with a <code class="docutils literal notranslate"><span class="pre">dt</span></code> argument<a class="headerlink" href="#scheduling-functions-with-a-dt-argument" title="Permalink to this headline"></a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_update_func</span><span class="p">(</span><span class="n">dt</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I was last updated&quot;</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="s2">&quot;seconds ago&quot;</span><span class="p">)</span>
@@ -399,13 +400,13 @@ the behavior of <code class="docutils literal notranslate"><span class="pre">Sch
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I waited&quot;</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="s2">&quot;seconds&quot;</span><span class="p">)</span>
 
 <span class="n">Scheduler</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">my_update_func</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">Scheduler</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">my_wait_func</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">Scheduler</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">my_wait_func</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 <hr class="docutils" />
-<section id="animation-cycles">
+<div class="section" id="animation-cycles">
 <h2>Animation Cycles<a class="headerlink" href="#animation-cycles" title="Permalink to this headline"></a></h2>
 <a class="reference internal image-reference" href="../_images/animation_cycle.gif"><img alt="../_images/animation_cycle.gif" class="align-center" src="../_images/animation_cycle.gif" style="width: 30%;" /></a>
 <p><a class="reference download internal" download="" href="../_downloads/3e204a2798fd9e59594e72fd3b3617f4/lesson_09_images.zip"><code class="xref download docutils literal notranslate"><span class="pre">lesson_09_images.zip</span></code></a></p>
@@ -415,8 +416,8 @@ the behavior of <code class="docutils literal notranslate"><span class="pre">Sch
 <li><p>Let’s discuss the advantages and disadvantages of the two approaches.</p></li>
 <li><p>Start planning your project!</p></li>
 </ol>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
