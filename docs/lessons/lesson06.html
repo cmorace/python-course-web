@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lesson 6 &mdash; Peanuts Python Course Website 0.0.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -118,6 +119,19 @@
 <li class="toctree-l3"><a class="reference internal" href="lesson08.html#the-on-update-s-dt-parameter">The <code class="docutils literal notranslate"><span class="pre">on_update</span></code>’s <code class="docutils literal notranslate"><span class="pre">dt</span></code> Parameter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="lesson08.html#controlling-the-stopwatch-state">Controlling the Stopwatch State</a></li>
 <li class="toctree-l3"><a class="reference internal" href="lesson08.html#extensions">Extensions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lesson09.html">Lesson 9</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="lesson09.html#individual-project-and-presentation">Individual Project and Presentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lesson09.html#the-sprite-s-on-update-method">The <code class="docutils literal notranslate"><span class="pre">Sprite</span></code>’s <code class="docutils literal notranslate"><span class="pre">on_update</span></code> Method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lesson09.html#scheduler-methods"><code class="docutils literal notranslate"><span class="pre">Scheduler</span></code> Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="lesson09.html#the-scheduler-update-method">The <code class="docutils literal notranslate"><span class="pre">Scheduler.update()</span></code> Method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="lesson09.html#the-scheduler-cancel-update-method">The <code class="docutils literal notranslate"><span class="pre">Scheduler.cancel_update()</span></code> Method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="lesson09.html#the-scheduler-wait-method">The <code class="docutils literal notranslate"><span class="pre">Scheduler.wait()</span></code> Method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="lesson09.html#scheduling-functions-with-a-dt-argument">Scheduling functions with a <code class="docutils literal notranslate"><span class="pre">dt</span></code> argument</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="lesson09.html#animation-cycles">Animation Cycles</a></li>
 </ul>
 </li>
 </ul>
@@ -255,9 +269,9 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="lesson-6">
+<section id="lesson-6">
 <h1>Lesson 6<a class="headerlink" href="#lesson-6" title="Permalink to this headline"></a></h1>
-<div class="section" id="turtle-graphics">
+<section id="turtle-graphics">
 <h2>Turtle Graphics<a class="headerlink" href="#turtle-graphics" title="Permalink to this headline"></a></h2>
 <p>Similar to the Pen Tools extension in Scratch.</p>
 <p>Useful for:</p>
@@ -267,19 +281,19 @@
 </ul>
 <a class="reference internal image-reference" href="../_images/euler_spiral.png"><img alt="../_images/euler_spiral.png" src="../_images/euler_spiral.png" style="width: 39.5%;" /></a>
 <a class="reference internal image-reference" href="../_images/siepinski.png"><img alt="../_images/siepinski.png" src="../_images/siepinski.png" style="width: 49%;" /></a>
-<div class="section" id="turtle-graphics-in-pycat">
+<section id="turtle-graphics-in-pycat">
 <h3>Turtle Graphics in pycat<a class="headerlink" href="#turtle-graphics-in-pycat" title="Permalink to this headline"></a></h3>
 <p>In pycat, the <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> class is a special kind of <code class="docutils literal notranslate"><span class="pre">Sprite</span></code>
 that draws line segments whenever it <code class="docutils literal notranslate"><span class="pre">moves_forward</span></code>.</p>
-<div class="section" id="turtle-creation">
+<section id="turtle-creation">
 <h4>Turtle Creation<a class="headerlink" href="#turtle-creation" title="Permalink to this headline"></a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pycat.extensions.turtle</span> <span class="kn">import</span> <span class="n">Turtle</span>
 
 <span class="n">t</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">create_sprite</span><span class="p">(</span><span class="n">Turtle</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="turtle-methods">
+</section>
+<section id="turtle-methods">
 <h4>Turtle Methods<a class="headerlink" href="#turtle-methods" title="Permalink to this headline"></a></h4>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">turtle.turn_left(degrees:</span> <span class="pre">float)</span></code></p></li>
@@ -287,8 +301,8 @@ that draws line segments whenever it <code class="docutils literal notranslate">
 <li><p><code class="docutils literal notranslate"><span class="pre">turtle.pen_up()</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">turtle.pen_down()</span></code></p></li>
 </ul>
-</div>
-<div class="section" id="turtle-properties">
+</section>
+<section id="turtle-properties">
 <h4>Turtle Properties<a class="headerlink" href="#turtle-properties" title="Permalink to this headline"></a></h4>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">turtle.pen_color</span></code></p></li>
@@ -302,11 +316,11 @@ that draws line segments whenever it <code class="docutils literal notranslate">
 <li><p>experiment with the turtle methods and properties listed above</p></li>
 </ul>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="for-loops">
+<section id="for-loops">
 <h2>For Loops<a class="headerlink" href="#for-loops" title="Permalink to this headline"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
@@ -337,9 +351,9 @@ that draws line segments whenever it <code class="docutils literal notranslate">
 </ul>
 <p>After you finish a few different shapes, try to make them using dotted lines.</p>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="functions">
+<section id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h2>
 <p>Let’s make a function to draw a square together:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_square</span><span class="p">():</span>
@@ -350,9 +364,9 @@ that draws line segments whenever it <code class="docutils literal notranslate">
 <p class="admonition-title">Exercise</p>
 <p>Create functions for the shapes you made in the previous exercise</p>
 </div>
-<div class="section" id="function-arguments">
+<section id="function-arguments">
 <h3>Function Arguments<a class="headerlink" href="#function-arguments" title="Permalink to this headline"></a></h3>
-<div class="section" id="part-1">
+<section id="part-1">
 <h4>Part 1<a class="headerlink" href="#part-1" title="Permalink to this headline"></a></h4>
 <p>How can we make our functions more generic/useful?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_square</span><span class="p">(</span><span class="n">size</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
@@ -363,20 +377,20 @@ that draws line segments whenever it <code class="docutils literal notranslate">
 <p class="admonition-title">Exercise</p>
 <p>Rewrite your functions to be more generic</p>
 </div>
-</div>
-<div class="section" id="part-2">
+</section>
+<section id="part-2">
 <h4>Part 2<a class="headerlink" href="#part-2" title="Permalink to this headline"></a></h4>
 <p>What if we have multiple turtles in our file?</p>
 <div class="admonition-exercise admonition">
 <p class="admonition-title">Exercise</p>
 <p>Rewrite your functions to be generic</p>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="extensions">
+</section>
+</section>
+</section>
+<section id="extensions">
 <h2>Extensions<a class="headerlink" href="#extensions" title="Permalink to this headline"></a></h2>
-<div class="section" id="regular-polygon">
+<section id="regular-polygon">
 <h3>Regular Polygon<a class="headerlink" href="#regular-polygon" title="Permalink to this headline"></a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_regular_polygon</span><span class="p">(</span><span class="n">sides</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">side_length</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
     <span class="k">pass</span>
@@ -385,8 +399,8 @@ that draws line segments whenever it <code class="docutils literal notranslate">
     <span class="k">pass</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="user-controlled-turtle">
+</section>
+<section id="user-controlled-turtle">
 <h3>User-controlled Turtle<a class="headerlink" href="#user-controlled-turtle" title="Permalink to this headline"></a></h3>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">InteractiveTurtle</span><span class="p">(</span><span class="n">Turtle</span><span class="p">):</span>
@@ -397,13 +411,13 @@ that draws line segments whenever it <code class="docutils literal notranslate">
 </pre></div>
 </div>
 </div></blockquote>
-</div>
-</div>
-<div class="section" id="homework">
+</section>
+</section>
+<section id="homework">
 <h2>Homework<a class="headerlink" href="#homework" title="Permalink to this headline"></a></h2>
 <p><a class="reference internal" href="../homework/homework04.html"><span class="doc">Homework 4</span></a></p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

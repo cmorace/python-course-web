@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lesson 9 &mdash; Peanuts Python Course Website 0.0.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,7 +21,9 @@
         <script src="../_static/js/custom.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Homework" href="../homework.html" />
+    <link rel="prev" title="Lesson 8" href="lesson08.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -38,8 +41,8 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../lessons.html">Lessons</a><ul>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../lessons.html">Lessons</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="lesson01.html">Lesson 1</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="lesson01.html#import-statements">Import Statements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="lesson01.html#variables">Variables</a></li>
@@ -116,6 +119,19 @@
 <li class="toctree-l3"><a class="reference internal" href="lesson08.html#the-on-update-s-dt-parameter">The <code class="docutils literal notranslate"><span class="pre">on_update</span></code>’s <code class="docutils literal notranslate"><span class="pre">dt</span></code> Parameter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="lesson08.html#controlling-the-stopwatch-state">Controlling the Stopwatch State</a></li>
 <li class="toctree-l3"><a class="reference internal" href="lesson08.html#extensions">Extensions</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lesson 9</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#individual-project-and-presentation">Individual Project and Presentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-sprite-s-on-update-method">The <code class="docutils literal notranslate"><span class="pre">Sprite</span></code>’s <code class="docutils literal notranslate"><span class="pre">on_update</span></code> Method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scheduler-methods"><code class="docutils literal notranslate"><span class="pre">Scheduler</span></code> Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-scheduler-update-method">The <code class="docutils literal notranslate"><span class="pre">Scheduler.update()</span></code> Method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-scheduler-cancel-update-method">The <code class="docutils literal notranslate"><span class="pre">Scheduler.cancel_update()</span></code> Method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-scheduler-wait-method">The <code class="docutils literal notranslate"><span class="pre">Scheduler.wait()</span></code> Method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scheduling-functions-with-a-dt-argument">Scheduling functions with a <code class="docutils literal notranslate"><span class="pre">dt</span></code> argument</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#animation-cycles">Animation Cycles</a></li>
 </ul>
 </li>
 </ul>
@@ -219,6 +235,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../lessons.html">Lessons</a> &raquo;</li>
       <li>Lesson 9</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -252,15 +269,162 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="lesson-9">
+<section id="lesson-9">
 <h1>Lesson 9<a class="headerlink" href="#lesson-9" title="Permalink to this headline"></a></h1>
-<p>Finish implementing the card match game.</p>
+<section id="individual-project-and-presentation">
+<h2>Individual Project and Presentation<a class="headerlink" href="#individual-project-and-presentation" title="Permalink to this headline"></a></h2>
+<p>Over the next two weeks, you will design and implement an individual project.
+You will demo and present your project at the end of next week’s class.</p>
+<div class="admonition-requirement admonition">
+<p class="admonition-title">Requirement</p>
+<p>You must have at least one sprite with an <em>animation cycle</em>.</p>
+<a class="reference internal image-reference" href="../_images/animation_cycle.gif"><img alt="../_images/animation_cycle.gif" class="align-center" src="../_images/animation_cycle.gif" style="width: 30%;" /></a>
 </div>
+<p>An animation cycle repeats different behaviors (i.e. animations).
+There are many ways we could implement this. It will be up to you
+to choose an appropriate method for your project.</p>
+</section>
+<hr class="docutils" />
+<section id="the-sprite-s-on-update-method">
+<h2>The <code class="docutils literal notranslate"><span class="pre">Sprite</span></code>’s <code class="docutils literal notranslate"><span class="pre">on_update</span></code> Method<a class="headerlink" href="#the-sprite-s-on-update-method" title="Permalink to this headline"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> class has an <code class="docutils literal notranslate"><span class="pre">on_update</span></code> method,
+which takes the <em>arguments</em> <code class="docutils literal notranslate"><span class="pre">self</span></code> and <code class="docutils literal notranslate"><span class="pre">dt</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyAwesomeSprite</span><span class="p">(</span><span class="n">Sprite</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">on_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
+        <span class="c1"># does some awesome stuff</span>
+</pre></div>
+</div>
+<div class="admonition-questions admonition">
+<p class="admonition-title">Questions</p>
+<ol class="arabic simple">
+<li><p>What is the <code class="docutils literal notranslate"><span class="pre">type</span></code> of the argument <code class="docutils literal notranslate"><span class="pre">dt</span></code>?</p></li>
+<li><p>What is the approximate value?</p></li>
+<li><p>What does the value of <code class="docutils literal notranslate"><span class="pre">dt</span></code> represent?</p></li>
+<li><p>What are some use-cases for <code class="docutils literal notranslate"><span class="pre">dt</span></code>?</p></li>
+<li><p>How does a <code class="docutils literal notranslate"><span class="pre">Sprite</span></code>’s <code class="docutils literal notranslate"><span class="pre">on_update</span></code> method get called?</p></li>
+</ol>
+</div>
+</section>
+<hr class="docutils" />
+<section id="scheduler-methods">
+<h2><code class="docutils literal notranslate"><span class="pre">Scheduler</span></code> Methods<a class="headerlink" href="#scheduler-methods" title="Permalink to this headline"></a></h2>
+<section id="the-scheduler-update-method">
+<h3>The <code class="docutils literal notranslate"><span class="pre">Scheduler.update()</span></code> Method<a class="headerlink" href="#the-scheduler-update-method" title="Permalink to this headline"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Scheduler.update(func:</span> <span class="pre">Callable,</span> <span class="pre">interval:</span> <span class="pre">float)</span></code> is a <em>static</em> method that
+repeatedly calls a function at fixed time intervals.</p>
+<ol class="arabic simple">
+<li><p>A <code class="docutils literal notranslate"><span class="pre">Callable</span></code> object i.e. a <em>method</em>, <em>function</em>, or <em>constructor</em></p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">float</span></code> equal to the time interval between each function called</p></li>
+</ol>
+<p>For example,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pycat.core</span> <span class="kn">import</span> <span class="n">Scheduler</span>
+
+<span class="k">def</span> <span class="nf">create_gem</span><span class="p">():</span>
+    <span class="n">window</span><span class="o">.</span><span class="n">create_sprite</span><span class="p">(</span><span class="n">Gem</span><span class="p">)</span>
+
+<span class="n">Scheduler</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">create_gem</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition-questions admonition">
+<p class="admonition-title">Questions</p>
+<ol class="arabic simple">
+<li><p>What does the code above do?</p></li>
+<li><p>How often will the <code class="docutils literal notranslate"><span class="pre">create_gem()</span></code> function be called?</p></li>
+<li><p>Is the time between each call exact?</p></li>
+<li><p>How long does it take for the first <code class="docutils literal notranslate"><span class="pre">Gem</span></code> to be created?</p></li>
+<li><p>What if we wanted to create new <code class="docutils literal notranslate"><span class="pre">Gems</span></code> at random time intervals?</p></li>
+</ol>
+</div>
+<p>We can also pass methods to <code class="docutils literal notranslate"><span class="pre">Scheduler.update()</span></code>.
+For example,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Ape</span><span class="p">(</span><span class="n">Sprite</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">on_create</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">Scheduler</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">throw</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">throw</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;throw called&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Ape</span><span class="p">(</span><span class="n">Sprite</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">throw</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;throw called&#39;</span><span class="p">)</span>
+
+<span class="n">ape</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">create_sprite</span><span class="p">(</span><span class="n">Ape</span><span class="p">)</span>
+<span class="n">Scheduler</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">ape</span><span class="o">.</span><span class="n">throw</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition-questions admonition">
+<p class="admonition-title">Questions</p>
+<ol class="arabic simple">
+<li><p>Is there a difference in behavior in the last two examples?</p></li>
+<li><p>What is the difference?</p></li>
+</ol>
+</div>
+</section>
+<section id="the-scheduler-cancel-update-method">
+<h3>The <code class="docutils literal notranslate"><span class="pre">Scheduler.cancel_update()</span></code> Method<a class="headerlink" href="#the-scheduler-cancel-update-method" title="Permalink to this headline"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Scheduler.cancel_update(func:</span> <span class="pre">Callable)</span></code> is a <em>static</em> method that
+stops updating a function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Button</span><span class="p">(</span><span class="n">Sprite</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">on_create</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">Scheduler</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">my_update</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">my_update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my_update()&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">on_left_click</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">Scheudler</span><span class="o">.</span><span class="n">cancel_update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">my_update</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="the-scheduler-wait-method">
+<h3>The <code class="docutils literal notranslate"><span class="pre">Scheduler.wait()</span></code> Method<a class="headerlink" href="#the-scheduler-wait-method" title="Permalink to this headline"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Scheduler.wait(delay:</span> <span class="pre">float,</span> <span class="pre">func:</span> <span class="pre">Callable)</span></code> is a <em>static</em> method
+that calls a function a single time after some delay time. For example,
+<code class="docutils literal notranslate"><span class="pre">Scheduler.wait(5,</span> <span class="pre">create_gem)</span></code> calls the <code class="docutils literal notranslate"><span class="pre">create_gem</span></code> function after 5 seconds.</p>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Could we use <code class="docutils literal notranslate"><span class="pre">Scheduler.wait()</span></code> to replicate
+the behavior of <code class="docutils literal notranslate"><span class="pre">Scheduler.update()</span></code></p>
+</div>
+</section>
+<section id="scheduling-functions-with-a-dt-argument">
+<h3>Scheduling functions with a <code class="docutils literal notranslate"><span class="pre">dt</span></code> argument<a class="headerlink" href="#scheduling-functions-with-a-dt-argument" title="Permalink to this headline"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_update_func</span><span class="p">(</span><span class="n">dt</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I was last updated&quot;</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="s2">&quot;seconds ago&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">my_wait_func</span><span class="p">(</span><span class="n">dt</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I waited&quot;</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="s2">&quot;seconds&quot;</span><span class="p">)</span>
+
+<span class="n">Scheduler</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">my_update_func</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">Scheduler</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">my_wait_func</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="animation-cycles">
+<h2>Animation Cycles<a class="headerlink" href="#animation-cycles" title="Permalink to this headline"></a></h2>
+<a class="reference internal image-reference" href="../_images/animation_cycle.gif"><img alt="../_images/animation_cycle.gif" class="align-center" src="../_images/animation_cycle.gif" style="width: 30%;" /></a>
+<p><a class="reference download internal" download="" href="../_downloads/3e204a2798fd9e59594e72fd3b3617f4/lesson_09_images.zip"><code class="xref download docutils literal notranslate"><span class="pre">lesson_09_images.zip</span></code></a></p>
+<ol class="arabic simple">
+<li><p>Implement the animation above using the <code class="docutils literal notranslate"><span class="pre">Scheduler</span></code>.</p></li>
+<li><p>Implement it using the <code class="docutils literal notranslate"><span class="pre">Sprite</span></code>’s ‘<code class="docutils literal notranslate"><span class="pre">on_update</span></code> method.</p></li>
+<li><p>Let’s discuss the advantages and disadvantages of the two approaches.</p></li>
+<li><p>Start planning your project!</p></li>
+</ol>
+</section>
+</section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="lesson08.html" class="btn btn-neutral float-left" title="Lesson 8" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../homework.html" class="btn btn-neutral float-right" title="Homework" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

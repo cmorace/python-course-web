@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Operators &mdash; Peanuts Python Course Website 0.0.2 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -17,6 +18,8 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script src="../../_static/js/custom.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -118,6 +121,19 @@
 <li class="toctree-l3"><a class="reference internal" href="../../lessons/lesson08.html#the-on-update-s-dt-parameter">The <code class="docutils literal notranslate"><span class="pre">on_update</span></code>’s <code class="docutils literal notranslate"><span class="pre">dt</span></code> Parameter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../lessons/lesson08.html#controlling-the-stopwatch-state">Controlling the Stopwatch State</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../lessons/lesson08.html#extensions">Extensions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../lessons/lesson09.html">Lesson 9</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../lessons/lesson09.html#individual-project-and-presentation">Individual Project and Presentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../lessons/lesson09.html#the-sprite-s-on-update-method">The <code class="docutils literal notranslate"><span class="pre">Sprite</span></code>’s <code class="docutils literal notranslate"><span class="pre">on_update</span></code> Method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../lessons/lesson09.html#scheduler-methods"><code class="docutils literal notranslate"><span class="pre">Scheduler</span></code> Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../lessons/lesson09.html#the-scheduler-update-method">The <code class="docutils literal notranslate"><span class="pre">Scheduler.update()</span></code> Method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../lessons/lesson09.html#the-scheduler-cancel-update-method">The <code class="docutils literal notranslate"><span class="pre">Scheduler.cancel_update()</span></code> Method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../lessons/lesson09.html#the-scheduler-wait-method">The <code class="docutils literal notranslate"><span class="pre">Scheduler.wait()</span></code> Method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../lessons/lesson09.html#scheduling-functions-with-a-dt-argument">Scheduling functions with a <code class="docutils literal notranslate"><span class="pre">dt</span></code> argument</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../lessons/lesson09.html#animation-cycles">Animation Cycles</a></li>
 </ul>
 </li>
 </ul>
@@ -236,21 +252,35 @@
 /* CSS for nbsphinx extension */
 
 /* remove conflicting styling from Sphinx themes */
-div.nbinput.container,
-div.nbinput.container div.prompt,
-div.nbinput.container div.input_area,
-div.nbinput.container div[class*=highlight],
-div.nbinput.container div[class*=highlight] pre,
-div.nboutput.container,
-div.nboutput.container div.prompt,
-div.nboutput.container div.output_area,
-div.nboutput.container div[class*=highlight],
-div.nboutput.container div[class*=highlight] pre {
-    background: none;
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
     border: none;
-    padding: 0 0;
+    padding: 0;
     margin: 0;
     box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
 }
 
 /* avoid gaps between output lines */
@@ -351,7 +381,7 @@ div.nboutput.container div.output_area {
 div.nbinput.container div.input_area {
     border: 1px solid #e0e0e0;
     border-radius: 2px;
-    background: #f5f5f5;
+    /*background: #f5f5f5;*/
 }
 
 /* override MathJax center alignment in output cells */
@@ -417,6 +447,7 @@ div.nboutput.container div.output_area.rendered_html,
 div.nboutput.container div.output_area > div.output_javascript,
 div.nboutput.container div.output_area:not(.rendered_html) > img{
     padding: 5px;
+    margin: 0;
 }
 
 /* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
@@ -426,7 +457,7 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
+.prompt .copybtn {
     display: none;
 }
 
@@ -486,11 +517,11 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Operators">
+<section id="Operators">
 <h1>Operators<a class="headerlink" href="#Operators" title="Permalink to this headline"></a></h1>
 <p>Operators are used to perform operations on variables or literal values.</p>
 <hr class="docutils" />
-<div class="section" id="Comparison-Operators">
+<section id="Comparison-Operators">
 <h2>Comparison Operators<a class="headerlink" href="#Comparison-Operators" title="Permalink to this headline"></a></h2>
 <p>Comparison operators are used to compare two values. The comparison evaluates to either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <p>Comparison operators include:</p>
@@ -506,8 +537,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;comparison operators example&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;comparison operators example&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----------------------------&quot;</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
@@ -537,9 +567,9 @@ x &gt; y    -&gt;     False
 x &lt; y    -&gt;     True
 </pre></div></div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="Logical-Operators">
+<section id="Logical-Operators">
 <h2>Logical Operators<a class="headerlink" href="#Logical-Operators" title="Permalink to this headline"></a></h2>
 <p>Logical operators are used to combine boolean values.</p>
 <p>Logical operators include:</p>
@@ -552,8 +582,7 @@ x &lt; y    -&gt;     True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;logical operators&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;logical operators&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--------------------&quot;</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">y</span> <span class="o">=</span> <span class="kc">False</span>
@@ -593,8 +622,7 @@ not y    -&gt;    True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="kc">False</span> <span class="ow">and</span> <span class="kc">False</span> <span class="o">==</span> <span class="kc">False</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="kc">False</span> <span class="ow">and</span> <span class="kc">False</span> <span class="o">==</span> <span class="kc">False</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">((</span><span class="kc">False</span> <span class="ow">and</span> <span class="kc">False</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -614,9 +642,9 @@ True
 <p>The <code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code> operators may return unexpected results if applied to non-boolean types.</p>
 </div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="Arithmetic-Operators">
+<section id="Arithmetic-Operators">
 <h2>Arithmetic Operators<a class="headerlink" href="#Arithmetic-Operators" title="Permalink to this headline"></a></h2>
 <p>Arithmetic operators are used with numeric values to perform mathematical operations.</p>
 <p>Arithmetic operations include:</p>
@@ -633,8 +661,7 @@ True
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;arithmetic operators&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;arithmetic operators&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--------------------&quot;</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mi">3</span>
@@ -670,8 +697,8 @@ x ** y   -&gt;    8
 x // y   -&gt;    0
 </pre></div></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lesson 7 &mdash; Peanuts Python Course Website 0.0.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -17,6 +18,8 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script src="../_static/js/custom.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -116,6 +119,19 @@
 <li class="toctree-l3"><a class="reference internal" href="lesson08.html#the-on-update-s-dt-parameter">The <code class="docutils literal notranslate"><span class="pre">on_update</span></code>’s <code class="docutils literal notranslate"><span class="pre">dt</span></code> Parameter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="lesson08.html#controlling-the-stopwatch-state">Controlling the Stopwatch State</a></li>
 <li class="toctree-l3"><a class="reference internal" href="lesson08.html#extensions">Extensions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lesson09.html">Lesson 9</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="lesson09.html#individual-project-and-presentation">Individual Project and Presentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lesson09.html#the-sprite-s-on-update-method">The <code class="docutils literal notranslate"><span class="pre">Sprite</span></code>’s <code class="docutils literal notranslate"><span class="pre">on_update</span></code> Method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lesson09.html#scheduler-methods"><code class="docutils literal notranslate"><span class="pre">Scheduler</span></code> Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="lesson09.html#the-scheduler-update-method">The <code class="docutils literal notranslate"><span class="pre">Scheduler.update()</span></code> Method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="lesson09.html#the-scheduler-cancel-update-method">The <code class="docutils literal notranslate"><span class="pre">Scheduler.cancel_update()</span></code> Method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="lesson09.html#the-scheduler-wait-method">The <code class="docutils literal notranslate"><span class="pre">Scheduler.wait()</span></code> Method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="lesson09.html#scheduling-functions-with-a-dt-argument">Scheduling functions with a <code class="docutils literal notranslate"><span class="pre">dt</span></code> argument</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="lesson09.html#animation-cycles">Animation Cycles</a></li>
 </ul>
 </li>
 </ul>
@@ -233,21 +249,35 @@
 /* CSS for nbsphinx extension */
 
 /* remove conflicting styling from Sphinx themes */
-div.nbinput.container,
-div.nbinput.container div.prompt,
-div.nbinput.container div.input_area,
-div.nbinput.container div[class*=highlight],
-div.nbinput.container div[class*=highlight] pre,
-div.nboutput.container,
-div.nboutput.container div.prompt,
-div.nboutput.container div.output_area,
-div.nboutput.container div[class*=highlight],
-div.nboutput.container div[class*=highlight] pre {
-    background: none;
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
     border: none;
-    padding: 0 0;
+    padding: 0;
     margin: 0;
     box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
 }
 
 /* avoid gaps between output lines */
@@ -348,7 +378,7 @@ div.nboutput.container div.output_area {
 div.nbinput.container div.input_area {
     border: 1px solid #e0e0e0;
     border-radius: 2px;
-    background: #f5f5f5;
+    /*background: #f5f5f5;*/
 }
 
 /* override MathJax center alignment in output cells */
@@ -414,6 +444,7 @@ div.nboutput.container div.output_area.rendered_html,
 div.nboutput.container div.output_area > div.output_javascript,
 div.nboutput.container div.output_area:not(.rendered_html) > img{
     padding: 5px;
+    margin: 0;
 }
 
 /* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
@@ -423,7 +454,7 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
+.prompt .copybtn {
     display: none;
 }
 
@@ -483,15 +514,14 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Lesson-7">
+<section id="Lesson-7">
 <h1>Lesson 7<a class="headerlink" href="#Lesson-7" title="Permalink to this headline"></a></h1>
 <p>So far we seen types of variables that store a single value</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">4</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mf">3.14</span>
 <span class="n">z</span> <span class="o">=</span> <span class="kc">False</span>
 </pre></div>
@@ -502,22 +532,20 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;strings&#39;</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;strings&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the first character is:&#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the length of characters in y is:&#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="List-Initialization">
+<section id="List-Initialization">
 <h2>List Initialization<a class="headerlink" href="#List-Initialization" title="Permalink to this headline"></a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">empty_list</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">empty_list</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">empty_list</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -526,8 +554,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">my_int_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_int_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_int_list</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_int_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_int_list</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
@@ -538,23 +565,21 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">my_bool_list</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_bool_list</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_bool_list</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_bool_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_bool_list</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="The-append()-method">
+</section>
+<section id="The-append()-method">
 <h2>The <code class="docutils literal notranslate"><span class="pre">append()</span></code> method<a class="headerlink" href="#The-append()-method" title="Permalink to this headline"></a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">starting_list</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">starting_list</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">starting_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">starting_list</span><span class="p">)</span>
 <span class="n">starting_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -566,8 +591,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
     <span class="n">color</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;what is your favorite color&quot;</span><span class="p">)</span>
     <span class="n">colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
@@ -575,15 +599,14 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="List-Indexing-and-Iteration">
+</section>
+<section id="List-Indexing-and-Iteration">
 <h2>List Indexing and Iteration<a class="headerlink" href="#List-Indexing-and-Iteration" title="Permalink to this headline"></a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Charles&#39;</span><span class="p">,</span> <span class="s1">&#39;Ivan&#39;</span><span class="p">,</span> <span class="s1">&#39;Hank&#39;</span><span class="p">,</span> <span class="s1">&#39;Feng-Jun&#39;</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Charles&#39;</span><span class="p">,</span> <span class="s1">&#39;Ivan&#39;</span><span class="p">,</span> <span class="s1">&#39;Hank&#39;</span><span class="p">,</span> <span class="s1">&#39;Feng-Jun&#39;</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span><span class="n">names</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span><span class="n">names</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span><span class="n">names</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
@@ -595,21 +618,19 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Charles&#39;</span><span class="p">,</span> <span class="s1">&#39;Ivan&#39;</span><span class="p">,</span> <span class="s1">&#39;Hank&#39;</span><span class="p">,</span> <span class="s1">&#39;Feng-Jun&#39;</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Charles&#39;</span><span class="p">,</span> <span class="s1">&#39;Ivan&#39;</span><span class="p">,</span> <span class="s1">&#39;Hank&#39;</span><span class="p">,</span> <span class="s1">&#39;Feng-Jun&#39;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="n">names</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="The-len()-function">
+<section id="The-len()-function">
 <h3>The <code class="docutils literal notranslate"><span class="pre">len()</span></code> function<a class="headerlink" href="#The-len()-function" title="Permalink to this headline"></a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Charles&#39;</span><span class="p">,</span> <span class="s1">&#39;Ivan&#39;</span><span class="p">,</span> <span class="s1">&#39;Hank&#39;</span><span class="p">,</span> <span class="s1">&#39;Feng-Jun&#39;</span><span class="p">,</span> <span class="s1">&#39;Chris&#39;</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Charles&#39;</span><span class="p">,</span> <span class="s1">&#39;Ivan&#39;</span><span class="p">,</span> <span class="s1">&#39;Hank&#39;</span><span class="p">,</span> <span class="s1">&#39;Feng-Jun&#39;</span><span class="p">,</span> <span class="s1">&#39;Chris&#39;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="n">names</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </pre></div>
@@ -619,8 +640,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Charles&#39;</span><span class="p">,</span> <span class="s1">&#39;Ivan&#39;</span><span class="p">,</span> <span class="s1">&#39;Hank&#39;</span><span class="p">,</span> <span class="s1">&#39;Feng-Jun&#39;</span><span class="p">,</span> <span class="s1">&#39;Chris&#39;</span><span class="p">,</span> <span class="s1">&#39;Sebastian&#39;</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Charles&#39;</span><span class="p">,</span> <span class="s1">&#39;Ivan&#39;</span><span class="p">,</span> <span class="s1">&#39;Hank&#39;</span><span class="p">,</span> <span class="s1">&#39;Feng-Jun&#39;</span><span class="p">,</span> <span class="s1">&#39;Chris&#39;</span><span class="p">,</span> <span class="s1">&#39;Sebastian&#39;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="n">names</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
@@ -630,8 +650,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Charles&#39;</span><span class="p">,</span> <span class="s1">&#39;Ivan&#39;</span><span class="p">,</span> <span class="s1">&#39;Hank&#39;</span><span class="p">,</span> <span class="s1">&#39;Feng-Jun&#39;</span><span class="p">,</span> <span class="s1">&#39;Chris&#39;</span><span class="p">,</span> <span class="s1">&#39;Sebastian&#39;</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Charles&#39;</span><span class="p">,</span> <span class="s1">&#39;Ivan&#39;</span><span class="p">,</span> <span class="s1">&#39;Hank&#39;</span><span class="p">,</span> <span class="s1">&#39;Feng-Jun&#39;</span><span class="p">,</span> <span class="s1">&#39;Chris&#39;</span><span class="p">,</span> <span class="s1">&#39;Sebastian&#39;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="n">names</span><span class="p">[</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
@@ -641,21 +660,19 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Conditionals-in-a-for-loop">
+</section>
+<section id="Conditionals-in-a-for-loop">
 <h3>Conditionals in a for loop<a class="headerlink" href="#Conditionals-in-a-for-loop" title="Permalink to this headline"></a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Charles&#39;</span><span class="p">,</span> <span class="s1">&#39;Ivan&#39;</span><span class="p">,</span> <span class="s1">&#39;Hank&#39;</span><span class="p">,</span> <span class="s1">&#39;Feng-Jun&#39;</span><span class="p">,</span> <span class="s1">&#39;Chris&#39;</span><span class="p">,</span> <span class="s1">&#39;Sebastian&#39;</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Charles&#39;</span><span class="p">,</span> <span class="s1">&#39;Ivan&#39;</span><span class="p">,</span> <span class="s1">&#39;Hank&#39;</span><span class="p">,</span> <span class="s1">&#39;Feng-Jun&#39;</span><span class="p">,</span> <span class="s1">&#39;Chris&#39;</span><span class="p">,</span> <span class="s1">&#39;Sebastian&#39;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)):</span>
     <span class="k">if</span> <span class="n">names</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Chris&#39;</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">names</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="s1">&#39;went to study Scratch&#39;</span><span class="p">)</span>
@@ -669,8 +686,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Charles&#39;</span><span class="p">,</span> <span class="s1">&#39;Ivan&#39;</span><span class="p">,</span> <span class="s1">&#39;Hank&#39;</span><span class="p">,</span> <span class="s1">&#39;Feng-Jun&#39;</span><span class="p">,</span> <span class="s1">&#39;Chris&#39;</span><span class="p">,</span> <span class="s1">&#39;Sebastian&#39;</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Charles&#39;</span><span class="p">,</span> <span class="s1">&#39;Ivan&#39;</span><span class="p">,</span> <span class="s1">&#39;Hank&#39;</span><span class="p">,</span> <span class="s1">&#39;Feng-Jun&#39;</span><span class="p">,</span> <span class="s1">&#39;Chris&#39;</span><span class="p">,</span> <span class="s1">&#39;Sebastian&#39;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="s1">&#39;Chris&#39;</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="s1">&#39;went to study Scratch&#39;</span><span class="p">)</span>
@@ -683,14 +699,13 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>

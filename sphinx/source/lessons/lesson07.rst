@@ -55,7 +55,7 @@ Labels display strings on the screen. The Label API is very similar to the Sprit
 
 .. code-block:: python
 
-    label = w.create_label():
+    label = w.create_label()
     label.x = 100
     label.y = 300
     label.text = 'Hello, World!'
