@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lesson 2 &mdash; Peanuts Python Course Website 0.0.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -133,6 +134,24 @@
 <li class="toctree-l3"><a class="reference internal" href="lesson09.html#animation-cycles">Animation Cycles</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="lesson10.html">Lesson 10</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="lesson10.html#individual-project-overview">Individual Project Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lesson10.html#today-s-plan">Today’s Plan</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="lesson10.html#brainstorming">1. Brainstorming</a></li>
+<li class="toctree-l4"><a class="reference internal" href="lesson10.html#decomposition">2. Decomposition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="lesson10.html#planning">3. Planning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="lesson10.html#implementation">4. Implementation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="lesson10.html#presentation">Presentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="lesson10.html#introduction-1-minute">1. Introduction (~1 minute)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="lesson10.html#demo-1-2-minutes">2. Demo (~1-2 minutes)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="lesson10.html#discuss-the-implementation-1-2-minutes">3. Discuss the Implementation (~1-2 minutes)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="lesson10.html#questions-and-comments">4. Questions and Comments</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../homework.html">Homework</a><ul>
@@ -215,7 +234,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../student_work.html">Student Work</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../student_work.html#yong">王奕詠 (Yong)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../student_work.html#lucas">顏浚翊 (Lucas)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../student_work.html#justyna-yang">Justyna Yang</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../student_work.html#justyna">Justyna</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../student_work.html#capri">張翊頡 (Capri)</a></li>
 </ul>
 </li>
 </ul>
@@ -268,9 +288,9 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="lesson-2">
+<section id="lesson-2">
 <h1>Lesson 2<a class="headerlink" href="#lesson-2" title="Permalink to this headline"></a></h1>
-<div class="section" id="types">
+<section id="types">
 <h2>Types<a class="headerlink" href="#types" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">int</span></code> a whole number</p></li>
@@ -291,31 +311,31 @@
 <p>Questions:</p>
 <p>What is the function <code class="docutils literal notranslate"><span class="pre">input()</span></code> ‘s return value type?
 What is the type of the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> properties of a Sprite?</p>
-</div>
-<div class="section" id="type-conversion">
+</section>
+<section id="type-conversion">
 <h2>Type Conversion<a class="headerlink" href="#type-conversion" title="Permalink to this headline"></a></h2>
 <p>Implicit Conversion</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">y</span> <span class="o">=</span> <span class="o">.</span><span class="mi">14</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">.14</span>
 <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Explicit Conversion</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;3&#39;</span>
-<span class="n">y</span> <span class="o">=</span> <span class="o">.</span><span class="mi">14</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">.14</span>
 <span class="n">z</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">y</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;3&#39;</span>
-<span class="n">y</span> <span class="o">=</span> <span class="o">.</span><span class="mi">14</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">.14</span>
 <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="classes">
+</section>
+<section id="classes">
 <h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline"></a></h2>
 <p>We can create custom types by defining a <strong>class</strong>. A class defines properties and methods or modifies the properties and methods of an existing class through inheritance.</p>
 <p>For example, we can create a class that inherits from the <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> class that includes all the properties and methods of a Sprite, plus any additional properties of methods we define. We can also set the specific properties so that all class instances share the same data.</p>
@@ -329,15 +349,15 @@ What is the type of the <code class="docutils literal notranslate"><span class="
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">elephant</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">create_sprite</span><span class="p">(</span><span class="n">Elephant</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="loops">
+</section>
+<section id="loops">
 <h2>Loops<a class="headerlink" href="#loops" title="Permalink to this headline"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

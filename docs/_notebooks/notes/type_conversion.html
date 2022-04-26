@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Type Conversion &mdash; Peanuts Python Course Website 0.0.2 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -17,6 +18,8 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script src="../../_static/js/custom.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -133,6 +136,24 @@
 <li class="toctree-l3"><a class="reference internal" href="../../lessons/lesson09.html#animation-cycles">Animation Cycles</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../lessons/lesson10.html">Lesson 10</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../lessons/lesson10.html#individual-project-overview">Individual Project Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../lessons/lesson10.html#today-s-plan">Today’s Plan</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../lessons/lesson10.html#brainstorming">1. Brainstorming</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../lessons/lesson10.html#decomposition">2. Decomposition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../lessons/lesson10.html#planning">3. Planning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../lessons/lesson10.html#implementation">4. Implementation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../lessons/lesson10.html#presentation">Presentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../lessons/lesson10.html#introduction-1-minute">1. Introduction (~1 minute)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../lessons/lesson10.html#demo-1-2-minutes">2. Demo (~1-2 minutes)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../lessons/lesson10.html#discuss-the-implementation-1-2-minutes">3. Discuss the Implementation (~1-2 minutes)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../lessons/lesson10.html#questions-and-comments">4. Questions and Comments</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../homework.html">Homework</a><ul>
@@ -215,7 +236,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../student_work.html">Student Work</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../student_work.html#yong">王奕詠 (Yong)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../student_work.html#lucas">顏浚翊 (Lucas)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../student_work.html#justyna-yang">Justyna Yang</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../student_work.html#justyna">Justyna</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../student_work.html#capri">張翊頡 (Capri)</a></li>
 </ul>
 </li>
 </ul>
@@ -249,21 +271,35 @@
 /* CSS for nbsphinx extension */
 
 /* remove conflicting styling from Sphinx themes */
-div.nbinput.container,
-div.nbinput.container div.prompt,
-div.nbinput.container div.input_area,
-div.nbinput.container div[class*=highlight],
-div.nbinput.container div[class*=highlight] pre,
-div.nboutput.container,
-div.nboutput.container div.prompt,
-div.nboutput.container div.output_area,
-div.nboutput.container div[class*=highlight],
-div.nboutput.container div[class*=highlight] pre {
-    background: none;
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
     border: none;
-    padding: 0 0;
+    padding: 0;
     margin: 0;
     box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
 }
 
 /* avoid gaps between output lines */
@@ -364,7 +400,7 @@ div.nboutput.container div.output_area {
 div.nbinput.container div.input_area {
     border: 1px solid #e0e0e0;
     border-radius: 2px;
-    background: #f5f5f5;
+    /*background: #f5f5f5;*/
 }
 
 /* override MathJax center alignment in output cells */
@@ -430,6 +466,7 @@ div.nboutput.container div.output_area.rendered_html,
 div.nboutput.container div.output_area > div.output_javascript,
 div.nboutput.container div.output_area:not(.rendered_html) > img{
     padding: 5px;
+    margin: 0;
 }
 
 /* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
@@ -439,7 +476,7 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
+.prompt .copybtn {
     display: none;
 }
 
@@ -499,15 +536,14 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Type-Conversion">
+<section id="Type-Conversion">
 <h1>Type Conversion<a class="headerlink" href="#Type-Conversion" title="Permalink to this headline"></a></h1>
 <p>We use type names to convert from one type to another. Below are some examples of type conversions and their resulting values.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;boolean conversions&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;boolean conversions&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------------------------------------------------------------&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;int(True)         -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="kc">True</span><span class="p">))</span>   <span class="o">+</span> <span class="s2">&quot;            # bool to int&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;float(False)      -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="kc">False</span><span class="p">))</span>   <span class="o">+</span> <span class="s2">&quot;          # bool to float&quot;</span><span class="p">)</span>
@@ -576,8 +612,7 @@ chr(122)          -&gt; &#39;z&#39;          # ascii to str
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">ok_to_convert</span> <span class="o">=</span> <span class="s2">&quot;987654321&quot;</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ok_to_convert</span> <span class="o">=</span> <span class="s2">&quot;987654321&quot;</span>
 <span class="nb">int</span><span class="p">(</span><span class="n">ok_to_convert</span><span class="p">)</span>
 <span class="n">not_ok_to_convert</span> <span class="o">=</span> <span class="s2">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span>
 <span class="c1"># int(not_ok_to_convert) # Value Error</span>
@@ -589,8 +624,7 @@ chr(122)          -&gt; &#39;z&#39;          # ascii to str
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;False&#39;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">))</span>
 </pre></div>
@@ -611,8 +645,7 @@ False
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">)))</span>
 </pre></div>
 </div>
@@ -626,7 +659,7 @@ True
 False
 </pre></div></div>
 </div>
-</div>
+</section>
 
 
            </div>

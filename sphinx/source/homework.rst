@@ -37,13 +37,13 @@ Homework
      - ✅
    * - `Homework 3 <homework/homework03.rst>`_
      - ❓
-     - ❓
+     - ⚠️
      - ✅
      - ✅
-     - 
+     - ✅
    * - `Homework 4 <homework/homework04.rst>`_
      - ✅
-     - ❓
+     - ⚠️
      - ✅
      - ✅
      - 

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Variables &mdash; Peanuts Python Course Website 0.0.2 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -17,6 +18,8 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script src="../../_static/js/custom.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -133,6 +136,24 @@
 <li class="toctree-l3"><a class="reference internal" href="../../lessons/lesson09.html#animation-cycles">Animation Cycles</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../lessons/lesson10.html">Lesson 10</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../lessons/lesson10.html#individual-project-overview">Individual Project Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../lessons/lesson10.html#today-s-plan">Today’s Plan</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../lessons/lesson10.html#brainstorming">1. Brainstorming</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../lessons/lesson10.html#decomposition">2. Decomposition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../lessons/lesson10.html#planning">3. Planning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../lessons/lesson10.html#implementation">4. Implementation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../lessons/lesson10.html#presentation">Presentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../lessons/lesson10.html#introduction-1-minute">1. Introduction (~1 minute)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../lessons/lesson10.html#demo-1-2-minutes">2. Demo (~1-2 minutes)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../lessons/lesson10.html#discuss-the-implementation-1-2-minutes">3. Discuss the Implementation (~1-2 minutes)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../lessons/lesson10.html#questions-and-comments">4. Questions and Comments</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../homework.html">Homework</a><ul>
@@ -215,7 +236,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../student_work.html">Student Work</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../student_work.html#yong">王奕詠 (Yong)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../student_work.html#lucas">顏浚翊 (Lucas)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../student_work.html#justyna-yang">Justyna Yang</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../student_work.html#justyna">Justyna</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../student_work.html#capri">張翊頡 (Capri)</a></li>
 </ul>
 </li>
 </ul>
@@ -249,21 +271,35 @@
 /* CSS for nbsphinx extension */
 
 /* remove conflicting styling from Sphinx themes */
-div.nbinput.container,
-div.nbinput.container div.prompt,
-div.nbinput.container div.input_area,
-div.nbinput.container div[class*=highlight],
-div.nbinput.container div[class*=highlight] pre,
-div.nboutput.container,
-div.nboutput.container div.prompt,
-div.nboutput.container div.output_area,
-div.nboutput.container div[class*=highlight],
-div.nboutput.container div[class*=highlight] pre {
-    background: none;
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
     border: none;
-    padding: 0 0;
+    padding: 0;
     margin: 0;
     box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
 }
 
 /* avoid gaps between output lines */
@@ -364,7 +400,7 @@ div.nboutput.container div.output_area {
 div.nbinput.container div.input_area {
     border: 1px solid #e0e0e0;
     border-radius: 2px;
-    background: #f5f5f5;
+    /*background: #f5f5f5;*/
 }
 
 /* override MathJax center alignment in output cells */
@@ -430,6 +466,7 @@ div.nboutput.container div.output_area.rendered_html,
 div.nboutput.container div.output_area > div.output_javascript,
 div.nboutput.container div.output_area:not(.rendered_html) > img{
     padding: 5px;
+    margin: 0;
 }
 
 /* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
@@ -439,7 +476,7 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
+.prompt .copybtn {
     display: none;
 }
 
@@ -499,11 +536,11 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Variables">
+<section id="Variables">
 <h1>Variables<a class="headerlink" href="#Variables" title="Permalink to this headline"></a></h1>
 <p>Variables let us store and manipulate different kinds of data. For example, we can store numbers, characters, lists, dictionaries, and many other types with Python.</p>
 <hr class="docutils" />
-<div class="section" id="Assigning-values">
+<section id="Assigning-values">
 <h2>Assigning values<a class="headerlink" href="#Assigning-values" title="Permalink to this headline"></a></h2>
 <p>We use the <strong>assignment operator</strong> <code class="docutils literal notranslate"><span class="pre">=</span></code> to assign values to variables.</p>
 <p>On the left side is a name we give to our variable and on the right side is a <strong>literal value</strong>.</p>
@@ -511,8 +548,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">example_variable</span> <span class="o">=</span> <span class="mi">5</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">example_variable</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;example_variable =&quot;</span><span class="p">,</span> <span class="n">example_variable</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -530,8 +566,7 @@ example_variable = 5
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -544,9 +579,9 @@ example_variable = 5
 1 2 3
 </pre></div></div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="Naming-Variables">
+<section id="Naming-Variables">
 <h2>Naming Variables<a class="headerlink" href="#Naming-Variables" title="Permalink to this headline"></a></h2>
 <p>Variable names should be descriptive. Your programs will be easier to read and write if you name your variables according to the values they represent. Most python programs name variables with all lowercase letters and underscores between words. For example, <code class="docutils literal notranslate"><span class="pre">this_is_a_long_variable_name</span></code>. Consistency in naming style is considered a good practice.</p>
 <p>Rules for Python variables:</p>
@@ -559,16 +594,15 @@ example_variable = 5
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">_variable_names_can_start_with_an_underscore</span> <span class="o">=</span> <span class="kc">True</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_variable_names_can_start_with_an_underscore</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">variable_names_can_include_numbers_like_123</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">VARIABLE_NAMES_ARE_CASE_SENSITIVE</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 </div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="Data-Types">
+<section id="Data-Types">
 <h2>Data Types<a class="headerlink" href="#Data-Types" title="Permalink to this headline"></a></h2>
 <p>Python is a <em>dynamically-typed</em> programming language. This means that data types are automatically inferred based on the values being assigned. Python has many built-in data types. For example,</p>
 <ul class="simple">
@@ -577,15 +611,14 @@ example_variable = 5
 <li><p><code class="docutils literal notranslate"><span class="pre">float</span></code> (floating point values, numbers like <code class="docutils literal notranslate"><span class="pre">3.1415</span></code>)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">str</span></code> (a string is a list of characters, like <code class="docutils literal notranslate"><span class="pre">&quot;programming</span> <span class="pre">is</span> <span class="pre">fun&quot;</span></code>)</p></li>
 </ul>
-<div class="section" id="The-type()-Function">
+<section id="The-type()-Function">
 <h3>The <code class="docutils literal notranslate"><span class="pre">type()</span></code> Function<a class="headerlink" href="#The-type()-Function" title="Permalink to this headline"></a></h3>
 <p>We can use the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function to check a variable’s type.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 <span class="n">c</span> <span class="o">=</span> <span class="mf">3.1415</span>
 <span class="n">d</span> <span class="o">=</span> <span class="s2">&quot;programming is fun&quot;</span>
@@ -607,9 +640,9 @@ the variable &#39;c&#39; has type: &lt;class &#39;float&#39;&gt;
 the variable &#39;d&#39; has type: &lt;class &#39;str&#39;&gt;
 </pre></div></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>

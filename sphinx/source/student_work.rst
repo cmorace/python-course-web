@@ -12,6 +12,7 @@ Student Work
     :alt: octogon_spiral
     :width: 49.5%
 
+-----------------------------------
 
 顏浚翊 (Lucas)
 -------------------------------------
@@ -20,11 +21,20 @@ Student Work
     :alt: lucas_spiral
     :width: 100%
 
+-----------------------------------
 
-Justyna Yang
+Justyna
 -------------------------------------
 
 .. image:: _student_work/justyna/justyna_stars.png
     :alt: justyna_stars
     :width: 100%
 
+-----------------------------------
+
+張翊頡 (Capri)
+-------------------------------------
+
+.. image:: _student_work/capri/capri_torus.png
+    :alt: capri_torus
+    :width: 100%
