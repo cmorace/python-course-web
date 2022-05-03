@@ -102,8 +102,7 @@ How can we "remember" the current index?
        changes to the next photo in the list each time it is clicked.
 
 
-    Extension:
-
+    Extensions:
        - Fix the index out of bounds error.
        - Modify your program to go back to the first image after the last
 
@@ -143,7 +142,8 @@ because if we add or remove elements from our list, our program will still work.
 
     Use the ``len()`` function to fix the ``IndexError`` index out of range problem.
 
-    Extension: Use the mod operator ``%`` instead of an if statement.
+    Extension:
+        Use the mod operator ``%`` instead of an if statement.
 
 -------------------
 
@@ -152,7 +152,6 @@ Part 4: Slideshow with Previous and Next Button
 ================================================
 
 What if we want to add a previous button?
-
 
 
 Scope: Global vs. Local Variables and the ``global`` Keyword
@@ -193,9 +192,8 @@ get unexpected results.
     the previous index when clicked.
 
     Extensions:
-
-    - Could you use a single class for the Previous and Next Buttons? How?
-    - Add any extensions from the previous exercises
-    - Add "like" and "dislike" buttons and add elements
-      to the two new lists or tracks the number of liked and disliked images.
-    - Add a button that changes the background to a random image.
+     - Could you use a single class for the Previous and Next Buttons? How?
+     - Add any extensions from the previous exercises
+     - Add "like" and "dislike" buttons and add elements
+       to the two new lists or track the number of liked and disliked images.
+     - Add a button that changes the background to a random image.
