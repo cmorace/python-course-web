@@ -170,7 +170,33 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Lesson 12</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lesson 12</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#review-lists-loops-and-functions">Review Lists, Loops, and Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#list-initialization">List Initialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#accessing-list-elements-by-index">Accessing List Elements by Index</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-len-function">The <code class="docutils literal notranslate"><span class="pre">len()</span></code> Function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#for-loops-with-range">For Loops with <code class="docutils literal notranslate"><span class="pre">range()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#functions">Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exercise-1">Exercise 1</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#iterating-over-a-list">Iterating Over a List</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#exercise-2">Exercise 2</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#conditions-in-for-loops">Conditions in For Loops</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#exercise-3">Exercise 3</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#return-values-from-functions">Return Values from Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#exercise-4">Exercise 4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-return-to-stop-execution">Using <code class="docutils literal notranslate"><span class="pre">return</span></code> to Stop Execution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exercise-5">Exercise 5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#python-s-in-keyword">Python’s <code class="docutils literal notranslate"><span class="pre">in</span></code> Keyword</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../homework.html">Homework</a><ul>
@@ -312,7 +338,192 @@
 </style>
 <section id="lesson-12">
 <h1>Lesson 12<a class="headerlink" href="#lesson-12" title="Permalink to this headline"></a></h1>
-<p>Review</p>
+<section id="review-lists-loops-and-functions">
+<h2>Review Lists, Loops, and Functions<a class="headerlink" href="#review-lists-loops-and-functions" title="Permalink to this headline"></a></h2>
+<section id="list-initialization">
+<h3>List Initialization<a class="headerlink" href="#list-initialization" title="Permalink to this headline"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="accessing-list-elements-by-index">
+<h3>Accessing List Elements by Index<a class="headerlink" href="#accessing-list-elements-by-index" title="Permalink to this headline"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="the-len-function">
+<h3>The <code class="docutils literal notranslate"><span class="pre">len()</span></code> Function<a class="headerlink" href="#the-len-function" title="Permalink to this headline"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="for-loops-with-range">
+<h3>For Loops with <code class="docutils literal notranslate"><span class="pre">range()</span></code><a class="headerlink" href="#for-loops-with-range" title="Permalink to this headline"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">counter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">counter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">counter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;printint inside the foo function&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline"></a></h3>
+<div class="admonition-exercise-1 admonition">
+<p class="admonition-title">Exercise 1</p>
+<p>Define a function named <code class="docutils literal notranslate"><span class="pre">print_numbers</span></code> that prints the numbers 0-10.</p>
+<p>Extensions:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Write a function <code class="docutils literal notranslate"><span class="pre">print_numbers_up_to(n:</span> <span class="pre">int)</span></code> that prints the numbers 0-n.</p></li>
+<li><p>Write a function <code class="docutils literal notranslate"><span class="pre">print_numbers_between(a:</span> <span class="pre">int,</span> <span class="pre">b:</span> <span class="pre">int)</span></code> that prints the numbers a-b.</p></li>
+<li><ol class="arabic simple" start="2">
+<li><p>Write a function <code class="docutils literal notranslate"><span class="pre">print_even_numbers_between(a:</span> <span class="pre">int,</span> <span class="pre">b:</span> <span class="pre">int)</span></code> that prints the even numbers between a and b</p></li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="iterating-over-a-list">
+<h2>Iterating Over a List<a class="headerlink" href="#iterating-over-a-list" title="Permalink to this headline"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Charles&#39;</span><span class="p">,</span> <span class="s1">&#39;Capri&#39;</span><span class="p">,</span> <span class="s1">&#39;Lucas&#39;</span><span class="p">,</span> <span class="s1">&#39;Tim&#39;</span><span class="p">,</span> <span class="s1">&#39;Yong&#39;</span><span class="p">,</span> <span class="s1">&#39;Justyna&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">names</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+
+
+<span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>How can we print out all of the names in the <code class="docutils literal notranslate"><span class="pre">names</span></code> list?</p>
+<section id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline"></a></h3>
+<div class="admonition-exercise-2 admonition">
+<p class="admonition-title">Exercise 2</p>
+<p>Define a function named <code class="docutils literal notranslate"><span class="pre">print_list(any_list:</span> <span class="pre">List[Any])</span></code> that takes a list as an argument and prints out all of the lists elements.</p>
+<p>Extensions:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Write a function to print the first half of a list.</p></li>
+<li><p>Write a function to print the second half of a list.</p></li>
+<li><p>Write a function to print put rounded numbers from a list of floats.</p></li>
+<li><p>Write a function to print a list in reverse order.</p></li>
+<li><p>Write a function to print the square of each number in a list.</p></li>
+</ol>
+</div></blockquote>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="conditions-in-for-loops">
+<h2>Conditions in For Loops<a class="headerlink" href="#conditions-in-for-loops" title="Permalink to this headline"></a></h2>
+<section id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline"></a></h3>
+<div class="admonition-exercise-3 admonition">
+<p class="admonition-title">Exercise 3</p>
+<p>Define a function named <code class="docutils literal notranslate"><span class="pre">print_element_in_list(any_list:</span> <span class="pre">List[Any],</span> <span class="pre">element)</span></code> that takes a list as an argument and prints out the element if it is in the list.</p>
+<p>Extensions:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Write a function to print the indices of an element if it is in a list.</p></li>
+<li><p>Write a function to print the elements between two numbers <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p></li>
+<li><p>Write a function to print put all the even numbers in a list.</p></li>
+<li><p>Write a function to print out all of the prime numbers in a list.</p></li>
+</ol>
+</div></blockquote>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="return-values-from-functions">
+<h2>Return Values from Functions<a class="headerlink" href="#return-values-from-functions" title="Permalink to this headline"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;What is your name&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">give_me_5</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">int</span>
+    <span class="k">return</span> <span class="mi">5</span>
+
+<span class="n">hand</span> <span class="o">=</span> <span class="n">give_me_5</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hand</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">roll_die</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="n">random_side</span> <span class="o">=</span> <span class="n">roll_die</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">is_adult</span><span class="p">(</span><span class="n">age</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span>
+</pre></div>
+</div>
+<section id="exercise-4">
+<h3>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline"></a></h3>
+<div class="admonition-exercise-4 admonition">
+<p class="admonition-title">Exercise 4</p>
+<p>Define a function named <code class="docutils literal notranslate"><span class="pre">roll_die(sides:</span> <span class="pre">int)</span> <span class="pre">-&gt;</span> <span class="pre">int</span></code> that returns a random int between 1 and <code class="docutils literal notranslate"><span class="pre">sides</span></code>.</p>
+<p>Extensions:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Write a function to returns the first element in a list</p></li>
+<li><p>Write a function to returns the last element in a list</p></li>
+<li><p>Write a function that returns the number of elements in a list with the value equal to <code class="docutils literal notranslate"><span class="pre">v</span></code> where <code class="docutils literal notranslate"><span class="pre">v</span></code> is an argument.</p></li>
+<li><p>Write a function that returns True if a string starts with the letter ‘t’</p></li>
+<li><p>Write a function that returns True if a string starts with the letter <code class="docutils literal notranslate"><span class="pre">c</span></code> where <code class="docutils literal notranslate"><span class="pre">c</span></code> is and argument.</p></li>
+<li><p>Write a function that returns a list of length <code class="docutils literal notranslate"><span class="pre">n</span></code> with random elements between 1 and 100.</p></li>
+<li><p>Write a function that returns a list of length <code class="docutils literal notranslate"><span class="pre">n</span></code> with random elements between <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> where <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are arguments.</p></li>
+</ol>
+</div></blockquote>
+</div>
+</section>
+<section id="using-return-to-stop-execution">
+<h3>Using <code class="docutils literal notranslate"><span class="pre">return</span></code> to Stop Execution<a class="headerlink" href="#using-return-to-stop-execution" title="Permalink to this headline"></a></h3>
+</section>
+<section id="exercise-5">
+<h3>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline"></a></h3>
+<div class="admonition-exercise-5 admonition">
+<p class="admonition-title">Exercise 5</p>
+<p>Define a function named <code class="docutils literal notranslate"><span class="pre">is_in_list(lst:</span> <span class="pre">List[int],</span> <span class="pre">element:</span> <span class="pre">int)</span> <span class="pre">-&gt;</span> <span class="pre">bool</span></code> that returns a True if and only if <code class="docutils literal notranslate"><span class="pre">element</span></code> is found in <code class="docutils literal notranslate"><span class="pre">lst</span></code>.</p>
+<p>Extensions:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Write a function that returns True if an element is not in a list.</p></li>
+<li><p>Write a function that returns True if two lists have at least one element in common.</p></li>
+</ol>
+</div></blockquote>
+</div>
+</section>
+<section id="python-s-in-keyword">
+<h3>Python’s <code class="docutils literal notranslate"><span class="pre">in</span></code> Keyword<a class="headerlink" href="#python-s-in-keyword" title="Permalink to this headline"></a></h3>
+</section>
+</section>
 </section>
 
 
