@@ -127,14 +127,14 @@ Exercise 3
 
 .. admonition:: Exercise 3
 
-    Define a function named ``print_element_in_list(any_list: List[Any], element)`` that takes a list as an argument and prints out the element if it is in the list.
+    Define a function named ``print_element_in_list(any_list: List[Any], element: Any)`` that takes a list as an argument and prints out the element if it is in the list.
 
     Extensions:
 
         1. Write a function to print the indices of an element if it is in a list.
         2. Write a function to print the elements between two numbers ``a`` and ``b``.
-        3. Write a function to print put all the even numbers in a list.
-        4. Write a function to print out all of the prime numbers in a list.
+        3. Write a function to print all the even numbers in a list.
+        4. Write a function to print all of the prime numbers in a list.
 
 
 --------------------
@@ -174,11 +174,10 @@ Exercise 4
 
         1. Write a function to returns the first element in a list
         2. Write a function to returns the last element in a list
-        3. Write a function that returns the number of elements in a list with the value equal to ``v`` where ``v`` is an argument.
-        4. Write a function that returns True if a string starts with the letter 't'
-        5. Write a function that returns True if a string starts with the letter ``c`` where ``c`` is and argument.
-        6. Write a function that returns a list of length ``n`` with random elements between 1 and 100.
-        7. Write a function that returns a list of length ``n`` with random elements between ``a`` and ``b`` where ``a`` and ``b`` are arguments.
+        3. Write a function that returns True if a string starts with the letter 't'
+        4. Write a function that returns True if a string starts with the letter ``c`` where ``c`` is an argument.
+        5. Write a function that returns a list of length ``n`` with random elements between 1 and 100.
+        6. Write a function that returns a list of length ``n`` with random elements between ``a`` and ``b``.
 
 
 Using ``return`` to Stop Execution
@@ -193,7 +192,7 @@ Exercise 5
 
     Extensions:
 
-        1. Write a function that returns True if an element is not in a list.
+        1. Write a function that returns True if an element is **not** in a list.
         2. Write a function that returns True if two lists have at least one element in common.
 
 
