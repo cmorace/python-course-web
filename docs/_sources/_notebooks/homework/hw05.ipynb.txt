@@ -4,7 +4,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "# Homework 6"
+    "# Homework 5"
    ]
   },
   {
@@ -82,7 +82,9 @@
     "# test\n",
     "x = [1,4,2,5,3]\n",
     "y = [1,4,2,5,3]\n",
-    "print(is_equal(x, y))"
+    "z = [0,4,2,5,3]\n",
+    "print(is_equal(x, y)) # should print True\n",
+    "print(is_equal(y, z)) # should print False"
    ]
   },
   {
@@ -91,7 +93,9 @@
    "source": [
     "### Exercise: Digit List\n",
     "Write a function that takes an integer and returns a list or its digits. For example,\n",
-    "`to_digits(50394829384)` should return `[5,0,3,9,4,8,2,9,3,8,4]`. Do not use string conversion."
+    "`to_digits(50394829384)` should return `[5,0,3,9,4,8,2,9,3,8,4]`.\n",
+    "\n",
+    "Hint: an easier way to do this is to first convert the number to a ``str``."
    ]
   },
   {
@@ -117,12 +121,6 @@
    "source": [
     "### Exercise: Filter Primes\n",
     "Write a function that takes a list of numbers and returns a new list with the prime numbers in the original list. For example: \n",
-    "```python\n",
-    "x = [1,2,3,4,5,6,7,8,9,10]\n",
-    "x2 = filter_primes(x)\n",
-    "print(x2)\n",
-    "```\n",
-    "should output `[2,3,5,7]`. \n",
     "\n",
     "Recall, a prime number is a positive integer that is divisible by no other number but 1 and itself."
    ]
@@ -141,7 +139,7 @@
     "# test\n",
     "x = [1,2,3,4,5,6,7,8,9,10]\n",
     "x2 = filter_primes(x)\n",
-    "print(x2)"
+    "print(x2) # should print [2, 3, 5, 7] "
    ]
   }
  ],

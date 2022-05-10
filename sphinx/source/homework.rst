@@ -37,16 +37,22 @@ Homework
      - ✅
    * - `Homework 3 <homework/homework03.rst>`_
      - ❓
-     - ⚠️
+     - ❓
      - ✅
      - ✅
      - ✅
    * - `Homework 4 <homework/homework04.rst>`_
      - ✅
-     - ⚠️
      - ✅
      - ✅
-     - 
+     - ✅
+     -
+   * - `Homework 5 <homework/homework05.rst>`_
+     -
+     -
+     -
+     -
+     -
 
 .. toctree::
    :hidden:
@@ -55,3 +61,4 @@ Homework
    homework/homework02
    homework/homework03
    homework/homework04
+   homework/homework05

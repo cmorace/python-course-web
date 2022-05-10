@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Homework 6 &mdash; Peanuts Python Course Website 0.0.2 documentation</title>
+  <title>Homework 5 &mdash; Peanuts Python Course Website 0.0.2 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
@@ -170,6 +170,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../lessons/lesson12.html">Lesson 12</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../homework.html">Homework</a><ul>
@@ -184,6 +185,9 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../homework/homework04.html">Homework 4 (Math and Emojis)</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../homework/homework05.html">Homework 5 (Lists and Functions)</a><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -272,7 +276,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Homework 6</li>
+      <li>Homework 5</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -551,8 +555,8 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<section id="Homework-6">
-<h1>Homework 6<a class="headerlink" href="#Homework-6" title="Permalink to this headline"></a></h1>
+<section id="Homework-5">
+<h1>Homework 5<a class="headerlink" href="#Homework-5" title="Permalink to this headline"></a></h1>
 <section id="Exercise:-Map-x^2">
 <h2>Exercise: Map <span class="math notranslate nohighlight">\(x^2\)</span><a class="headerlink" href="#Exercise:-Map-x^2" title="Permalink to this headline"></a></h2>
 <p>Write a function that takes a list of numbers and returns a new list with the square of each number in the original list. For example:</p>
@@ -611,14 +615,17 @@ div.rendered_html tbody tr:hover {
 <span class="c1"># test</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">is_equal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+<span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_equal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span> <span class="c1"># should print True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_equal</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">))</span> <span class="c1"># should print False</span>
 </pre></div>
 </div>
 </div>
 </section>
 <section id="Exercise:-Digit-List">
 <h2>Exercise: Digit List<a class="headerlink" href="#Exercise:-Digit-List" title="Permalink to this headline"></a></h2>
-<p>Write a function that takes an integer and returns a list or its digits. For example, <code class="docutils literal notranslate"><span class="pre">to_digits(50394829384)</span></code> should return <code class="docutils literal notranslate"><span class="pre">[5,0,3,9,4,8,2,9,3,8,4]</span></code>. Do not use string conversion.</p>
+<p>Write a function that takes an integer and returns a list or its digits. For example, <code class="docutils literal notranslate"><span class="pre">to_digits(50394829384)</span></code> should return <code class="docutils literal notranslate"><span class="pre">[5,0,3,9,4,8,2,9,3,8,4]</span></code>.</p>
+<p>Hint: an easier way to do this is to first convert the number to a <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -639,12 +646,6 @@ div.rendered_html tbody tr:hover {
 <section id="Exercise:-Filter-Primes">
 <h2>Exercise: Filter Primes<a class="headerlink" href="#Exercise:-Filter-Primes" title="Permalink to this headline"></a></h2>
 <p>Write a function that takes a list of numbers and returns a new list with the prime numbers in the original list. For example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
-<span class="n">x2</span> <span class="o">=</span> <span class="n">filter_primes</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>should output <code class="docutils literal notranslate"><span class="pre">[2,3,5,7]</span></code>.</p>
 <p>Recall, a prime number is a positive integer that is divisible by no other number but 1 and itself.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -658,7 +659,7 @@ div.rendered_html tbody tr:hover {
 <span class="c1"># test</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
 <span class="n">x2</span> <span class="o">=</span> <span class="n">filter_primes</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span> <span class="c1"># should print [2, 3, 5, 7]</span>
 </pre></div>
 </div>
 </div>
