@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lesson 11 &mdash; Peanuts Python Course Website 0.0.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -336,9 +335,9 @@
     text-align: unset;
 }
 </style>
-<section id="lesson-11">
+<div class="section" id="lesson-11">
 <h1>Lesson 11<a class="headerlink" href="#lesson-11" title="Permalink to this headline"></a></h1>
-<section id="lists">
+<div class="section" id="lists">
 <h2>Lists<a class="headerlink" href="#lists" title="Permalink to this headline"></a></h2>
 <p>Lists in Python (also known as arrays in other programming languages)
 are very powerful <strong>data structure</strong>.</p>
@@ -348,7 +347,7 @@ are very powerful <strong>data structure</strong>.</p>
 <li><p>the elements are <strong>ordered</strong> (i.e., there is a first, second, etc. element)</p></li>
 <li><p>the elements in a list should usually have the same <strong>type</strong></p></li>
 </ul>
-<section id="initialization">
+<div class="section" id="initialization">
 <h3>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline"></a></h3>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">b</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
@@ -360,8 +359,8 @@ are very powerful <strong>data structure</strong>.</p>
 <span class="n">images</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;apple.jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;ninja.png&#39;</span><span class="p">,</span> <span class="s1">&#39;sword.tga&#39;</span><span class="p">,</span> <span class="s1">&#39;background.bmp&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-</section>
-<section id="accessing-elements-by-index">
+</div>
+<div class="section" id="accessing-elements-by-index">
 <h3>Accessing Elements by Index<a class="headerlink" href="#accessing-elements-by-index" title="Permalink to this headline"></a></h3>
 <p>Each element in the list has an <strong>index</strong>, an integer value
 corresponding to the element’s position in the list.</p>
@@ -375,9 +374,9 @@ corresponding to the element’s position in the list.</p>
 <span class="c1"># print(student_names[5])</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="part-1-basic-slideshow">
+</div>
+</div>
+<div class="section" id="part-1-basic-slideshow">
 <h2>Part 1: Basic Slideshow<a class="headerlink" href="#part-1-basic-slideshow" title="Permalink to this headline"></a></h2>
 <div class="admonition-exercise-1 admonition">
 <p class="admonition-title">Exercise 1</p>
@@ -402,9 +401,9 @@ Change to the different captions when you change the images.</p>
 </dd>
 </dl>
 </div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="part-2-slideshow-with-next-button">
+<div class="section" id="part-2-slideshow-with-next-button">
 <h2>Part 2: Slideshow with Next Button<a class="headerlink" href="#part-2-slideshow-with-next-button" title="Permalink to this headline"></a></h2>
 <p>What if we want more than three images in the list?</p>
 <p>Let’s implement a “next button” that switches to the next image in the list.
@@ -435,15 +434,15 @@ changes to the next photo in the list each time it is clicked.</p></li>
 </dd>
 </dl>
 </div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="part-3-infinite-slideshow">
+<div class="section" id="part-3-infinite-slideshow">
 <h2>Part 3: Infinite Slideshow<a class="headerlink" href="#part-3-infinite-slideshow" title="Permalink to this headline"></a></h2>
 <p>If we are showing the last image in the list,
 what happens when we hit the next button?</p>
 <p>Can you come up with a solution to fix the <code class="docutils literal notranslate"><span class="pre">IndexError</span></code> problem?</p>
 <p>What if we don’t know the number of elements in the list?</p>
-<section id="the-len-function">
+<div class="section" id="the-len-function">
 <h3>The <code class="docutils literal notranslate"><span class="pre">len()</span></code> Function<a class="headerlink" href="#the-len-function" title="Permalink to this headline"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">len()</span></code> function returns the number of elements in a list. For example,</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">images</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1.jpg&#39;</span><span class="p">,</span>
@@ -466,13 +465,13 @@ because if we add or remove elements from our list, our program will still work.
 </dd>
 </dl>
 </div>
-</section>
-</section>
+</div>
+</div>
 <hr class="docutils" />
-<section id="part-4-slideshow-with-previous-and-next-button">
+<div class="section" id="part-4-slideshow-with-previous-and-next-button">
 <h2>Part 4: Slideshow with Previous and Next Button<a class="headerlink" href="#part-4-slideshow-with-previous-and-next-button" title="Permalink to this headline"></a></h2>
 <p>What if we want to add a previous button?</p>
-<section id="scope-global-vs-local-variables-and-the-global-keyword">
+<div class="section" id="scope-global-vs-local-variables-and-the-global-keyword">
 <h3>Scope: Global vs. Local Variables and the <code class="docutils literal notranslate"><span class="pre">global</span></code> Keyword<a class="headerlink" href="#scope-global-vs-local-variables-and-the-global-keyword" title="Permalink to this headline"></a></h3>
 <p>Since the <code class="docutils literal notranslate"><span class="pre">current_index</span></code> variable must be modified in
 two different classes (previous button and next button),
@@ -515,9 +514,9 @@ to the two new lists or track the number of liked and disliked images.</p></li>
 </dd>
 </dl>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
