@@ -15,7 +15,7 @@ Returning a list from a function
     def get_random_list(low, high, length):
         result = []
         for _ in range(length):
-            result.append(randint(a, b))
+            result.append(randint(low, hight))
         return result
 
 -------------------------------
@@ -41,7 +41,7 @@ A simpler way to do the same thing:
 
 .. admonition:: Exercise:
 
-    Rewrite the ``is_in_list(any_list)`` function from last week using a for each loop.
+    Rewrite the ``is_in_list(any_list, x)`` function from last week using a for each loop.
 
     Extension: rewrite functions from the last homework to use for each loops
 

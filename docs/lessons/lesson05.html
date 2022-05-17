@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lesson 5 &mdash; Peanuts Python Course Website 0.0.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -345,11 +344,11 @@
     text-align: unset;
 }
 </style>
-<section id="lesson-5">
+<div class="section" id="lesson-5">
 <h1>Lesson 5<a class="headerlink" href="#lesson-5" title="Permalink to this headline"></a></h1>
 <p>Download and extract the image files below.</p>
 <p><a class="reference download internal" download="" href="../_downloads/9d2e838abdb73cec2b6d39c4203efe3f/img.zip"><code class="xref download docutils literal notranslate"><span class="pre">img.zip</span></code></a></p>
-<section id="decomposition">
+<div class="section" id="decomposition">
 <h2>Decomposition<a class="headerlink" href="#decomposition" title="Permalink to this headline"></a></h2>
 <ol class="arabic simple">
 <li><p>What are the components of the “Gem Catching” game?</p></li>
@@ -358,8 +357,8 @@
 <li><p>What is missing?</p></li>
 <li><p>What could we add to make the game more interesting?</p></li>
 </ol>
-</section>
-<section id="functions">
+</div>
+<div class="section" id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h2>
 <p>A function defines a procedure that we “call” to execute at a different
 location in our program. In Python, functions start with the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword
@@ -370,8 +369,8 @@ the function arguments, and the code that we want the function to execute.</p>
     <span class="n">window</span><span class="o">.</span><span class="n">create_sprite</span><span class="p">(</span><span class="n">Gem</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="the-scheduler-class">
+</div>
+<div class="section" id="the-scheduler-class">
 <h2>The <code class="docutils literal notranslate"><span class="pre">Scheduler</span></code> Class<a class="headerlink" href="#the-scheduler-class" title="Permalink to this headline"></a></h2>
 <p>Pycat includes a <code class="docutils literal notranslate"><span class="pre">Scheduler</span></code> class to call a function repeatedly at a fixed time interval. For example, if we want to execute our <code class="docutils literal notranslate"><span class="pre">create_gem</span></code> function every second, we can write:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pycat.core</span> <span class="kn">import</span> <span class="n">Scheduler</span>
@@ -379,16 +378,16 @@ the function arguments, and the code that we want the function to execute.</p>
 <span class="n">Scheduler</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">create_gem</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="the-sprite-s-delete-method">
+</div>
+<div class="section" id="the-sprite-s-delete-method">
 <h2>The <code class="docutils literal notranslate"><span class="pre">Sprite</span></code>’s <code class="docutils literal notranslate"><span class="pre">delete()</span></code> method<a class="headerlink" href="#the-sprite-s-delete-method" title="Permalink to this headline"></a></h2>
 <p>To delete a sprite from the window, use the <code class="docutils literal notranslate"><span class="pre">delete()</span></code> method.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_touching_sprite</span><span class="p">(</span><span class="n">cat</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
 </pre></div>
 </div>
-</section>
-<section id="randomization">
+</div>
+<div class="section" id="randomization">
 <h2>Randomization<a class="headerlink" href="#randomization" title="Permalink to this headline"></a></h2>
 <p>You can use the <code class="docutils literal notranslate"><span class="pre">random</span></code> module to generate random numbers.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
@@ -400,8 +399,8 @@ the function arguments, and the code that we want the function to execute.</p>
     <span class="bp">self</span><span class="o">.</span><span class="n">goto_random_position</span><span class="p">()</span>
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>

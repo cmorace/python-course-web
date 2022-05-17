@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lesson 1 &mdash; Peanuts Python Course Website 0.0.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -345,18 +344,18 @@
     text-align: unset;
 }
 </style>
-<section id="lesson-1">
+<div class="section" id="lesson-1">
 <h1>Lesson 1<a class="headerlink" href="#lesson-1" title="Permalink to this headline"></a></h1>
 <p>Download and extract the image files below.</p>
 <p><a class="reference download internal" download="" href="../_downloads/da54e62131a77a63b54d026efca9a98b/lesson_01_images.zip"><code class="xref download docutils literal notranslate"><span class="pre">lesson_01_images.zip</span></code></a></p>
-<section id="import-statements">
+<div class="section" id="import-statements">
 <h2>Import Statements<a class="headerlink" href="#import-statements" title="Permalink to this headline"></a></h2>
 <p>Import statements allow us to import code from outside the file we are currently working on. For example, Window and Sprite are pieces of code that we have already written and would like to re-use.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pycat.core</span> <span class="kn">import</span> <span class="n">Window</span><span class="p">,</span> <span class="n">Sprite</span>
 </pre></div>
 </div>
-</section>
-<section id="variables">
+</div>
+<div class="section" id="variables">
 <h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline"></a></h2>
 <p>Variables let us store and manipulate data. They store simple data like a number or a string of characters or more complex objects like a Window or a Sprite.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;enter your name&#39;</span>
@@ -365,8 +364,8 @@
 <span class="n">elephant</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">create_sprite</span><span class="p">()</span>
 </pre></div>
 </div>
-</section>
-<section id="properties">
+</div>
+<div class="section" id="properties">
 <h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline"></a></h2>
 <p>Properties, also known as member variables, are variables contained inside a particular Class like Sprite or Window. For example, below <code class="docutils literal notranslate"><span class="pre">image</span></code>, <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, and <code class="docutils literal notranslate"><span class="pre">scale</span></code> are properties of the Sprite class.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">elephant</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="s1">&#39;elephant.png&#39;</span>
@@ -375,8 +374,8 @@
 <span class="n">elephant</span><span class="o">.</span><span class="n">scale</span> <span class="o">=</span> <span class="mf">1.5</span>
 </pre></div>
 </div>
-</section>
-<section id="functions">
+</div>
+<div class="section" id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h2>
 <p>Functions define a sub-routine in our program. They are handy to eliminate duplicate code and make our programs easier to understand and maintain. The data we pass into functions are called <strong>arguments</strong>. The data that we receive from functions are called <strong>return values</strong>. The code inside functions is not executed until the function is <em>called</em>.</p>
 <p>Two functions in the Python programming language are <code class="docutils literal notranslate"><span class="pre">input()</span></code> and <code class="docutils literal notranslate"><span class="pre">print()</span></code>.</p>
@@ -384,8 +383,8 @@
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;your age is&#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="methods">
+</div>
+<div class="section" id="methods">
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline"></a></h2>
 <p>Methods, also known as member functions, are functions contained inside a particular class. Thus, we usually need an instance of the class to call them.</p>
 <p>The method <code class="docutils literal notranslate"><span class="pre">create_sprite()</span></code> is a member of the <code class="docutils literal notranslate"><span class="pre">Window</span></code> class and <code class="docutils literal notranslate"><span class="pre">goto_random_position()</span></code> is a method in the the <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> class.</p>
@@ -393,8 +392,8 @@
 <span class="n">elephant</span><span class="o">.</span><span class="n">goto_random_position</span><span class="p">()</span>
 </pre></div>
 </div>
-</section>
-<section id="conditional-statements">
+</div>
+<div class="section" id="conditional-statements">
 <h2>Conditional Statements<a class="headerlink" href="#conditional-statements" title="Permalink to this headline"></a></h2>
 <p>Conditional statements change the flow of our code based on some logic.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">size</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;big or small? )</span>
@@ -406,8 +405,8 @@
    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sorry, I only understand big or small.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>

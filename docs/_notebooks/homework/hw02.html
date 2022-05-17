@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intro to Python with Jupyter Notebooks &mdash; Peanuts Python Course Website 0.0.2 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -18,8 +17,8 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
         <script src="../../_static/js/custom.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -325,35 +324,21 @@
 /* CSS for nbsphinx extension */
 
 /* remove conflicting styling from Sphinx themes */
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt *,
-div.nbinput.container div.input_area pre,
-div.nboutput.container div.output_area pre,
-div.nbinput.container div.input_area .highlight,
-div.nboutput.container div.output_area .highlight {
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
     border: none;
-    padding: 0;
+    padding: 0 0;
     margin: 0;
     box-shadow: none;
-}
-
-div.nbinput.container > div[class*=highlight],
-div.nboutput.container > div[class*=highlight] {
-    margin: 0;
-}
-
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt * {
-    background: none;
-}
-
-div.nboutput.container div.output_area .highlight,
-div.nboutput.container div.output_area pre {
-    background: unset;
-}
-
-div.nboutput.container div.output_area div.highlight {
-    color: unset;  /* override Pygments text color */
 }
 
 /* avoid gaps between output lines */
@@ -454,7 +439,7 @@ div.nboutput.container div.output_area {
 div.nbinput.container div.input_area {
     border: 1px solid #e0e0e0;
     border-radius: 2px;
-    /*background: #f5f5f5;*/
+    background: #f5f5f5;
 }
 
 /* override MathJax center alignment in output cells */
@@ -520,7 +505,6 @@ div.nboutput.container div.output_area.rendered_html,
 div.nboutput.container div.output_area > div.output_javascript,
 div.nboutput.container div.output_area:not(.rendered_html) > img{
     padding: 5px;
-    margin: 0;
 }
 
 /* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
@@ -530,7 +514,7 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt .copybtn {
+.prompt a.copybtn {
     display: none;
 }
 
@@ -590,7 +574,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<section id="Intro-to-Python-with-Jupyter-Notebooks">
+<div class="section" id="Intro-to-Python-with-Jupyter-Notebooks">
 <h1>Intro to Python with Jupyter Notebooks<a class="headerlink" href="#Intro-to-Python-with-Jupyter-Notebooks" title="Permalink to this headline"></a></h1>
 <p>This homework will test your understanding of the following programming concepts:</p>
 <ul class="simple">
@@ -602,16 +586,17 @@ div.rendered_html tbody tr:hover {
 </ul>
 <p>Each problem is preceded by an example to demonstrate the concepts and Python syntax you will need to complete the exercise. Read the example code, click on the example’s code cell, and press <code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">enter</span></code> to execute the code. Then read the exercise and complete the program.</p>
 <hr class="docutils" />
-<section id="1.-Comparison">
+<div class="section" id="1.-Comparison">
 <h2>1. Comparison<a class="headerlink" href="#1.-Comparison" title="Permalink to this headline"></a></h2>
-<section id="Example:-The-Smaller-Number">
+<div class="section" id="Example:-The-Smaller-Number">
 <h3>Example: The Smaller Number<a class="headerlink" href="#Example:-The-Smaller-Number" title="Permalink to this headline"></a></h3>
 <p>Get two integers from a user and print which number is smaller or if they are equal.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;enter an integer:&quot;</span><span class="p">))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;enter an integer:&quot;</span><span class="p">))</span>
 <span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;enter an integer:&quot;</span><span class="p">))</span>
 <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s2">&quot;is less than&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
@@ -622,15 +607,16 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Exercise:-Who-is-Younger?">
+</div>
+<div class="section" id="Exercise:-Who-is-Younger?">
 <h3>Exercise: Who is Younger?<a class="headerlink" href="#Exercise:-Who-is-Younger?" title="Permalink to this headline"></a></h3>
 <p>Get the names and ages of two people, then print which person is younger or if they are the same age.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name_a</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;first name:&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">name_a</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;first name:&quot;</span><span class="p">)</span>
 <span class="n">age_a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;first age:&quot;</span><span class="p">))</span>
 <span class="n">name_b</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;second name:&quot;</span><span class="p">)</span>
 <span class="n">age_b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;second age:&quot;</span><span class="p">))</span>
@@ -639,18 +625,19 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <hr class="docutils" />
-</section>
-</section>
-<section id="2.-Divisibility-testing">
+</div>
+</div>
+<div class="section" id="2.-Divisibility-testing">
 <h2>2. Divisibility testing<a class="headerlink" href="#2.-Divisibility-testing" title="Permalink to this headline"></a></h2>
-<section id="Example:-Divisible-by-3">
+<div class="section" id="Example:-Divisible-by-3">
 <h3>Example: Divisible by <span class="math notranslate nohighlight">\(3\)</span><a class="headerlink" href="#Example:-Divisible-by-3" title="Permalink to this headline"></a></h3>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">%</span></code> operator to check if an integer is divisible by <span class="math notranslate nohighlight">\(3\)</span></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;enter an integer:&quot;</span><span class="p">))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;enter an integer:&quot;</span><span class="p">))</span>
 <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;is divisible by 3&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
@@ -658,32 +645,34 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Exercise:-Even-or-Odd?">
+</div>
+<div class="section" id="Exercise:-Even-or-Odd?">
 <h3>Exercise: Even or Odd?<a class="headerlink" href="#Exercise:-Even-or-Odd?" title="Permalink to this headline"></a></h3>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">%</span></code> operator to check if an integer is even or odd.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;enter an integer&quot;</span><span class="p">))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;enter an integer&quot;</span><span class="p">))</span>
 <span class="c1"># fill in the rest</span>
 </pre></div>
 </div>
 </div>
 <hr class="docutils" />
-</section>
-</section>
-<section id="3.-Calculator">
+</div>
+</div>
+<div class="section" id="3.-Calculator">
 <h2>3. Calculator<a class="headerlink" href="#3.-Calculator" title="Permalink to this headline"></a></h2>
-<section id="Example:-Sum-and-Difference">
+<div class="section" id="Example:-Sum-and-Difference">
 <h3>Example: Sum and Difference<a class="headerlink" href="#Example:-Sum-and-Difference" title="Permalink to this headline"></a></h3>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function to get two numbers and an arithmetic operation (either + or -) from the user, then print the result.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;enter a number:&quot;</span><span class="p">))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;enter a number:&quot;</span><span class="p">))</span>
 <span class="n">operator</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;enter a operator:&quot;</span><span class="p">)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;enter a number:&quot;</span><span class="p">))</span>
 
@@ -698,15 +687,16 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Exercise:-All-Arithmetic-Operators">
+</div>
+<div class="section" id="Exercise:-All-Arithmetic-Operators">
 <h3>Exercise: All Arithmetic Operators<a class="headerlink" href="#Exercise:-All-Arithmetic-Operators" title="Permalink to this headline"></a></h3>
 <p>Use a conditional statement to calculate results for all of the arithmetic operators</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;enter a number:&quot;</span><span class="p">))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;enter a number:&quot;</span><span class="p">))</span>
 <span class="n">operator</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;enter an operator:&quot;</span><span class="p">)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;enter a number:&quot;</span><span class="p">))</span>
 
@@ -732,18 +722,19 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <hr class="docutils" />
-</section>
-</section>
-<section id="4.-Extension:-Calculate-While-…">
+</div>
+</div>
+<div class="section" id="4.-Extension:-Calculate-While-…">
 <h2>4. Extension: Calculate While …<a class="headerlink" href="#4.-Extension:-Calculate-While-…" title="Permalink to this headline"></a></h2>
-<section id="Example:-Repeat-until-I-say-‘q’">
+<div class="section" id="Example:-Repeat-until-I-say-‘q’">
 <h3>Example: Repeat until I say ‘q’<a class="headerlink" href="#Example:-Repeat-until-I-say-‘q’" title="Permalink to this headline"></a></h3>
 <p>The code below uses a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop to continue to get input from the user. If the the user enters <code class="docutils literal notranslate"><span class="pre">q</span></code> then the loop will stop and the program will finish. The <code class="docutils literal notranslate"><span class="pre">break</span></code> keyword forces the loop to exit.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this is code you can use to repeat getting input</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># this is code you can use to repeat getting input</span>
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
 
     <span class="n">do_again</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Type q to quit: &quot;</span><span class="p">)</span>
@@ -753,8 +744,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Exercise:-Keep-on-Calculating">
+</div>
+<div class="section" id="Exercise:-Keep-on-Calculating">
 <h3>Exercise: Keep on Calculating<a class="headerlink" href="#Exercise:-Keep-on-Calculating" title="Permalink to this headline"></a></h3>
 <p>Use a while loop to continue to get input from the user for your calculator</p>
 <p>Your calculator code should:</p>
@@ -770,14 +761,15 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># write you calculator with a while loop here</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># write you calculator with a while loop here</span>
 </pre></div>
 </div>
 </div>
 <hr class="docutils" />
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
