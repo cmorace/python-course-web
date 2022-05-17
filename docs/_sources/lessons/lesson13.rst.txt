@@ -15,7 +15,7 @@ Returning a list from a function
     def get_random_list(low, high, length):
         result = []
         for _ in range(length):
-            result.append(randint(low, hight))
+            result.append(randint(low, high))
         return result
 
 -------------------------------
@@ -67,6 +67,7 @@ Particle Effects
     - fades out over time
     - find an image so particles look more like fire/explosion
 
+
 .. admonition:: Exercise:
 
     Create a Button to change the color of all of the particles.
@@ -77,15 +78,8 @@ Particle Effects
 
     - Add multiple buttons to change the particles different colors.
       Can you use a single ``Button`` class?
-    - Add a button to change the image and scale of the particles.
-
-
-.. admonition:: Exercise:
-
-    Create a Button to create new particles.
-
-    Extensions:
-
+    - Add a button to change the image or scale of the particles.
+    - Create a Button to create new particles
     - Create a button to delete all particles
     - Create a button to delete particles in the order they were created.
 

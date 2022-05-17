@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Strings &mdash; Peanuts Python Course Website 0.0.2 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -17,6 +18,8 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script src="../../_static/js/custom.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -325,21 +328,35 @@
 /* CSS for nbsphinx extension */
 
 /* remove conflicting styling from Sphinx themes */
-div.nbinput.container,
-div.nbinput.container div.prompt,
-div.nbinput.container div.input_area,
-div.nbinput.container div[class*=highlight],
-div.nbinput.container div[class*=highlight] pre,
-div.nboutput.container,
-div.nboutput.container div.prompt,
-div.nboutput.container div.output_area,
-div.nboutput.container div[class*=highlight],
-div.nboutput.container div[class*=highlight] pre {
-    background: none;
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
     border: none;
-    padding: 0 0;
+    padding: 0;
     margin: 0;
     box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
 }
 
 /* avoid gaps between output lines */
@@ -440,7 +457,7 @@ div.nboutput.container div.output_area {
 div.nbinput.container div.input_area {
     border: 1px solid #e0e0e0;
     border-radius: 2px;
-    background: #f5f5f5;
+    /*background: #f5f5f5;*/
 }
 
 /* override MathJax center alignment in output cells */
@@ -506,6 +523,7 @@ div.nboutput.container div.output_area.rendered_html,
 div.nboutput.container div.output_area > div.output_javascript,
 div.nboutput.container div.output_area:not(.rendered_html) > img{
     padding: 5px;
+    margin: 0;
 }
 
 /* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
@@ -515,7 +533,7 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
+.prompt .copybtn {
     display: none;
 }
 
@@ -575,17 +593,16 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Strings">
+<section id="Strings">
 <h1>Strings<a class="headerlink" href="#Strings" title="Permalink to this headline"></a></h1>
-<div class="section" id="String-Assignment">
+<section id="String-Assignment">
 <h2>String Assignment<a class="headerlink" href="#String-Assignment" title="Permalink to this headline"></a></h2>
 <p>Strings can start and end with either single or double quotation marks. For example <code class="docutils literal notranslate"><span class="pre">&quot;hello&quot;</span></code> is the same as <code class="docutils literal notranslate"><span class="pre">'hello'</span></code>.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">string_1</span> <span class="o">=</span> <span class="s2">&quot;abc123&quot;</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">string_1</span> <span class="o">=</span> <span class="s2">&quot;abc123&quot;</span>
 <span class="n">string_2</span> <span class="o">=</span> <span class="s1">&#39;abc123&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">string_1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">string_2</span><span class="p">)</span>
@@ -601,16 +618,15 @@ abc123
 abc123
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="Multi-line-Strings">
+</section>
+<section id="Multi-line-Strings">
 <h2>Multi-line Strings<a class="headerlink" href="#Multi-line-Strings" title="Permalink to this headline"></a></h2>
 <p>Multi-line strings can be assigned by wrapping the string with three quotation marks.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">multi_line_string</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Multi-line strings are ok if your string</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">multi_line_string</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Multi-line strings are ok if your string</span>
 <span class="s2">starts and ends with three quotation marks.&quot;&quot;&quot;</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">multi_line_string</span><span class="p">)</span>
@@ -631,8 +647,7 @@ starts and ends with three quotation marks.
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">test</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;the first line is here</span><span class="se">\n</span><span class="s2">&quot;</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;the first line is here</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="s2">&quot;a second line is here</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="s2">&quot;a third line is here&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
@@ -649,20 +664,19 @@ a second line is here
 a third line is here
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="Escape-Characters">
+</section>
+<section id="Escape-Characters">
 <h2>Escape Characters<a class="headerlink" href="#Escape-Characters" title="Permalink to this headline"></a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
