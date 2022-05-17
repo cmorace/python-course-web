@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lesson 9 &mdash; Peanuts Python Course Website 0.0.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -196,6 +197,15 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="lesson13.html">Lesson 13</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="lesson13.html#review-homework">Review Homework</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="lesson13.html#returning-a-list-from-a-function">Returning a list from a function</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="lesson13.html#for-each-loops">For Each Loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lesson13.html#particle-effects">Particle Effects</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../homework.html">Homework</a><ul>
@@ -335,9 +345,9 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="lesson-9">
+<section id="lesson-9">
 <h1>Lesson 9<a class="headerlink" href="#lesson-9" title="Permalink to this headline"></a></h1>
-<div class="section" id="individual-project-and-presentation">
+<section id="individual-project-and-presentation">
 <h2>Individual Project and Presentation<a class="headerlink" href="#individual-project-and-presentation" title="Permalink to this headline"></a></h2>
 <p>Over the next two weeks, you will design and implement an individual project.
 You will demo and present your project at the end of next week’s class.</p>
@@ -349,9 +359,9 @@ You will demo and present your project at the end of next week’s class.</p>
 <p>An animation cycle repeats different behaviors (i.e. animations).
 There are many ways we could implement this. It will be up to you
 to choose an appropriate method for your project.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="the-sprite-s-on-update-method">
+<section id="the-sprite-s-on-update-method">
 <h2>The <code class="docutils literal notranslate"><span class="pre">Sprite</span></code>’s <code class="docutils literal notranslate"><span class="pre">on_update</span></code> Method<a class="headerlink" href="#the-sprite-s-on-update-method" title="Permalink to this headline"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">Sprite</span></code> class has an <code class="docutils literal notranslate"><span class="pre">on_update</span></code> method,
 which takes the <em>arguments</em> <code class="docutils literal notranslate"><span class="pre">self</span></code> and <code class="docutils literal notranslate"><span class="pre">dt</span></code>.</p>
@@ -370,11 +380,11 @@ which takes the <em>arguments</em> <code class="docutils literal notranslate"><s
 <li><p>How does a <code class="docutils literal notranslate"><span class="pre">Sprite</span></code>’s <code class="docutils literal notranslate"><span class="pre">on_update</span></code> method get called?</p></li>
 </ol>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="scheduler-methods">
+<section id="scheduler-methods">
 <h2><code class="docutils literal notranslate"><span class="pre">Scheduler</span></code> Methods<a class="headerlink" href="#scheduler-methods" title="Permalink to this headline"></a></h2>
-<div class="section" id="the-scheduler-update-method">
+<section id="the-scheduler-update-method">
 <h3>The <code class="docutils literal notranslate"><span class="pre">Scheduler.update()</span></code> Method<a class="headerlink" href="#the-scheduler-update-method" title="Permalink to this headline"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Scheduler.update(func:</span> <span class="pre">Callable,</span> <span class="pre">interval:</span> <span class="pre">float)</span></code> is a <em>static</em> method that
 repeatedly calls a function at fixed time intervals.</p>
@@ -430,8 +440,8 @@ For example,</p>
 <li><p>What is the difference?</p></li>
 </ol>
 </div>
-</div>
-<div class="section" id="the-scheduler-cancel-update-method">
+</section>
+<section id="the-scheduler-cancel-update-method">
 <h3>The <code class="docutils literal notranslate"><span class="pre">Scheduler.cancel_update()</span></code> Method<a class="headerlink" href="#the-scheduler-cancel-update-method" title="Permalink to this headline"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Scheduler.cancel_update(func:</span> <span class="pre">Callable)</span></code> is a <em>static</em> method that
 stops updating a function.</p>
@@ -446,8 +456,8 @@ stops updating a function.</p>
         <span class="n">Scheduler</span><span class="o">.</span><span class="n">cancel_update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">my_update</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="the-scheduler-wait-method">
+</section>
+<section id="the-scheduler-wait-method">
 <h3>The <code class="docutils literal notranslate"><span class="pre">Scheduler.wait()</span></code> Method<a class="headerlink" href="#the-scheduler-wait-method" title="Permalink to this headline"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Scheduler.wait(delay:</span> <span class="pre">float,</span> <span class="pre">func:</span> <span class="pre">Callable)</span></code> is a <em>static</em> method
 that calls a function a single time after some delay time. For example,
@@ -457,8 +467,8 @@ that calls a function a single time after some delay time. For example,
 <p>Could we use <code class="docutils literal notranslate"><span class="pre">Scheduler.wait()</span></code> to replicate
 the behavior of <code class="docutils literal notranslate"><span class="pre">Scheduler.update()</span></code></p>
 </div>
-</div>
-<div class="section" id="scheduling-functions-with-a-dt-argument">
+</section>
+<section id="scheduling-functions-with-a-dt-argument">
 <h3>Scheduling functions with a <code class="docutils literal notranslate"><span class="pre">dt</span></code> argument<a class="headerlink" href="#scheduling-functions-with-a-dt-argument" title="Permalink to this headline"></a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_update_func</span><span class="p">(</span><span class="n">dt</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I was last updated&quot;</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="s2">&quot;seconds ago&quot;</span><span class="p">)</span>
@@ -470,10 +480,10 @@ the behavior of <code class="docutils literal notranslate"><span class="pre">Sch
 <span class="n">Scheduler</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">my_wait_func</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="animation-cycles">
+<section id="animation-cycles">
 <h2>Animation Cycles<a class="headerlink" href="#animation-cycles" title="Permalink to this headline"></a></h2>
 <a class="reference internal image-reference" href="../_images/animation_cycle.gif"><img alt="../_images/animation_cycle.gif" class="align-center" src="../_images/animation_cycle.gif" style="width: 30%;" /></a>
 <p><a class="reference download internal" download="" href="../_downloads/3e204a2798fd9e59594e72fd3b3617f4/lesson_09_images.zip"><code class="xref download docutils literal notranslate"><span class="pre">lesson_09_images.zip</span></code></a></p>
@@ -483,8 +493,8 @@ the behavior of <code class="docutils literal notranslate"><span class="pre">Sch
 <li><p>Let’s discuss the advantages and disadvantages of the two approaches.</p></li>
 <li><p>Start planning your project!</p></li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

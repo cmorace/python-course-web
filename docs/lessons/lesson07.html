@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lesson 7 &mdash; Peanuts Python Course Website 0.0.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -196,6 +197,15 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="lesson13.html">Lesson 13</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="lesson13.html#review-homework">Review Homework</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="lesson13.html#returning-a-list-from-a-function">Returning a list from a function</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="lesson13.html#for-each-loops">For Each Loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lesson13.html#particle-effects">Particle Effects</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../homework.html">Homework</a><ul>
@@ -335,11 +345,11 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="lesson-7">
+<section id="lesson-7">
 <h1>Lesson 7<a class="headerlink" href="#lesson-7" title="Permalink to this headline"></a></h1>
 <p>Download and extract the image files below.</p>
 <p><a class="reference download internal" download="" href="../_downloads/1f7c1636a227330b8cd4e5b9aeb3e958/L6_media.zip"><code class="xref download docutils literal notranslate"><span class="pre">media.zip</span></code></a></p>
-<div class="section" id="state">
+<section id="state">
 <h2>State<a class="headerlink" href="#state" title="Permalink to this headline"></a></h2>
 <p>We can add behavior to our sprite’s by defining different states. For example, a sprite can perform one type of behavior if it is in one state, and perform another behavior if it is in a different state. Add a custom property to the sprite to store its current state. If only two behaviors are required, a boolean will suffice. For example,</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">is_in_original_state</span> <span class="o">=</span> <span class="kc">True</span>
@@ -353,16 +363,16 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-=</span> <span class="mi">1</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="mouse-click-event-handler">
+</section>
+<section id="mouse-click-event-handler">
 <h2>Mouse Click Event Handler<a class="headerlink" href="#mouse-click-event-handler" title="Permalink to this headline"></a></h2>
 <p>In Pycat, when a sprite is clicked with the left mouse button, the <code class="docutils literal notranslate"><span class="pre">on_left_click()</span></code> event handler is called.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_left_click</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">pass</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="tagging-sprites">
+</section>
+<section id="tagging-sprites">
 <h2>Tagging Sprites<a class="headerlink" href="#tagging-sprites" title="Permalink to this headline"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">add_tag</span><span class="p">(</span><span class="s1">&#39;alien&#39;</span><span class="p">)</span>
 </pre></div>
@@ -371,8 +381,8 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I touched an alien!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="labels">
+</section>
+<section id="labels">
 <h2>Labels<a class="headerlink" href="#labels" title="Permalink to this headline"></a></h2>
 <p>Labels display strings on the screen. The Label API is very similar to the Sprite’s API. For example,</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">label</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">create_label</span><span class="p">()</span>
@@ -393,16 +403,16 @@
 <span class="n">window</span><span class="o">.</span><span class="n">create_label</span><span class="p">(</span><span class="n">Hello</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="sound-effects">
+</section>
+<section id="sound-effects">
 <h2>Sound Effects<a class="headerlink" href="#sound-effects" title="Permalink to this headline"></a></h2>
 <p>You can use the pycat <code class="docutils literal notranslate"><span class="pre">Player</span></code> class to play different sounds. First you must find a <code class="docutils literal notranslate"><span class="pre">.wav</span></code> sound file you would like to play in your game. <a class="reference external" href="www.scratch.mit.edu">Scratch</a> has many good sound effects that you can download.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sound</span> <span class="o">=</span> <span class="n">Player</span><span class="p">(</span><span class="s1">&#39;die.wav&#39;</span><span class="p">)</span>
 <span class="n">sound</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

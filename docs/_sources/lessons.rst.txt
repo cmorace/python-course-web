@@ -17,5 +17,5 @@ Lessons
    lessons/lesson10
    lessons/lesson11
    lessons/lesson12
-   .. lessons/lesson13
+   lessons/lesson13
    .. lessons/lesson14

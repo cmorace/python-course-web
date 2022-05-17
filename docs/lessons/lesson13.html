@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lesson 13 &mdash; Peanuts Python Course Website 0.0.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,7 +21,9 @@
         <script src="../_static/js/custom.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Homework" href="../homework.html" />
+    <link rel="prev" title="Lesson 12" href="lesson12.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -38,8 +41,8 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../lessons.html">Lessons</a><ul>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../lessons.html">Lessons</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="lesson01.html">Lesson 1</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="lesson01.html#import-statements">Import Statements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="lesson01.html#variables">Variables</a></li>
@@ -194,6 +197,15 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lesson 13</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#review-homework">Review Homework</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#returning-a-list-from-a-function">Returning a list from a function</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#for-each-loops">For Each Loops</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#particle-effects">Particle Effects</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../homework.html">Homework</a><ul>
@@ -299,6 +311,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../lessons.html">Lessons</a> &raquo;</li>
       <li>Lesson 13</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -332,15 +345,101 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="lesson-13">
+<section id="lesson-13">
 <h1>Lesson 13<a class="headerlink" href="#lesson-13" title="Permalink to this headline"></a></h1>
-<p>Data Visualization with Matplotlib</p>
+<section id="review-homework">
+<h2>Review Homework<a class="headerlink" href="#review-homework" title="Permalink to this headline"></a></h2>
+<section id="returning-a-list-from-a-function">
+<h3>Returning a list from a function<a class="headerlink" href="#returning-a-list-from-a-function" title="Permalink to this headline"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="k">def</span> <span class="nf">get_random_list</span><span class="p">(</span><span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
 </div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="for-each-loops">
+<h2>For Each Loops<a class="headerlink" href="#for-each-loops" title="Permalink to this headline"></a></h2>
+<p>Last lesson we iterated over a list using an index variable.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">some_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">some_list</span><span class="p">)):</span>
+    <span class="n">element</span> <span class="o">=</span> <span class="n">some_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A simpler way to do the same thing:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">some_list</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise:</p>
+<p>Rewrite the <code class="docutils literal notranslate"><span class="pre">is_in_list(any_list)</span></code> function from last week using a for each loop.</p>
+<p>Extension: rewrite functions from the last homework to use for each loops</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="particle-effects">
+<h2>Particle Effects<a class="headerlink" href="#particle-effects" title="Permalink to this headline"></a></h2>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise:</p>
+<p>Create a <code class="docutils literal notranslate"><span class="pre">Particle(Sprite)</span></code> class.
+A particle should:</p>
+<ul class="simple">
+<li><p>have a random starting direction</p></li>
+<li><p>a random speed</p></li>
+<li><p>deletes itself if touching edge</p></li>
+</ul>
+<p>Create 100 particles using a for loop</p>
+<p>Extensions:</p>
+<ul class="simple">
+<li><p>bouncing off edge</p></li>
+<li><p>fades out over time</p></li>
+<li><p>find an image so particles look more like fire/explosion</p></li>
+</ul>
+</div>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise:</p>
+<p>Create a Button to change the color of all of the particles.
+Use a for each loop and <code class="docutils literal notranslate"><span class="pre">window.get_all_sprites_with_tag('particle')</span></code>
+to get the list of particles</p>
+<p>Extensions:</p>
+<ul class="simple">
+<li><p>Add multiple buttons to change the particles different colors.
+Can you use a single <code class="docutils literal notranslate"><span class="pre">Button</span></code> class?</p></li>
+<li><p>Add a button to change the image and scale of the particles.</p></li>
+</ul>
+</div>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise:</p>
+<p>Create a Button to create new particles.</p>
+<p>Extensions:</p>
+<ul class="simple">
+<li><p>Create a button to delete all particles</p></li>
+<li><p>Create a button to delete particles in the order they were created.</p></li>
+</ul>
+</div>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise:</p>
+<p>Create an fireworks animation when the user clicks on the window or presses a key.
+The animation should have an explosion animation where particles shoot out radially
+from the point of explosion.</p>
+</div>
+</section>
+</section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="lesson12.html" class="btn btn-neutral float-left" title="Lesson 12" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../homework.html" class="btn btn-neutral float-right" title="Homework" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

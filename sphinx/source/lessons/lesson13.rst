@@ -18,7 +18,9 @@ Returning a list from a function
             result.append(randint(a, b))
         return result
 
-Foreach Loops
+-------------------------------
+
+For Each Loops
 ======================================
 
 Last lesson we iterated over a list using an index variable.
@@ -37,21 +39,59 @@ A simpler way to do the same thing:
     for element in some_list:
         print(element)
 
+.. admonition:: Exercise:
+
+    Rewrite the ``is_in_list(any_list)`` function from last week using a for each loop.
+
+    Extension: rewrite functions from the last homework to use for each loops
+
+-------------------------------
 
 Particle Effects
 ==================
 
-``class Particle(Sprite)``
-----------------------------
+.. admonition:: Exercise:
 
-- random direction
-- random speed
-- deletes if touching edge
+    Create a ``Particle(Sprite)`` class.
+    A particle should:
 
-Use a for loop to create many particles
+    - have a random starting direction
+    - a random speed
+    - deletes itself if touching edge
 
-Extensions:
+    Create 100 particles using a for loop
 
-- bouncing off edge
-- fades out over time
-- find an fire/explosion
+    Extensions:
+
+    - bouncing off edge
+    - fades out over time
+    - find an image so particles look more like fire/explosion
+
+.. admonition:: Exercise:
+
+    Create a Button to change the color of all of the particles.
+    Use a for each loop and ``window.get_all_sprites_with_tag('particle')``
+    to get the list of particles
+
+    Extensions:
+
+    - Add multiple buttons to change the particles different colors.
+      Can you use a single ``Button`` class?
+    - Add a button to change the image and scale of the particles.
+
+
+.. admonition:: Exercise:
+
+    Create a Button to create new particles.
+
+    Extensions:
+
+    - Create a button to delete all particles
+    - Create a button to delete particles in the order they were created.
+
+
+.. admonition:: Exercise:
+
+    Create an fireworks animation when the user clicks on the window or presses a key.
+    The animation should have an explosion animation where particles shoot out radially
+    from the point of explosion.
