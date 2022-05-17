@@ -46,13 +46,13 @@ Homework
      - ✅
      - ✅
      - ✅
-     -
+     - ✅
    * - `Homework 5 <homework/homework05.rst>`_
      -
      -
+     - ✅
      -
-     -
-     -
+     - ✅
 
 .. toctree::
    :hidden:
