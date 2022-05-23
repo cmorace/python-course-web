@@ -21,7 +21,9 @@
         <script src="../_static/js/custom.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Homework" href="../homework.html" />
+    <link rel="prev" title="Lesson 13" href="lesson13.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -39,8 +41,8 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../lessons.html">Lessons</a><ul>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../lessons.html">Lessons</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="lesson01.html">Lesson 1</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="lesson01.html#import-statements">Import Statements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="lesson01.html#variables">Variables</a></li>
@@ -204,6 +206,15 @@
 <li class="toctree-l3"><a class="reference internal" href="lesson13.html#particle-effects">Particle Effects</a></li>
 </ul>
 </li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lesson 14</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-player-class">The <code class="docutils literal notranslate"><span class="pre">Player</span></code> Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-playerbullet-class">The <code class="docutils literal notranslate"><span class="pre">PlayerBullet</span></code> Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-enemy-class">The <code class="docutils literal notranslate"><span class="pre">Enemy</span></code> Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#playerbullet-enemy-interaction"><code class="docutils literal notranslate"><span class="pre">PlayerBullet</span></code> - <code class="docutils literal notranslate"><span class="pre">Enemy</span></code> Interaction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-enemybullet-class">The <code class="docutils literal notranslate"><span class="pre">EnemyBullet</span></code> Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enemybullet-player-interaction"><code class="docutils literal notranslate"><span class="pre">EnemyBullet</span></code> - <code class="docutils literal notranslate"><span class="pre">Player</span></code> Interaction</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../homework.html">Homework</a><ul>
@@ -309,6 +320,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../lessons.html">Lessons</a> &raquo;</li>
       <li>Lesson 14</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -344,18 +356,10 @@
 </style>
 <section id="lesson-14">
 <h1>Lesson 14<a class="headerlink" href="#lesson-14" title="Permalink to this headline"></a></h1>
-<dl class="simple">
-<dt>What’s new?</dt><dd><ul class="simple">
-<li><p>new mouse event handler for the Sprite class: <code class="docutils literal notranslate"><span class="pre">on_left_click_anywhere(self)</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">self.point_toward_mouse_cursor()</span></code> will set a sprite’s rotation/direction</p></li>
-</ul>
-</dd>
-</dl>
-<p>Final project template and decomposition</p>
-<ol class="arabic">
-<li><p>Implementing the Player class</p>
-<blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pycat.core</span> <span class="kn">import</span> <span class="n">Color</span><span class="p">,</span> <span class="n">KeyCode</span><span class="p">,</span> <span class="n">Sprite</span><span class="p">,</span> <span class="n">Window</span>
+<p>Top-Down Shooter</p>
+<section id="the-player-class">
+<h2>The <code class="docutils literal notranslate"><span class="pre">Player</span></code> Class<a class="headerlink" href="#the-player-class" title="Permalink to this headline"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pycat.core</span> <span class="kn">import</span> <span class="n">Color</span><span class="p">,</span> <span class="n">Sprite</span><span class="p">,</span> <span class="n">Window</span>
 
 <span class="n">window</span> <span class="o">=</span> <span class="n">Window</span><span class="p">()</span>
 
@@ -368,7 +372,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">speed</span> <span class="o">=</span> <span class="mi">10</span>
 
     <span class="k">def</span> <span class="nf">on_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">window</span><span class="o">.</span><span class="n">is_key_pressed</span><span class="p">(</span><span class="n">KeyCode</span><span class="o">.</span><span class="n">W</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">window</span><span class="o">.</span><span class="n">is_key_pressed</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">speed</span>
         <span class="c1"># fill in code for keys A, S, D</span>
 
@@ -384,44 +388,46 @@
 <li><p>add a method to reset your player’s position</p></li>
 <li><p>add properties to store your player’s hp, strength, defense, magic, etc.</p></li>
 </ul>
-</div></blockquote>
-</li>
-<li><p>Shooting Bullets with <code class="docutils literal notranslate"><span class="pre">on_left_click_anywhere()</span></code></p>
-<p>We will fire bullets whenever the mouse is clicked.
-Add the following method to your Player class.</p>
+</section>
+<hr class="docutils" />
+<section id="the-playerbullet-class">
+<h2>The <code class="docutils literal notranslate"><span class="pre">PlayerBullet</span></code> Class<a class="headerlink" href="#the-playerbullet-class" title="Permalink to this headline"></a></h2>
+<p>We will fire bullets from the player whenever the mouse is clicked.</p>
+<p>Implement your <code class="docutils literal notranslate"><span class="pre">PlayerBullet</span></code> class.</p>
+<ul class="simple">
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">self.scale</span></code>, <code class="docutils literal notranslate"><span class="pre">self.color</span></code>, <code class="docutils literal notranslate"><span class="pre">self.position</span></code></p></li>
+<li><p>Add a new property for bullet speed e.g. <code class="docutils literal notranslate"><span class="pre">self.speed</span></code></p></li>
+<li><p>Set rotation with <code class="docutils literal notranslate"><span class="pre">self.point_toward_mouse_cursor()</span></code></p></li>
+<li><p>Bullets move foward, i.e. <code class="docutils literal notranslate"><span class="pre">self.move_forward(self.speed)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self.delete()</span></code> if <code class="docutils literal notranslate"><span class="pre">self.is_touching_window_edge()</span></code></p></li>
+</ul>
+<p>Add the following method to your Player class.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_left_click_anywhere</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="n">window</span><span class="o">.</span><span class="n">create_sprite</span><span class="p">(</span><span class="n">Bullet</span><span class="p">)</span>
+    <span class="n">window</span><span class="o">.</span><span class="n">create_sprite</span><span class="p">(</span><span class="n">PlayerBullet</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Now implement your <code class="docutils literal notranslate"><span class="pre">Bullet</span></code> class.</p>
-<ul class="simple">
-<li><p>What is the bullet size i.e. <code class="docutils literal notranslate"><span class="pre">self.scale</span></code>?</p></li>
-<li><p>What is the bullet color i.e. <code class="docutils literal notranslate"><span class="pre">self.color</span></code>?</p></li>
-<li><p>What is the bullet starting position i.e <code class="docutils literal notranslate"><span class="pre">self.position</span></code>?</p></li>
-<li><p>Add a new property for bullet speed i.e. <code class="docutils literal notranslate"><span class="pre">self.speed</span></code></p></li>
-<li><p>To set the rotation to shoot towards the mouse cursor, use <code class="docutils literal notranslate"><span class="pre">self.point_toward_mouse_cursor()</span></code>.</p></li>
-<li><p>Make each bullet move foward to the mouse cursor with <code class="docutils literal notranslate"><span class="pre">self.move_forward(self.speed)</span></code> and call <code class="docutils literal notranslate"><span class="pre">self.delete()</span></code> if <code class="docutils literal notranslate"><span class="pre">self.is_touching_window_edge()</span></code></p></li>
-</ul>
 <p>Extensions:</p>
 <ul class="simple">
 <li><p>Give your player a maximum number of bullets they can fire</p></li>
 <li><p>Add a power property to your <code class="docutils literal notranslate"><span class="pre">Bullet</span></code> class</p></li>
 <li><p>Add a <code class="docutils literal notranslate"><span class="pre">PowerUp</span></code> class that the player can collect to increase power</p></li>
 </ul>
-</li>
-<li><p>Add an <code class="docutils literal notranslate"><span class="pre">Enemy</span></code> class and generate some enemies.</p>
-<p>We will need a little help. Import the <code class="docutils literal notranslate"><span class="pre">Scheduler</span></code> class and the <code class="docutils literal notranslate"><span class="pre">random</span></code> module.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pycat.core</span> <span class="kn">import</span> <span class="n">Color</span><span class="p">,</span> <span class="n">KeyCode</span><span class="p">,</span> <span class="n">Scheduler</span><span class="p">,</span> <span class="n">Sprite</span><span class="p">,</span> <span class="n">Window</span>
-<span class="kn">import</span> <span class="nn">random</span>
-</pre></div>
-</div>
+</section>
+<hr class="docutils" />
+<section id="the-enemy-class">
+<h2>The <code class="docutils literal notranslate"><span class="pre">Enemy</span></code> Class<a class="headerlink" href="#the-enemy-class" title="Permalink to this headline"></a></h2>
 <p>In the <code class="docutils literal notranslate"><span class="pre">Enemy</span></code> class:</p>
 <ul class="simple">
-<li><p>Start each enemy at a random starting position i.e. <code class="docutils literal notranslate"><span class="pre">self.goto_random_position()</span></code></p></li>
-<li><p>Start each enemy with a random rotation, i.e. <code class="docutils literal notranslate"><span class="pre">self.rotation</span> <span class="pre">=</span> <span class="pre">random.randint(0,</span> <span class="pre">360)</span></code></p></li>
+<li><p>Enemys start at a random position i.e. <code class="docutils literal notranslate"><span class="pre">self.goto_random_position()</span></code></p></li>
+<li><p>Enemys start with a random rotation, i.e. <code class="docutils literal notranslate"><span class="pre">self.rotation</span> <span class="pre">=</span> <span class="pre">randint(0,</span> <span class="pre">360)</span></code></p></li>
 <li><p>Add a speed property and move each enemy forward</p></li>
 <li><p>Delete an an enemy when they touch the window’s edge</p></li>
 </ul>
+<p>You will need the <code class="docutils literal notranslate"><span class="pre">Scheduler</span></code> class and the <code class="docutils literal notranslate"><span class="pre">randint</span></code> function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pycat.core</span> <span class="kn">import</span> <span class="n">Scheduler</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+</pre></div>
+</div>
 <p>Spawn the enemies using the <code class="docutils literal notranslate"><span class="pre">Scheduler.update()</span></code> method.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">spawn_enemy</span><span class="p">():</span>
     <span class="n">window</span><span class="o">.</span><span class="n">create_sprite</span><span class="p">(</span><span class="n">Enemy</span><span class="p">)</span>
@@ -430,58 +436,84 @@ Add the following method to your Player class.</p>
 <span class="n">Scheduler</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">spawn_enemy</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Remember that this code must be outside any class (in the global scope).</p>
-<p>Extension:</p>
-<ul class="simple">
-<li><p>only spawn enemies if they are farther than some distance from the player. You can use the method <code class="docutils literal notranslate"><span class="pre">self.distance_to(player.position)</span></code></p></li>
-<li><p>only spawn enemies on the window edge. How can you keep them from being immediately deleted?</p></li>
-</ul>
-</li>
-<li><p>Have the player’s bullets kill enemies</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">self.add_tag('bullet')</span></code> in our <code class="docutils literal notranslate"><span class="pre">Bullet</span></code> class</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">self.delete()</span></code> if <code class="docutils literal notranslate"><span class="pre">self.is_touching_any_sprite_with_tag('bullet')</span></code> in our <code class="docutils literal notranslate"><span class="pre">Enemy</span></code> class.</p></li>
-</ul>
 <p>Extensions:</p>
 <ul class="simple">
-<li><p>add hp to your <code class="docutils literal notranslate"><span class="pre">Enemy</span></code> class so that they die after multiple hits</p></li>
-<li><p>if an enemny touches the player, reduce their hp, change color, and/or opacity</p></li>
+<li><p>Spawn enemies only if they are farther than some distance from the player.
+You can use the method <code class="docutils literal notranslate"><span class="pre">self.distance_to(player.position)</span></code></p></li>
+<li><p>Spawn enemies on the window edge.
+How can you keep them from being immediately deleted?</p></li>
 </ul>
-</li>
-<li><p>Make your enemies shoot bullets at the player</p>
-<blockquote>
-<div><p>Create an <code class="docutils literal notranslate"><span class="pre">EnemyBullet</span></code> class with properties:</p>
+</section>
+<hr class="docutils" />
+<section id="playerbullet-enemy-interaction">
+<h2><code class="docutils literal notranslate"><span class="pre">PlayerBullet</span></code> - <code class="docutils literal notranslate"><span class="pre">Enemy</span></code> Interaction<a class="headerlink" href="#playerbullet-enemy-interaction" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self.add_tag('pbullet')</span></code> to our <code class="docutils literal notranslate"><span class="pre">PlayerBullet</span></code> class</p></li>
+<li><p>delete enemies if <code class="docutils literal notranslate"><span class="pre">self.is_touching_any_sprite_with_tag('pbullet')</span></code></p></li>
+</ul>
+<p>Extensions:</p>
+<ul>
+<li><p>add hp to your <code class="docutils literal notranslate"><span class="pre">Enemy</span></code> class so that they die after multiple hits</p></li>
+<li><p>When an enemy is hit you could also</p>
 <blockquote>
 <div><ul class="simple">
+<li><p>change color, and/or opacity</p></li>
+<li><p>create a particle effect animation</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="the-enemybullet-class">
+<h2>The <code class="docutils literal notranslate"><span class="pre">EnemyBullet</span></code> Class<a class="headerlink" href="#the-enemybullet-class" title="Permalink to this headline"></a></h2>
+<p>Create an <code class="docutils literal notranslate"><span class="pre">EnemyBullet</span></code> class with properties:</p>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">self.color</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">self.scale</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">self.speed</span></code></p></li>
 </ul>
-</div></blockquote>
-<p>The enemy bullets should <code class="docutils literal notranslate"><span class="pre">self.move_forward(self.speed)</span></code> and be deleted if:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">self.is_touching_window_edge()</span></code> or,</p></li>
+<p>The enemy bullets should be deleted if:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self.is_touching_window_edge()</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">self.is_touching_sprite(player)</span></code></p></li>
 </ul>
-</div></blockquote>
 <p>We want each of our enemies to fire bullets at the player every 2 seconds.</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p>add a <code class="docutils literal notranslate"><span class="pre">self.time</span></code> to the <code class="docutils literal notranslate"><span class="pre">Enemy</span></code> class</p></li>
 <li><p>update <code class="docutils literal notranslate"><span class="pre">self.time</span></code> in <code class="docutils literal notranslate"><span class="pre">on_update(self,</span> <span class="pre">dt)</span></code></p></li>
-<li><p>if <code class="docutils literal notranslate"><span class="pre">self.time</span> <span class="pre">&gt;</span> <span class="pre">2</span></code> then create a bullet and set it’s position and rotation</p></li>
+<li><p>if <code class="docutils literal notranslate"><span class="pre">self.time</span> <span class="pre">&gt;</span> <span class="pre">2</span></code> then create a bullet and set it’s position/rotation</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="enemybullet-player-interaction">
+<h2><code class="docutils literal notranslate"><span class="pre">EnemyBullet</span></code> - <code class="docutils literal notranslate"><span class="pre">Player</span></code> Interaction<a class="headerlink" href="#enemybullet-player-interaction" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self.add_tag('ebullet')</span></code> to our <code class="docutils literal notranslate"><span class="pre">EnemyBullet</span></code> class</p></li>
+<li><p>delete player if <code class="docutils literal notranslate"><span class="pre">self.is_touching_any_sprite_with_tag('ebullet')</span></code></p></li>
+</ul>
+<p>Extensions:</p>
+<ul>
+<li><p>add hp to your <code class="docutils literal notranslate"><span class="pre">Player</span></code> class so that they die after multiple hits</p></li>
+<li><p>When a player is hit you could also:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>change color, and/or opacity</p></li>
+<li><p>create a particle effect animation</p></li>
 </ul>
 </div></blockquote>
-</div></blockquote>
 </li>
-</ol>
+</ul>
+</section>
 </section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="lesson13.html" class="btn btn-neutral float-left" title="Lesson 13" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../homework.html" class="btn btn-neutral float-right" title="Homework" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

@@ -1,130 +1,164 @@
+************************
 Lesson 14
-==================
+************************
 
 
-What's new?
-   - new mouse event handler for the Sprite class: ``on_left_click_anywhere(self)``
-   - ``self.point_toward_mouse_cursor()`` will set a sprite's rotation/direction
-
-Final project template and decomposition
-
-1. Implementing the Player class
-
-    .. code:: python
-
-        from pycat.core import Color, KeyCode, Sprite, Window
-
-        window = Window()
+Top-Down Shooter
 
 
-        class Player(Sprite):
+The ``Player`` Class
+==================================
 
-            def on_create(self):
-                self.color = Color.AMBER
-                self.scale = 30
-                self.speed = 10
+.. code:: python
 
-            def on_update(self, dt):
-                if window.is_key_pressed(KeyCode.W):
-                    self.y += self.speed
-                # fill in code for keys A, S, D
+    from pycat.core import Color, Sprite, Window
+
+    window = Window()
 
 
-        player = window.create_sprite(Player)
-        window.run()
+    class Player(Sprite):
 
-    Extensions:
+        def on_create(self):
+            self.color = Color.AMBER
+            self.scale = 30
+            self.speed = 10
 
-    - set your player's initial position
-    - add a key to make your player teleport
-    - add a method to reset your player's position
-    - add properties to store your player's hp, strength, defense, magic, etc.
-
-
-2. Shooting Bullets with ``on_left_click_anywhere()``
-   
-   We will fire bullets whenever the mouse is clicked.
-   Add the following method to your Player class.
-   
-   .. code:: python
-
-        def on_left_click_anywhere(self):            
-            window.create_sprite(Bullet)
-
-   Now implement your ``Bullet`` class.
-
-   - What is the bullet size i.e. ``self.scale``?
-   - What is the bullet color i.e. ``self.color``?
-   - What is the bullet starting position i.e ``self.position``?
-   - Add a new property for bullet speed i.e. ``self.speed``
-   - To set the rotation to shoot towards the mouse cursor, use ``self.point_toward_mouse_cursor()``.
-   - Make each bullet move foward to the mouse cursor with ``self.move_forward(self.speed)`` and call ``self.delete()`` if ``self.is_touching_window_edge()``
-
-   Extensions:
-
-   - Give your player a maximum number of bullets they can fire
-   - Add a power property to your ``Bullet`` class
-   - Add a ``PowerUp`` class that the player can collect to increase power
-
-3. Add an ``Enemy`` class and generate some enemies.
-
-   We will need a little help. Import the ``Scheduler`` class and the ``random`` module.
-
-   .. code:: python
-      
-        from pycat.core import Color, KeyCode, Scheduler, Sprite, Window
-        import random
-
-   In the ``Enemy`` class:
-   
-   - Start each enemy at a random starting position i.e. ``self.goto_random_position()``
-   - Start each enemy with a random rotation, i.e. ``self.rotation = random.randint(0, 360)``
-   - Add a speed property and move each enemy forward
-   - Delete an an enemy when they touch the window's edge
-
-   Spawn the enemies using the ``Scheduler.update()`` method.
-
-   .. code:: python
-
-      def spawn_enemy():
-          window.create_sprite(Enemy)
+        def on_update(self, dt):
+            if window.is_key_pressed('w'):
+                self.y += self.speed
+            # fill in code for keys A, S, D
 
 
-      Scheduler.update(spawn_enemy, delay=1)
+    player = window.create_sprite(Player)
+    window.run()
 
-   Remember that this code must be outside any class (in the global scope).
+Extensions:
+
+- set your player's initial position
+- add a key to make your player teleport
+- add a method to reset your player's position
+- add properties to store your player's hp, strength, defense, magic, etc.
+
+-----------------------------------------------
 
 
-   Extension:
+The ``PlayerBullet`` Class
+==================================
 
-   - only spawn enemies if they are farther than some distance from the player. You can use the method ``self.distance_to(player.position)``
-   - only spawn enemies on the window edge. How can you keep them from being immediately deleted?
+We will fire bullets from the player whenever the mouse is clicked.
 
-4. Have the player's bullets kill enemies
 
-   - ``self.add_tag('bullet')`` in our ``Bullet`` class
-   - ``self.delete()`` if ``self.is_touching_any_sprite_with_tag('bullet')`` in our ``Enemy`` class.
+Implement your ``PlayerBullet`` class.
 
-   Extensions: 
-   
-   - add hp to your ``Enemy`` class so that they die after multiple hits
-   - if an enemny touches the player, reduce their hp, change color, and/or opacity
+- Set ``self.scale``, ``self.color``, ``self.position``
+- Add a new property for bullet speed e.g. ``self.speed``
+- Set rotation with ``self.point_toward_mouse_cursor()``
+- Bullets move foward, i.e. ``self.move_forward(self.speed)``
+- ``self.delete()`` if ``self.is_touching_window_edge()``
 
-5. Make your enemies shoot bullets at the player
 
-    Create an ``EnemyBullet`` class with properties:
+Add the following method to your Player class.
 
-       - ``self.color``
-       - ``self.scale``
-       - ``self.speed``
+.. code:: python
 
-    The enemy bullets should ``self.move_forward(self.speed)`` and be deleted if:
-    
-       - ``self.is_touching_window_edge()`` or,
-       - ``self.is_touching_sprite(player)``
+    def on_left_click_anywhere(self):
+        window.create_sprite(PlayerBullet)
 
-    We want each of our enemies to fire bullets at the player every 2 seconds.
-    
-       - add a ``self.time`` to the ``Enemy`` class
-       - update ``self.time`` in ``on_update(self, dt)``
-       - if ``self.time > 2`` then create a bullet and set it's position and rotation
+
+Extensions:
+
+- Give your player a maximum number of bullets they can fire
+- Add a power property to your ``Bullet`` class
+- Add a ``PowerUp`` class that the player can collect to increase power
+
+
+---------------------------------------------------
+
+The ``Enemy`` Class
+==========================
+
+In the ``Enemy`` class:
+
+- Enemys start at a random position i.e. ``self.goto_random_position()``
+- Enemys start with a random rotation, i.e. ``self.rotation = randint(0, 360)``
+- Add a speed property and move each enemy forward
+- Delete an an enemy when they touch the window's edge
+
+You will need the ``Scheduler`` class and the ``randint`` function.
+
+.. code:: python
+
+    from pycat.core import Scheduler
+    from random import randint
+
+Spawn the enemies using the ``Scheduler.update()`` method.
+
+.. code:: python
+
+    def spawn_enemy():
+        window.create_sprite(Enemy)
+
+
+    Scheduler.update(spawn_enemy, delay=1)
+
+
+Extensions:
+
+- Spawn enemies only if they are farther than some distance from the player.
+  You can use the method ``self.distance_to(player.position)``
+- Spawn enemies on the window edge.
+  How can you keep them from being immediately deleted?
+
+------------------------------------------------------------
+
+``PlayerBullet`` - ``Enemy`` Interaction
+=============================================
+
+- ``self.add_tag('pbullet')`` to our ``PlayerBullet`` class
+- delete enemies if ``self.is_touching_any_sprite_with_tag('pbullet')``
+
+Extensions:
+
+- add hp to your ``Enemy`` class so that they die after multiple hits
+- When an enemy is hit you could also
+
+    - change color, and/or opacity
+    - create a particle effect animation
+
+-----------------------------------------------------
+
+The ``EnemyBullet`` Class
+==================================
+
+Create an ``EnemyBullet`` class with properties:
+
+- ``self.color``
+- ``self.scale``
+- ``self.speed``
+
+The enemy bullets should be deleted if:
+
+- ``self.is_touching_window_edge()``
+- ``self.is_touching_sprite(player)``
+
+We want each of our enemies to fire bullets at the player every 2 seconds.
+
+- add a ``self.time`` to the ``Enemy`` class
+- update ``self.time`` in ``on_update(self, dt)``
+- if ``self.time > 2`` then create a bullet and set it's position/rotation
+
+--------------------------
+
+``EnemyBullet`` - ``Player`` Interaction
+=============================================
+
+- ``self.add_tag('ebullet')`` to our ``EnemyBullet`` class
+- delete player if ``self.is_touching_any_sprite_with_tag('ebullet')``
+
+Extensions:
+
+- add hp to your ``Player`` class so that they die after multiple hits
+- When a player is hit you could also:
+
+    - change color, and/or opacity
+    - create a particle effect animation
